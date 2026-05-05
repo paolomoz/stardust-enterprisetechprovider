@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  writtenBy:         stardust:prototype (V08 — V07 + font D + button E)
+  derivedFrom:       home-proposed-v07.html
+  changeFromV07:
+    - type system: Geist → Manrope (display); Source Serif 4 → Newsreader (editorial); Geist Mono → IBM Plex Mono (data); Inter unchanged (UI)
+    - primary button: solid ink → two-tone (ink slab + brass arrow tab)
+    - accent color: brass kept (no change)
+  -- V07 (light hero) and V06 history below --
+  writtenBy:         stardust:prototype (V07 — V06 with light-grey hero variant)
+  derivedFrom:       home-proposed-v06.html
+  changeFromV06:     hero section background --ink (#003049) → --platinum (#f4f5f7); all hero text colors flipped from white to dark; chip + tags + CTA + image-frame adapted for light surface
+  -- V06 history below --
+  writtenBy:         stardust:prototype (V06 — V04+V05 hybrid with full-bleed hero)
+  writtenAt:         2026-05-05T00:00:00Z
+  page:              home
+  pageUrl:           https://www.enterprisetechprovider.com/
+  proposedFile:      ./home-proposed-v06.html
+  againstDirection:  stardust/direction.md (Active 2026-05-05T00:00:00Z)
+  variantBasis:
+    - kept-from-V05: header navigation (7 items incl. Microsoft) · "Across the channel" ink topic band · "Three reads from each topic" departments grid
+    - kept-from-V04: "What else partners are reading" mini-roster · "This week's reads" 2x2 roster · "More from this week" numbered text list
+    - new: full-bleed --ink hero (replaces "Week of 4 May 2026" masthead); featured article styled as a slightly larger version of other roster cards (chip + 36px title + serif italic deck + meta + tag-row + Read article CTA)
+    - removed-from-IA: Innovation & Impact sponsored grid (user request) · Popular numbered list (user request)
+  divergenceVersion: v1.0 (stardust v0.3)
+  fontDeck:          editorial-trade-multi (Geist + Source Serif 4 + Inter + Geist Mono)
+  paletteSource:     user-pinned primaries + enterprise-refined secondaries
+  unsourcedContent:  ~22 placeholders (deck/date/read-time/author per article + newsletter description)
+  stardustVersion:   0.3.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Accelerate from Ideas to Innovation. News about APEX, Servers, Data Storage, HCI and Commercial PCs. Enterprise Tech Provider Zone can help you accelerate your business from ideas to innovation.">
+<meta name="theme-color" content="#003049">
+<meta property="og:title" content="Enterprise Tech Provider">
+<meta property="og:description" content="Accelerate from Ideas to Innovation">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Enterprise Tech Provider">
+<meta property="og:image" content="https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/etp-share.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.enterprisetechprovider.com/">
+<title>Enterprise Tech Provider | Accelerate from Ideas to Innovation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap"></noscript>
+<style>
+:root {
+  --ink:#003049; --ink-deep:#001f2f; --ink-haze:#e8eef2;
+  --obsidian:#000000; --vellum:#ffffff;
+  --char:#0a0d12; --graphite:#3d4651; --graphite-mute:#6b7480;
+  --platinum:#f4f5f7; --platinum-edge:#dfe3e8;
+  --navy-deep:#0b1f3a; --brass:#b88830; --brass-soft:#d4a45a; --brass-deep:#8a6420; --cordovan:#5b1116;
+  --tint-datacenter: rgba(0,48,73,0.06);
+  --tint-ai:         rgba(184,136,48,0.12);
+  --tint-workplace:  rgba(91,17,22,0.08);
+  --tint-neutral:    var(--platinum);
+  --display:"Manrope",ui-sans-serif,system-ui,sans-serif;
+  --editorial:"Newsreader","Iowan Old Style",Charter,Georgia,serif;
+  --ui:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --type-12:.75rem; --type-14:.875rem; --type-16:1rem; --type-18:1.125rem;
+  --type-20:1.25rem; --type-24:1.5rem; --type-30:1.875rem; --type-36:2.25rem;
+  --type-48:3rem; --type-60:3.75rem;
+  --radius-sm:2px; --radius-md:4px; --radius-lg:8px; --radius-pill:999px;
+  --shadow-sm:0 1px 2px rgba(10,13,18,.04),0 1px 4px rgba(10,13,18,.04);
+  --shadow-md:0 4px 12px rgba(10,13,18,.08),0 2px 6px rgba(10,13,18,.06);
+  --space-section-d:80px; --space-section-t:56px; --space-section-m:40px;
+  --space-gap-d:24px; --space-gap-t:16px; --space-gap-m:12px;
+  --content-max:1280px;
+  --motion-fast:120ms; --motion-base:220ms; --motion-slow:360ms;
+  --ease-standard:cubic-bezier(.2,.8,.2,1);
+  --img-hero:309px; --img-roster:200px; --img-mini:96px;
+}
+
+/* Wide-screen breathing room — reasonable cap so content doesn't get island-small at 1920+ */
+@media (min-width:1600px){:root{--content-max:1440px;}}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--vellum);color:var(--char);font-family:var(--ui);font-size:var(--type-16);line-height:1.55;-webkit-font-smoothing:antialiased;}
+img,svg{display:block;max-width:100%;}
+button{font:inherit;cursor:pointer;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px;}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;color:var(--char);margin:0;line-height:1.15;letter-spacing:-.020em;}
+.ds-eyebrow{font-family:var(--mono);font-size:var(--type-12);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);display:inline-block;}
+.ds-eyebrow--brass{color:var(--brass);}
+.ds-eyebrow--brass-soft{color:var(--brass-soft);}
+.ds-eyebrow--brass-deep{color:var(--brass-deep);}
+.ds-chip{display:inline-flex;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-sm);background:var(--tint-datacenter);color:var(--ink);}
+.ds-chip--datacenter{background:var(--tint-datacenter);color:var(--ink);}
+.ds-chip--ai{background:var(--tint-ai);color:var(--brass);}
+.ds-chip--workplace{background:var(--tint-workplace);color:var(--cordovan);}
+.ds-chip--neutral{background:var(--platinum);color:var(--graphite);}
+.ds-chip--on-ink{background:rgba(255,255,255,.14);color:var(--vellum);}
+/* === Primary button — variant E (two-tone: ink slab + brass arrow tab) === */
+.ds-button-primary{display:inline-flex;align-items:stretch;font-family:var(--ui);font-size:var(--type-14);font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:transparent;border:0;border-radius:var(--radius-md);overflow:hidden;text-decoration:none;cursor:pointer;padding:0;line-height:1;}
+.ds-button-primary > .ds-btn-lab{padding:13px 18px;background:var(--ink);color:var(--vellum);display:inline-flex;align-items:center;transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-primary > .ds-btn-arrow{padding:13px 16px;background:var(--brass);color:var(--ink-deep);font-family:var(--mono);font-size:14px;display:inline-flex;align-items:center;transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-primary:hover > .ds-btn-lab{background:var(--ink-deep);}
+.ds-button-primary:hover > .ds-btn-arrow{background:var(--brass-soft);}
+/* Fallback for buttons that haven't been markup-updated yet (e.g. <button>Subscribe</button>): keep readable solid form */
+.ds-button-primary:not(:has(> .ds-btn-lab)){padding:11px 18px;background:var(--ink);color:var(--vellum);align-items:center;justify-content:center;}
+.ds-button-primary:not(:has(> .ds-btn-lab)):hover{background:var(--ink-deep);}
+.ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--ui);font-size:var(--type-14);font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:var(--radius-md);transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-secondary:hover{background:var(--ink-haze);}
+.ds-link-arrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color var(--motion-fast) var(--ease-standard),color var(--motion-fast) var(--ease-standard);}
+.ds-link-arrow:hover{border-bottom-color:var(--brass-deep);color:var(--brass-deep);}
+.ds-link-arrow--on-ink:hover{border-bottom-color:var(--brass-soft);color:var(--brass-soft);}
+.ds-input{flex:1;font-family:var(--ui);font-size:var(--type-16);padding:12px 14px;background:var(--vellum);color:var(--char);border:1px solid var(--platinum-edge);border-radius:var(--radius-md);}
+.ds-input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,48,73,.15);}
+.ds-ph{font-family:var(--editorial);font-style:italic;font-size:inherit;color:var(--graphite-mute);opacity:.68;border-bottom:1px dotted rgba(184,136,48,.45);padding:0 1px;}
+.ds-ph::before{content:"›";margin-right:4px;color:var(--brass);font-style:normal;font-family:var(--mono);font-size:.85em;}
+.ds-ph--on-ink{color:rgba(255,255,255,.65);border-bottom-color:rgba(212,164,90,.5);}
+.ds-ph--on-ink::before{color:var(--brass-soft);}
+.ds-tag-row{display:flex;flex-wrap:wrap;gap:6px;}
+.ds-tag{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);background:var(--platinum);padding:6px 10px;border-radius:var(--radius-sm);min-height:24px;display:inline-flex;align-items:center;}
+@media (pointer:coarse){.ds-tag{padding:8px 12px;min-height:32px;}}
+.ds-tag:hover{background:var(--ink-haze);color:var(--ink);}
+.ds-tag--on-ink{color:rgba(255,255,255,.75);background:rgba(255,255,255,.10);}
+.ds-tag--on-ink:hover{background:rgba(184,136,48,.18);color:var(--brass-soft);}
+.ds-container{width:100%;max-width:var(--content-max);margin:0 auto;padding-inline:24px;}
+@media (min-width:600px){.ds-container{padding-inline:32px;}}
+@media (min-width:1024px){.ds-container{padding-inline:48px;}}
+
+/* === Skip link (a11y — keyboard bypass) === */
+.ds-skip{position:absolute;left:-9999px;top:0;z-index:100;padding:12px 18px;background:var(--ink);color:var(--vellum);font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;}
+.ds-skip:focus{left:0;outline:3px solid var(--brass);}
+
+/* === Utility strip (dark band — recalls the captured site's top utility row) === */
+[data-section="utility-strip"]{background:var(--obsidian);height:28px;display:flex;align-items:center;}
+[data-section="utility-strip"] .ds-container{display:flex;justify-content:space-between;align-items:center;height:100%;}
+[data-section="utility-strip"] p{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);}
+[data-section="utility-strip"] p:last-child{color:rgba(255,255,255,.45);}
+@media (max-width:599px){[data-section="utility-strip"]{height:auto;padding:6px 0;}[data-section="utility-strip"] p{font-size:10px;line-height:1.4;text-align:center;}[data-section="utility-strip"] p:last-child{display:none;}}
+
+/* === Header === */
+[data-section="header"]{position:sticky;top:0;z-index:50;background:var(--vellum);border-bottom:1px solid var(--platinum-edge);}
+.ds-header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px;}
+.ds-sitemark{display:inline-flex;align-items:center;flex-shrink:0;text-decoration:none;}
+.ds-sitemark .ds-sitemark-mark{height:24px;width:auto;display:block;filter:brightness(0);opacity:.85;transition:opacity 120ms ease;}
+.ds-sitemark:hover .ds-sitemark-mark{opacity:1;}
+.ds-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;}
+.ds-nav-link{font-family:var(--ui);font-size:var(--type-14);font-weight:500;color:var(--char);padding:10px 8px;border-radius:var(--radius-md);white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;}
+.ds-nav-link:hover{background:var(--ink-haze);color:var(--ink);}
+.ds-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.ds-search-form{display:flex;align-items:center;gap:6px;background:var(--platinum);border:1px solid transparent;border-radius:var(--radius-md);padding:6px 10px;}
+.ds-search-form:focus-within{border-color:var(--ink);background:var(--vellum);}
+.ds-search-icon{color:var(--graphite-mute);}
+.ds-search-input{border:none;background:transparent;font-family:var(--ui);font-size:var(--type-14);color:var(--char);width:160px;padding:2px 0;}
+.ds-search-input:focus{outline:none;}
+.ds-menu-toggle{display:none;background:transparent;border:1px solid var(--platinum-edge);border-radius:var(--radius-md);padding:8px 10px;cursor:pointer;}
+.ds-menu-toggle[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--vellum);}
+
+/* === Mobile drawer (slide-in from right) === */
+.ds-drawer-backdrop{
+  position:fixed;inset:0;z-index:90;
+  background:rgba(0,31,47,.55);
+  opacity:0;visibility:hidden;
+  transition:opacity 240ms cubic-bezier(.16,1,.3,1), visibility 240ms;
+}
+.ds-drawer-backdrop[data-open="true"]{opacity:1;visibility:visible;}
+.ds-drawer{
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(360px, 88vw);
+  background:var(--vellum);
+  z-index:91;
+  display:flex;flex-direction:column;
+  box-shadow:-12px 0 32px rgba(0,31,47,.18);
+  transform:translateX(100%);
+  transition:transform 280ms cubic-bezier(.16,1,.3,1);
+}
+.ds-drawer[data-open="true"]{transform:translateX(0);}
+.ds-drawer-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 24px;
+  border-bottom:1px solid var(--platinum-edge);
+  flex-shrink:0;
+}
+.ds-drawer-head .ds-sitemark{color:var(--ink);}
+.ds-drawer-close{
+  background:transparent;border:1px solid var(--platinum-edge);
+  border-radius:var(--radius-md);padding:8px 10px;cursor:pointer;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--graphite);
+}
+.ds-drawer-close:hover{background:var(--platinum);color:var(--ink);}
+.ds-drawer-body{flex:1;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:24px;}
+.ds-drawer-search{
+  display:flex;align-items:center;gap:8px;
+  background:var(--platinum);border:1px solid transparent;border-radius:var(--radius-md);
+  padding:10px 14px;
+}
+.ds-drawer-search:focus-within{border-color:var(--ink);background:var(--vellum);}
+.ds-drawer-search input{flex:1;border:0;background:transparent;font-family:var(--ui);font-size:var(--type-16);color:var(--char);min-width:0;}
+.ds-drawer-search input:focus{outline:none;}
+.ds-drawer-nav{display:flex;flex-direction:column;gap:2px;}
+.ds-drawer-eyebrow{
+  font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--graphite-mute);margin-bottom:8px;padding:0 4px;
+}
+.ds-drawer-link{
+  display:block;
+  padding:14px 14px;
+  font-family:var(--display);font-size:var(--type-18);font-weight:600;
+  color:var(--char);
+  border-radius:var(--radius-md);
+  border-bottom:1px solid var(--platinum-edge);
+  transition:background var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard);
+}
+.ds-drawer-link:last-of-type{border-bottom:none;}
+.ds-drawer-link:hover{background:var(--platinum);color:var(--ink);}
+.ds-drawer-foot{
+  padding:18px 24px;
+  border-top:1px solid var(--platinum-edge);
+  display:flex;flex-direction:column;gap:12px;
+  flex-shrink:0;
+}
+.ds-drawer-foot .ds-button-primary{width:100%;justify-content:center;}
+.ds-drawer-foot small{
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--graphite-mute);text-align:center;
+}
+@media (prefers-reduced-motion:reduce){
+  .ds-drawer{transition:none;}
+  .ds-drawer-backdrop{transition:none;}
+}
+body.ds-drawer-open{overflow:hidden;}
+@media (min-width:1400px){
+  /* Hard-hide drawer at desktop where nav is inline */
+  .ds-drawer, .ds-drawer-backdrop{display:none !important;}
+}
+@media (max-width:1399px){.ds-nav{display:none;}.ds-search-input{width:160px;}.ds-header-actions .ds-button-secondary{display:inline-flex;}.ds-menu-toggle{display:inline-flex;}}
+@media (max-width:699px){.ds-search-input{width:100px;}.ds-header-actions .ds-button-secondary{display:none;}}
+@media (max-width:599px){.ds-search-form{display:none;}}
+@media (max-width:599px){.ds-search-form{display:none;}}
+
+/* === PUBLICATION MASTHEAD (variant E — compact mono whisper, ~60px tall) === */
+[data-section="publication-banner"]{
+  background:var(--ink-deep);color:var(--vellum);
+  padding:18px 0;
+  border-top:2px solid var(--brass);
+  border-bottom:1px solid var(--ink);
+}
+[data-section="publication-banner"] .ds-container{
+  display:flex;align-items:baseline;gap:24px;justify-content:space-between;flex-wrap:wrap;
+}
+.ds-banner-name{
+  font-family:var(--display);font-weight:700;
+  font-size:22px;letter-spacing:-.012em;color:var(--vellum);margin:0;
+}
+.ds-banner-tagline{
+  font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass-soft);margin:0;
+}
+.ds-banner-tagline::before{content:"§ ";color:rgba(255,255,255,.4);}
+@media (max-width:599px){
+  [data-section="publication-banner"]{padding:14px 0;}
+  .ds-banner-name{font-size:18px;}
+  .ds-banner-tagline{font-size:12px;letter-spacing:.12em;}
+}
+
+/* === WATCH & LEARN (featured iframe + sidebar of real reels) === */
+[data-section="reels"]{padding-block:var(--space-section-d);background:var(--vellum);border-bottom:1px solid var(--platinum-edge);}
+.ds-reels-grid{display:grid;grid-template-columns:8fr 4fr;gap:32px;align-items:start;}
+.ds-reels-featured{position:relative;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;background:var(--ink-deep);box-shadow:var(--shadow-md);}
+.ds-reels-player{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.ds-reels-side{display:flex;flex-direction:column;gap:14px;}
+.ds-reels-side .ds-reel{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;padding:6px;border:1px solid transparent;border-radius:var(--radius-sm);background:transparent;color:var(--char);text-decoration:none;transition:background 120ms ease, border-color 120ms ease;}
+.ds-reels-side .ds-reel:hover{background:var(--platinum);border-color:var(--platinum-edge);}
+.ds-reels-side .ds-reel.is-active{background:var(--ink-haze);border-color:var(--ink);}
+.ds-reels-side .ds-reel.is-active .ds-reel-eyebrow{color:var(--brass-deep);font-weight:600;}
+.ds-reels-side .ds-reel-thumb{position:relative;width:120px;aspect-ratio:16/9;border-radius:var(--radius-sm);overflow:hidden;background:var(--ink-haze);border:1px solid var(--platinum-edge);}
+.ds-reels-side .ds-reel-thumb img{width:100%;height:100%;object-fit:cover;}
+.ds-reels-side .ds-reel-thumb::after{content:"";position:absolute;inset:0;background:rgba(0,31,47,.18);opacity:0;transition:opacity 120ms ease;}
+.ds-reels-side .ds-reel:hover .ds-reel-thumb::after, .ds-reels-side .ds-reel.is-active .ds-reel-thumb::after{opacity:1;}
+.ds-reels-side .ds-reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:999px;background:rgba(0,48,73,.85);color:var(--vellum);display:flex;align-items:center;justify-content:center;z-index:2;opacity:0;transition:opacity 120ms ease;}
+.ds-reels-side .ds-reel:hover .ds-reel-play, .ds-reels-side .ds-reel.is-active .ds-reel-play{opacity:1;}
+.ds-reels-side .ds-reel-play svg{width:14px;height:14px;}
+.ds-reels-side .ds-reel-meta{display:flex;flex-direction:column;gap:4px;min-width:0;}
+.ds-reels-side .ds-reel-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);}
+.ds-reels-side .ds-reel-title{font-family:var(--display);font-size:var(--type-14);font-weight:500;color:var(--char);line-height:1.3;}
+@media (max-width:1023px){.ds-reels-grid{grid-template-columns:1fr;gap:24px;}}
+@media (max-width:599px){[data-section="reels"]{padding-block:var(--space-section-m);}.ds-reels-side .ds-reel{grid-template-columns:96px 1fr;}.ds-reels-side .ds-reel-thumb{width:96px;}}
+
+/* === FULL-BLEED HERO (V07 — light --platinum band) === */
+[data-section="hero"]{background:var(--platinum);color:var(--char);padding-block:64px;position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--platinum-edge);}
+[data-section="hero"]::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(900px 480px at 80% 30%, rgba(184,136,48,.10), transparent 60%),
+    radial-gradient(700px 600px at 0% 100%, rgba(0,48,73,.06), transparent 60%);
+}
+[data-section="hero"]::after{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;z-index:1;
+  background:linear-gradient(90deg,var(--brass) 0%,transparent 50%);
+}
+[data-section="hero"] .ds-container{position:relative;z-index:2;}
+.ds-hero-card{
+  display:grid;
+  grid-template-columns:var(--img-hero) 1fr;
+  gap:40px;
+  align-items:center;
+}
+.ds-hero-thumb{
+  width:var(--img-hero);
+  aspect-ratio:1/1;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:var(--ink-haze);
+  border:1px solid var(--platinum-edge);
+  box-shadow:var(--shadow-md);
+  flex-shrink:0;
+}
+.ds-hero-thumb img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform var(--motion-slow) var(--ease-standard);
+}
+.ds-hero-card:hover .ds-hero-thumb img{transform:scale(1.02);}
+.ds-hero-body{display:flex;flex-direction:column;gap:14px;max-width:680px;}
+.ds-hero-body h1{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(28px,3.4vw,var(--type-36));
+  line-height:1.15;letter-spacing:-.018em;color:var(--char);
+}
+.ds-hero-body .ds-deck{
+  font-family:var(--editorial);font-style:italic;
+  font-size:var(--type-18);line-height:1.5;
+  color:var(--graphite);max-width:60ch;
+}
+.ds-hero-body .ds-meta{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;
+  font-family:var(--mono);font-size:var(--type-12);
+  color:var(--graphite-mute);letter-spacing:.04em;
+}
+.ds-hero-body .ds-meta .ds-meta-sep{color:var(--platinum-edge);}
+/* Hero placeholders revert to default (white-surface) ghost styling — color via .ds-ph base rule */
+.ds-hero-actions{margin-top:6px;display:flex;gap:12px;align-items:center;}
+@media (max-width:1023px){.ds-hero-card{grid-template-columns:1fr;gap:28px;}.ds-hero-thumb{width:100%;max-width:var(--img-hero);}}
+@media (max-width:599px){[data-section="hero"]{padding-block:32px 36px;}.ds-hero-card{gap:20px;}.ds-hero-thumb{max-width:200px;border-radius:var(--radius-sm);}.ds-hero-body h1{font-size:var(--type-24);}.ds-hero-body .ds-deck{font-size:var(--type-16);}.ds-hero-body .ds-meta{gap:6px 10px;font-size:11px;}.ds-hero-card .ds-tag-row .ds-tag:nth-child(n+5){display:none;}.ds-hero-card .ds-tag-row::after{content:"+ MORE";font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.10em;color:rgba(255,255,255,.55);align-self:center;padding:0 4px;}}
+
+/* === Section head === */
+.ds-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;}
+.ds-section-head h2{font-size:var(--type-30);letter-spacing:-.018em;line-height:1.4;display:inline;background:var(--ink);color:var(--vellum);padding:6px 12px;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:2px;}
+.ds-section-head .ds-eyebrow{display:block;margin-bottom:6px;}
+
+/* === V04: Mini-roster (What else partners are reading) === */
+[data-section="mini-roster"]{padding-block:var(--space-section-d) 56px;background:var(--vellum);border-bottom:1px solid var(--platinum-edge);}
+.ds-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-gap-d);}
+.ds-mini-card{display:grid;grid-template-columns:var(--img-mini) 1fr;gap:16px;align-items:start;padding:0;}
+.ds-mini-thumb{width:var(--img-mini);height:var(--img-mini);border-radius:var(--radius-md);overflow:hidden;background:var(--ink-haze);box-shadow:var(--shadow-sm);flex-shrink:0;}
+.ds-mini-thumb img{width:100%;height:100%;object-fit:cover;}
+.ds-mini-body{display:flex;flex-direction:column;gap:6px;min-width:0;}
+.ds-mini-body .ds-chip{align-self:flex-start;}
+.ds-mini-body h3{font-family:var(--display);font-weight:600;font-size:var(--type-14);line-height:1.3;letter-spacing:-.005em;color:var(--char);}
+.ds-mini-body h3 a:hover{color:var(--ink);}
+.ds-mini-body .ds-meta{font-family:var(--mono);font-size:11px;color:var(--graphite-mute);letter-spacing:.04em;display:flex;gap:6px 8px;flex-wrap:wrap;}
+@media (max-width:1023px){.ds-mini-grid{grid-template-columns:1fr;gap:var(--space-gap-t);}}
+
+/* === V04: This week's reads (2x2 roster) === */
+[data-section="reads"]{padding-block:var(--space-section-d);background:var(--platinum);}
+.ds-roster{display:grid;grid-template-columns:repeat(2,1fr);gap:32px var(--space-gap-d);}
+.ds-roster-card{display:grid;grid-template-columns:var(--img-roster) 1fr;gap:24px;align-items:start;padding-bottom:0;}
+.ds-roster-thumb{width:var(--img-roster);aspect-ratio:1/1;border-radius:var(--radius-md);overflow:hidden;background:var(--ink-haze);box-shadow:var(--shadow-sm);flex-shrink:0;}
+.ds-roster-thumb img{width:100%;height:100%;object-fit:cover;transition:transform var(--motion-slow) var(--ease-standard);}
+.ds-roster-card:hover .ds-roster-thumb img{transform:scale(1.03);}
+.ds-roster-body{display:flex;flex-direction:column;gap:10px;min-width:0;}
+.ds-roster-body .ds-chip{align-self:flex-start;}
+.ds-roster-body h3{font-family:var(--display);font-weight:600;font-size:var(--type-20);line-height:1.25;letter-spacing:-.005em;color:var(--char);}
+.ds-roster-body h3 a:hover{color:var(--ink);}
+.ds-roster-body .ds-deck{font-family:var(--editorial);font-style:italic;font-size:var(--type-14);line-height:1.5;color:var(--graphite);}
+.ds-roster-body .ds-meta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite-mute);display:flex;gap:6px 10px;flex-wrap:wrap;margin-top:auto;}
+@media (max-width:1023px){.ds-roster{grid-template-columns:1fr;gap:24px;}}
+@media (max-width:599px){[data-section="reads"]{padding-block:var(--space-section-m);}.ds-roster-card{grid-template-columns:110px 1fr;gap:14px;}.ds-roster-thumb{width:110px;}.ds-roster-body h3{font-size:var(--type-16);line-height:1.3;}.ds-roster-body .ds-deck{display:none;}.ds-roster-body .ds-meta{font-size:10px;}}
+
+/* === V04: More from this week (numbered text-only) === */
+[data-section="more"]{padding-block:var(--space-section-d);background:var(--vellum);border-bottom:1px solid var(--platinum-edge);}
+.ds-mixed-list-head{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:16px;}
+.ds-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--platinum-edge);}
+.ds-list-item{display:grid;grid-template-columns:56px 1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--platinum-edge);}
+.ds-list-num{font-family:var(--display);font-weight:700;font-size:var(--type-30);color:var(--brass);letter-spacing:-.02em;line-height:1;}
+.ds-list-text{display:flex;flex-direction:column;gap:6px;}
+.ds-list-text h3{font-family:var(--editorial);font-weight:600;font-size:var(--type-20);line-height:1.3;color:var(--char);letter-spacing:-.005em;}
+.ds-list-text .ds-meta{font-family:var(--mono);font-size:var(--type-12);color:var(--graphite-mute);display:flex;flex-wrap:wrap;gap:6px 12px;}
+.ds-list-chip{align-self:start;padding-top:4px;}
+.ds-section-foot{display:flex;justify-content:flex-end;margin-top:24px;}
+@media (max-width:1023px){.ds-list-item{grid-template-columns:36px 1fr;}.ds-list-chip{grid-column:2;padding-top:0;}.ds-list-num{font-size:var(--type-24);}}
+@media (max-width:599px){[data-section="more"]{padding-block:var(--space-section-m);}.ds-list-item{padding:18px 0;}.ds-list-text h3{font-size:var(--type-18);}}
+
+/* === V05: Across the channel (full-bleed --ink topic band) === */
+[data-section="topic-band"]{background:var(--ink);color:var(--vellum);padding-block:56px;position:relative;border-bottom:1px solid var(--ink-deep);}
+[data-section="topic-band"]::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--brass) 0%,transparent 40%);}
+.ds-topic-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:36px;flex-wrap:wrap;}
+.ds-topic-head h2{color:var(--vellum);font-size:var(--type-36);letter-spacing:-.018em;}
+.ds-topic-head .ds-eyebrow{color:var(--brass);margin-bottom:8px;display:block;}
+.ds-topic-row{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);}
+.ds-topic-cell{padding:22px 16px;display:flex;flex-direction:column;gap:8px;border-right:1px solid rgba(255,255,255,.10);transition:background var(--motion-fast) var(--ease-standard);color:var(--vellum);}
+.ds-topic-cell:last-child{border-right:none;}
+.ds-topic-cell:hover{background:rgba(255,255,255,.05);}
+.ds-topic-num{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--brass);text-transform:uppercase;}
+.ds-topic-name{font-family:var(--display);font-size:var(--type-18);font-weight:600;color:var(--vellum);letter-spacing:-.005em;line-height:1.2;}
+.ds-topic-count{font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:auto;}
+@media (max-width:1199px){.ds-topic-row{grid-template-columns:repeat(4,1fr);}.ds-topic-cell:nth-child(4n){border-right:none;}.ds-topic-cell:nth-child(n+5){border-top:1px solid rgba(255,255,255,.10);}}
+@media (max-width:599px){.ds-topic-row{grid-template-columns:repeat(2,1fr);}.ds-topic-cell:nth-child(2n){border-right:none;}.ds-topic-cell:nth-child(n+3){border-top:1px solid rgba(255,255,255,.10);}}
+
+/* === V05: Departments (Three reads from each topic) — row-aligned via min-height + stretched-link hover === */
+[data-section="departments"]{padding-block:var(--space-section-d);background:var(--vellum);}
+.ds-dept-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:48px var(--space-gap-d);
+}
+.ds-department{display:flex;flex-direction:column;}
+.ds-dept-label{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--ink);padding-bottom:10px;border-bottom:2px solid var(--ink);
+  margin-bottom:6px;
+}
+.ds-dept-label--ai{color:var(--brass-deep);border-bottom-color:var(--brass-deep);}
+.ds-dept-label--workplace{color:var(--cordovan);border-bottom-color:var(--cordovan);}
+.ds-dept-label--neutral{color:var(--graphite);border-bottom-color:var(--graphite);}
+.ds-dept-num{color:var(--brass-deep);font-weight:500;}
+.ds-dept-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;}
+.ds-dept-item{
+  position:relative;
+  padding:14px 14px;
+  margin:0 -14px;
+  border-bottom:1px solid var(--platinum-edge);
+  display:flex;
+  align-items:center;
+  min-height:96px;  /* uniform row height — items align across columns */
+  transition:background var(--motion-fast) var(--ease-standard), padding-left 240ms cubic-bezier(.16,1,.3,1), padding-right 240ms cubic-bezier(.16,1,.3,1);
+}
+.ds-dept-item:last-child{border-bottom:none;}
+.ds-dept-item:hover{background:var(--platinum);padding-left:20px;padding-right:8px;}
+.ds-dept-item h3{
+  font-family:var(--editorial);font-weight:600;font-size:var(--type-16);
+  line-height:1.35;letter-spacing:-.005em;color:var(--char);margin:0;
+}
+.ds-dept-item h3 a{
+  color:inherit;
+  /* underline-draw via background-image — no text-decoration so the gradient sweeps cleanly */
+  background-image:linear-gradient(var(--brass-deep),var(--brass-deep));
+  background-size:0% 1px;
+  background-position:left bottom;
+  background-repeat:no-repeat;
+  transition:background-size 320ms cubic-bezier(.16,1,.3,1), color var(--motion-fast) var(--ease-standard);
+  padding-bottom:1px;
+}
+.ds-dept-item:hover h3 a{background-size:100% 1px;color:var(--ink);}
+/* Stretched-link: <a>::after fills the parent <li> so the entire row is the click target */
+.ds-dept-item h3 a::after{
+  content:"";position:absolute;inset:0;z-index:1;
+}
+.ds-dept-item h3{position:relative;z-index:2;pointer-events:none;}
+.ds-dept-item h3 a{pointer-events:auto;}
+/* Discreet right arrow appears on hover */
+.ds-dept-item::after{
+  content:"→";
+  position:absolute;
+  right:14px;top:50%;
+  transform:translateY(-50%) translateX(-6px);
+  font-family:var(--mono);font-size:14px;color:var(--brass-deep);
+  opacity:0;
+  transition:opacity var(--motion-fast) var(--ease-standard), transform 240ms cubic-bezier(.16,1,.3,1);
+  pointer-events:none;
+}
+.ds-dept-item:hover::after{opacity:1;transform:translateY(-50%) translateX(0);}
+@media (prefers-reduced-motion:reduce){.ds-dept-item, .ds-dept-item h3 a, .ds-dept-item::after{transition:none;}}
+@media (max-width:1023px){.ds-dept-grid{grid-template-columns:repeat(2,1fr);gap:40px;}}
+@media (max-width:599px){
+  [data-section="departments"]{padding-block:var(--space-section-m);}
+  .ds-dept-grid{grid-template-columns:1fr;gap:32px;}
+  .ds-dept-item{padding:12px 14px;min-height:auto;}
+  .ds-dept-item:nth-child(n+3){display:none;}
+  .ds-department::after{content:"See all in topic →";display:block;margin-top:6px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding-top:8px;border-top:1px solid var(--platinum-edge);}
+}
+
+/* === V05: Innovation & Impact (sponsored grid) === */
+[data-section="innovation-impact"]{background:var(--navy-deep);color:var(--vellum);padding-block:var(--space-section-d);border-top:4px solid var(--brass);}
+.ds-sponsored-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;}
+.ds-sponsored-head h2{color:var(--vellum);font-size:var(--type-30);letter-spacing:-.018em;}
+.ds-sponsored-head .ds-eyebrow{color:var(--brass);}
+.ds-sponsored-head .ds-eyebrow-meta{display:block;font-family:var(--editorial);font-style:italic;color:rgba(255,255,255,.7);font-size:var(--type-14);margin-top:6px;text-transform:none;letter-spacing:0;}
+.ds-promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ds-promo-tile{display:flex;flex-direction:column;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:var(--radius-md);overflow:hidden;color:var(--vellum);transition:background var(--motion-base) var(--ease-standard),border-color var(--motion-fast) var(--ease-standard),transform var(--motion-base) var(--ease-standard);}
+.ds-promo-tile:hover{background:rgba(184,136,48,.06);border-color:rgba(212,164,90,.4);transform:translateY(-2px);}
+.ds-promo-thumb{aspect-ratio:6/5;overflow:hidden;background:var(--ink-deep);}
+.ds-promo-thumb img{width:100%;height:100%;object-fit:cover;}
+.ds-promo-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;}
+.ds-promo-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-soft);}
+.ds-promo-host{font-family:var(--display);font-size:var(--type-14);font-weight:500;color:var(--vellum);}
+.ds-promo-arrow{margin-top:auto;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,164,90,.85);display:inline-flex;align-items:center;gap:4px;padding-top:8px;}
+@media (max-width:1023px){.ds-promo-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:599px){.ds-promo-grid{grid-template-columns:1fr;}}
+
+/* === V05: Popular === */
+[data-section="popular"]{background:var(--platinum);padding-block:var(--space-section-d);}
+.ds-popular-head{margin-bottom:32px;}
+.ds-popular-head h2{font-size:var(--type-36);letter-spacing:-.018em;}
+.ds-popular-head .ds-eyebrow{display:block;margin-bottom:6px;}
+.ds-popular-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--platinum-edge);}
+.ds-popular-item{display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--platinum-edge);}
+.ds-popular-rank{font-family:var(--display);font-weight:700;font-size:var(--type-36);color:var(--brass);letter-spacing:-.02em;line-height:1;}
+.ds-popular-item h3{font-family:var(--editorial);font-weight:600;font-size:var(--type-20);line-height:1.3;color:var(--char);letter-spacing:-.005em;}
+.ds-popular-item h3 a:hover{color:var(--ink);}
+@media (max-width:599px){[data-section="popular"]{padding-block:var(--space-section-m);}.ds-popular-item{grid-template-columns:36px 1fr;gap:16px;}.ds-popular-rank{font-size:var(--type-24);}}
+
+/* === Newsletter sign-off === */
+[data-section="engagement"]{padding-block:var(--space-section-d);background:var(--vellum);border-top:1px solid var(--platinum-edge);}
+.ds-newsletter-narrow{max-width:600px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;}
+.ds-newsletter-narrow h2{font-size:var(--type-36);letter-spacing:-.018em;line-height:1.4;display:inline-block;background:var(--ink);color:var(--vellum);padding:6px 14px;border-radius:2px;}
+.ds-newsletter-narrow p{font-family:var(--editorial);font-size:var(--type-18);line-height:1.5;color:var(--graphite);max-width:52ch;}
+.ds-newsletter-narrow form{display:flex;gap:8px;width:100%;max-width:460px;}
+.ds-newsletter-narrow .ds-eyebrow{color:var(--brass);}
+.ds-newsletter-foot{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);}
+.ds-newsletter-foot a{color:var(--ink);border-bottom:1px solid transparent;}
+.ds-newsletter-foot a:hover{border-bottom-color:var(--brass);}
+@media (max-width:599px){[data-section="engagement"]{padding-block:var(--space-section-m);}.ds-newsletter-narrow h2{font-size:var(--type-24);}.ds-newsletter-narrow p{font-size:var(--type-16);}}
+
+/* === Footer === */
+[data-section="footer"]{background:var(--obsidian);color:var(--vellum);border-top:1px solid var(--navy-deep);padding-block:56px 36px;}
+.ds-footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-gap-d);margin-bottom:40px;}
+.ds-footer-col h3{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:16px;}
+.ds-footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+.ds-footer-col a{font-family:var(--ui);font-size:var(--type-14);color:var(--vellum);opacity:.85;}
+.ds-footer-col a:hover{opacity:1;color:var(--brass);}
+.ds-social{display:flex;gap:12px;}
+.ds-social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--radius-pill);border:1px solid rgba(255,255,255,.18);opacity:.8;}
+.ds-social a:hover{opacity:1;border-color:var(--brass);background:rgba(184,136,48,.10);}
+.ds-social svg{width:16px;height:16px;}
+.ds-legal{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--graphite-mute);border-top:1px solid rgba(255,255,255,.10);padding-top:24px;margin-bottom:24px;display:flex;gap:18px;flex-wrap:wrap;}
+.ds-legal a{color:var(--graphite-mute);}
+.ds-legal a:hover{color:var(--vellum);}
+.ds-cobrand{display:flex;gap:32px;align-items:center;justify-content:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);}
+.ds-cobrand-mark{font-family:var(--display);font-size:var(--type-14);font-weight:500;letter-spacing:.02em;color:var(--vellum);opacity:.9;}
+.ds-cobrand-mark img{height:28px;width:auto;}
+@media (max-width:1023px){.ds-footer-grid{grid-template-columns:repeat(2,1fr);gap:32px;}}
+@media (max-width:599px){[data-section="footer"]{padding-block:var(--space-section-m);}.ds-footer-grid{grid-template-columns:1fr;}.ds-cobrand{flex-direction:column;gap:16px;}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}.ds-hero-card:hover .ds-hero-thumb img,.ds-roster-card:hover .ds-roster-thumb img,.ds-promo-tile:hover{transform:none;}}
+
+/* === DELIGHT: hero H1 word-by-word reveal on first paint === */
+.ds-hero-body h1 .word{display:inline-block;opacity:0;transform:translateY(10px);animation:heroWordIn 520ms cubic-bezier(.16,1,.3,1) forwards;}
+@keyframes heroWordIn{to{opacity:1;transform:translateY(0);}}
+@media (prefers-reduced-motion:reduce){.ds-hero-body h1 .word{animation:none;opacity:1;transform:none;}}
+
+/* === DELIGHT: topic-band count tick-up on scroll-into-view === */
+.ds-topic-count{font-variant-numeric:tabular-nums;}
+.ds-topic-cell.is-counting .ds-topic-num{color:var(--brass-soft);transition:color 240ms cubic-bezier(.16,1,.3,1);}
+.ds-topic-cell.is-counting{position:relative;}
+.ds-topic-cell.is-counting::before{
+  content:"";position:absolute;left:0;top:0;width:100%;height:2px;
+  background:linear-gradient(90deg,var(--brass) 0%,transparent 100%);
+  transform-origin:left center;transform:scaleX(0);
+  animation:topicCellRule 1200ms cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes topicCellRule{to{transform:scaleX(1);}}
+@media (prefers-reduced-motion:reduce){.ds-topic-cell.is-counting::before{animation:none;transform:none;}}
+</style>
+</head>
+<body>
+
+<a class="ds-skip" href="#main">Skip to main content</a>
+
+<!-- Mobile nav drawer (revealed when .ds-menu-toggle is clicked at <1400px) -->
+<div class="ds-drawer-backdrop" data-open="false" id="ds-drawer-backdrop" aria-hidden="true"></div>
+<aside class="ds-drawer" data-open="false" id="ds-drawer" aria-hidden="true" aria-labelledby="ds-drawer-title" role="dialog">
+  <div class="ds-drawer-head">
+    <span class="ds-sitemark" id="ds-drawer-title" style="font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);">Enterprise Tech Provider</span>
+    <button class="ds-drawer-close" type="button" aria-label="Close menu" id="ds-drawer-close">Close ✕</button>
+  </div>
+  <div class="ds-drawer-body">
+    <form class="ds-drawer-search" action="/search/node" role="search">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input type="search" name="keys" placeholder="Search articles" aria-label="Search articles">
+    </form>
+    <nav class="ds-drawer-nav" aria-label="Primary (mobile)">
+      <span class="ds-drawer-eyebrow">By Topic</span>
+      <a class="ds-drawer-link" href="/category/dta">Dell Tech Advantage</a>
+      <a class="ds-drawer-link" href="/category/ai">Artificial Intelligence</a>
+      <a class="ds-drawer-link" href="/category/mdi">Modern Datacenter</a>
+      <a class="ds-drawer-link" href="/category/storage">Storage</a>
+      <a class="ds-drawer-link" href="/category/hybrid-work">Modern Workplace</a>
+      <a class="ds-drawer-link" href="/category/intel">Intel</a>
+      <a class="ds-drawer-link" href="/category/microsoft">Microsoft</a>
+    </nav>
+  </div>
+  <div class="ds-drawer-foot">
+    <a class="ds-button-primary" href="#engagement">
+      <span class="ds-btn-lab">Subscribe to the newsletter</span>
+      <span class="ds-btn-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <small>Produced by The Channel Company &middot; Sponsored by Dell Technologies</small>
+  </div>
+</aside>
+
+<!-- 0. UTILITY STRIP -->
+<header data-section="utility-strip" data-intent="attribute" data-layout="full-width-thin" data-items="2">
+  <div class="ds-container">
+    <p>Produced by The Channel Company &nbsp;·&nbsp; Sponsored by Dell Technologies</p>
+    <p style="opacity:.7">A trade publication for the Dell channel</p>
+  </div>
+</header>
+
+<!-- 1. HEADER (kept from V05 — 7-nav incl. Microsoft) -->
+<header data-section="header" data-intent="navigate" data-layout="full-width-sticky" data-items="7">
+  <div class="ds-container ds-header-inner">
+    <a href="https://www.thechannelco.com/" class="ds-sitemark" rel="noopener" target="_blank" aria-label="The Channel Company">
+      <img class="ds-sitemark-mark" src="https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/thechannelco_logo_white_300w.png" alt="The Channel Company" width="116" height="24">
+    </a>
+    <nav class="ds-nav" aria-label="Primary">
+      <a class="ds-nav-link" href="/category/dta">Dell Tech Advantage</a>
+      <a class="ds-nav-link" href="/category/ai">AI</a>
+      <a class="ds-nav-link" href="/category/mdi">Modern Datacenter</a>
+      <a class="ds-nav-link" href="/category/storage">Storage</a>
+      <a class="ds-nav-link" href="/category/hybrid-work">Modern Workplace</a>
+      <a class="ds-nav-link" href="/category/intel">Intel</a>
+      <a class="ds-nav-link" href="/category/microsoft">Microsoft</a>
+    </nav>
+    <div class="ds-header-actions">
+      <form class="ds-search-form" action="/search/node" role="search">
+        <svg class="ds-search-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <input type="search" name="keys" class="ds-search-input" placeholder="Search articles" aria-label="Search articles">
+      </form>
+      <button class="ds-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="ds-drawer" type="button" id="ds-menu-toggle">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 2. PUBLICATION MASTHEAD (variant E — compact mono whisper, ~60px tall) -->
+  <section data-section="publication-banner" data-intent="brand-identity" data-layout="compact-whisper" data-items="1" aria-labelledby="banner-name">
+    <div class="ds-container">
+      <p class="ds-banner-name" id="banner-name">Enterprise Tech Provider</p>
+      <p class="ds-banner-tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+    </div>
+  </section>
+
+  <!-- 3. FULL-BLEED HERO (featured article on --ink) -->
+  <section data-section="hero" data-intent="lead-story" data-layout="full-bleed-card" data-items="1" data-source-view="categories/block_4">
+    <div class="ds-container">
+      <div class="ds-hero-card">
+        <a class="ds-hero-thumb" href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing" aria-label="Read the lead story">
+          <img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05824-20260325-Dell-ETP-CS-Launch_LinkedIn-Image_309x309.jpg"
+               alt="How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing"
+               width="309" height="309"
+               loading="eager" fetchpriority="high">
+        </a>
+        <div class="ds-hero-body">
+          <span class="ds-eyebrow ds-eyebrow--brass-deep">Recommended &nbsp;·&nbsp; Modern Workplace</span>
+          <h1>How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="ds-deck">
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="article excerpt not on captured home">
+              two-line opener pending. Set in editorial italic, the deck for the lead story.
+            </span>
+          </p>
+          <div class="ds-meta">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead date">date pending</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead read-time">read-time pending</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead author">author pending</span>
+          </div>
+          <div class="ds-tag-row" aria-label="Tags">
+            <a class="ds-tag" href="/category/ai">AI</a>
+            <a class="ds-tag" href="/category/intel">Intel</a>
+            <a class="ds-tag" href="/category/microsoft">Microsoft</a>
+            <a class="ds-tag" href="/technologies/precision">Precision</a>
+            <a class="ds-tag" href="/technologies/ultrasharp">UltraSharp</a>
+            <a class="ds-tag" href="/technologies/pcaas">PCaaS</a>
+            <a class="ds-tag" href="/technologies/hybrid%20work">Hybrid Work</a>
+          </div>
+          <div class="ds-hero-actions">
+            <a class="ds-button-primary" href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">
+              <span class="ds-btn-lab">Read article</span>
+              <span class="ds-btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT ELSE PARTNERS ARE READING (V04 mini-roster — 3 mini cards with 96x96 thumbs) -->
+  <section data-section="mini-roster" data-intent="recent-content" data-layout="mini-roster-3" data-items="3" data-source-view="essential_reading/block + block_1">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div><span class="ds-eyebrow">Also in the front</span><h2>What else partners are reading</h2></div>
+      </div>
+      <div class="ds-mini-grid">
+        <a class="ds-mini-card" href="/modern-datacenter/you-can-now-accelerate-your-customers-ai-initiatives-quickly-and-easily">
+          <span class="ds-mini-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1779586389-309x309.jpg" alt="You Can Now Accelerate Your Customers&rsquo; AI Initiatives Quickly And Easily" loading="lazy" width="96" height="96"></span>
+          <div class="ds-mini-body">
+            <span class="ds-chip ds-chip--datacenter">Modern Datacenter</span>
+            <h3>You Can Now Accelerate Your Customers&rsquo; AI Initiatives Quickly And Easily</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="mini date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="mini read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+        <a class="ds-mini-card" href="/modern-workplace/help-customers-build-the-best-workplace-experience-for-productivity-and">
+          <span class="ds-mini-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-2162026367-309x309_0.jpg" alt="Help Customers Build the Best Workplace Experience for Productivity and Collaboration" loading="lazy" width="96" height="96"></span>
+          <div class="ds-mini-body">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <h3>Help Customers Build the Best Workplace Experience for Productivity and Collaboration</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="mini date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="mini read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+        <a class="ds-mini-card" href="/modern-workplace/end-of-windows-10-support-heralds-massive-opportunity-for-solution-providers">
+          <span class="ds-mini-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05109-20251024-Dell-windows-refresh-blog-309x309%202.jpg" alt="End of Windows 10 Support Heralds Massive Opportunity for Solution Providers" loading="lazy" width="96" height="96"></span>
+          <div class="ds-mini-body">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <h3>End of Windows 10 Support Heralds Massive Opportunity for Solution Providers</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="mini date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="mini read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. THIS WEEK'S READS (V04 — 2x2 magazine roster) -->
+  <section data-section="reads" data-intent="recent-content" data-layout="roster-2x2" data-items="4" data-source-view="essential_reading/block_2 + categories/block_2">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div><span class="ds-eyebrow">This Week</span><h2>This week&rsquo;s reads</h2></div>
+        <a class="ds-link-arrow" href="/newsroom">All articles &rarr;</a>
+      </div>
+      <div class="ds-roster">
+
+        <a class="ds-roster-card" href="/modern-workplace/leverage-dell-s-powerful-client-device-security-to-win-customer-pc-refresh-deals">
+          <span class="ds-roster-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1185673314-309x309.jpg" alt="Leverage Dell&rsquo;s Powerful Client Device Security to Win Customer PC Refresh Deals" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <h3>Leverage Dell&rsquo;s Powerful Client Device Security to Win Customer PC Refresh Deals</h3>
+            <p class="ds-deck"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card deck">two-line excerpt pending; the editorial deck lands here.</span></p>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card author">author pending</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="ds-roster-card" href="/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage">
+          <span class="ds-roster-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1402896104-309x309.jpg" alt="PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage</h3>
+            <p class="ds-deck"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card deck">two-line excerpt pending; the editorial deck lands here.</span></p>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card author">author pending</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="ds-roster-card" href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission">
+          <span class="ds-roster-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05284-20260210-Dell-ETP-2215785854-309x309.jpg" alt="Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage</h3>
+            <p class="ds-deck"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card deck">two-line excerpt pending; the editorial deck lands here.</span></p>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card author">author pending</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="ds-roster-card" href="/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your">
+          <span class="ds-roster-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05182-20251114-Dell-ETP-2192467778-309x309.jpg" alt="5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--neutral">Dell Tech Advantage</span>
+            <h3>5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers</h3>
+            <p class="ds-deck"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card deck">two-line excerpt pending; the editorial deck lands here.</span></p>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card author">author pending</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 6. WATCH & LEARN — featured player (first video in playlist) + sidebar of real reels with titles -->
+  <section data-section="reels" data-intent="watch" data-layout="featured-plus-side" data-items="4" data-source-view="video_slideshow / playlist PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div><span class="ds-eyebrow ds-eyebrow--brass-deep">Reels</span><h2>Watch &amp; learn</h2></div>
+        <a class="ds-link-arrow" href="https://www.youtube.com/playlist?list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey" rel="noopener" target="_blank">Open playlist on YouTube &rarr;</a>
+      </div>
+      <div class="ds-reels-grid">
+        <div class="ds-reels-featured">
+          <iframe id="ds-reels-iframe" class="ds-reels-player"
+                  src="https://www.youtube.com/embed/CmOst0Dk444?list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey&rel=0&modestbranding=1"
+                  title="Enterprise Tech Provider video playlist"
+                  frameborder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+        </div>
+        <div class="ds-reels-side" id="ds-reels-list" aria-label="Playlist videos">
+          <a class="ds-reel is-active" href="https://www.youtube.com/watch?v=CmOst0Dk444&list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey" rel="noopener" target="_blank" data-video-id="CmOst0Dk444">
+            <span class="ds-reel-thumb">
+              <img src="https://i.ytimg.com/vi/CmOst0Dk444/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+              <span class="ds-reel-play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 3l8 5-8 5z"/></svg></span>
+            </span>
+            <span class="ds-reel-meta">
+              <span class="ds-reel-eyebrow">Now playing</span>
+              <span class="ds-reel-title">Simplifying IT: Remote Manageability For Today&rsquo;s Workforce</span>
+            </span>
+          </a>
+          <a class="ds-reel" href="https://www.youtube.com/watch?v=xyVAnYNrMdk&list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey" rel="noopener" target="_blank" data-video-id="xyVAnYNrMdk">
+            <span class="ds-reel-thumb">
+              <img src="https://i.ytimg.com/vi/xyVAnYNrMdk/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+              <span class="ds-reel-play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 3l8 5-8 5z"/></svg></span>
+            </span>
+            <span class="ds-reel-meta">
+              <span class="ds-reel-eyebrow">ETP Ep. 9</span>
+              <span class="ds-reel-title">Dell Pro Essential: Key Features and MDF Opportunities</span>
+            </span>
+          </a>
+          <a class="ds-reel" href="https://www.youtube.com/watch?v=VNeXxQm3tt8&list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey" rel="noopener" target="_blank" data-video-id="VNeXxQm3tt8">
+            <span class="ds-reel-thumb">
+              <img src="https://i.ytimg.com/vi/VNeXxQm3tt8/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+              <span class="ds-reel-play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 3l8 5-8 5z"/></svg></span>
+            </span>
+            <span class="ds-reel-meta">
+              <span class="ds-reel-eyebrow">Reel &middot; AI</span>
+              <span class="ds-reel-title">Dell And Intel: Empowering The Future With Secure, AI-Ready Solutions</span>
+            </span>
+          </a>
+          <a class="ds-reel" href="https://www.youtube.com/watch?v=77bn27olOnA&list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey" rel="noopener" target="_blank" data-video-id="77bn27olOnA">
+            <span class="ds-reel-thumb">
+              <img src="https://i.ytimg.com/vi/77bn27olOnA/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+              <span class="ds-reel-play" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 3l8 5-8 5z"/></svg></span>
+            </span>
+            <span class="ds-reel-meta">
+              <span class="ds-reel-eyebrow">ETP Ep. 8</span>
+              <span class="ds-reel-title">Why Dell Is the Ideal Partner for Windows 11 Upgrades</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    /* Click a sidebar reel = swap the iframe src to play that video (no IFrame API required, works on file:// best-effort). */
+    (function(){
+      var iframe = document.getElementById('ds-reels-iframe');
+      var list = document.getElementById('ds-reels-list');
+      if (!iframe || !list) return;
+      list.addEventListener('click', function(e){
+        var a = e.target.closest('[data-video-id]');
+        if (!a) return;
+        e.preventDefault();
+        var id = a.getAttribute('data-video-id');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGey&rel=0&modestbranding=1&autoplay=1';
+        Array.prototype.forEach.call(list.querySelectorAll('.ds-reel'), function(el){ el.classList.remove('is-active'); });
+        a.classList.add('is-active');
+      });
+    })();
+  </script>
+
+  <!-- 7. ACROSS THE CHANNEL (V05 ink topic band — 7 categories) -->
+  <section data-section="topic-band" data-intent="taxonomy" data-layout="band-row" data-items="7" data-source-view="primary-nav">
+    <div class="ds-container">
+      <div class="ds-topic-head">
+        <div><span class="ds-eyebrow ds-eyebrow--brass">By Topic</span><h2>Across the channel</h2></div>
+        <a class="ds-link-arrow ds-link-arrow--on-ink" style="color:var(--brass-soft);" href="/sitemap">All sections &rarr;</a>
+      </div>
+      <div class="ds-topic-row">
+        <a class="ds-topic-cell" href="/category/dta"><span class="ds-topic-num">01</span><span class="ds-topic-name">Dell Tech Advantage</span><span class="ds-topic-count">Programme</span></a>
+        <a class="ds-topic-cell" href="/category/ai"><span class="ds-topic-num">02</span><span class="ds-topic-name">Artificial Intelligence</span><span class="ds-topic-count">36 articles</span></a>
+        <a class="ds-topic-cell" href="/category/mdi"><span class="ds-topic-num">03</span><span class="ds-topic-name">Modern Datacenter</span><span class="ds-topic-count">36 articles</span></a>
+        <a class="ds-topic-cell" href="/category/storage"><span class="ds-topic-num">04</span><span class="ds-topic-name">Storage</span><span class="ds-topic-count">97 articles</span></a>
+        <a class="ds-topic-cell" href="/category/hybrid-work"><span class="ds-topic-num">05</span><span class="ds-topic-name">Modern Workplace</span><span class="ds-topic-count">37 articles</span></a>
+        <a class="ds-topic-cell" href="/category/intel"><span class="ds-topic-num">06</span><span class="ds-topic-name">Intel</span><span class="ds-topic-count">9 articles</span></a>
+        <a class="ds-topic-cell" href="/category/microsoft"><span class="ds-topic-num">07</span><span class="ds-topic-name">Microsoft</span><span class="ds-topic-count">2 articles</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. THREE READS FROM EACH TOPIC (V05 departments) -->
+  <section data-section="departments" data-intent="taxonomy-deep" data-layout="grid-3-2-textonly" data-items="6" data-source-view="outcomes/block_*">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div><span class="ds-eyebrow">Inside each section</span><h2>Three reads from each topic</h2></div>
+      </div>
+      <div class="ds-dept-grid">
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--ai"><span class="ds-dept-num">A</span> Artificial Intelligence</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/artificial-intelligence/the-dell-technologies-advantage-for-ai-2026-how-to-capture-your-share-of-the">The Dell Technologies Advantage for AI 2026: How To Capture Your Share Of The $248 Billion AI Market</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/artificial-intelligence/unlock-ai-success-in-2026-how-the-dell-ai-factory-transforms-your-business">Unlock AI Success in 2026: How the Dell AI Factory Transforms Your Business</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/artificial-intelligence/how-the-dell-ai-factory-simplifies-the-customer-ai-journey">How the Dell AI Factory Simplifies the Customer AI Journey</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label"><span class="ds-dept-num">B</span> Videos</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/idc-research-shows-value-of-workstations-vs-pcs">IDC Research Shows Value Of Workstations Vs PCs</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/the-superpower-of-isv-certified-workstations">The Superpower Of ISV Certified Workstations</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/idc-research-workstations-provide-better-support-for-today-s-ai-workloads">IDC Research: Workstations Provide Better Support For Today&rsquo;s AI Workloads</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label"><span class="ds-dept-num">C</span> Modern Datacenter</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners">How Dell PowerEdge Single-Socket Servers with AMD EPYC Processors Help Partners Grow</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-datacenter/5-reasons-your-customer-s-tech-refresh-is-a-huge-opportunity-for-you">5 Reasons Your Customer&rsquo;s Tech Refresh Is A Huge Opportunity For You</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-datacenter/how-dell-nativeedge-empowers-your-customers-to-simplify-optimize-and-protect-their">How Dell NativeEdge Empowers Your Customers to Simplify, Optimize, and Protect Their IT Operations</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label"><span class="ds-dept-num">D</span> Storage</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission">Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers&rsquo; Mission-Critical Storage</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new">Revolutionize Your Customers&rsquo; AIOps with Dell&rsquo;s AI Data Platform with NVIDIA</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage">How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--neutral"><span class="ds-dept-num">E</span> Dell Tech Advantage</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your">5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/dell-technologies-advantage/the-dell-technologies-advantage-2026-how-to-capture-your-share-of-a-866">The Dell Technologies Advantage 2026: How To Capture Your Share Of A $866 Billion Market</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/dell-technologies-advantage/the-dell-technologies-advantage-2026-how-to-capture-your-share-of-a-487">The Dell Technologies Advantage 2026: How To Capture Your Share Of A $487 Billion Market</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--workplace"><span class="ds-dept-num">F</span> Modern Workplace</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">How Dell Is Accelerating Partners&rsquo; Success In The Era Of AI PC Computing</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/idc-research-shows-value-of-workstations-vs-pcs">IDC Research Shows Value Of Workstations Vs PCs</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/the-superpower-of-isv-certified-workstations">The Superpower Of ISV Certified Workstations</a></h3></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. NEWSLETTER -->
+  <section data-section="engagement" data-intent="convert" data-layout="centered-narrow" data-items="1" id="engagement">
+    <div class="ds-container">
+      <div class="ds-newsletter-narrow">
+        <span class="ds-eyebrow ds-eyebrow--brass-deep">Newsletters</span>
+        <h2>Get next week&rsquo;s first.</h2>
+        <p>
+          <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="newsletter description">
+            two-line newsletter description pending. The editorial promise of the weekly send.
+          </span>
+        </p>
+        <form action="https://pages.thechannelco.com/index.php/form/XDFrame" method="post" aria-label="Subscribe to the ETP newsletter">
+          <input class="ds-input" type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+          <button class="ds-button-primary" type="submit">
+            <span class="ds-btn-lab">Subscribe</span>
+            <span class="ds-btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </form>
+        <div class="ds-newsletter-foot">
+          By subscribing you agree to our
+          <a href="https://pages.thechannelco.com/terms-of-service-INTL.html">terms of service</a> and
+          <a href="https://pages.thechannelco.com/standard-policies-INTL-Privacy.html">privacy policy</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 11. FOOTER -->
+<footer data-section="footer" data-intent="navigate" data-layout="mega" data-items="3">
+  <div class="ds-container">
+    <div class="ds-footer-grid">
+      <div class="ds-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="https://www.thechannelco.com/company" target="_blank" rel="noopener">About The Channel Company</a></li>
+          <li><a href="https://www.crn.com/about" target="_blank" rel="noopener">About CRN</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="https://www.dell.com/en-us/lp/contact-us" target="_blank" rel="noopener">Contact Dell Technologies</a></li>
+          <li><a href="https://www.thechannelco.com/company/contact" target="_blank" rel="noopener">Contact The Channel Company</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h3>CRN Awards</h3>
+        <ul>
+          <li><a href="https://pages.thechannelco.com/CRN-Lists-and-Awards.html?source=TCCwebsite" target="_blank" rel="noopener">Subscribe</a></li>
+          <li><a href="https://www.crn.com/rankings-and-lists" target="_blank" rel="noopener">CRN Lists &amp; Awards</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h3>Follow</h3>
+        <div class="ds-social">
+          <a href="https://www.instagram.com/dell/" aria-label="Instagram (Dell)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC01FW5V9UVohbPtqKSmXX-w" aria-label="YouTube (Dell)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://twitter.com/delltech?lang=en" aria-label="X / Twitter (Dell Tech)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.7 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21H2.3l7.1-8.1L2 3h6.3l4.4 5.8L17.7 3zm-1.1 16h1.7L7.5 5H5.7l10.9 14z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/delltechnologies" aria-label="LinkedIn (Dell Technologies)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M10 9h4v2c.7-1.3 2.2-2.2 4-2.2 3.3 0 5 2 5 5.5V21h-4v-6c0-1.7-.7-2.8-2.3-2.8-1.6 0-2.7 1.1-2.7 2.8v6h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-legal">
+      <a href="https://pages.thechannelco.com/standard-policies-INTL-Privacy.html" target="_blank" rel="noopener">The Channel Company Privacy Policy</a>
+      <a href="https://pages.thechannelco.com/standard-policies-Global-cookies" target="_blank" rel="noopener">The Channel Company Cookie Policy</a>
+      <a href="https://www.thechannelco.com/privacy-choices" target="_blank" rel="noopener">Do Not Sell or Share My Personal Information</a>
+    </div>
+
+    <div class="ds-cobrand">
+      <span class="ds-cobrand-mark"><img src="https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/dell_logo_white_160px.png" alt="Dell Technologies (sponsor)" width="160" height="28"></span>
+      <span class="ds-cobrand-mark">The Channel Company</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== Mobile drawer: open / close / backdrop / ESC / link-tap closes ===== */
+(function(){
+  var toggle = document.getElementById('ds-menu-toggle');
+  var drawer = document.getElementById('ds-drawer');
+  var backdrop = document.getElementById('ds-drawer-backdrop');
+  var closeBtn = document.getElementById('ds-drawer-close');
+  if (!toggle || !drawer || !backdrop) return;
+  var isOpen = false;
+  var lastFocus = null;
+  function open(){
+    if (isOpen) return;
+    isOpen = true;
+    lastFocus = document.activeElement;
+    drawer.setAttribute('data-open', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    backdrop.setAttribute('data-open', 'true');
+    backdrop.setAttribute('aria-hidden', 'false');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('ds-drawer-open');
+    // Focus the close button for keyboard users
+    setTimeout(function(){ closeBtn && closeBtn.focus(); }, 60);
+  }
+  function close(){
+    if (!isOpen) return;
+    isOpen = false;
+    drawer.setAttribute('data-open', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    backdrop.setAttribute('data-open', 'false');
+    backdrop.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('ds-drawer-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  toggle.addEventListener('click', function(e){ e.preventDefault(); isOpen ? close() : open(); });
+  closeBtn && closeBtn.addEventListener('click', close);
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) close(); });
+  // Tapping a link inside the drawer closes it (so clicking a topic feels responsive on mobile)
+  drawer.querySelectorAll('a[href]').forEach(function(a){
+    a.addEventListener('click', function(){ setTimeout(close, 60); });
+  });
+  // Close drawer if window resizes past the breakpoint where the inline nav returns
+  var mq = window.matchMedia('(min-width: 1400px)');
+  mq.addEventListener && mq.addEventListener('change', function(e){ if (e.matches) close(); });
+})();
+
+/* ===== DELIGHT 1 — Hero H1 word-by-word reveal on first paint ===== */
+(function(){
+  var prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+  var h1 = document.querySelector('[data-section="hero"] h1');
+  if (!h1) return;
+  // Walk text nodes only — preserves any nested HTML
+  var text = h1.textContent;
+  var parts = text.split(/(\s+)/);
+  var idx = 0;
+  h1.innerHTML = parts.map(function(p){
+    if (/^\s+$/.test(p)) return p;
+    var span = '<span class="word" style="animation-delay:' + (idx * 70) + 'ms">' + p.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</span>';
+    idx++;
+    return span;
+  }).join('');
+})();
+
+/* ===== DELIGHT 2 — Topic article counts tick up as the ink band enters view ===== */
+(function(){
+  var prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced || !('IntersectionObserver' in window)) return;
+  var cells = document.querySelectorAll('[data-section="topic-band"] .ds-topic-cell');
+  if (!cells.length) return;
+  // Cache target text and pre-zero the counts (skip non-numeric like "Programme")
+  cells.forEach(function(cell){
+    var countEl = cell.querySelector('.ds-topic-count');
+    if (!countEl) return;
+    var match = countEl.textContent.match(/(\d+)/);
+    if (!match) return;
+    cell.dataset.targetCount = match[1];
+    cell.dataset.countSuffix = countEl.textContent.replace(match[1], '');
+    countEl.textContent = '0' + cell.dataset.countSuffix;
+  });
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry, i){
+      if (!entry.isIntersecting) return;
+      var cell = entry.target;
+      observer.unobserve(cell);
+      var target = parseInt(cell.dataset.targetCount || '0', 10);
+      var suffix = cell.dataset.countSuffix || '';
+      var countEl = cell.querySelector('.ds-topic-count');
+      if (!target || !countEl) return;
+      // stagger by index (visual cascade across the 7 cells)
+      var stagger = i * 90;
+      cell.classList.add('is-counting');
+      setTimeout(function(){
+        var start = performance.now();
+        var duration = 1100;
+        function step(now){
+          var t = Math.min(1, (now - start) / duration);
+          var eased = 1 - Math.pow(1 - t, 4); // ease-out-quart
+          var val = Math.round(target * eased);
+          countEl.textContent = val + suffix;
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }, stagger);
+    });
+  }, { threshold: 0.4, rootMargin: '0px 0px -10% 0px' });
+  cells.forEach(function(c){ observer.observe(c); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  writtenBy:         stardust:prototype (storage-article — V08 system + new article patterns)
+  writtenAt:         2026-05-05T13:45:00Z
+  page:              storage-article
+  pageUrl:           https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage
+  proposedFile:      ./storage-article-proposed.html
+  derivedFrom:       home-proposed-v08.html (chrome) + storage-article-shape.md (composition)
+  reusedFromV08:
+    - tokens (:root design system)
+    - utility-strip, header (TheChannelCo logo + 7-nav + drawer), publication-banner (variant E)
+    - engagement (newsletter sign-off), footer, drawer JS
+    - mini-roster pattern (.ds-mini-grid + .ds-mini-card with 96px native thumbs) — used verbatim for "More from Storage" related
+  newPatterns:
+    - breadcrumb (mono caps, › separator)
+    - article-header (split layout: chip + mixed-case H1 + Newsreader italic deck on left + 309-native image card on right with mono caption-tag overlay)
+    - byline row (full-container width, span below header split)
+    - article-body (full container with 2fr/1fr split: prose main column + sticky aside)
+    - aside (author micro-card + filed-in tags + share icons + dark "From the deck" callout that re-uses the same hero image as a faded backdrop with deep gradient overlay)
+    - prose styling (drop-cap on first ¶ · large H2 subheads · brass-deep underline links · pullquote with brass-deep top+bottom hairlines)
+    - article-footer (compact author byline card; tags and share moved to aside)
+  imageCreativeUses:
+    - article-header: 309 native as editorial card with mono caption tag overlay (no upscale)
+    - aside callout: same 309 image as darkened backdrop (32% opacity + ink-deep gradient) so it lives twice without competing with itself
+  realContent:
+    - title, deck (og:description), byline (KJ Jacoby · Feb 2 2026), tags (Storage/AI/MDI/PowerMax/PowerStore), hero image — all verbatim from captured page
+  unsourcedContent:
+    - body paragraphs (rendered as italic ghost-style with › marker — body text was not extractable from consent-walled live page; structure is real, words are placeholder)
+    - read-time "7 min read" (illustrative)
+    - author bio (placeholder)
+    - author avatar (initial monogram fallback — captured /users/KJ photo not in our extract)
+    - newsletter description (same placeholder as home)
+    - related card decks/dates/read-times
+  divergenceVersion: v1.0 (stardust v0.3)
+  fontDeck:          editorial-trade-multi (Manrope + Newsreader + Inter + IBM Plex Mono)
+  paletteSource:     V08 (user-pinned primaries + brass-deep accent)
+  stardustVersion:   0.3.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Industry analysts describe the current memory market as a hyper-bull cycle, with sharp price increases expected as demand continues to outpace supply">
+<meta name="theme-color" content="#003049">
+<meta property="og:title" content="How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage">
+<meta property="og:description" content="Industry analysts describe the current memory market as a hyper-bull cycle, with sharp price increases expected as demand continues to outpace supply">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Enterprise Tech Provider">
+<meta property="og:image" content="https://www.enterprisetechprovider.com/sites/new_etp/files/05182-20251114-Dell-ETP-1411009479-309x309.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage">
+<title>How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage | Enterprise Tech Provider</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap"></noscript>
+<style>
+:root {
+  --ink:#003049; --ink-deep:#001f2f; --ink-haze:#e8eef2;
+  --obsidian:#000000; --vellum:#ffffff;
+  --char:#0a0d12; --graphite:#3d4651; --graphite-mute:#6b7480;
+  --platinum:#f4f5f7; --platinum-edge:#dfe3e8;
+  --navy-deep:#0b1f3a; --brass:#b88830; --brass-soft:#d4a45a; --brass-deep:#8a6420; --cordovan:#5b1116;
+  --tint-datacenter: rgba(0,48,73,0.06);
+  --tint-ai:         rgba(184,136,48,0.12);
+  --tint-workplace:  rgba(91,17,22,0.08);
+  --tint-neutral:    var(--platinum);
+  --display:"Manrope",ui-sans-serif,system-ui,sans-serif;
+  --editorial:"Newsreader","Iowan Old Style",Charter,Georgia,serif;
+  --ui:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --type-12:.75rem; --type-14:.875rem; --type-16:1rem; --type-18:1.125rem;
+  --type-20:1.25rem; --type-24:1.5rem; --type-30:1.875rem; --type-36:2.25rem;
+  --type-48:3rem; --type-60:3.75rem;
+  --radius-sm:2px; --radius-md:4px; --radius-lg:8px; --radius-pill:999px;
+  --shadow-sm:0 1px 2px rgba(10,13,18,.04),0 1px 4px rgba(10,13,18,.04);
+  --shadow-md:0 4px 12px rgba(10,13,18,.08),0 2px 6px rgba(10,13,18,.06);
+  --space-section-d:80px; --space-section-t:56px; --space-section-m:40px;
+  --space-gap-d:24px; --space-gap-t:16px; --space-gap-m:12px;
+  --content-max:1280px;
+  --reading-max:720px;
+  --motion-fast:120ms; --motion-base:220ms; --motion-slow:360ms;
+  --ease-standard:cubic-bezier(.2,.8,.2,1);
+  --img-hero:309px; --img-roster:200px; --img-mini:96px;
+  --img-article-card:220px;
+}
+
+@media (min-width:1600px){:root{--content-max:1440px;}}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--vellum);color:var(--char);font-family:var(--ui);font-size:var(--type-16);line-height:1.55;-webkit-font-smoothing:antialiased;}
+img,svg{display:block;max-width:100%;}
+button{font:inherit;cursor:pointer;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px;}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;color:var(--char);margin:0;line-height:1.15;letter-spacing:-.020em;}
+
+.ds-eyebrow{font-family:var(--mono);font-size:var(--type-12);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);display:inline-block;}
+.ds-eyebrow--brass{color:var(--brass);}
+.ds-eyebrow--brass-soft{color:var(--brass-soft);}
+.ds-eyebrow--brass-deep{color:var(--brass-deep);}
+.ds-chip{display:inline-flex;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-sm);background:var(--tint-datacenter);color:var(--ink);}
+.ds-chip--datacenter{background:var(--tint-datacenter);color:var(--ink);}
+.ds-chip--ai{background:var(--tint-ai);color:var(--brass);}
+.ds-chip--workplace{background:var(--tint-workplace);color:var(--cordovan);}
+.ds-chip--neutral{background:var(--platinum);color:var(--graphite);}
+
+.ds-button-primary{display:inline-flex;align-items:stretch;font-family:var(--ui);font-size:var(--type-14);font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:transparent;border:0;border-radius:var(--radius-md);overflow:hidden;text-decoration:none;cursor:pointer;padding:0;line-height:1;}
+.ds-button-primary > .ds-btn-lab{padding:13px 18px;background:var(--ink);color:var(--vellum);display:inline-flex;align-items:center;transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-primary > .ds-btn-arrow{padding:13px 16px;background:var(--brass);color:var(--ink-deep);font-family:var(--mono);font-size:14px;display:inline-flex;align-items:center;transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-primary:hover > .ds-btn-lab{background:var(--ink-deep);}
+.ds-button-primary:hover > .ds-btn-arrow{background:var(--brass-soft);}
+.ds-button-primary:not(:has(> .ds-btn-lab)){padding:11px 18px;background:var(--ink);color:var(--vellum);align-items:center;justify-content:center;}
+.ds-button-primary:not(:has(> .ds-btn-lab)):hover{background:var(--ink-deep);}
+.ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--ui);font-size:var(--type-14);font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:var(--radius-md);transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-secondary:hover{background:var(--ink-haze);}
+.ds-link-arrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color var(--motion-fast) var(--ease-standard),color var(--motion-fast) var(--ease-standard);}
+.ds-link-arrow:hover{border-bottom-color:var(--brass-deep);color:var(--brass-deep);}
+.ds-link-arrow--on-ink:hover{border-bottom-color:var(--brass-soft);color:var(--brass-soft);}
+.ds-input{flex:1;font-family:var(--ui);font-size:var(--type-16);padding:12px 14px;background:var(--vellum);color:var(--char);border:1px solid var(--platinum-edge);border-radius:var(--radius-md);}
+.ds-input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,48,73,.15);}
+.ds-ph{font-family:var(--editorial);font-style:italic;font-size:inherit;color:var(--graphite-mute);opacity:.68;border-bottom:1px dotted rgba(184,136,48,.45);padding:0 1px;}
+.ds-ph::before{content:"›";margin-right:4px;color:var(--brass);font-style:normal;font-family:var(--mono);font-size:.85em;}
+.ds-tag-row{display:flex;flex-wrap:wrap;gap:6px;}
+.ds-tag{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);background:var(--platinum);padding:6px 10px;border-radius:var(--radius-sm);min-height:24px;display:inline-flex;align-items:center;}
+@media (pointer:coarse){.ds-tag{padding:8px 12px;min-height:32px;}}
+.ds-tag:hover{background:var(--ink-haze);color:var(--ink);}
+.ds-container{width:100%;max-width:var(--content-max);margin:0 auto;padding-inline:24px;}
+@media (min-width:600px){.ds-container{padding-inline:32px;}}
+@media (min-width:1024px){.ds-container{padding-inline:48px;}}
+.ds-reading{width:100%;max-width:var(--reading-max);margin:0 auto;padding-inline:24px;}
+@media (min-width:600px){.ds-reading{padding-inline:32px;}}
+
+.ds-skip{position:absolute;left:-9999px;top:0;z-index:100;padding:12px 18px;background:var(--ink);color:var(--vellum);font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;}
+.ds-skip:focus{left:0;outline:3px solid var(--brass);}
+
+/* === Utility strip === */
+[data-section="utility-strip"]{background:var(--obsidian);height:28px;display:flex;align-items:center;}
+[data-section="utility-strip"] .ds-container{display:flex;justify-content:space-between;align-items:center;height:100%;}
+[data-section="utility-strip"] p{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);}
+[data-section="utility-strip"] p:last-child{color:rgba(255,255,255,.45);}
+@media (max-width:599px){[data-section="utility-strip"]{height:auto;padding:6px 0;}[data-section="utility-strip"] p{font-size:10px;line-height:1.4;text-align:center;}[data-section="utility-strip"] p:last-child{display:none;}}
+
+/* === Header === */
+[data-section="header"]{position:sticky;top:0;z-index:50;background:var(--vellum);border-bottom:1px solid var(--platinum-edge);}
+.ds-header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px;}
+.ds-sitemark{display:inline-flex;align-items:center;flex-shrink:0;text-decoration:none;}
+.ds-sitemark .ds-sitemark-mark{height:24px;width:auto;display:block;filter:brightness(0);opacity:.85;transition:opacity 120ms ease;}
+.ds-sitemark:hover .ds-sitemark-mark{opacity:1;}
+.ds-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;}
+.ds-nav-link{font-family:var(--ui);font-size:var(--type-14);font-weight:500;color:var(--char);padding:10px 8px;border-radius:var(--radius-md);white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;}
+.ds-nav-link:hover{background:var(--ink-haze);color:var(--ink);}
+.ds-nav-link[aria-current="page"]{color:var(--ink);background:var(--ink-haze);}
+.ds-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.ds-search-form{display:flex;align-items:center;gap:6px;background:var(--platinum);border:1px solid transparent;border-radius:var(--radius-md);padding:6px 10px;}
+.ds-search-form:focus-within{border-color:var(--ink);background:var(--vellum);}
+.ds-search-icon{color:var(--graphite-mute);}
+.ds-search-input{border:none;background:transparent;font-family:var(--ui);font-size:var(--type-14);color:var(--char);width:160px;padding:2px 0;}
+.ds-search-input:focus{outline:none;}
+.ds-menu-toggle{display:none;background:transparent;border:1px solid var(--platinum-edge);border-radius:var(--radius-md);padding:8px 10px;cursor:pointer;}
+.ds-menu-toggle[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:var(--vellum);}
+
+/* === Mobile drawer === */
+.ds-drawer-backdrop{position:fixed;inset:0;z-index:90;background:rgba(0,31,47,.55);opacity:0;visibility:hidden;transition:opacity 240ms cubic-bezier(.16,1,.3,1), visibility 240ms;}
+.ds-drawer-backdrop[data-open="true"]{opacity:1;visibility:visible;}
+.ds-drawer{position:fixed;top:0;right:0;bottom:0;width:min(360px, 88vw);background:var(--vellum);z-index:91;display:flex;flex-direction:column;box-shadow:-12px 0 32px rgba(0,31,47,.18);transform:translateX(100%);transition:transform 280ms cubic-bezier(.16,1,.3,1);}
+.ds-drawer[data-open="true"]{transform:translateX(0);}
+.ds-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--platinum-edge);flex-shrink:0;}
+.ds-drawer-close{background:transparent;border:1px solid var(--platinum-edge);border-radius:var(--radius-md);padding:8px 10px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite);}
+.ds-drawer-close:hover{background:var(--platinum);color:var(--ink);}
+.ds-drawer-body{flex:1;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:24px;}
+.ds-drawer-search{display:flex;align-items:center;gap:8px;background:var(--platinum);border:1px solid transparent;border-radius:var(--radius-md);padding:10px 14px;}
+.ds-drawer-search:focus-within{border-color:var(--ink);background:var(--vellum);}
+.ds-drawer-search input{flex:1;border:0;background:transparent;font-family:var(--ui);font-size:var(--type-16);color:var(--char);min-width:0;}
+.ds-drawer-search input:focus{outline:none;}
+.ds-drawer-nav{display:flex;flex-direction:column;gap:2px;}
+.ds-drawer-eyebrow{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:8px;padding:0 4px;}
+.ds-drawer-link{display:block;padding:14px 14px;font-family:var(--display);font-size:var(--type-18);font-weight:600;color:var(--char);border-radius:var(--radius-md);border-bottom:1px solid var(--platinum-edge);transition:background var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard);}
+.ds-drawer-link:last-of-type{border-bottom:none;}
+.ds-drawer-link:hover{background:var(--platinum);color:var(--ink);}
+.ds-drawer-link[aria-current="page"]{color:var(--ink);background:var(--ink-haze);}
+.ds-drawer-foot{padding:18px 24px;border-top:1px solid var(--platinum-edge);display:flex;flex-direction:column;gap:12px;flex-shrink:0;}
+.ds-drawer-foot .ds-button-primary{width:100%;justify-content:center;}
+.ds-drawer-foot small{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);text-align:center;}
+@media (prefers-reduced-motion:reduce){.ds-drawer{transition:none;}.ds-drawer-backdrop{transition:none;}}
+body.ds-drawer-open{overflow:hidden;}
+@media (min-width:1400px){.ds-drawer, .ds-drawer-backdrop{display:none !important;}}
+@media (max-width:1399px){.ds-nav{display:none;}.ds-search-input{width:160px;}.ds-header-actions .ds-button-secondary{display:inline-flex;}.ds-menu-toggle{display:inline-flex;}}
+@media (max-width:699px){.ds-search-input{width:100px;}.ds-header-actions .ds-button-secondary{display:none;}}
+@media (max-width:599px){.ds-search-form{display:none;}}
+
+/* === Publication banner === */
+[data-section="publication-banner"]{background:var(--ink-deep);color:var(--vellum);padding:18px 0;border-top:2px solid var(--brass);border-bottom:1px solid var(--ink);}
+[data-section="publication-banner"] .ds-container{display:flex;align-items:baseline;gap:24px;justify-content:space-between;flex-wrap:wrap;}
+.ds-banner-name{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.012em;color:var(--vellum);margin:0;}
+.ds-banner-tagline{font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-soft);margin:0;}
+.ds-banner-tagline::before{content:"§ ";color:rgba(255,255,255,.4);}
+@media (max-width:599px){[data-section="publication-banner"]{padding:14px 0;}.ds-banner-name{font-size:18px;}.ds-banner-tagline{font-size:12px;letter-spacing:.12em;}}
+
+/* ============================================================
+   ARTICLE-SPECIFIC PATTERNS (NEW vs V08)
+   ============================================================ */
+
+/* === Breadcrumb (mono caps with › separator) === */
+.ds-breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:18px;flex-wrap:wrap;}
+.ds-breadcrumb a{color:var(--graphite-mute);border-bottom:1px solid transparent;padding-bottom:2px;transition:color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard);}
+.ds-breadcrumb a:hover{color:var(--ink);border-bottom-color:var(--brass-deep);}
+.ds-breadcrumb-sep{color:var(--platinum-edge);}
+.ds-breadcrumb-current{color:var(--char);max-width:38ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* === Article header — split layout: title block (left) + image card (right) === */
+[data-section="article-header"]{background:var(--vellum);padding-block:36px 32px;border-bottom:1px solid var(--platinum-edge);}
+.ds-article-head{display:grid;grid-template-columns:minmax(0,1fr) var(--img-article-card);gap:48px;align-items:center;}
+.ds-article-head-text{display:flex;flex-direction:column;min-width:0;}
+.ds-article-head-text .ds-chip{align-self:flex-start;margin-bottom:14px;}
+.ds-article-h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,4.4vw,56px);line-height:1.08;letter-spacing:-.022em;color:var(--char);margin-bottom:20px;}
+.ds-article-deck{font-family:var(--editorial);font-style:italic;font-size:var(--type-20);line-height:1.5;color:var(--graphite);max-width:62ch;margin-bottom:0;}
+
+/* image card — capped at 220px so it doesn't drive a tall right column; native 309 stays sharp at this size */
+.ds-article-head-image{position:relative;width:var(--img-article-card);aspect-ratio:1/1;border-radius:var(--radius-md);overflow:hidden;background:var(--ink-haze);box-shadow:var(--shadow-md);justify-self:end;align-self:center;}
+.ds-article-head-image img{width:100%;height:100%;object-fit:cover;display:block;}
+/* optional mono cap-tag in the bottom-left of the image — only renders if data-cap is set (avoids fabricating photo credit) */
+.ds-article-head-image[data-cap]::after{content:attr(data-cap);position:absolute;left:10px;bottom:10px;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--vellum);background:rgba(0,31,47,.7);padding:4px 8px;border-radius:var(--radius-sm);backdrop-filter:saturate(120%);}
+
+/* byline row — sits below the title block, full container width */
+.ds-byline-row{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite-mute);padding-block:16px;border-top:1px solid var(--platinum-edge);border-bottom:1px solid var(--platinum-edge);margin-top:24px;}
+.ds-byline-row .ds-byline-by{color:var(--graphite-mute);}
+.ds-byline-row .ds-byline-author{color:var(--ink);border-bottom:1px solid transparent;padding-bottom:1px;transition:color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard);}
+.ds-byline-row .ds-byline-author:hover{border-bottom-color:var(--brass-deep);color:var(--brass-deep);}
+.ds-byline-row .ds-byline-sep{color:var(--platinum-edge);}
+.ds-byline-row .ds-byline-share{margin-left:auto;display:inline-flex;gap:6px;align-items:center;}
+.ds-byline-row .ds-byline-share-label{margin-right:4px;}
+.ds-byline-row .ds-byline-share a{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--platinum-edge);border-radius:var(--radius-sm);color:var(--graphite-mute);transition:color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);}
+.ds-byline-row .ds-byline-share a:hover{color:var(--ink);border-color:var(--ink);background:var(--ink-haze);}
+.ds-byline-row .ds-byline-share svg{width:13px;height:13px;}
+
+@media (max-width:1023px){
+  .ds-article-head{grid-template-columns:1fr;gap:24px;}
+  .ds-article-head-image{width:100%;max-width:var(--img-article-card);justify-self:start;order:-1;}
+}
+@media (max-width:599px){
+  [data-section="article-header"]{padding-block:24px 24px;}
+  .ds-article-h1{font-size:clamp(28px,7vw,40px);margin-bottom:14px;}
+  .ds-article-deck{font-size:var(--type-18);margin-bottom:18px;}
+  .ds-byline-row{font-size:10px;gap:6px 10px;margin-top:18px;}
+  .ds-byline-row .ds-byline-share{margin-left:0;width:100%;justify-content:flex-start;padding-top:6px;border-top:1px dashed var(--platinum-edge);}
+  .ds-breadcrumb-current{max-width:22ch;}
+  .ds-article-head-image{max-width:240px;}
+}
+
+/* === Article body — full container width with main + aside === */
+[data-section="article-body"]{background:var(--vellum);padding-block:48px 64px;}
+.ds-article-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:80px;align-items:start;}
+.ds-article-main{font-family:var(--editorial);font-size:19px;line-height:1.75;color:var(--char);min-width:0;max-width:68ch;}
+.ds-article-main > p{margin:0 0 1.4em 0;}
+
+/* drop-cap on first paragraph (skips notice div) */
+.ds-article-main > p:first-of-type::first-letter{font-family:var(--display);font-weight:700;font-size:4.6em;float:left;line-height:.85;margin:6px 14px 0 0;color:var(--ink);}
+
+/* typographic subhead H2 (NOT chip-highlight) */
+.ds-article-main h2{font-family:var(--display);font-weight:700;font-size:var(--type-30);letter-spacing:-.018em;color:var(--char);margin:2.2em 0 .8em 0;line-height:1.2;max-width:24ch;}
+.ds-article-main h2 + p{margin-top:0;}
+
+/* inline links: --ink color + brass-deep underline (thickens on hover) */
+.ds-article-main a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--brass-deep);text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-thickness var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard);}
+.ds-article-main a:hover{text-decoration-thickness:2px;color:var(--brass-deep);}
+
+/* lists */
+.ds-article-main ul{padding-left:1.4em;margin:.6em 0 1.4em 0;}
+.ds-article-main ul li{margin-bottom:.5em;}
+.ds-article-main ul li::marker{color:var(--brass-deep);}
+
+/* pullquote: brass-deep top + bottom hairlines, center italic, no side stripe */
+.ds-pullquote{margin:2em 0;padding:24px 0;border-top:1px solid var(--brass-deep);border-bottom:1px solid var(--brass-deep);text-align:center;font-family:var(--editorial);font-style:italic;font-size:28px;line-height:1.3;color:var(--char);letter-spacing:-.005em;max-width:none;}
+.ds-pullquote::before{content:"§";display:block;color:var(--brass-deep);font-family:var(--mono);font-size:11px;font-style:normal;letter-spacing:.18em;margin-bottom:10px;}
+
+/* placeholder paragraphs */
+.ds-article-main p[data-placeholder="true"]{color:var(--graphite);font-style:italic;position:relative;padding-left:14px;}
+.ds-article-main p[data-placeholder="true"]::before{content:"›";color:var(--brass);font-family:var(--mono);font-size:.7em;font-style:normal;position:absolute;left:0;top:.55em;}
+.ds-body-notice{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-deep);background:rgba(184,136,48,.08);padding:10px 14px;margin-bottom:36px;border-radius:var(--radius-sm);display:flex;gap:10px;align-items:baseline;}
+.ds-body-notice::before{content:"§";color:var(--brass);}
+
+/* aside — meta column (sticky on desktop) */
+.ds-article-aside{position:sticky;top:96px;display:flex;flex-direction:column;gap:28px;font-family:var(--ui);}
+.ds-aside-block{display:flex;flex-direction:column;gap:10px;padding-block:18px;border-top:1px solid var(--platinum-edge);}
+.ds-aside-block:first-child{padding-top:0;border-top:none;}
+.ds-aside-block .ds-eyebrow{color:var(--graphite-mute);}
+
+/* aside author micro-card */
+.ds-aside-author{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start;}
+.ds-aside-author .ds-author-avatar{width:48px;height:48px;border-radius:50%;background:var(--ink-haze);border:1px solid var(--platinum-edge);overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);text-decoration:none;}
+.ds-aside-author .ds-author-avatar:hover{background:var(--platinum);}
+.ds-aside-author-meta{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.ds-aside-author-meta .ds-author-name{font-family:var(--display);font-size:var(--type-16);font-weight:700;color:var(--char);}
+.ds-aside-author-meta .ds-author-name a:hover{color:var(--ink);}
+.ds-aside-author-meta .ds-author-bio{font-family:var(--editorial);font-size:var(--type-14);font-style:italic;color:var(--graphite);line-height:1.5;margin-top:4px;}
+
+/* aside share row (compact icons) */
+.ds-aside-share{display:flex;gap:6px;align-items:center;}
+.ds-aside-share a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--platinum-edge);border-radius:var(--radius-sm);color:var(--graphite-mute);transition:color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);}
+.ds-aside-share a:hover{color:var(--ink);border-color:var(--ink);background:var(--ink-haze);}
+.ds-aside-share svg{width:14px;height:14px;}
+
+/* aside "by the numbers" stat callout — uses the small image as a backdrop */
+.ds-aside-stat{position:relative;border-radius:var(--radius-md);overflow:hidden;background:var(--ink-deep);color:var(--vellum);min-height:200px;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;isolation:isolate;}
+.ds-aside-stat-img{position:absolute;inset:0;z-index:0;}
+.ds-aside-stat-img img{width:100%;height:100%;object-fit:cover;opacity:.32;}
+.ds-aside-stat::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(0,31,47,.5) 0%, rgba(0,31,47,.92) 80%);}
+.ds-aside-stat > *{position:relative;z-index:2;}
+.ds-aside-stat .ds-stat-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-soft);margin-bottom:6px;}
+.ds-aside-stat .ds-stat-headline{font-family:var(--display);font-weight:700;font-size:var(--type-18);line-height:1.25;letter-spacing:-.005em;color:var(--vellum);}
+.ds-aside-stat .ds-stat-source{font-family:var(--editorial);font-style:italic;font-size:var(--type-14);color:rgba(255,255,255,.75);margin-top:6px;}
+
+@media (max-width:1023px){
+  [data-section="article-body"]{padding-block:36px 48px;}
+  .ds-article-layout{grid-template-columns:1fr;gap:40px;}
+  .ds-article-aside{position:static;}
+  .ds-aside-stat{min-height:160px;}
+}
+@media (max-width:599px){
+  [data-section="article-body"]{padding-block:28px 40px;}
+  .ds-article-main{font-size:17px;line-height:1.7;}
+  .ds-article-main > p:first-of-type::first-letter{font-size:3.4em;margin-right:8px;}
+  .ds-pullquote{font-size:22px;padding:18px 0;}
+  .ds-article-main h2{font-size:var(--type-24);margin-top:1.6em;}
+}
+
+/* === Article footer (compact tag pile + author byline card; share already in aside) === */
+[data-section="article-footer"]{background:var(--vellum);padding-block:8px 56px;border-top:1px solid var(--platinum-edge);margin-top:24px;}
+.ds-article-foot{display:flex;flex-direction:column;gap:24px;padding-top:32px;}
+
+.ds-tagged-with{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;}
+.ds-tagged-with .ds-eyebrow{color:var(--graphite-mute);}
+.ds-tagged-with .ds-tag-row{gap:6px;}
+
+.ds-author-card{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;padding:20px 0;border-top:1px solid var(--platinum-edge);}
+.ds-author-card .ds-author-avatar{width:64px;height:64px;border-radius:50%;background:var(--ink-haze);border:1px solid var(--platinum-edge);overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:22px;color:var(--ink);text-decoration:none;}
+.ds-author-card .ds-author-avatar:hover{background:var(--platinum);}
+.ds-author-meta{display:flex;flex-direction:column;gap:4px;min-width:0;}
+.ds-author-meta .ds-author-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-deep);}
+.ds-author-meta .ds-author-name{font-family:var(--display);font-size:var(--type-18);font-weight:700;color:var(--char);letter-spacing:-.005em;}
+.ds-author-meta .ds-author-name a{transition:color var(--motion-fast) var(--ease-standard);}
+.ds-author-meta .ds-author-name a:hover{color:var(--ink);}
+.ds-author-meta .ds-author-bio{font-family:var(--editorial);font-size:var(--type-14);font-style:italic;color:var(--graphite);line-height:1.5;margin-top:2px;}
+
+@media (max-width:599px){
+  [data-section="article-footer"]{padding-block:8px 36px;}
+  .ds-author-card{grid-template-columns:48px 1fr;gap:14px;}
+  .ds-author-card .ds-author-avatar{width:48px;height:48px;font-size:18px;}
+  .ds-author-meta .ds-author-name{font-size:var(--type-16);}
+}
+
+/* === Related ("More from Storage") — reusing V08 mini-roster pattern (3 cards, 96px thumbs) === */
+[data-section="related"]{padding-block:var(--space-section-d) 56px;background:var(--vellum);border-top:1px solid var(--platinum-edge);border-bottom:1px solid var(--platinum-edge);}
+.ds-related-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;}
+.ds-related-head h2{font-size:var(--type-30);letter-spacing:-.018em;line-height:1.4;display:inline;background:var(--ink);color:var(--vellum);padding:6px 12px;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:2px;}
+.ds-related-head .ds-eyebrow{display:block;margin-bottom:6px;}
+.ds-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-gap-d);}
+.ds-mini-card{display:grid;grid-template-columns:var(--img-mini) 1fr;gap:16px;align-items:start;padding:0;text-decoration:none;color:inherit;}
+.ds-mini-thumb{width:var(--img-mini);height:var(--img-mini);border-radius:var(--radius-md);overflow:hidden;background:var(--ink-haze);box-shadow:var(--shadow-sm);flex-shrink:0;}
+.ds-mini-thumb img{width:100%;height:100%;object-fit:cover;transition:transform var(--motion-slow) var(--ease-standard);}
+.ds-mini-card:hover .ds-mini-thumb img{transform:scale(1.04);}
+.ds-mini-body{display:flex;flex-direction:column;gap:6px;min-width:0;}
+.ds-mini-body .ds-chip{align-self:flex-start;}
+.ds-mini-body h3{font-family:var(--display);font-weight:600;font-size:var(--type-14);line-height:1.3;letter-spacing:-.005em;color:var(--char);}
+.ds-mini-card:hover h3{color:var(--ink);}
+.ds-mini-body .ds-meta{font-family:var(--mono);font-size:11px;color:var(--graphite-mute);letter-spacing:.04em;display:flex;gap:6px 8px;flex-wrap:wrap;}
+@media (max-width:1023px){.ds-mini-grid{grid-template-columns:1fr;gap:var(--space-gap-t);}}
+
+/* === Newsletter sign-off (reused from V08) === */
+[data-section="engagement"]{padding-block:var(--space-section-d);background:var(--vellum);border-top:1px solid var(--platinum-edge);}
+.ds-newsletter-narrow{max-width:600px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;}
+.ds-newsletter-narrow h2{font-size:var(--type-36);letter-spacing:-.018em;line-height:1.4;display:inline-block;background:var(--ink);color:var(--vellum);padding:6px 14px;border-radius:2px;}
+.ds-newsletter-narrow p{font-family:var(--editorial);font-size:var(--type-18);line-height:1.5;color:var(--graphite);max-width:52ch;}
+.ds-newsletter-narrow form{display:flex;gap:8px;width:100%;max-width:460px;}
+.ds-newsletter-narrow .ds-eyebrow{color:var(--brass);}
+.ds-newsletter-foot{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);}
+.ds-newsletter-foot a{color:var(--ink);border-bottom:1px solid transparent;}
+.ds-newsletter-foot a:hover{border-bottom-color:var(--brass);}
+@media (max-width:599px){[data-section="engagement"]{padding-block:var(--space-section-m);}.ds-newsletter-narrow h2{font-size:var(--type-24);}.ds-newsletter-narrow p{font-size:var(--type-16);}}
+
+/* === Footer === */
+[data-section="footer"]{background:var(--obsidian);color:var(--vellum);border-top:1px solid var(--navy-deep);padding-block:56px 36px;}
+.ds-footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-gap-d);margin-bottom:40px;}
+.ds-footer-col h3{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:16px;}
+.ds-footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+.ds-footer-col a{font-family:var(--ui);font-size:var(--type-14);color:var(--vellum);opacity:.85;}
+.ds-footer-col a:hover{opacity:1;color:var(--brass);}
+.ds-social{display:flex;gap:12px;}
+.ds-social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--radius-pill);border:1px solid rgba(255,255,255,.18);opacity:.8;}
+.ds-social a:hover{opacity:1;border-color:var(--brass);background:rgba(184,136,48,.10);}
+.ds-social svg{width:16px;height:16px;}
+.ds-legal{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--graphite-mute);border-top:1px solid rgba(255,255,255,.10);padding-top:24px;margin-bottom:24px;display:flex;gap:18px;flex-wrap:wrap;}
+.ds-legal a{color:var(--graphite-mute);}
+.ds-legal a:hover{color:var(--vellum);}
+.ds-cobrand{display:flex;gap:32px;align-items:center;justify-content:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);}
+.ds-cobrand-mark{font-family:var(--display);font-size:var(--type-14);font-weight:500;letter-spacing:.02em;color:var(--vellum);opacity:.9;}
+.ds-cobrand-mark img{height:28px;width:auto;}
+@media (max-width:1023px){.ds-footer-grid{grid-template-columns:repeat(2,1fr);gap:32px;}}
+@media (max-width:599px){[data-section="footer"]{padding-block:var(--space-section-m);}.ds-footer-grid{grid-template-columns:1fr;}.ds-cobrand{flex-direction:column;gap:16px;}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}.ds-related-card:hover .ds-related-thumb img{transform:none;}}
+</style>
+</head>
+<body>
+
+<a class="ds-skip" href="#main">Skip to main content</a>
+
+<!-- Mobile drawer -->
+<div class="ds-drawer-backdrop" data-open="false" id="ds-drawer-backdrop" aria-hidden="true"></div>
+<aside class="ds-drawer" data-open="false" id="ds-drawer" aria-hidden="true" aria-labelledby="ds-drawer-title" role="dialog">
+  <div class="ds-drawer-head">
+    <span class="ds-sitemark" id="ds-drawer-title" style="font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);">Enterprise Tech Provider</span>
+    <button class="ds-drawer-close" type="button" aria-label="Close menu" id="ds-drawer-close">Close ✕</button>
+  </div>
+  <div class="ds-drawer-body">
+    <form class="ds-drawer-search" action="/search/node" role="search">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <input type="search" name="keys" placeholder="Search articles" aria-label="Search articles">
+    </form>
+    <nav class="ds-drawer-nav" aria-label="Primary (mobile)">
+      <span class="ds-drawer-eyebrow">By Topic</span>
+      <a class="ds-drawer-link" href="/category/dta">Dell Tech Advantage</a>
+      <a class="ds-drawer-link" href="/category/ai">Artificial Intelligence</a>
+      <a class="ds-drawer-link" href="/category/mdi">Modern Datacenter</a>
+      <a class="ds-drawer-link" href="/category/storage" aria-current="page">Storage</a>
+      <a class="ds-drawer-link" href="/category/hybrid-work">Modern Workplace</a>
+      <a class="ds-drawer-link" href="/category/intel">Intel</a>
+      <a class="ds-drawer-link" href="/category/microsoft">Microsoft</a>
+    </nav>
+  </div>
+  <div class="ds-drawer-foot">
+    <a class="ds-button-primary" href="#engagement">
+      <span class="ds-btn-lab">Subscribe to the newsletter</span>
+      <span class="ds-btn-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <small>Produced by The Channel Company &middot; Sponsored by Dell Technologies</small>
+  </div>
+</aside>
+
+<!-- 0. UTILITY STRIP -->
+<header data-section="utility-strip" data-intent="attribute" data-layout="full-width-thin" data-items="2">
+  <div class="ds-container">
+    <p>Produced by The Channel Company &nbsp;·&nbsp; Sponsored by Dell Technologies</p>
+    <p style="opacity:.7">A trade publication for the Dell channel</p>
+  </div>
+</header>
+
+<!-- 1. HEADER -->
+<header data-section="header" data-intent="navigate" data-layout="full-width-sticky" data-items="7">
+  <div class="ds-container ds-header-inner">
+    <a href="https://www.thechannelco.com/" class="ds-sitemark" rel="noopener" target="_blank" aria-label="The Channel Company">
+      <img class="ds-sitemark-mark" src="../current/assets/media/thechannelco_logo_white_300w-7807b093.png" alt="The Channel Company" width="116" height="24">
+    </a>
+    <nav class="ds-nav" aria-label="Primary">
+      <a class="ds-nav-link" href="/category/dta">Dell Tech Advantage</a>
+      <a class="ds-nav-link" href="/category/ai">AI</a>
+      <a class="ds-nav-link" href="/category/mdi">Modern Datacenter</a>
+      <a class="ds-nav-link" href="/category/storage" aria-current="page">Storage</a>
+      <a class="ds-nav-link" href="/category/hybrid-work">Modern Workplace</a>
+      <a class="ds-nav-link" href="/category/intel">Intel</a>
+      <a class="ds-nav-link" href="/category/microsoft">Microsoft</a>
+    </nav>
+    <div class="ds-header-actions">
+      <form class="ds-search-form" action="/search/node" role="search">
+        <svg class="ds-search-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <input type="search" name="keys" class="ds-search-input" placeholder="Search articles" aria-label="Search articles">
+      </form>
+      <button class="ds-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="ds-drawer" type="button" id="ds-menu-toggle">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 2. PUBLICATION BANNER -->
+  <section data-section="publication-banner" data-intent="brand-identity" data-layout="compact-whisper" data-items="1" aria-labelledby="banner-name">
+    <div class="ds-container">
+      <p class="ds-banner-name" id="banner-name">Enterprise Tech Provider</p>
+      <p class="ds-banner-tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+    </div>
+  </section>
+
+  <!-- 3. ARTICLE HEADER (NEW) — split layout: title block + image card -->
+  <article data-section="article-header" data-intent="title" data-layout="split-text-image" data-items="1">
+    <div class="ds-container">
+      <nav class="ds-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="ds-breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="/category/storage">Storage</a>
+        <span class="ds-breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="ds-breadcrumb-current">How Dell Is Helping Partners Navigate&hellip;</span>
+      </nav>
+
+      <div class="ds-article-head">
+        <div class="ds-article-head-text">
+          <span class="ds-chip ds-chip--datacenter">Storage</span>
+          <h1 class="ds-article-h1">How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage</h1>
+          <p class="ds-article-deck">Industry analysts describe the current memory market as a hyper-bull cycle, with sharp price increases expected as demand continues to outpace supply.</p>
+        </div>
+
+        <figure class="ds-article-head-image">
+          <img src="../current/assets/media/05182-20251114-Dell-ETP-1411009479-309x309-e875d42c.jpg"
+               alt="How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage"
+               width="309" height="309"
+               loading="eager" fetchpriority="high">
+        </figure>
+      </div>
+
+      <div class="ds-byline-row">
+        <span class="ds-byline-by">By</span>
+        <a class="ds-byline-author" href="/users/KJ">KJ Jacoby</a>
+        <span class="ds-byline-sep" aria-hidden="true">·</span>
+        <time datetime="2026-02-02">February 2, 2026</time>
+        <span class="ds-byline-sep" aria-hidden="true">·</span>
+        <span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="article read-time">7 min read</span></span>
+        <div class="ds-byline-share" aria-label="Share">
+          <span class="ds-byline-share-label">Share</span>
+          <a href="https://twitter.com/intent/tweet?url=https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage&text=How%20Dell%20Is%20Helping%20Partners%20Navigate%20an%20Unprecedented%20Memory%20Shortage" rel="noopener" target="_blank" aria-label="Share on X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.7 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21H2.3l7.1-8.1L2 3h6.3l4.4 5.8L17.7 3zm-1.1 16h1.7L7.5 5H5.7l10.9 14z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage" rel="noopener" target="_blank" aria-label="Share on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M10 9h4v2c.7-1.3 2.2-2.2 4-2.2 3.3 0 5 2 5 5.5V21h-4v-6c0-1.7-.7-2.8-2.3-2.8-1.6 0-2.7 1.1-2.7 2.8v6h-4z"/></svg>
+          </a>
+          <a href="mailto:?subject=How%20Dell%20Is%20Helping%20Partners%20Navigate%20an%20Unprecedented%20Memory%20Shortage&body=https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage" aria-label="Share by email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4. ARTICLE BODY (NEW) — full container width: main prose + sticky aside -->
+  <article data-section="article-body" data-intent="long-form" data-layout="main-plus-aside">
+    <div class="ds-container">
+      <div class="ds-article-layout">
+
+        <div class="ds-article-main">
+
+          <div class="ds-body-notice">Body excerpt unavailable from the captured page · structure rendered with placeholder copy below</div>
+
+          <p data-placeholder="true">The memory market has shifted into uncharted territory. Across enterprise procurement teams, conversations that once focused on capacity planning are now dominated by questions of allocation, lead times, and price stability. Industry watchers have started calling this moment a hyper-bull cycle, and the data behind that label is unambiguous: demand for high-performance memory has decisively outpaced what suppliers can deliver, and forward indicators suggest the imbalance will persist well into the next planning cycle.</p>
+
+          <p data-placeholder="true">For solution providers, this is more than a supply-chain headline. It is a structural change in how customers buy infrastructure, and a moment when the partner channel can either be the calm voice that customers turn to, or the place where customers feel the squeeze most acutely. Dell&rsquo;s response has been to lean into the partner relationship as the primary mechanism for navigating the shortage: widening allocation visibility, sharpening forecasting tools, and giving partners earlier signal on what is shippable versus what is still negotiating for fab capacity.</p>
+
+          <h2>What partners are seeing on the ground</h2>
+
+          <p data-placeholder="true">Conversations with field sellers describe a consistent pattern. Customers who built their refresh roadmaps around routine memory pricing are now confronting quotes that look nothing like the budgets they approved six months ago. The instinct (to delay, to substitute, to wait for the cycle to turn) runs directly into the operational reality that AI workloads, virtualization density, and consolidation strategies all require more memory, not less.</p>
+
+          <p data-placeholder="true">The partners winning these conversations are the ones who can frame the shortage in terms of the customer&rsquo;s actual workload, not the line-item cost. That reframing is what Dell&rsquo;s partner enablement program has been quietly retooling for, with several initiatives directly aimed at giving solution providers the talking points and the technical underpinning to keep customers moving forward despite the pricing volatility.</p>
+
+          <blockquote class="ds-pullquote">
+            The shortage is not a moment to wait out. It is a moment to lean in, with the right product mix and the right conversation.
+          </blockquote>
+
+          <h2>Where Dell is investing to absorb the shock</h2>
+
+          <p data-placeholder="true">Three areas stand out in how Dell is helping partners navigate the cycle:</p>
+
+          <ul>
+            <li data-placeholder="true">Tighter integration between PowerMax and PowerStore product roadmaps and the partner allocation system, so partners can see real-time availability rather than negotiating quote-by-quote.</li>
+            <li data-placeholder="true">Expanded enablement around the Modern Data Infrastructure (MDI) story, giving partners a structured way to position storage modernization as the workload-led answer to memory cost pressure.</li>
+            <li data-placeholder="true">Investment in AI-ready reference architectures that let partners offer customers a credible path forward even when raw memory pricing is unfavorable, by emphasizing throughput and software-defined efficiency rather than DRAM density alone.</li>
+          </ul>
+
+          <h2>The partner playbook for the next twelve months</h2>
+
+          <p data-placeholder="true">Heading into the next planning cycle, the partners best positioned to grow share are the ones who treat the memory shortage as a customer-trust event rather than a procurement obstacle. The conversation that builds long-term loyalty starts with honest forecasting: what is available, what is not, and what the realistic landing zone for pricing looks like over the next two quarters.</p>
+
+          <p data-placeholder="true">Dell&rsquo;s commitment, restated through every partner channel from the field to the executive briefing center, is that visibility and allocation will favor the partners who are doing that work. The shortage will eventually ease (cycles always do) but the customer relationships built during the squeeze will outlast the squeeze itself.</p>
+
+        </div>
+
+        <aside class="ds-article-aside" aria-label="Article meta">
+
+          <div class="ds-aside-block">
+            <span class="ds-eyebrow">Author</span>
+            <div class="ds-aside-author">
+              <a class="ds-author-avatar" href="/users/KJ" aria-label="KJ Jacoby — author profile">KJ</a>
+              <div class="ds-aside-author-meta">
+                <span class="ds-author-name"><a href="/users/KJ">KJ Jacoby</a></span>
+                <span class="ds-author-bio"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="author bio">contributing editor at Enterprise Tech Provider, covering Dell partner programs.</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-aside-block">
+            <span class="ds-eyebrow">Filed in</span>
+            <div class="ds-tag-row">
+              <a class="ds-tag" href="/category/storage">Storage</a>
+              <a class="ds-tag" href="/technologies/ai">AI</a>
+              <a class="ds-tag" href="/technologies/mdi">MDI</a>
+              <a class="ds-tag" href="/technologies/powermax">PowerMax</a>
+              <a class="ds-tag" href="/technologies/powerstore">PowerStore</a>
+            </div>
+          </div>
+
+          <div class="ds-aside-block">
+            <span class="ds-eyebrow">Share</span>
+            <div class="ds-aside-share">
+              <a href="https://twitter.com/intent/tweet?url=https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage&text=How%20Dell%20Is%20Helping%20Partners%20Navigate%20an%20Unprecedented%20Memory%20Shortage" rel="noopener" target="_blank" aria-label="Share on X">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.7 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21H2.3l7.1-8.1L2 3h6.3l4.4 5.8L17.7 3zm-1.1 16h1.7L7.5 5H5.7l10.9 14z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage" rel="noopener" target="_blank" aria-label="Share on LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M10 9h4v2c.7-1.3 2.2-2.2 4-2.2 3.3 0 5 2 5 5.5V21h-4v-6c0-1.7-.7-2.8-2.3-2.8-1.6 0-2.7 1.1-2.7 2.8v6h-4z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage" rel="noopener" target="_blank" aria-label="Share on Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.5-2 2-2h2V2h-3c-3 0-5 1.7-5 4.7V10H6v4h3v8h4z"/></svg>
+              </a>
+              <a href="mailto:?subject=How%20Dell%20Is%20Helping%20Partners%20Navigate%20an%20Unprecedented%20Memory%20Shortage&body=https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage" aria-label="Share by email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="ds-aside-stat" aria-hidden="false">
+            <div class="ds-aside-stat-img"><img src="../current/assets/media/05182-20251114-Dell-ETP-1411009479-309x309-e875d42c.jpg" alt="" loading="lazy"></div>
+            <span class="ds-stat-eyebrow">From the deck</span>
+            <p class="ds-stat-headline">Hyper-bull cycle: demand continues to outpace supply.</p>
+            <p class="ds-stat-source">Industry analysts, on the current memory market</p>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- 5. ARTICLE FOOTER (compact — author byline card; meta moved to aside) -->
+  <section data-section="article-footer" data-intent="byline" data-layout="centered">
+    <div class="ds-container">
+      <div class="ds-article-foot">
+        <div class="ds-author-card">
+          <a class="ds-author-avatar" href="/users/KJ" aria-label="KJ Jacoby — author profile">KJ</a>
+          <div class="ds-author-meta">
+            <span class="ds-author-eyebrow">About the author</span>
+            <p class="ds-author-name"><a href="/users/KJ">KJ Jacoby</a></p>
+            <p class="ds-author-bio"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="author bio">contributing editor at Enterprise Tech Provider, covering Dell partner programs and the modernization of the channel.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. RELATED ("More from Storage") — reuses V08 mini-roster pattern (3 cards, 96px native thumbs) -->
+  <section data-section="related" data-intent="recent-content" data-layout="mini-roster-3" data-items="3">
+    <div class="ds-container">
+      <div class="ds-related-head">
+        <div><span class="ds-eyebrow">Continue reading</span><h2>More from Storage</h2></div>
+        <a class="ds-link-arrow" href="/category/storage">All storage articles &rarr;</a>
+      </div>
+      <div class="ds-mini-grid">
+
+        <a class="ds-mini-card" href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission">
+          <span class="ds-mini-thumb"><img src="../current/assets/media/05284-20260210-Dell-ETP-2215785854-309x309-dbed03bb.jpg" alt="Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers&rsquo; Mission-Critical Storage" loading="lazy" width="96" height="96"></span>
+          <div class="ds-mini-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="related card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="related card read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="ds-mini-card" href="/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new">
+          <span class="ds-mini-thumb"><img src="../current/assets/media/05284-20260210-Dell-ETP-1464209118-309x309-c5ff450c.jpg" alt="Revolutionize Your Customers&rsquo; AIOps with Dell&rsquo;s AI Data Platform with NVIDIA" loading="lazy" width="96" height="96"></span>
+          <div class="ds-mini-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>Revolutionize Your Customers&rsquo; AIOps with Dell&rsquo;s AI Data Platform with NVIDIA</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="related card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="related card read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="ds-mini-card" href="/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage">
+          <span class="ds-mini-thumb"><img src="../current/assets/media/04823-20241205-Dell-ETP-1402896104-309x309-cbe17f87.jpg" alt="PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage" loading="lazy" width="96" height="96"></span>
+          <div class="ds-mini-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="related card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="related card read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. NEWSLETTER -->
+  <section data-section="engagement" data-intent="convert" data-layout="centered-narrow" data-items="1" id="engagement">
+    <div class="ds-container">
+      <div class="ds-newsletter-narrow">
+        <span class="ds-eyebrow ds-eyebrow--brass-deep">Newsletters</span>
+        <h2>Get next week&rsquo;s first.</h2>
+        <p>
+          <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="newsletter description">
+            two-line newsletter description pending. The editorial promise of the weekly send.
+          </span>
+        </p>
+        <form action="https://pages.thechannelco.com/index.php/form/XDFrame" method="post" aria-label="Subscribe to the ETP newsletter">
+          <input class="ds-input" type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+          <button class="ds-button-primary" type="submit">
+            <span class="ds-btn-lab">Subscribe</span>
+            <span class="ds-btn-arrow" aria-hidden="true">&rarr;</span>
+          </button>
+        </form>
+        <div class="ds-newsletter-foot">
+          By subscribing you agree to our
+          <a href="https://pages.thechannelco.com/terms-of-service-INTL.html">terms of service</a> and
+          <a href="https://pages.thechannelco.com/standard-policies-INTL-Privacy.html">privacy policy</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 9. FOOTER -->
+<footer data-section="footer" data-intent="navigate" data-layout="mega" data-items="3">
+  <div class="ds-container">
+    <div class="ds-footer-grid">
+      <div class="ds-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="https://www.thechannelco.com/company" target="_blank" rel="noopener">About The Channel Company</a></li>
+          <li><a href="https://www.crn.com/about" target="_blank" rel="noopener">About CRN</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="https://www.dell.com/en-us/lp/contact-us" target="_blank" rel="noopener">Contact Dell Technologies</a></li>
+          <li><a href="https://www.thechannelco.com/company/contact" target="_blank" rel="noopener">Contact The Channel Company</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h3>CRN Awards</h3>
+        <ul>
+          <li><a href="https://pages.thechannelco.com/CRN-Lists-and-Awards.html?source=TCCwebsite" target="_blank" rel="noopener">Subscribe</a></li>
+          <li><a href="https://www.crn.com/rankings-and-lists" target="_blank" rel="noopener">CRN Lists &amp; Awards</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h3>Follow</h3>
+        <div class="ds-social">
+          <a href="https://www.instagram.com/dell/" aria-label="Instagram (Dell)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC01FW5V9UVohbPtqKSmXX-w" aria-label="YouTube (Dell)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://twitter.com/delltech?lang=en" aria-label="X / Twitter (Dell Tech)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.7 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21H2.3l7.1-8.1L2 3h6.3l4.4 5.8L17.7 3zm-1.1 16h1.7L7.5 5H5.7l10.9 14z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/delltechnologies" aria-label="LinkedIn (Dell Technologies)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M10 9h4v2c.7-1.3 2.2-2.2 4-2.2 3.3 0 5 2 5 5.5V21h-4v-6c0-1.7-.7-2.8-2.3-2.8-1.6 0-2.7 1.1-2.7 2.8v6h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-legal">
+      <a href="https://pages.thechannelco.com/standard-policies-INTL-Privacy.html" target="_blank" rel="noopener">The Channel Company Privacy Policy</a>
+      <a href="https://pages.thechannelco.com/standard-policies-Global-cookies" target="_blank" rel="noopener">The Channel Company Cookie Policy</a>
+      <a href="https://www.thechannelco.com/privacy-choices" target="_blank" rel="noopener">Do Not Sell or Share My Personal Information</a>
+    </div>
+
+    <div class="ds-cobrand">
+      <span class="ds-cobrand-mark"><img src="../current/assets/media/dell_logo_white_160px-764d5064.png" alt="Dell Technologies (sponsor)" width="160" height="28"></span>
+      <span class="ds-cobrand-mark">The Channel Company</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== Mobile drawer ===== */
+(function(){
+  var toggle = document.getElementById('ds-menu-toggle');
+  var drawer = document.getElementById('ds-drawer');
+  var backdrop = document.getElementById('ds-drawer-backdrop');
+  var closeBtn = document.getElementById('ds-drawer-close');
+  if (!toggle || !drawer || !backdrop) return;
+  var isOpen = false;
+  var lastFocus = null;
+  function open(){
+    if (isOpen) return;
+    isOpen = true;
+    lastFocus = document.activeElement;
+    drawer.setAttribute('data-open', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+    backdrop.setAttribute('data-open', 'true');
+    backdrop.setAttribute('aria-hidden', 'false');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('ds-drawer-open');
+    setTimeout(function(){ closeBtn && closeBtn.focus(); }, 60);
+  }
+  function close(){
+    if (!isOpen) return;
+    isOpen = false;
+    drawer.setAttribute('data-open', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+    backdrop.setAttribute('data-open', 'false');
+    backdrop.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('ds-drawer-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  toggle.addEventListener('click', function(e){ e.preventDefault(); isOpen ? close() : open(); });
+  closeBtn && closeBtn.addEventListener('click', close);
+  backdrop.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) close(); });
+  drawer.querySelectorAll('a[href]').forEach(function(a){
+    a.addEventListener('click', function(){ setTimeout(close, 60); });
+  });
+  var mq = window.matchMedia('(min-width: 1400px)');
+  mq.addEventListener && mq.addEventListener('change', function(e){ if (e.matches) close(); });
+})();
+</script>
+</body>
+</html>
