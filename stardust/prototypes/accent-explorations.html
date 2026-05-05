@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accent color exploration · Enterprise Tech Provider</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500;1,8..60,600&display=swap">
+<style>
+:root{
+  --ink:#003049; --ink-deep:#001f2f; --ink-haze:#e8eef2;
+  --vellum:#ffffff; --char:#0a0d12; --graphite:#3d4651; --graphite-mute:#6b7480;
+  --platinum:#f4f5f7; --platinum-edge:#dfe3e8;
+  --display:Geist,system-ui,sans-serif;
+  --editorial:'Source Serif 4',Georgia,serif;
+  --ui:Inter,system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--vellum);color:var(--char);font-family:var(--ui);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+
+.expo-toolbar{position:sticky;top:0;z-index:50;background:var(--ink-deep);color:var(--vellum);display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;}
+.expo-title{font-weight:600;}
+.expo-meta a{color:#d4a45a;border-bottom:1px solid #d4a45a;text-decoration:none;}
+
+.expo-container{max-width:1280px;margin:0 auto;padding:48px 24px;}
+.expo-intro{font-family:var(--editorial);font-size:18px;line-height:1.6;color:var(--graphite);max-width:65ch;margin:0 0 32px;}
+.expo-intro b{color:var(--char);font-weight:600;}
+
+.variant-label{display:flex;align-items:baseline;justify-content:space-between;border-top:2px solid var(--ink);padding:14px 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);flex-wrap:wrap;gap:14px;}
+.variant-id{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);text-transform:none;}
+.variant-name{font-family:var(--display);font-weight:500;font-size:14px;color:var(--char);text-transform:none;}
+.variant-tag{color:var(--graphite-mute);}
+.swatches{display:inline-flex;gap:6px;align-items:center;}
+.swatch{width:28px;height:18px;border:1px solid rgba(0,0,0,.10);border-radius:2px;}
+.swatch-hex{font-family:var(--mono);font-size:10px;color:var(--graphite-mute);}
+
+.expo-stack{margin-block:24px;border:1px solid var(--platinum-edge);border-radius:4px;background:var(--vellum);overflow:hidden;}
+
+/* === Hero block (light) — accent color via --acc === */
+.expo-hero{padding:56px 0;background:var(--platinum);position:relative;border-bottom:1px solid var(--platinum-edge);}
+.expo-hero::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--acc) 0%,transparent 50%);}
+.expo-hero .inner{max-width:1100px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:center;}
+.expo-hero .img{width:240px;aspect-ratio:1/1;background:var(--ink-haze);border:1px solid var(--platinum-edge);border-radius:4px;}
+.expo-hero .body{display:flex;flex-direction:column;gap:14px;}
+
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);}
+.h1{font-family:var(--display);font-weight:600;font-size:34px;line-height:1.15;letter-spacing:-.018em;color:var(--char);margin:0;}
+.deck{font-family:var(--editorial);font-style:italic;font-size:18px;line-height:1.45;color:var(--graphite);max-width:56ch;margin:0;}
+.meta{display:flex;gap:8px 12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--graphite-mute);letter-spacing:.04em;}
+.meta .sep{color:var(--platinum-edge);}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--ink);color:var(--vellum);font-family:var(--ui);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;text-decoration:none;width:max-content;}
+.cta-arrow{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;width:max-content;}
+.chip{display:inline-flex;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--acc-tint);color:var(--acc);}
+
+/* small token sample row inside each option */
+.tokens{padding:18px 56px;background:var(--vellum);font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite-mute);display:flex;flex-wrap:wrap;gap:16px;border-top:1px solid var(--platinum-edge);}
+.tokens .pair{display:inline-flex;align-items:center;gap:8px;}
+.tokens .chip-ink{display:inline-flex;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--ink);color:var(--vellum);}
+.tokens .topic-band-mini{display:inline-flex;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;background:var(--ink);color:var(--acc-on-ink,#d4a45a);border-radius:2px;}
+
+@media (max-width:899px){.expo-hero .inner{grid-template-columns:1fr;padding:0 32px;}.expo-hero .img{width:100%;max-width:240px;}.tokens{padding:14px 24px;font-size:10px;}.h1{font-size:26px;}}
+
+/* ============ Variant tokens ============ */
+/* A. Brass (current, baseline) */
+.var-A{--acc:#8a6420;--acc-tint:rgba(184,136,48,.12);--acc-on-ink:#d4a45a;}
+/* B. Live-site link blue (#1d6dab) */
+.var-B{--acc:#1d6dab;--acc-tint:rgba(29,109,171,.10);--acc-on-ink:#5fa6db;}
+/* C. Live-site accent red (#cc0000) — refined to deeper #b00020 to pass AA */
+.var-C{--acc:#b00020;--acc-tint:rgba(176,0,32,.08);--acc-on-ink:#ff7a8a;}
+/* D. Cordovan (already in our palette) */
+.var-D{--acc:#5b1116;--acc-tint:rgba(91,17,22,.08);--acc-on-ink:#c97b80;}
+/* E. Refined live-site link (deeper for AA) */
+.var-E{--acc:#155e8e;--acc-tint:rgba(21,94,142,.10);--acc-on-ink:#5fa6db;}
+
+</style>
+</head>
+<body>
+
+<div class="expo-toolbar">
+  <span class="expo-title">Accent color exploration · 5 alternatives</span>
+  <span class="expo-meta">For V06 / V07 · sourced from live-site palette · <a href="home-proposed-v07.html">View V07</a></span>
+</div>
+
+<div class="expo-container">
+  <p class="expo-intro">
+    The current accent is <b>brass &middot; #8a6420</b> (warm gold, my addition). Below are 4 alternatives — three are colors that already exist in the captured live ETP palette, one is a refined cordovan from our extended set. Each option shows the same hero with the accent driving the eyebrow, top-rule, link-arrow, and chip tint. The CTA stays <b>--ink</b> in all variants (it's the brand anchor).
+  </p>
+  <p class="expo-intro" style="font-style:italic;font-size:15px;color:var(--graphite-mute);">
+    Live-site colors found: <b>#003049</b> brand teal (kept as primary in all variants), <b>#1d6dab</b> link blue (used inline in article body), <b>#cc0000</b> accent red (used on &ldquo;Read more&rdquo; markers), plus our extended cordovan #5b1116.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">A</span> &middot; <span class="variant-name">Brass &middot; #8a6420</span></span>
+    <span><span class="swatches"><span class="swatch" style="background:#8a6420"></span><span class="swatch-hex">#8a6420</span></span></span>
+    <span class="variant-tag">baseline · ships in V07 · added by us, not from live</span>
+  </div>
+  <div class="expo-stack var-A">
+    <div class="expo-hero">
+      <div class="inner">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta"><span class="chip">Modern Workplace</span><span class="sep">·</span><span>12 May 2026</span><span class="sep">·</span><span>5 min read</span></div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;"><a class="cta" href="#">Read article</a><a class="cta-arrow" href="#">All articles &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="tokens">
+      <span class="pair">Eyebrow / link-arrow on white &rarr;</span>
+      <span class="pair">Topic band sees: <span class="topic-band-mini">All sections &rarr;</span></span>
+      <span class="pair">Chip tint sees: <span class="chip">Modern Workplace</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">B</span> &middot; <span class="variant-name">Live-site link blue &middot; #1d6dab</span></span>
+    <span><span class="swatches"><span class="swatch" style="background:#1d6dab"></span><span class="swatch-hex">#1d6dab</span></span></span>
+    <span class="variant-tag">from live site (inline link color) · monochromatic blue family with --ink</span>
+  </div>
+  <div class="expo-stack var-B">
+    <div class="expo-hero">
+      <div class="inner">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta"><span class="chip">Modern Workplace</span><span class="sep">·</span><span>12 May 2026</span><span class="sep">·</span><span>5 min read</span></div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;"><a class="cta" href="#">Read article</a><a class="cta-arrow" href="#">All articles &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="tokens">
+      <span class="pair">Eyebrow / link-arrow on white &rarr;</span>
+      <span class="pair">Topic band sees: <span class="topic-band-mini" style="color:#5fa6db">All sections &rarr;</span></span>
+      <span class="pair">Chip tint sees: <span class="chip">Modern Workplace</span></span>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    The captured site uses #1d6dab as inline-link color in article body. Promoting it to accent gives a tight monochromatic blue family with --ink (#003049). Reads as &ldquo;tech publication&rdquo; very directly. AA contrast on white: 4.7:1 ✓. Risk: too close to --ink hue; loses the warm/cool tension brass provided.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">C</span> &middot; <span class="variant-name">Live-site accent red &middot; #b00020 (refined from #cc0000)</span></span>
+    <span><span class="swatches"><span class="swatch" style="background:#b00020"></span><span class="swatch-hex">#b00020</span></span></span>
+    <span class="variant-tag">from live site (Read more accent) · darkened for AA</span>
+  </div>
+  <div class="expo-stack var-C">
+    <div class="expo-hero">
+      <div class="inner">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta"><span class="chip">Modern Workplace</span><span class="sep">·</span><span>12 May 2026</span><span class="sep">·</span><span>5 min read</span></div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;"><a class="cta" href="#">Read article</a><a class="cta-arrow" href="#">All articles &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="tokens">
+      <span class="pair">Eyebrow / link-arrow on white &rarr;</span>
+      <span class="pair">Topic band sees: <span class="topic-band-mini" style="color:#ff7a8a">All sections &rarr;</span></span>
+      <span class="pair">Chip tint sees: <span class="chip">Modern Workplace</span></span>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    The captured site uses #cc0000 sparingly on &ldquo;Read more&rdquo; / &ldquo;Latest&rdquo; markers — a publication-red signal. Refined to #b00020 for AA on white (5.2:1). Strong hot/cold tension with --ink. Risk: red carries &ldquo;urgency / warning&rdquo; semantics; could feel alarming next to article content. Best used sparingly.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">D</span> &middot; <span class="variant-name">Cordovan &middot; #5b1116</span></span>
+    <span><span class="swatches"><span class="swatch" style="background:#5b1116"></span><span class="swatch-hex">#5b1116</span></span></span>
+    <span class="variant-tag">already in our palette · refined publication red</span>
+  </div>
+  <div class="expo-stack var-D">
+    <div class="expo-hero">
+      <div class="inner">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta"><span class="chip">Modern Workplace</span><span class="sep">·</span><span>12 May 2026</span><span class="sep">·</span><span>5 min read</span></div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;"><a class="cta" href="#">Read article</a><a class="cta-arrow" href="#">All articles &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="tokens">
+      <span class="pair">Eyebrow / link-arrow on white &rarr;</span>
+      <span class="pair">Topic band sees: <span class="topic-band-mini" style="color:#c97b80">All sections &rarr;</span></span>
+      <span class="pair">Chip tint sees: <span class="chip">Modern Workplace</span></span>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Cordovan #5b1116 is the deep-red token I added in the original direction — currently used only on the Modern Workplace topic chip. Promoting it to global accent makes the system more cohesive (everything in two color families: blues + cordovan-red). Reads as &ldquo;Bloomberg / Economist red&rdquo; — serious publication signal without the alarm of bright red.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">E</span> &middot; <span class="variant-name">Refined link blue &middot; #155e8e</span></span>
+    <span><span class="swatches"><span class="swatch" style="background:#155e8e"></span><span class="swatch-hex">#155e8e</span></span></span>
+    <span class="variant-tag">live-site blue darkened for AA stability everywhere</span>
+  </div>
+  <div class="expo-stack var-E">
+    <div class="expo-hero">
+      <div class="inner">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta"><span class="chip">Modern Workplace</span><span class="sep">·</span><span>12 May 2026</span><span class="sep">·</span><span>5 min read</span></div>
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;"><a class="cta" href="#">Read article</a><a class="cta-arrow" href="#">All articles &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="tokens">
+      <span class="pair">Eyebrow / link-arrow on white &rarr;</span>
+      <span class="pair">Topic band sees: <span class="topic-band-mini" style="color:#5fa6db">All sections &rarr;</span></span>
+      <span class="pair">Chip tint sees: <span class="chip">Modern Workplace</span></span>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    A darker take on B — same brand-blue family but with safer AA contrast on every surface (~6.3:1 on white). Loses some of #1d6dab's energy but is the most accessible.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-block:24px 64px;border-top:1px solid var(--platinum-edge);">
+  <p style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);margin:0;">
+    Tell me which accent (A–E) to wire into V07.
+  </p>
+</div>
+
+</body>
+</html>

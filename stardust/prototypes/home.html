@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  writtenBy:        stardust:prototype
+  writtenAt:        2026-05-05T00:00:00Z
+  page:             home
+  pageUrl:          https://www.enterprisetechprovider.com/
+  proposedFiles:
+    - { id: "V01", path: "./home-proposed.html",     label: "V01 · faithful + improvements" }
+    - { id: "V02", path: "./home-proposed-v02.html", label: "V02 · bento + ink-band + magazine-mixed" }
+    - { id: "V03", path: "./home-proposed-v03.html", label: "V03 · magazine cover + numbered TOC" }
+    - { id: "V04", path: "./home-proposed-v04.html", label: "V04 · type-led hero + 1:1 native thumbs (small-image-friendly)" }
+    - { id: "V05", path: "./home-proposed-v05.html", label: "V05 · V04 design applied to exact 13-section IA" }
+    - { id: "V06", path: "./home-proposed-v06.html", label: "V06 · hybrid V04+V05 with full-bleed hero (V06 default)" }
+  againstDirection: stardust/direction.md (Active 2026-05-05T00:00:00Z)
+  readArtifacts:
+    - stardust/current/pages/home.json
+    - stardust/current/assets/screenshots/home.png
+    - DESIGN.md
+    - DESIGN.json
+  stardustVersion:  0.3.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>home · before / after · 3 variants · Enterprise Tech Provider</title>
+<style>
+  :root {
+    --ink: #003049;
+    --ink-deep: #001f2f;
+    --vellum: #ffffff;
+    --char: #0a0d12;
+    --graphite: #3d4651;
+    --graphite-mute: #6b7480;
+    --platinum: #f4f5f7;
+    --platinum-edge: #dfe3e8;
+    --brass: #b88830;
+    --display: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --ui:      "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --mono:    "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+  body { font-family: var(--ui); color: var(--char); background: var(--platinum); display: flex; flex-direction: column; }
+  a { color: inherit; }
+
+  .topstrip {
+    flex-shrink: 0; height: 52px;
+    background: var(--ink-deep); color: var(--vellum);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 16px; gap: 12px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .topstrip .left { display: flex; align-items: center; gap: 14px; }
+  .topstrip .slug { font-weight: 600; }
+  .topstrip .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.10); border-radius: 999px; padding: 4px 12px;
+    font-size: 10px;
+  }
+  .topstrip .actions { display: flex; gap: 8px; }
+  .topstrip button {
+    font-family: var(--ui); font-size: 12px; font-weight: 600;
+    padding: 6px 14px; background: transparent; color: var(--vellum);
+    border: 1px solid rgba(255,255,255,0.30); border-radius: 999px;
+    cursor: pointer; text-transform: uppercase; letter-spacing: 0.06em;
+    transition: background 120ms ease-out, border-color 120ms ease-out;
+  }
+  .topstrip button:hover { background: rgba(255,255,255,0.15); border-color: var(--vellum); }
+  .topstrip button.primary { background: var(--brass); border-color: var(--brass); color: var(--ink-deep); }
+  .topstrip button.primary:hover { background: #cf9a3a; }
+
+  .panes {
+    flex: 1; display: grid; grid-template-columns: 1fr 6px 1fr;
+    overflow: hidden; background: var(--platinum-edge);
+  }
+  .pane { position: relative; overflow: auto; background: var(--vellum); display: flex; flex-direction: column; }
+  .pane-label {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--vellum); border-bottom: 1px solid var(--platinum-edge);
+    padding: 8px 14px;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--graphite-mute);
+    flex-shrink: 0;
+  }
+  .pane-label .name { font-weight: 600; color: var(--ink); }
+  .pane-label .toggle { display: inline-flex; gap: 4px; }
+  .pane-label .toggle button {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.10em;
+    padding: 4px 9px; border: 1px solid var(--platinum-edge);
+    background: var(--vellum); border-radius: 2px; cursor: pointer; color: var(--graphite-mute);
+    text-transform: uppercase; font-weight: 500;
+  }
+  .pane-label .toggle button.on { background: var(--ink); color: var(--vellum); border-color: var(--ink); }
+  .pane-label .toggle button:hover { background: var(--platinum); }
+  .pane-label .toggle button.on:hover { background: var(--ink-deep); }
+
+  .pane-body { flex: 1; width: 100%; overflow: auto; }
+  .pane-body img.shot { width: 100%; height: auto; display: block; }
+  .pane-body iframe { width: 100%; height: 100%; min-height: 600px; border: 0; display: block; background: var(--vellum); }
+
+  .divider {
+    background: var(--platinum-edge); cursor: col-resize; position: relative;
+  }
+  .divider::after {
+    content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 2px; height: 32px; background: var(--graphite-mute); border-radius: 999px; opacity: 0.4;
+  }
+
+  .footstrip {
+    flex-shrink: 0; height: 36px;
+    background: var(--vellum); border-top: 1px solid var(--platinum-edge);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 16px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--graphite-mute);
+  }
+  .footstrip .direction { color: var(--char); }
+  .footstrip a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+  .footstrip a:hover { border-bottom-color: var(--brass); color: var(--brass); }
+
+  /* V-tabs row at the top of the proposed pane */
+  .vtab-row { display: inline-flex; gap: 2px; align-items: center; }
+  .vtab {
+    font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.10em;
+    padding: 5px 10px; border: 1px solid var(--platinum-edge);
+    background: var(--vellum); cursor: pointer; color: var(--graphite-mute);
+    text-transform: uppercase;
+  }
+  .vtab + .vtab { border-left: none; }
+  .vtab.on { background: var(--brass); color: var(--ink-deep); border-color: var(--brass); }
+  .vtab:hover:not(.on) { background: var(--platinum); }
+</style>
+</head>
+<body>
+
+<div class="topstrip" role="toolbar" aria-label="Prototype controls">
+  <div class="left">
+    <span class="slug">HOME · before / after</span>
+    <span class="pill">Mode A · brand-faithful refresh</span>
+  </div>
+  <div class="actions">
+    <button onclick="swapSides()">Swap sides</button>
+    <button onclick="alert('To approve a variant, reply with the variant id, e.g. \\'approve V02\\'')">Approve</button>
+  </div>
+</div>
+
+<div class="panes" id="panes">
+  <div class="pane" id="paneL">
+    <div class="pane-label">
+      <span><span class="name">Current</span> &nbsp; enterprisetechprovider.com</span>
+      <span class="toggle" role="tablist" aria-label="Source for current pane">
+        <button class="on" id="curScreenshot" onclick="setCurrent('screenshot')">Screenshot</button>
+        <button id="curLive" onclick="setCurrent('live')">Try live</button>
+      </span>
+    </div>
+    <div class="pane-body" id="paneLBody">
+      <img class="shot" src="../current/assets/screenshots/home.png" alt="Captured screenshot of the current Enterprise Tech Provider home page">
+    </div>
+  </div>
+  <div class="divider" aria-hidden="true"></div>
+  <div class="pane" id="paneR">
+    <div class="pane-label">
+      <span style="display:inline-flex;align-items:center;gap:14px">
+        <span class="name" style="color:var(--brass)">Proposed</span>
+        <span class="vtab-row" role="tablist" aria-label="Variant">
+          <button class="vtab"    id="vtabV01" onclick="setVariant('V01')">V01 · safe</button>
+          <button class="vtab"    id="vtabV02" onclick="setVariant('V02')">V02 · magazine</button>
+          <button class="vtab"    id="vtabV03" onclick="setVariant('V03')">V03 · cover-led</button>
+          <button class="vtab"    id="vtabV04" onclick="setVariant('V04')">V04 · sharp at small img</button>
+          <button class="vtab"    id="vtabV05" onclick="setVariant('V05')">V05 · exact IA</button>
+          <button class="vtab on" id="vtabV06" onclick="setVariant('V06')">V06 · hybrid + full-bleed hero</button>
+        </span>
+      </span>
+      <span id="vtabLabel" style="font-size:10px">Full-bleed --ink hero + V04 reads patterns + V05 taxonomy/departments</span>
+    </div>
+    <div class="pane-body">
+      <iframe id="proposedFrame" src="home-proposed-v06.html" title="Proposed home redesign · V06" loading="eager"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="footstrip">
+  <span><span class="direction">Direction:</span> &nbsp; Brand-faithful refresh · enterprise-refined secondaries · multi-family type · density balanced</span>
+  <span><a href="../direction.md" target="_blank">direction.md</a> &nbsp; · &nbsp; <a href="home-shape.md" target="_blank">shape</a> &nbsp; · &nbsp; <a href="home-improvements.md" target="_blank">improvements</a></span>
+</div>
+
+<script>
+  const VARIANTS = {
+    V01: { src: 'home-proposed.html',     label: 'Original · safe (32 placeholders, generic editorial template)' },
+    V02: { src: 'home-proposed-v02.html', label: 'Bento + ink band + mixed grid + numbered list (18 placeholders)' },
+    V03: { src: 'home-proposed-v03.html', label: 'Magazine cover · numbered TOC · departments · editor sign-off (17 placeholders)' },
+    V04: { src: 'home-proposed-v04.html', label: 'Type-led hero · 1:1 native thumbs · magazine roster · designed for 309x309 images (21 placeholders)' },
+    V05: { src: 'home-proposed-v05.html', label: 'V04 design applied to the exact 13-section IA captured from the live home (38 items, ~16 placeholders)' },
+    V06: { src: 'home-proposed-v06.html', label: 'Hybrid V04+V05 — full-bleed --ink hero, V04 reads patterns, V05 taxonomy/departments, V05 nav (~22 placeholders)' },
+  };
+
+  function setVariant(id) {
+    const f = document.getElementById('proposedFrame');
+    f.src = VARIANTS[id].src;
+    f.title = 'Proposed home redesign · ' + id;
+    document.getElementById('vtabLabel').textContent = VARIANTS[id].label;
+    ['V01','V02','V03','V04','V05','V06'].forEach(k => {
+      document.getElementById('vtab' + k).classList.toggle('on', k === id);
+    });
+  }
+
+  let swapped = false;
+  function swapSides() {
+    const panes = document.getElementById('panes');
+    const L = document.getElementById('paneL');
+    if (!swapped) panes.appendChild(L); else panes.insertBefore(L, panes.firstChild);
+    swapped = !swapped;
+  }
+
+  function setCurrent(mode) {
+    const body = document.getElementById('paneLBody');
+    const btnS = document.getElementById('curScreenshot');
+    const btnL = document.getElementById('curLive');
+    if (mode === 'screenshot') {
+      body.innerHTML = '<img class="shot" src="../current/assets/screenshots/home.png" alt="Captured screenshot of the current Enterprise Tech Provider home page">';
+      btnS.classList.add('on'); btnL.classList.remove('on');
+    } else {
+      body.innerHTML = '<iframe sandbox="allow-scripts allow-same-origin" src="https://www.enterprisetechprovider.com/" title="Live current home page" referrerpolicy="no-referrer" style="width:100%;height:100%;border:0"></iframe>';
+      btnL.classList.add('on'); btnS.classList.remove('on');
+    }
+  }
+
+  (function() {
+    const panes = document.getElementById('panes');
+    const divider = document.querySelector('.divider');
+    let dragging = false;
+    divider.addEventListener('pointerdown', (e) => {
+      dragging = true; divider.setPointerCapture(e.pointerId); document.body.style.userSelect = 'none';
+    });
+    divider.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const rect = panes.getBoundingClientRect();
+      const x = Math.max(120, Math.min(rect.width - 120, e.clientX - rect.left));
+      panes.style.gridTemplateColumns = `${x}px 6px ${rect.width - x - 6}px`;
+    });
+    divider.addEventListener('pointerup', () => { dragging = false; document.body.style.userSelect = ''; });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Enterprise Tech Provider · Current state · stardust extract</title>
+<style>
+  :root {
+    --primary:        #003049;
+    --primary-dark:   #001f2f;
+    --accent:         #cc0000;
+    --secondary:      #1d6dab;
+    --text:           #181818;
+    --text-muted:     #656565;
+    --surface:        #ffffff;
+    --surface-alt:    #f5f6f7;
+    --surface-dark:   #191919;
+    --border:         #e7e7e7;
+    --display:        "Roboto Condensed", Roboto, "Arial Narrow", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --body:           Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --mono:           ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--body);
+    line-height: 1.55;
+    font-size: 16px;
+  }
+  a { color: var(--secondary); text-decoration: underline; }
+  h1, h2, h3, h4, .display { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.02em; color: var(--text); }
+  h1 { font-size: 2.4rem; line-height: 1.1; margin: 0 0 .25rem; font-weight: 500; }
+  h2 { font-size: 1.6rem; line-height: 1.2; margin: 2rem 0 .75rem; font-weight: 500; }
+  h3 { font-size: 1.15rem; margin: 1.25rem 0 .5rem; font-weight: 500; }
+  h4 { font-size: 0.95rem; margin: 0 0 .35rem; font-weight: 500; }
+  code, .mono { font-family: var(--mono); font-size: 0.86em; }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+  /* Sticky top nav */
+  nav.topnav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--primary-dark); color: #fff;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem;
+    padding: .5rem 1.25rem;
+    font-family: var(--display); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  nav.topnav .brand { font-weight: 700; margin-right: 1rem; color: #fff; text-decoration: none; }
+  nav.topnav a { color: #fff; text-decoration: none; padding: .35rem .65rem; border-radius: 150px; }
+  nav.topnav a:hover { background: rgba(255,255,255,0.18); }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* Masthead */
+  .masthead {
+    background: var(--primary);
+    color: #fff;
+    padding: 3rem 1.5rem 2.5rem;
+    border-bottom: 6px solid #000;
+  }
+  .masthead .inner { max-width: 1180px; margin: 0 auto; }
+  .masthead h1 { color: #fff; font-size: 2.6rem; }
+  .masthead .hero-line { color: #fff; opacity: .85; font-family: var(--display); font-weight: 300; font-size: 1.15rem; max-width: 60ch; }
+  .masthead .meta { margin-top: 1rem; font-family: var(--mono); font-size: 12px; opacity: .8; }
+  .masthead .cobrand { display: flex; gap: 1.25rem; align-items: center; margin-bottom: 1.25rem; opacity: .75; font-family: var(--display); font-size: 11px; letter-spacing: 1.5px; }
+
+  /* Coverage callout */
+  .coverage { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 1rem; margin: 2rem 0; }
+  .stat { background: var(--surface-alt); border-left: 4px solid var(--primary); padding: 1rem 1.25rem; }
+  .stat .num { font-family: var(--display); font-weight: 500; font-size: 2rem; line-height: 1; color: var(--primary); }
+  .stat .label { font-family: var(--display); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: .5rem; }
+
+  /* Pages grid */
+  .pages-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+  .page-thumb { background: var(--surface-alt); border: 1px solid var(--border); }
+  .page-thumb img { display: block; width: 100%; height: 200px; object-fit: cover; object-position: top; }
+  .page-thumb .label { padding: .65rem .85rem; }
+  .page-thumb .label .t { font-family: var(--display); font-size: .9rem; font-weight: 500; }
+  .page-thumb .label .s { font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-top: .15rem; word-break: break-all; }
+
+  /* Palette */
+  .palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .swatch { background: var(--surface-alt); border: 1px solid var(--border); padding: 1rem; }
+  .swatch .chip { width: 100%; height: 96px; border: 1px solid rgba(0,0,0,.08); }
+  .swatch .role { font-family: var(--display); font-weight: 500; text-transform: uppercase; letter-spacing: 1.2px; font-size: .8rem; margin-top: .65rem; color: var(--text-muted); }
+  .swatch .hex  { font-family: var(--mono); font-size: 1rem; margin-top: .25rem; }
+  .swatch .where { font-size: .82rem; color: var(--text-muted); margin-top: .35rem; line-height: 1.4; }
+
+  /* Type specimens */
+  .specimen { padding: 1rem 0; border-top: 1px dashed var(--border); }
+  .specimen:first-of-type { border-top: 0; }
+  .specimen .meta { font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-bottom: .35rem; }
+  .specimen .sample { color: var(--text); }
+  .badge { display: inline-block; background: var(--primary); color: #fff; font-family: var(--display); font-weight: 500; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: .2rem .55rem; vertical-align: middle; margin-left: .5rem; border-radius: 0; }
+  .badge.warn { background: var(--accent); }
+  .badge.muted { background: var(--text-muted); }
+
+  /* Voice cards */
+  .voice-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .voice-card { background: var(--surface-alt); padding: 1.25rem 1.5rem; border-left: 4px solid var(--primary); }
+  .voice-card .role { font-family: var(--display); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: .35rem; }
+  .voice-card .quote { font-family: var(--display); font-size: 1.05rem; font-weight: 500; line-height: 1.4; }
+
+  .ctapills { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 1.5rem; }
+  .ctapill { display: inline-flex; align-items: center; gap: .35rem; background: #fff; border: 1px solid var(--border); padding: .35rem .75rem; font-family: var(--display); font-weight: 500; font-size: .82rem; }
+  .ctapill .n { color: var(--text-muted); font-family: var(--mono); font-size: 11px; }
+
+  .repeated-headings { columns: 2; column-gap: 2rem; }
+  .repeated-headings li { break-inside: avoid; margin-bottom: .35rem; }
+
+  /* Tensions */
+  .tensions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .tension {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 1.1rem 1.25rem;
+  }
+  .tension .tag { font-family: var(--mono); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+  .tension h4 { margin-top: .35rem; }
+  .tension p { margin: .35rem 0 .5rem; line-height: 1.5; font-size: .94rem; }
+  .tension .src { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+
+  /* Motifs */
+  .radius-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+  .radius-card { background: var(--surface-alt); padding: 1.25rem; text-align: center; }
+  .radius-demo { width: 60px; height: 60px; background: var(--primary); margin: 0 auto .65rem; }
+  .radius-card .label { font-family: var(--mono); font-size: 13px; color: var(--text-muted); }
+  .radius-card .count { font-family: var(--display); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-top: .35rem; }
+
+  /* Components list */
+  .components-list { list-style: none; padding: 0; }
+  .components-list li {
+    border-left: 3px solid var(--primary);
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+    background: var(--surface-alt);
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  }
+  .components-list li .k { font-family: var(--display); font-weight: 500; }
+  .components-list li .v { font-family: var(--mono); font-size: 12px; color: var(--text-muted); }
+
+  /* System components */
+  .syscomp { background: var(--surface-alt); padding: 1rem 1.25rem; margin-bottom: .65rem; }
+  .syscomp .head { font-family: var(--display); font-weight: 500; font-size: .95rem; text-transform: uppercase; letter-spacing: 1.2px; }
+  .syscomp .pages { font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-top: .25rem; }
+  .syscomp p { margin: .35rem 0 0; font-size: .9rem; line-height: 1.45; }
+
+  /* Footer */
+  footer.review { background: #000; color: #fff; margin-top: 3rem; padding: 2rem 1.5rem; }
+  footer.review .inner { max-width: 1180px; margin: 0 auto; font-size: .85rem; line-height: 1.5; }
+  footer.review code { color: #fff; background: rgba(255,255,255,0.08); padding: 0 .35rem; }
+
+  /* Reproduction strip (the persistent hero) */
+  .reproduction { border: 4px dashed var(--primary); padding: 1.25rem; margin: 1rem 0; background: var(--primary); color: #fff; }
+  .reproduction .tag { font-family: var(--display); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); background: #fff; padding: .15rem .5rem; }
+  .reproduction h3 { color: #fff; margin: .65rem 0 .25rem; font-size: 1.5rem; }
+  .reproduction p { color: #fff; opacity: .8; margin: 0; font-family: var(--display); font-weight: 300; }
+
+  /* Iframe ecosystem */
+  .iframe-list { font-family: var(--mono); font-size: 13px; }
+  .iframe-list li { padding: .35rem 0; border-bottom: 1px dashed var(--border); }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .coverage { grid-template-columns: 1fr; }
+    .tensions { grid-template-columns: 1fr; }
+    .repeated-headings { columns: 1; }
+  }
+  @media print {
+    nav.topnav { position: static; }
+    .tension, .swatch, .voice-card, .syscomp { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Section navigation">
+  <span class="brand">Enterprise Tech Provider · Current state</span>
+  <a href="#coverage">Coverage</a>
+  <a href="#pages">Pages</a>
+  <a href="#palette">Palette</a>
+  <a href="#type">Typography</a>
+  <a href="#voice">Voice</a>
+  <a href="#tensions">Tensions</a>
+  <a href="#motifs">Motifs</a>
+  <a href="#components">Components</a>
+  <a href="#systems">System parts</a>
+  <a href="#iframes">Iframes</a>
+  <a href="#footer">Footer</a>
+</nav>
+
+<header class="masthead">
+  <div class="inner">
+    <div class="cobrand">PRODUCED BY THE CHANNEL COMPANY · SPONSORED BY DELL TECHNOLOGIES</div>
+    <h1>Enterprise Tech Provider</h1>
+    <p class="hero-line">Accelerate from Ideas to Innovation.</p>
+    <p class="hero-line" style="opacity:.7">Stay ahead of what’s next to drive profitable growth.</p>
+    <p class="meta">https://www.enterprisetechprovider.com/ · extracted 2026-05-04 · 5 of 614 pages sampled</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <h2 id="coverage">Coverage <span class="badge muted">cross-page</span></h2>
+  <div class="coverage">
+    <div class="stat"><div class="num">5 / 614</div><div class="label">pages extracted (sitemap.xml + home BFS)</div></div>
+    <div class="stat"><div class="num">~10 s</div><div class="label">avg wait, mode <code>medium</code> · 0 fallbacks</div></div>
+    <div class="stat"><div class="num">9</div><div class="label">distinct system components detected</div></div>
+  </div>
+  <p style="font-size:.92rem;color:var(--text-muted)">
+    Discovery method: <code>sitemap.xml</code> (614 article URLs) plus link-extraction from the home page to find category and listing templates not in the sitemap.
+    Five pages cover the four observed templates: home, category listing, article (storage + newsroom), and author profile.
+    Three nav-linked utility paths return errors: <code>/videos</code> (404), <code>/newsletter-archive</code> (404), <code>/sitemap</code> (403).
+  </p>
+
+  <h2 id="pages">Pages <span class="badge muted">cross-page</span></h2>
+  <div class="pages-grid">
+    <div class="page-thumb"><img src="assets/screenshots/home.png" alt="Home page"><div class="label"><div class="t">Enterprise Tech Provider</div><div class="s">/</div></div></div>
+    <div class="page-thumb"><img src="assets/screenshots/category-storage.png" alt="Category Storage"><div class="label"><div class="t">Storage news (category)</div><div class="s">/category/storage</div></div></div>
+    <div class="page-thumb"><img src="assets/screenshots/storage-article.png" alt="Storage article"><div class="label"><div class="t">How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage</div><div class="s">/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage</div></div></div>
+    <div class="page-thumb"><img src="assets/screenshots/newsroom-article.png" alt="Newsroom article"><div class="label"><div class="t">Dell Technologies World 2021: Get Ready to be Inspired</div><div class="s">/newsroom/dell-technologies-world-2021-get-ready-to-be-inspired</div></div></div>
+    <div class="page-thumb"><img src="assets/screenshots/user-profile.png" alt="Author profile"><div class="label"><div class="t">KJ Jacoby (author profile)</div><div class="s">/users/KJ</div></div></div>
+  </div>
+
+  <h2 id="palette">Palette <span class="badge muted">cross-page</span></h2>
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#003049"></div><div class="role">Primary</div><div class="hex">#003049</div><div class="where">Header band, footer accents, page-title bands, h6 brand label. All 5 pages.</div></div>
+    <div class="swatch"><div class="chip" style="background:#191919"></div><div class="role">Surface dark</div><div class="hex">#191919</div><div class="where">Pre-footer band, separator before footer. All 5 pages.</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="role">Footer</div><div class="hex">#000000</div><div class="where">Site footer container.</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff;border:1px solid #ccc"></div><div class="role">Background</div><div class="hex">#ffffff</div><div class="where">Body / main background. All 5 pages.</div></div>
+    <div class="swatch"><div class="chip" style="background:#e7e7e7"></div><div class="role">Surface</div><div class="hex">#e7e7e7</div><div class="where">Search button, dividers, light bands.</div></div>
+    <div class="swatch"><div class="chip" style="background:#181818"></div><div class="role">Text strong</div><div class="hex">#181818</div><div class="where">Decorative section H2s (41px Roboto Light).</div></div>
+    <div class="swatch"><div class="chip" style="background:#333333"></div><div class="role">Text</div><div class="hex">#333333</div><div class="where">Body copy on every page.</div></div>
+    <div class="swatch"><div class="chip" style="background:#656565"></div><div class="role">Text muted</div><div class="hex">#656565</div><div class="where">Site tagline, secondary headings.</div></div>
+    <div class="swatch"><div class="chip" style="background:#1d6dab"></div><div class="role">Link</div><div class="hex">#1d6dab</div><div class="where">Inline body links inside articles only.</div></div>
+    <div class="swatch"><div class="chip" style="background:#cc0000"></div><div class="role">Accent red</div><div class="hex">#cc0000</div><div class="where">Occasional cross-promo "Read more" links.</div></div>
+  </div>
+  <p style="font-size:.92rem;color:var(--text-muted);margin-top:1rem">
+    Two-color brand: dark teal <code>#003049</code> (Dell-adjacent) on white, extended by neutrals.
+    No saturated palette beyond primary; the link blue and accent red are inline-content only and never appear as buttons or surfaces.
+  </p>
+
+  <h2 id="type">Typography <span class="badge muted">cross-page</span> <span class="badge warn">No modular scale</span></h2>
+
+  <div class="specimen"><div class="meta">H1 · Roboto Light, 500 / 41px / 45.1px / rgb(24,24,24) — used as a DECORATIVE label, not the page title</div><div class="sample" style="font-family:var(--display);font-weight:500;font-size:41px;line-height:45.1px;color:#181818;text-transform:none">Stay ahead of what’s next</div></div>
+
+  <div class="specimen"><div class="meta">H2 · Roboto Condensed Light, 300 / 27.5px / 38.5px / rgb(101,101,101) — site tagline</div><div class="sample" style="font-family:var(--display);font-weight:300;font-size:27.5px;line-height:38.5px;color:#656565;text-transform:none">Stay ahead of what’s next to drive profitable growth</div></div>
+
+  <div class="specimen"><div class="meta">Article H1 · Roboto Condensed Regular, 500 / 25px / 27.5px / #ffffff on #003049 band — UPPERCASE</div><div class="sample" style="font-family:var(--display);font-weight:500;font-size:25px;line-height:27.5px;background:#003049;color:#fff;padding:.65rem .85rem;text-transform:uppercase">How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage</div></div>
+
+  <div class="specimen"><div class="meta">H3 · Roboto Regular, 500 / 24px / 26.4px / #2d2d2d — featured card titles</div><div class="sample" style="font-family:var(--body);font-weight:500;font-size:24px;line-height:26.4px;color:#2d2d2d;text-transform:none">You Can Now Accelerate Your Customers’ AI Initiatives Quickly And Easily</div></div>
+
+  <div class="specimen"><div class="meta">H4 · Roboto Condensed Regular, 500 / 18px / 19.8px / #333 — secondary card titles</div><div class="sample" style="font-family:var(--display);font-weight:500;font-size:18px;line-height:19.8px;color:#333;text-transform:none">Help Customers Build The Best Workplace Experience For Productivity And Collaboration</div></div>
+
+  <div class="specimen"><div class="meta">H6 · Roboto Condensed Regular, 400 / 18px / 25.2px / #020202 — small card titles</div><div class="sample" style="font-family:var(--display);font-weight:400;font-size:18px;line-height:25.2px;color:#020202;text-transform:none">Why Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission‑Critical Workloads</div></div>
+
+  <div class="specimen"><div class="meta">Body · Roboto Regular, 400 / 16px / 24px / #333</div><div class="sample">Industry analysts describe the current memory market as a hyper-bull cycle, with sharp price increases expected as demand continues to outpace supply. Dell is helping partners with allocation transparency, multi-quarter forecasting, and incentives that protect margin during the squeeze.</div></div>
+
+  <p style="font-size:.92rem;color:var(--text-muted);margin-top:1rem">
+    Single family system: <strong>Roboto + Roboto Condensed</strong> at four weights.
+    Sizes do not follow a modular ratio (14 → 16 → 18 → 24 → 25 → 27.5 → 41 — no consistent step).
+    The semantic article H1 is <strong>25px</strong> while a decorative section label H2 elsewhere on the same page reaches <strong>41px</strong>.
+  </p>
+
+  <h2 id="voice">Voice <span class="badge">observed</span></h2>
+  <div class="voice-cards">
+    <div class="voice-card">
+      <div class="role">Hero promise</div>
+      <div class="quote">Accelerate from Ideas to Innovation</div>
+    </div>
+    <div class="voice-card">
+      <div class="role">Tagline</div>
+      <div class="quote">Stay ahead of what’s next to drive profitable growth</div>
+    </div>
+    <div class="voice-card">
+      <div class="role">Sample headline</div>
+      <div class="quote">5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers</div>
+    </div>
+  </div>
+
+  <h3>CTA frequency (top across 5 pages)</h3>
+  <div class="ctapills">
+    <span class="ctapill">MENU <span class="n">5</span></span>
+    <span class="ctapill">SEARCH <span class="n">5</span></span>
+    <span class="ctapill">Submit <span class="n">4</span></span>
+    <span class="ctapill">Learn more <span class="n">40+ (as inline link)</span></span>
+    <span class="ctapill">Subscribe <span class="n">in footer</span></span>
+  </div>
+
+  <h3>Repeated headings (≥3 pages)</h3>
+  <ul class="repeated-headings">
+    <li><strong>Enterprise Tech Provider</strong> — H1 on every page (5/5)</li>
+    <li><strong>Stay ahead of what’s next to drive profitable growth</strong> — H2 on every page (5/5)</li>
+    <li><strong>NEWSLETTERS</strong> — H2 on 4/5 pages</li>
+    <li><strong>INNOVATION & IMPACT</strong> — H2 on 3/5 pages</li>
+    <li><strong>Why Dell’s PowerMaxOS 10.4 Enhancements …</strong> — same article promoted on 3/5 pages</li>
+    <li><strong>Intel vPro® Fleet Services …</strong> — same item promoted on 3/5 pages</li>
+  </ul>
+
+  <div class="coverage">
+    <div class="stat"><div class="num">33%</div><div class="label">headings fully UPPERCASE</div></div>
+    <div class="stat"><div class="num">52</div><div class="label">distinct headings across 5 pages</div></div>
+    <div class="stat"><div class="num">4</div><div class="label">distinct CTA labels across 5 pages</div></div>
+  </div>
+
+  <h3>Reproduction · the persistent hero band</h3>
+  <div class="reproduction">
+    <span class="tag">Reproduction · approximate</span>
+    <h3>ENTERPRISE TECH PROVIDER</h3>
+    <p>Stay ahead of what’s next to drive profitable growth</p>
+    <p style="margin-top:1rem;font-size:.85rem;opacity:.6">↑ Renders ~190 px tall on every page (home, listing, article, author profile) before the page’s actual title appears.</p>
+  </div>
+
+  <h2 id="tensions">Tensions <span class="badge warn">decision agenda for direct</span></h2>
+  <div class="tensions">
+
+    <div class="tension">
+      <div class="tag">T-scale</div>
+      <h4>Type scale is ad-hoc</h4>
+      <p>Sizes 14 → 16 → 18 → 24 → 25 → 27.5 → 41 do not follow a modular ratio. Article H1 is <strong>25px</strong> while decorative section H2s elsewhere reach <strong>41px</strong> — semantic hierarchy reads upside-down.</p>
+      <div class="src">Source: <code>_brand-extraction.json § type.scaleAudit</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-no-tokens</div>
+      <h4>Site ships zero design tokens</h4>
+      <p>Only <code>--sa-uid</code> (analytics user id) is defined at <code>:root</code>. No color / spacing / type tokens — every value is hard-coded in legacy Drupal CSS. The migration target will introduce tokens, which is a structural change worth surfacing now.</p>
+      <div class="src">Source: <code>pages/*.json § cssCustomProperties</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-logo-variants</div>
+      <h4>Single logo variant captured</h4>
+      <p>Only the white wordmark on dark teal <code>etp-logo-2025.png</code> is in use. No SVG, no monochrome, no inverted variant. The redesign will need a variant set for use against light backgrounds and at small sizes.</p>
+      <div class="src">Source: <code>_brand-extraction.json § logo</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-h1-misuse</div>
+      <h4>The site name is the H1 of every page</h4>
+      <p>On the home page H1 = "Enterprise Tech Provider" (the site name); the article's actual title is rendered as H2 inside a teal band. Article pages instead promote the article title to H1 but at <strong>25px</strong> — visually outranked by an unrelated decorative H2 at 41px on the same page. SEO + accessibility + visual hierarchy all read inconsistently.</p>
+      <div class="src">Source: <code>pages/*.json § headings</code> (H1s captured)</div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-persistent-hero</div>
+      <h4>~190px hero band repeats on every page including utility pages</h4>
+      <p>The "Enterprise Tech Provider · Stay ahead …" band with stock photo is delivered above-the-fold on the author profile, on category listings, and on every article — costing ~190px before the page's own H1 appears. The brand is asserted via repetition rather than via design intent.</p>
+      <div class="src">Source: <code>_brand-extraction.json § systemComponents.hero-band</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-section-glut</div>
+      <h4>Home page stacks 13+ section labels</h4>
+      <p>RECOMMENDED · ESSENTIAL READING · LATEST · POPULAR · NEWSLETTERS · ARTIFICIAL INTELLIGENCE · VIDEOS · MODERN DATA CENTER · STORAGE · DELL TECH ADVANTAGE · MODERN WORK · INNOVATION & IMPACT · REEL HIGHLIGHTS — each rendered as a full-width dark teal strip. Editorial intent dissolves; nothing reads as the most important thing on the page.</p>
+      <div class="src">Source: <code>pages/home.json § headings</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-uppercase-flatten</div>
+      <h4>Heavy ALL-CAPS flattens scannability</h4>
+      <p>33% of headings (29 of 88) are fully UPPERCASE — including article H1s on storage and newsroom templates. Combined with high-density grids, this removes the natural shape-recognition cue readers use to skim.</p>
+      <div class="src">Source: aggregated <code>pages/*.json § headings</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-card-metadata</div>
+      <h4>Cards carry only a title — no date, author, or topic chip</h4>
+      <p>Every listing card shows a 309×309 thumbnail (rendered 78–195px) and 1–3 lines of headline. There is no publication date, no byline, no read-time, and no topic chip. With 614 articles in the sitemap, the user cannot tell what is current, who wrote it, or what category it belongs to without clicking.</p>
+      <div class="src">Source: <code>pages/category-storage.json § components</code> + <code>media.images</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-image-oversampling</div>
+      <h4>Card thumbnails 4× oversized</h4>
+      <p>Source images are 309×309 px but rendered at 78–195 px, with no responsive <code>srcset</code> — wasting bandwidth and making cards feel weighty. On a category listing with 30+ tiles this is the dominant page weight.</p>
+      <div class="src">Source: <code>pages/*.json § media.images</code> (naturalWidth vs. rendered rect)</div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-broken-nav</div>
+      <h4>Three nav-linked surfaces return errors</h4>
+      <p><code>/videos</code> (404, linked from home VIDEOS section) · <code>/newsletter-archive</code> (404, linked from main nav) · <code>/sitemap</code> (403, linked from footer). Each is a promise the navigation makes and the site doesn't keep.</p>
+      <div class="src">Source: <code>_crawl-log.json § discovery.ia_observations.broken_nav_links</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-co-brand-noise</div>
+      <h4>Two co-brand strips compete with the page identity</h4>
+      <p>The header carries "PRODUCED BY THE CHANNEL COMPANY" + "SPONSORED BY DELL TECHNOLOGIES" co-brands. The footer repeats them. Neither establishes a clear primary brand for the site itself — the destination ("Enterprise Tech Provider") feels intermediated rather than direct.</p>
+      <div class="src">Source: <code>_brand-extraction.json § logo.coBrand + footerCoBrand</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-consent-overlay</div>
+      <h4>Sourcepoint consent dialog dominates first impression</h4>
+      <p>A 1440×900 cross-origin iframe (<code>cdn.privacy-mgmt.com</code>) covers the entire viewport on first visit and remains until dismissed. Because the consent UI is unstyled by the host, the brand impression on first-visit users is generic Sourcepoint rather than ETP.</p>
+      <div class="src">Source: <code>pages/*.json § media.iframes</code> + <code>embedDominance</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-img-alt-empty</div>
+      <h4>25% of images carry empty alt text</h4>
+      <p>28 of 111 captured images have no alt text. Below the 30% trigger threshold for the mechanical detector, but worth flagging given that thumbnails on listing pages — which carry the article title's only visual cue — are among the empties.</p>
+      <div class="src">Source: aggregated <code>pages/*.json § media.images[].alt</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-ia-duplicate</div>
+      <h4>Two parallel taxonomies for the same topics</h4>
+      <p>Storage articles can be reached via <code>/storage</code> (working index), <code>/category/storage</code> (working alternative index), and <code>/storage/&lt;slug&gt;</code> (article path). Other topics live in URL space (<code>/artificial-intelligence/&lt;slug&gt;</code>) but the section index <code>/artificial-intelligence</code> 404s — only <code>/category/ai</code> works. The IA promises symmetry it doesn't deliver.</p>
+      <div class="src">Source: <code>_crawl-log.json § discovery.ia_observations</code></div>
+    </div>
+
+    <div class="tension">
+      <div class="tag">T-framework-age</div>
+      <h4>Built on Bootstrap 3 + Drupal legacy theme</h4>
+      <p>Bootstrap 3.3.7 (released 2015, EOL 2019) is loaded from a public CDN. The theme path is <code>/sites/all/themes/tpz_theme_2020</code> (Drupal 7 convention). The visual chrome — flat grids, sharp corners, no shadow language — is shaped by the framework era as much as by deliberate brand choices.</p>
+      <div class="src">Source: home.html assets + brand-extraction § frameworkSignals</div>
+    </div>
+
+  </div>
+
+  <h2 id="motifs">Motifs <span class="badge muted">cross-page</span></h2>
+  <div class="radius-grid">
+    <div class="radius-card"><div class="radius-demo" style="border-radius:0"></div><div class="label">0px</div><div class="count">Dominant — cards · bands · sections</div></div>
+    <div class="radius-card"><div class="radius-demo" style="border-radius:3px"></div><div class="label">3px</div><div class="count">Submit button only</div></div>
+    <div class="radius-card"><div class="radius-demo" style="border-radius:50%"></div><div class="label">50%</div><div class="count">Footer social icons</div></div>
+    <div class="radius-card"><div class="radius-demo" style="background:#fff;border:1px solid #e7e7e7;box-shadow:0 1px 4px rgba(0,0,0,.16);border-radius:0"></div><div class="label">shadow</div><div class="count">Newsletter signup only</div></div>
+  </div>
+
+  <h2 id="components">Components <span class="badge">observed</span></h2>
+  <ul class="components-list">
+    <li><span class="k">Card grid</span><span class="v">listing template, all 5 pages — 309×309 thumbs, no metadata</span></li>
+    <li><span class="k">Section-label strip</span><span class="v">5–13× on home — full-width #003049 + uppercase H2</span></li>
+    <li><span class="k">Right-rail ad slot</span><span class="v">300×250 GIF/JPEG, home + listing + article</span></li>
+    <li><span class="k">Newsletter form (3-field)</span><span class="v">all 5 pages — embedded TheChannelCo iframe</span></li>
+    <li><span class="k">Carousel (lightSlider)</span><span class="v">5 instances on home — REEL HIGHLIGHTS, recommended, etc.</span></li>
+    <li><span class="k">Article-title band</span><span class="v">3 article templates — uppercase white H1 on #003049</span></li>
+    <li><span class="k">Hero band (persistent)</span><span class="v">all 5 pages — site H1 + tagline + stock photo</span></li>
+    <li><span class="k">Co-branded header</span><span class="v">all 5 pages — publisher + sponsor + MENU/SEARCH</span></li>
+    <li><span class="k">Co-branded footer</span><span class="v">all 5 pages — 4-col + social row + legal</span></li>
+    <li><span class="k">Consent overlay</span><span class="v">all 5 pages on first visit — Sourcepoint iframe (1440×900)</span></li>
+  </ul>
+
+  <h2 id="systems">System parts <span class="badge muted">cross-page</span></h2>
+  <div class="syscomp">
+    <div class="head">Site header</div>
+    <div class="pages">on 5 / 5 pages</div>
+    <p>Dark teal band carrying co-brand markers (PRODUCED BY THE CHANNEL COMPANY · SPONSORED BY DELL TECHNOLOGIES), search bar, and MENU button. ~70px tall.</p>
+  </div>
+  <div class="syscomp">
+    <div class="head">Persistent hero band</div>
+    <div class="pages">on 5 / 5 pages</div>
+    <p>H1 "Enterprise Tech Provider" + H2 "Stay ahead of what’s next to drive profitable growth" + lifestyle stock photo of three people at a workstation. Repeats above the fold on every page including the author profile.</p>
+  </div>
+  <div class="syscomp">
+    <div class="head">Article title band</div>
+    <div class="pages">on 3 / 3 article pages</div>
+    <p>Full-width #003049 strip with uppercase H1 in white, optional thumbnail at right. The page's actual title — beneath the global hero.</p>
+  </div>
+  <div class="syscomp">
+    <div class="head">Right rail (ad + newsletter)</div>
+    <div class="pages">on 4 / 5 pages</div>
+    <p>300×250 ad slot above a 3-field newsletter signup form embedded from <code>pages.thechannelco.com</code>.</p>
+  </div>
+  <div class="syscomp">
+    <div class="head">Co-branded footer</div>
+    <div class="pages">on 5 / 5 pages</div>
+    <p>Black band, 4 columns (ABOUT · CONTACT · CRN AWARDS · FOLLOW), social icons row, legal strip, and a TheChannelCo + Dell Technologies co-brand row at the bottom.</p>
+  </div>
+
+  <h2 id="iframes">Iframe ecosystem <span class="badge">observed</span></h2>
+  <ul class="iframe-list">
+    <li><strong>cdn.privacy-mgmt.com</strong> — Sourcepoint consent overlay, 1440×900 (full viewport on first visit)</li>
+    <li><strong>youtube.com/embed/videoseries</strong> — REEL HIGHLIGHTS playlist embed, 870×315</li>
+    <li><strong>pages.thechannelco.com/index.php/form/XDFrame</strong> — newsletter signup form, lazy-loaded</li>
+    <li><strong>tcc.demdex.net</strong> — Adobe Audience Manager, 0×0 (offscreen tracking)</li>
+  </ul>
+
+  <h2 id="logo">Logo</h2>
+  <div style="display:flex;align-items:flex-start;gap:2rem;flex-wrap:wrap">
+    <div style="background:#003049;padding:1.25rem;display:inline-block">
+      <img src="assets/media/dell_logo_white_160px-764d5064.png" alt="Dell Technologies sponsor wordmark" style="height:32px;display:block">
+    </div>
+    <dl style="margin:0;font-size:.92rem">
+      <dt style="font-family:var(--display);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)">Source</dt>
+      <dd style="margin:0 0 .65rem">Site uses three logo assets: the white "Enterprise Tech Provider" wordmark PNG, the "Produced by The Channel Company" mark, and the white "Sponsored by Dell Technologies" mark. Captured here: the Dell sponsor mark.</dd>
+      <dt style="font-family:var(--display);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)">File</dt>
+      <dd style="margin:0 0 .65rem">PNG, 160 px wide</dd>
+      <dt style="font-family:var(--display);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)">Variants captured</dt>
+      <dd style="margin:0 0 .65rem">White-on-dark only.</dd>
+      <dt style="font-family:var(--display);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted)">Variants not captured</dt>
+      <dd style="margin:0">SVG, mono / inverted, ETP master wordmark on light surfaces.</dd>
+    </dl>
+  </div>
+
+</main>
+
+<footer class="review" id="footer">
+  <div class="inner">
+    <p>This review reads from <code>stardust/current/PRODUCT.md</code>, <code>stardust/current/DESIGN.md</code>, <code>stardust/current/DESIGN.json</code>, <code>stardust/current/_brand-extraction.json</code>, <code>stardust/current/_crawl-log.json</code>, and the per-page JSON under <code>stardust/current/pages/</code>.</p>
+    <p>Next: <code>$ stardust direct</code> — resolve a redesign direction. Tensions above are the decision agenda <code>direct</code> should resolve before any prototype is rendered.</p>
+    <p style="opacity:.7;font-size:.78rem;margin-top:1rem">Badge legend: <code>observed</code> ≥3 pages, high confidence · <code>cross-page</code> aggregated across all extracted pages · <code>home-only</code> single-page bias · <code>inferred</code> agent judgment · <code>synthesized</code> constructed claim from extracted inputs.</p>
+  </div>
+</footer>
+
+</body>
+</html>

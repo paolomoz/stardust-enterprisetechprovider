@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masthead exploration · Enterprise Tech Provider</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500;1,8..60,600&display=swap">
+<style>
+:root {
+  --ink:#003049; --ink-deep:#001f2f; --ink-haze:#e8eef2;
+  --obsidian:#000000; --vellum:#ffffff;
+  --char:#0a0d12; --graphite:#3d4651; --graphite-mute:#6b7480;
+  --platinum:#f4f5f7; --platinum-edge:#dfe3e8;
+  --navy-deep:#0b1f3a; --brass:#b88830; --brass-soft:#d4a45a; --brass-deep:#8a6420;
+  --cordovan:#5b1116;
+  --display:"Geist",ui-sans-serif,system-ui,sans-serif;
+  --editorial:"Source Serif 4",Charter,Georgia,serif;
+  --ui:"Inter",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--vellum);color:var(--char);font-family:var(--ui);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+
+.expo-toolbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--ink-deep);color:var(--vellum);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+}
+.expo-title{font-weight:600;color:var(--vellum);}
+.expo-meta{color:rgba(255,255,255,.55);}
+.expo-meta a{color:var(--brass-soft);border-bottom:1px solid var(--brass-soft);text-decoration:none;padding-bottom:1px;}
+
+.expo-container{max-width:1280px;margin:0 auto;padding:48px 24px;}
+.expo-intro{font-family:var(--editorial);font-size:18px;line-height:1.6;color:var(--graphite);max-width:65ch;margin:0 0 32px;}
+.expo-intro b{color:var(--char);font-weight:600;}
+
+.variant{margin:0 0 48px;}
+.variant-label{
+  display:flex;align-items:baseline;justify-content:space-between;
+  border-top:2px solid var(--ink);padding:14px 0 10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);
+}
+.variant-id{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);text-transform:none;letter-spacing:0;}
+.variant-name{font-family:var(--display);font-weight:500;font-size:14px;color:var(--char);text-transform:none;letter-spacing:-.005em;}
+.variant-tag{color:var(--brass-deep);}
+.variant-frame{
+  width:100%;
+  border:1px solid var(--platinum-edge);
+  background:var(--vellum);
+  margin-top:12px;
+  overflow:hidden;
+}
+.variant-note{
+  margin-top:12px;
+  font-family:var(--editorial);font-style:italic;
+  font-size:14px;line-height:1.55;color:var(--graphite);
+  max-width:75ch;
+}
+
+/* ============ Variant A — Type-led editorial on --ink ============ */
+.mast-A{
+  background:var(--ink);color:var(--vellum);
+  padding:48px 0;border-top:4px solid var(--brass);
+  position:relative;
+}
+.mast-A .inner{max-width:1184px;margin:0 auto;padding:0 48px;display:flex;align-items:flex-end;justify-content:space-between;gap:48px;flex-wrap:wrap;}
+.mast-A .name{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(36px,5vw,72px);
+  letter-spacing:-.02em;line-height:.95;color:var(--vellum);margin:0;
+}
+.mast-A .tagline{
+  font-family:var(--editorial);font-style:italic;
+  font-size:clamp(16px,1.5vw,20px);line-height:1.4;color:var(--brass-soft);
+  max-width:38ch;margin:0;text-align:right;
+}
+
+/* ============ Variant B — Editorial issue marker ============ */
+.mast-B{
+  background:var(--vellum);color:var(--char);
+  padding:36px 0 28px;
+  border-bottom:1px solid var(--platinum-edge);
+}
+.mast-B .inner{max-width:1184px;margin:0 auto;padding:0 48px;}
+.mast-B .meta-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--graphite-mute);
+  margin-bottom:18px;
+}
+.mast-B .vol{color:var(--brass-deep);font-weight:600;}
+.mast-B .name{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(36px,5vw,64px);
+  letter-spacing:-.022em;line-height:1;color:var(--ink);margin:0 0 10px;
+}
+.mast-B .name em{font-family:var(--editorial);font-style:italic;font-weight:600;color:var(--brass-deep);}
+.mast-B .tagline{
+  font-family:var(--editorial);font-style:italic;
+  font-size:18px;line-height:1.4;color:var(--graphite);max-width:60ch;margin:0;
+}
+.mast-B .rule{
+  margin-top:20px;height:2px;background:var(--ink);
+  position:relative;
+}
+.mast-B .rule::after{
+  content:"";position:absolute;left:0;top:0;height:100%;width:120px;background:var(--brass);
+}
+
+/* ============ Variant C — Geometric grid-pattern (data lines) ============ */
+.mast-C{
+  background:var(--ink);color:var(--vellum);
+  padding:56px 0;border-top:4px solid var(--brass);
+  position:relative;overflow:hidden;isolation:isolate;
+}
+.mast-C::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:48px 48px;
+  background-position:-1px -1px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,1) 0%,rgba(0,0,0,.4) 100%);
+}
+.mast-C::after{
+  content:"";position:absolute;right:-100px;top:-100px;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle, rgba(184,136,48,.18) 0%, transparent 60%);
+  z-index:0;
+}
+.mast-C .inner{position:relative;z-index:1;max-width:1184px;margin:0 auto;padding:0 48px;display:flex;align-items:flex-end;gap:36px;flex-wrap:wrap;justify-content:space-between;}
+.mast-C .lockup{display:flex;flex-direction:column;gap:10px;}
+.mast-C .eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--brass-soft);
+}
+.mast-C .name{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(32px,4.4vw,56px);
+  letter-spacing:-.022em;line-height:1;color:var(--vellum);margin:0;
+}
+.mast-C .tagline{
+  font-family:var(--editorial);font-style:italic;
+  font-size:18px;line-height:1.45;color:rgba(255,255,255,.78);
+  max-width:42ch;margin:0;text-align:right;
+}
+
+/* ============ Variant D — Asymmetric split (brass slab + ink) ============ */
+.mast-D{
+  background:var(--ink);color:var(--vellum);
+  padding:0;
+  position:relative;
+  display:grid;grid-template-columns:200px 1fr;align-items:stretch;
+  min-height:200px;border-top:4px solid var(--brass);
+}
+.mast-D .slab{
+  background:var(--brass);color:var(--ink-deep);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:24px 20px;
+  position:relative;
+}
+.mast-D .slab .mark{
+  font-family:var(--display);font-weight:800;font-size:64px;line-height:.95;letter-spacing:-.04em;
+  color:var(--ink-deep);
+}
+.mast-D .slab .meta{
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);font-weight:600;
+}
+.mast-D .body{
+  display:flex;flex-direction:column;justify-content:center;gap:14px;
+  padding:40px 48px;
+}
+.mast-D .name{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(28px,3.6vw,44px);
+  letter-spacing:-.02em;line-height:1;color:var(--vellum);margin:0;
+}
+.mast-D .tagline{
+  font-family:var(--editorial);font-style:italic;
+  font-size:18px;line-height:1.45;color:rgba(255,255,255,.82);
+  max-width:60ch;margin:0;
+}
+@media (max-width:599px){
+  .mast-D{grid-template-columns:120px 1fr;min-height:140px;}
+  .mast-D .slab .mark{font-size:42px;}
+  .mast-D .body{padding:24px;}
+}
+
+/* ============ Variant E — Compact mono whisper ============ */
+.mast-E{
+  background:var(--ink-deep);color:var(--vellum);
+  padding:18px 0;
+  border-top:2px solid var(--brass);
+  border-bottom:1px solid var(--ink);
+}
+.mast-E .inner{
+  max-width:1184px;margin:0 auto;padding:0 48px;
+  display:flex;align-items:baseline;gap:24px;justify-content:space-between;flex-wrap:wrap;
+}
+.mast-E .name{
+  font-family:var(--display);font-weight:700;
+  font-size:22px;letter-spacing:-.012em;color:var(--vellum);margin:0;
+}
+.mast-E .tagline{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--brass-soft);margin:0;
+}
+.mast-E .tagline::before{content:"§ "; color:rgba(255,255,255,.4);}
+
+/* ============ Variant F — Letterpress / serif-led ============ */
+.mast-F{
+  background:var(--vellum);color:var(--char);
+  padding:56px 0 48px;
+  border-bottom:6px double var(--ink);
+  border-top:1px solid var(--platinum-edge);
+}
+.mast-F .inner{max-width:1184px;margin:0 auto;padding:0 48px;text-align:center;}
+.mast-F .small-cap{
+  font-family:var(--mono);font-size:11px;letter-spacing:.30em;text-transform:uppercase;
+  color:var(--graphite-mute);margin-bottom:14px;
+}
+.mast-F .small-cap span{color:var(--brass-deep);}
+.mast-F .name{
+  font-family:var(--editorial);font-weight:600;
+  font-size:clamp(36px,5vw,64px);
+  letter-spacing:-.02em;line-height:1;color:var(--ink);margin:0 0 8px;
+  font-style:italic;
+}
+.mast-F .name strong{font-style:normal;font-family:var(--display);font-weight:700;color:var(--char);}
+.mast-F .tagline{
+  font-family:var(--editorial);
+  font-size:17px;line-height:1.5;color:var(--graphite);
+  max-width:60ch;margin:6px auto 0;
+}
+.mast-F .rule{
+  margin:18px auto 0;width:64px;height:1px;background:var(--ink);position:relative;
+}
+.mast-F .rule::before, .mast-F .rule::after{
+  content:"";position:absolute;top:50%;width:6px;height:6px;border-radius:50%;background:var(--brass-deep);transform:translateY(-50%);
+}
+.mast-F .rule::before{left:-18px;}
+.mast-F .rule::after{right:-18px;}
+
+/* ============ Variant G — Chip strip (topic ticker beneath name) ============ */
+.mast-G{
+  background:var(--vellum);color:var(--char);
+  padding:36px 0 0;
+  border-bottom:1px solid var(--platinum-edge);
+}
+.mast-G .inner{max-width:1184px;margin:0 auto;padding:0 48px;}
+.mast-G .row{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.mast-G .name{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(28px,3.6vw,44px);
+  letter-spacing:-.022em;line-height:1;color:var(--ink);margin:0;
+}
+.mast-G .tagline{
+  font-family:var(--editorial);font-style:italic;
+  font-size:16px;line-height:1.45;color:var(--graphite);
+  max-width:46ch;margin:0;text-align:right;
+}
+.mast-G .ticker{
+  margin-top:24px;
+  display:flex;gap:0;align-items:stretch;
+  border-top:1px solid var(--platinum-edge);
+  overflow-x:auto;
+}
+.mast-G .ticker a{
+  flex-shrink:0;
+  padding:14px 18px;
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--graphite-mute);text-decoration:none;
+  border-right:1px solid var(--platinum-edge);
+  transition:color 120ms ease, background 120ms ease;
+}
+.mast-G .ticker a:hover{color:var(--ink);background:var(--platinum);}
+.mast-G .ticker a .num{color:var(--brass-deep);margin-right:6px;font-weight:600;}
+
+</style>
+</head>
+<body>
+
+<div class="expo-toolbar">
+  <span class="expo-title">Masthead exploration · 6 alternatives</span>
+  <span class="expo-meta">Without the lifestyle photo &nbsp;·&nbsp; for V06 publication-banner &nbsp;·&nbsp; <a href="home-proposed-v06.html">View V06</a></span>
+</div>
+
+<div class="expo-container">
+  <p class="expo-intro">
+    The captured site uses a lifestyle stock photo (three people at a workstation) to back the masthead. Removing it forces the wordmark and tagline to do the brand-recognition work themselves. <b>Six photo-free treatments below.</b> Each is shown at the actual width and proportions it would deploy on the home page, immediately above the editorial hero. Pick one (or hybridize), and we wire it into V06.
+  </p>
+</div>
+
+<!-- ============ A ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">A</span> &middot; <span class="variant-name">Type-led editorial on --ink</span></span>
+    <span class="variant-tag">closest-to-V06 · 0 photo · brass top accent</span>
+  </div>
+</div>
+<section class="mast-A">
+  <div class="inner">
+    <h1 class="name">Enterprise Tech Provider</h1>
+    <p class="tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+  </div>
+</section>
+<div class="expo-container" style="padding-block:14px 28px;">
+  <p class="variant-note">
+    Pure typography on the brand color. Wordmark and tagline trade strength for restraint. Brass top accent (4&nbsp;px) gives the band a clear stopping line. Reads like Bloomberg Businessweek front-of-section.
+  </p>
+</div>
+
+<!-- ============ B ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">B</span> &middot; <span class="variant-name">Editorial issue marker (publication signal)</span></span>
+    <span class="variant-tag">on white · italic accent · masthead rule</span>
+  </div>
+</div>
+<section class="mast-B">
+  <div class="inner">
+    <div class="meta-row">
+      <span><span class="vol">May 2026 &middot; Vol. 03</span></span>
+      <span>The Dell channel edition &middot; 614 articles</span>
+    </div>
+    <h1 class="name">Enterprise <em>Tech</em> Provider</h1>
+    <p class="tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+    <div class="rule" aria-hidden="true"></div>
+  </div>
+</section>
+<div class="expo-container" style="padding-block:14px 28px;">
+  <p class="variant-note">
+    Adds publication-signaling metadata (date, volume, edition). Italic serif &ldquo;Tech&rdquo; in the wordmark gives a small typographic moment without inventing a new logo. The two-tone rule beneath reads as masthead chrome from a real magazine. Sits on white instead of ink &mdash; differentiates from the editorial hero band that follows.
+  </p>
+</div>
+
+<!-- ============ C ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">C</span> &middot; <span class="variant-name">Geometric grid + brass glow</span></span>
+    <span class="variant-tag">data/network abstraction · no stock photo</span>
+  </div>
+</div>
+<section class="mast-C">
+  <div class="inner">
+    <div class="lockup">
+      <span class="eyebrow">A trade publication for the Dell channel</span>
+      <h1 class="name">Enterprise Tech Provider</h1>
+    </div>
+    <p class="tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+  </div>
+</section>
+<div class="expo-container" style="padding-block:14px 28px;">
+  <p class="variant-note">
+    A subtle grid-line pattern in the background (suggests data, network, infrastructure) plus a soft brass glow in the upper-right corner. Reads as &ldquo;tech publication&rdquo; without resorting to a literal device photo. The grid is CSS-only (linear-gradients), no image asset needed.
+  </p>
+</div>
+
+<!-- ============ D ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">D</span> &middot; <span class="variant-name">Asymmetric split &mdash; brass slab + ink body</span></span>
+    <span class="variant-tag">monogram identity · Pentagram-y</span>
+  </div>
+</div>
+<section class="mast-D">
+  <div class="slab">
+    <span class="mark">ETP</span>
+    <span class="meta">Vol. 03</span>
+  </div>
+  <div class="body">
+    <h1 class="name">Enterprise Tech Provider</h1>
+    <p class="tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+  </div>
+</section>
+<div class="expo-container" style="padding-block:14px 28px;">
+  <p class="variant-note">
+    A bold typographic monogram (ETP) on a brass slab acts as a quasi-logo without inventing a custom mark. The wordmark + tagline live in the dark body. Most distinctive of the six; also the most committed move &mdash; reads as a serious publication identity. Risks looking like a Pentagram annual report (positive or neutral).
+  </p>
+</div>
+
+<!-- ============ E ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">E</span> &middot; <span class="variant-name">Compact mono whisper (60 px tall)</span></span>
+    <span class="variant-tag">most restrained · fastest scroll-past</span>
+  </div>
+</div>
+<section class="mast-E">
+  <div class="inner">
+    <h1 class="name">Enterprise Tech Provider</h1>
+    <p class="tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+  </div>
+</section>
+<div class="expo-container" style="padding-block:14px 28px;">
+  <p class="variant-note">
+    A single thin band (60&nbsp;px). Treats the masthead almost as a sub-header rather than a hero. Frees the editorial hero below to dominate the fold completely. Risks being too quiet for a brand-recognition moment.
+  </p>
+</div>
+
+<!-- ============ F ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">F</span> &middot; <span class="variant-name">Letterpress / serif-led centered</span></span>
+    <span class="variant-tag">classical publication mark · symmetric</span>
+  </div>
+</div>
+<section class="mast-F">
+  <div class="inner">
+    <div class="small-cap"><span>The Channel Company</span> &middot; In partnership with Dell Technologies</div>
+    <h1 class="name">Enterprise <strong>Tech</strong> Provider</h1>
+    <p class="tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+    <div class="rule" aria-hidden="true"></div>
+  </div>
+</section>
+<div class="expo-container" style="padding-block:14px 28px;">
+  <p class="variant-note">
+    Letterpress / classical-publication treatment: serif-italic wordmark with the middle word in display-bold, double-rule below, brass dots flanking a hairline ornament. The most editorial of the six. Reads as a quarterly review or annual journal &mdash; might tip toward &ldquo;literary&rdquo; rather than &ldquo;trade press&rdquo;.
+  </p>
+</div>
+
+<!-- ============ G ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">G</span> &middot; <span class="variant-name">Wordmark + topic ticker</span></span>
+    <span class="variant-tag">doubles as IA · works as nav-extension</span>
+  </div>
+</div>
+<section class="mast-G">
+  <div class="inner">
+    <div class="row">
+      <h1 class="name">Enterprise Tech Provider</h1>
+      <p class="tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+    </div>
+    <div class="ticker" role="navigation" aria-label="Topic shortcuts">
+      <a href="/category/dta"><span class="num">01</span>Dell Tech Adv</a>
+      <a href="/category/ai"><span class="num">02</span>AI</a>
+      <a href="/category/mdi"><span class="num">03</span>Modern Datacenter</a>
+      <a href="/category/storage"><span class="num">04</span>Storage</a>
+      <a href="/category/hybrid-work"><span class="num">05</span>Modern Workplace</a>
+      <a href="/category/intel"><span class="num">06</span>Intel</a>
+      <a href="/category/microsoft"><span class="num">07</span>Microsoft</a>
+    </div>
+  </div>
+</section>
+<div class="expo-container" style="padding-block:14px 28px;">
+  <p class="variant-note">
+    Wordmark + tagline on white, with a horizontal topic-ticker beneath that doubles as quick-access navigation. Removes the need for the &ldquo;Across the channel&rdquo; ink band lower on the page (or the band becomes an editorial-deep view of the same topics). Most functional of the six &mdash; the masthead earns its real estate by carrying IA.
+  </p>
+</div>
+
+<!-- ============ Footer ============ -->
+<div class="expo-container" style="padding:24px 24px 64px;border-top:1px solid var(--platinum-edge);">
+  <p class="variant-note" style="font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);">
+    Tell me which variant (A &ndash; G) you want wired into V06, or pick two to hybridize.
+  </p>
+</div>
+
+</body>
+</html>

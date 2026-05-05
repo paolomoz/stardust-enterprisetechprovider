@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ headless: false });
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+const page = await ctx.newPage();
+await page.goto('file:///Users/paolo/excat/tmp/migrate-enterprisetechprovider/stardust/prototypes/home-proposed-v06.html', { waitUntil: 'networkidle', timeout: 30000 });
+await page.waitForTimeout(8000);
+await page.evaluate(() => document.querySelector('[data-section="reels"]').scrollIntoView({ block: 'start' }));
+await page.waitForTimeout(4000);
+await page.screenshot({ path: 'stardust/prototypes/v06-reels-headed.png', fullPage: false });
+await browser.close();
+console.log('OK');

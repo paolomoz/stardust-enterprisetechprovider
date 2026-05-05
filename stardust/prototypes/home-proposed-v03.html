@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  writtenBy:         stardust:prototype (variant V03 — "lean harder" magazine treatment)
+  writtenAt:         2026-05-05T00:00:00Z
+  page:              home
+  pageUrl:           https://www.enterprisetechprovider.com/
+  proposedFile:      ./home-proposed-v03.html
+  againstDirection:  stardust/direction.md (Active 2026-05-05T00:00:00Z)
+  variantBasis:      magazine-cover-lead — full-viewport ink cover · numbered TOC · departmental groupings · serif headlines · editorial sign-off · brand color (--ink) as dominant surface
+  divergenceVersion: v1.0 (stardust v0.3)
+  fontDeck:          editorial-trade-multi (Geist + Source Serif 4 + Inter + Geist Mono)
+  paletteSource:     user-pinned primaries + enterprise-refined secondaries
+  unsourcedContent:
+    - { selector: ".ds-cover .ds-cover-deck",          type: other, reason: "lead-story cover deck not on captured home" }
+    - { selector: ".ds-toc .ds-ph",                    type: other, reason: "TOC line meta not captured (8 instances)" }
+    - { selector: ".ds-feature .ds-ph",                type: other, reason: "feature-story deck + meta not captured" }
+    - { selector: ".ds-department .ds-ph",             type: other, reason: "department-story meta not captured (6 instances)" }
+    - { selector: ".ds-editor-note .ds-ph",            type: other, reason: "editor's-note newsletter framing not on captured home" }
+  totalPlaceholders: 17
+  stardustVersion:   0.3.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise Tech Provider · May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap">
+<style>
+:root {
+  --ink: #003049;
+  --ink-deep: #001f2f;
+  --ink-haze: #e8eef2;
+  --obsidian: #000000;
+  --vellum: #ffffff;
+  --char: #0a0d12;
+  --graphite: #3d4651;
+  --graphite-mute: #6b7480;
+  --platinum: #f4f5f7;
+  --platinum-edge: #dfe3e8;
+  --navy-deep: #0b1f3a;
+  --brass: #b88830;
+  --brass-soft: #d4a45a;
+  --cordovan: #5b1116;
+
+  --display:   "Geist", ui-sans-serif, system-ui, sans-serif;
+  --editorial: "Source Serif 4", "Iowan Old Style", Charter, Georgia, serif;
+  --ui:        "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:      "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --content-max:   1200px;
+  --reading-max:   720px;
+  --motion-base: 220ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--vellum);
+  color: var(--char);
+  font-family: var(--ui);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+button, input { font: inherit; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+
+/* ===== Quiet placeholder ghost (F) ===== */
+.ds-ph {
+  font-family: var(--editorial);
+  font-style: italic;
+  color: var(--graphite-mute);
+  opacity: 0.7;
+  border-bottom: 1px dotted rgba(184, 136, 48, 0.45);
+  padding: 0 1px;
+}
+.ds-ph::before {
+  content: "›"; margin-right: 4px; color: var(--brass);
+  font-style: normal; font-family: var(--mono); font-size: 0.85em;
+}
+
+.ds-container { width: 100%; max-width: var(--content-max); margin: 0 auto; padding-inline: 24px; }
+@media (min-width: 600px) { .ds-container { padding-inline: 40px; } }
+@media (min-width: 1024px) { .ds-container { padding-inline: 56px; } }
+.ds-reading { width: 100%; max-width: var(--reading-max); margin: 0 auto; padding-inline: 24px; }
+
+/* ===== Utility strip + nav (compact, magazine-style) ===== */
+[data-section="utility-strip"] {
+  background: var(--ink-deep);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 8px 0;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+}
+[data-section="utility-strip"] .ds-container {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+[data-section="utility-strip"] p { margin: 0; }
+@media (max-width: 599px) {
+  [data-section="utility-strip"] p:last-child { display: none; }
+}
+
+[data-section="header"] {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--vellum);
+  border-bottom: 1px solid var(--platinum-edge);
+}
+.ds-header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; height: 60px;
+}
+.ds-sitemark {
+  font-family: var(--display); font-weight: 700; font-size: 1.25rem;
+  color: var(--ink); letter-spacing: -0.02em;
+}
+.ds-issue-tag {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brass);
+  display: none;
+}
+@media (min-width: 768px) {
+  .ds-issue-tag { display: inline-flex; }
+}
+.ds-header-actions { display: flex; align-items: center; gap: 14px; }
+.ds-header-actions a {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--graphite); padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms var(--ease-standard), color 120ms var(--ease-standard);
+}
+.ds-header-actions a:hover { border-bottom-color: var(--brass); color: var(--ink); }
+.ds-header-actions a.ds-h-search { display: inline-flex; align-items: center; gap: 6px; color: var(--graphite-mute); }
+
+/* ===== S1: COVER ===== */
+[data-section="cover"] {
+  background: var(--ink);
+  color: var(--vellum);
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 60px - 28px);
+  display: flex; flex-direction: column;
+  isolation: isolate;
+}
+[data-section="cover"]::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(800px 500px at 80% 20%, rgba(184, 136, 48, 0.16), transparent 60%),
+    radial-gradient(700px 600px at 10% 100%, rgba(11, 31, 58, 0.65), transparent 60%);
+  z-index: 0;
+}
+.ds-cover-top {
+  position: relative; z-index: 1;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0 0;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(255, 255, 255, 0.65);
+}
+.ds-cover-top .ds-cover-mark { color: var(--brass); font-weight: 600; }
+.ds-cover-body {
+  position: relative; z-index: 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 56px;
+  align-items: center;
+  padding-block: 48px 64px;
+}
+.ds-cover-text { display: flex; flex-direction: column; gap: 28px; max-width: 680px; }
+.ds-cover-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.20em;
+  text-transform: uppercase; color: var(--brass-soft);
+}
+.ds-cover h1 {
+  font-family: var(--editorial);
+  font-weight: 600;
+  font-size: clamp(2.8rem, 7.2vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--vellum);
+  margin: 0;
+}
+.ds-cover h1 em {
+  font-family: var(--editorial);
+  font-style: italic;
+  color: var(--brass-soft);
+  font-weight: 600;
+}
+.ds-cover-deck {
+  font-family: var(--editorial);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 56ch;
+  margin: 0;
+}
+.ds-cover-meta {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255, 255, 255, 0.65);
+}
+.ds-cover-meta a {
+  color: var(--brass-soft); border-bottom: 1px solid var(--brass-soft);
+  padding-bottom: 2px;
+  transition: color 120ms var(--ease-standard), border-color 120ms var(--ease-standard);
+}
+.ds-cover-meta a:hover { color: var(--vellum); border-bottom-color: var(--vellum); }
+
+.ds-cover-image {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: var(--ink-deep);
+}
+.ds-cover-image img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; opacity: 0.92;
+}
+.ds-cover-image::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 31, 47, 0.45) 100%);
+}
+.ds-cover-caption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 22px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255, 255, 255, 0.85);
+  z-index: 2;
+}
+
+.ds-cover-rule {
+  position: relative; z-index: 1;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.20em;
+  text-transform: uppercase; color: rgba(255, 255, 255, 0.7);
+}
+.ds-cover-rule .ds-cover-rule-r { display: flex; align-items: center; gap: 10px; color: var(--brass-soft); }
+.ds-cover-rule .ds-cover-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 999px; border: 1px solid rgba(212, 164, 90, 0.5);
+  color: var(--brass-soft);
+  transition: background 200ms var(--ease-standard), border-color 200ms var(--ease-standard);
+}
+.ds-cover-rule .ds-cover-arrow:hover { background: rgba(212, 164, 90, 0.12); border-color: var(--brass-soft); }
+
+@media (max-width: 1023px) {
+  .ds-cover-body { grid-template-columns: 1fr; gap: 32px; padding-block: 32px 40px; }
+  .ds-cover-image { max-width: 480px; aspect-ratio: 4 / 3; }
+}
+
+/* ===== S2: INSIDE THIS ISSUE (TOC) ===== */
+[data-section="toc"] {
+  background: var(--vellum);
+  padding-block: 88px;
+  border-bottom: 1px solid var(--platinum-edge);
+}
+.ds-toc-head {
+  display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px;
+  text-align: center; align-items: center;
+}
+.ds-toc-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.20em;
+  text-transform: uppercase; color: var(--brass);
+}
+.ds-toc-head h2 {
+  font-family: var(--editorial); font-weight: 600;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  letter-spacing: -0.018em; color: var(--char); margin: 0;
+}
+.ds-toc-rule {
+  width: 80px; height: 2px; background: var(--brass); margin: 18px auto 0;
+}
+.ds-toc-list {
+  list-style: none; padding: 0; margin: 0;
+  border-top: 1px solid var(--platinum-edge);
+}
+.ds-toc-item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 28px;
+  align-items: baseline;
+  padding: 26px 0 22px;
+  border-bottom: 1px solid var(--platinum-edge);
+  transition: background 120ms var(--ease-standard);
+}
+.ds-toc-item:hover { background: var(--platinum); }
+.ds-toc-num {
+  font-family: var(--display); font-weight: 700; font-size: 1.5rem;
+  letter-spacing: -0.01em; color: var(--brass);
+  text-align: right; padding-right: 12px;
+  border-right: 1px solid var(--platinum-edge);
+  align-self: stretch; display: flex; align-items: center; justify-content: flex-end;
+}
+.ds-toc-text { display: flex; flex-direction: column; gap: 6px; }
+.ds-toc-section {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--graphite-mute);
+}
+.ds-toc-text h3 {
+  font-family: var(--editorial); font-weight: 600;
+  font-size: 1.375rem; line-height: 1.32;
+  letter-spacing: -0.01em; color: var(--char);
+  margin: 0;
+}
+.ds-toc-text h3 a:hover { color: var(--ink); }
+.ds-toc-meta {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--graphite-mute); white-space: nowrap;
+  align-self: center;
+}
+@media (max-width: 599px) {
+  [data-section="toc"] { padding-block: 56px; }
+  .ds-toc-item { grid-template-columns: 44px 1fr; gap: 16px; }
+  .ds-toc-meta { grid-column: 2; padding-top: 6px; white-space: normal; }
+  .ds-toc-num { font-size: 1.125rem; padding-right: 10px; }
+}
+
+/* ===== S3: FEATURE (the lead, retold at scale) ===== */
+[data-section="feature"] {
+  background: var(--platinum);
+  padding-block: 88px;
+}
+.ds-feature {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 56px;
+  align-items: center;
+}
+.ds-feature-image {
+  aspect-ratio: 3 / 4;
+  background: var(--ink-deep);
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+.ds-feature-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ds-feature-text { display: flex; flex-direction: column; gap: 20px; max-width: 600px; }
+.ds-feature-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.20em;
+  text-transform: uppercase; color: var(--brass);
+}
+.ds-feature h2 {
+  font-family: var(--editorial); font-weight: 600;
+  font-size: clamp(1.875rem, 3.4vw, 2.75rem);
+  line-height: 1.12; letter-spacing: -0.02em;
+  color: var(--char); margin: 0;
+}
+.ds-feature .ds-feature-deck {
+  font-family: var(--editorial); font-style: italic;
+  font-size: 1.25rem; line-height: 1.55;
+  color: var(--graphite); margin: 0;
+}
+.ds-feature .ds-feature-meta {
+  display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--graphite-mute);
+}
+.ds-feature-cta {
+  margin-top: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink);
+  display: inline-flex; align-items: center; gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ink);
+  align-self: flex-start;
+  transition: color 120ms var(--ease-standard), border-color 120ms var(--ease-standard);
+}
+.ds-feature-cta:hover { color: var(--brass); border-bottom-color: var(--brass); }
+
+@media (max-width: 1023px) {
+  [data-section="feature"] { padding-block: 56px; }
+  .ds-feature { grid-template-columns: 1fr; gap: 32px; }
+  .ds-feature-image { max-width: 420px; aspect-ratio: 4 / 3; }
+}
+
+/* ===== S4: DEPARTMENTS ===== */
+[data-section="departments"] {
+  background: var(--vellum);
+  padding-block: 88px;
+}
+.ds-dept-head { text-align: center; margin-bottom: 48px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.ds-dept-head h2 {
+  font-family: var(--editorial); font-weight: 600;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  letter-spacing: -0.018em; color: var(--char); margin: 0;
+}
+.ds-dept-head .ds-dept-rule { width: 60px; height: 2px; background: var(--brass); margin-top: 12px; }
+
+.ds-dept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px 40px;
+}
+.ds-department { display: flex; flex-direction: column; gap: 18px; }
+.ds-dept-label {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.ds-dept-label .ds-dept-num { color: var(--brass); }
+.ds-dept-label--datacenter { color: var(--ink); }
+.ds-dept-label--datacenter { border-bottom-color: var(--ink); }
+.ds-dept-label--workplace { color: var(--cordovan); border-bottom-color: var(--cordovan); }
+.ds-dept-label--ai { color: var(--brass); border-bottom-color: var(--brass); }
+.ds-dept-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; }
+.ds-dept-item {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--platinum-edge);
+}
+.ds-dept-item:last-child { border-bottom: none; padding-bottom: 0; }
+.ds-dept-item h3 {
+  font-family: var(--editorial); font-weight: 600;
+  font-size: 1.0625rem; line-height: 1.35; letter-spacing: -0.005em;
+  color: var(--char); margin: 0 0 6px;
+}
+.ds-dept-item h3 a:hover { color: var(--ink); }
+.ds-dept-item .ds-meta {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--graphite-mute);
+  display: flex; gap: 6px 12px; flex-wrap: wrap;
+}
+
+@media (max-width: 1023px) {
+  [data-section="departments"] { padding-block: 56px; }
+  .ds-dept-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ===== S5: REELS strip ===== */
+[data-section="reels"] {
+  background: var(--ink-deep); color: var(--vellum);
+  padding-block: 56px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.ds-reels-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.ds-reels-head h2 {
+  font-family: var(--editorial); font-weight: 600;
+  font-size: 1.75rem; color: var(--vellum); margin: 0;
+  letter-spacing: -0.018em;
+}
+.ds-reels-head .ds-eyebrow { color: var(--brass-soft); font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
+.ds-reels-head a {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--brass-soft); border-bottom: 1px solid transparent; padding-bottom: 4px;
+  transition: border-color 120ms var(--ease-standard), color 120ms var(--ease-standard);
+}
+.ds-reels-head a:hover { border-bottom-color: var(--brass-soft); color: var(--vellum); }
+
+.ds-reels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.ds-reel {
+  display: flex; flex-direction: column; gap: 10px;
+  background: transparent; border: none; padding: 0; text-align: left;
+  color: var(--vellum);
+}
+.ds-reel-thumb {
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: var(--ink);
+}
+.ds-reel-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 360ms var(--ease-standard); }
+.ds-reel:hover .ds-reel-thumb img { transform: scale(1.04); }
+.ds-reel-play {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 31, 47, 0.30); color: var(--vellum);
+  opacity: 0; transition: opacity 200ms var(--ease-standard);
+}
+.ds-reel:hover .ds-reel-play, .ds-reel:focus-visible .ds-reel-play { opacity: 1; }
+.ds-reel-title {
+  font-family: var(--editorial); font-size: 0.9375rem; font-weight: 500;
+  color: rgba(255, 255, 255, 0.92); line-height: 1.4;
+}
+.ds-reel-title .ds-ph { color: rgba(255, 255, 255, 0.65); border-bottom-color: rgba(212, 164, 90, 0.5); }
+.ds-reel-title .ds-ph::before { color: var(--brass-soft); }
+@media (max-width: 599px) {
+  .ds-reels-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== S6: EDITOR'S NOTE / NEWSLETTER ===== */
+[data-section="engagement"] {
+  background: var(--vellum);
+  padding-block: 96px;
+  border-top: 1px solid var(--platinum-edge);
+}
+.ds-editor-note {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+.ds-editor-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.20em;
+  text-transform: uppercase; color: var(--brass); margin-bottom: 14px;
+  display: inline-block;
+}
+.ds-editor-note h2 {
+  font-family: var(--editorial); font-weight: 600;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  letter-spacing: -0.02em; color: var(--char); margin: 0 0 18px;
+  line-height: 1.18;
+}
+.ds-editor-note p {
+  font-family: var(--editorial); font-size: 1.125rem; line-height: 1.6;
+  color: var(--graphite); margin: 0 0 24px;
+}
+.ds-editor-form {
+  display: flex; gap: 8px; align-items: stretch;
+  border-top: 1px solid var(--platinum-edge);
+  border-bottom: 1px solid var(--platinum-edge);
+  padding: 16px 0;
+}
+.ds-editor-form input {
+  flex: 1; border: none; background: transparent;
+  font-family: var(--editorial); font-size: 1.125rem;
+  color: var(--char); padding: 8px 4px;
+}
+.ds-editor-form input::placeholder { color: var(--graphite-mute); font-style: italic; }
+.ds-editor-form input:focus { outline: none; }
+.ds-editor-form button {
+  background: var(--ink); color: var(--vellum); border: none;
+  padding: 10px 22px; font-family: var(--mono);
+  font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; cursor: pointer;
+  transition: background 200ms var(--ease-standard);
+}
+.ds-editor-form button:hover { background: var(--ink-deep); }
+.ds-editor-sign {
+  margin-top: 18px;
+  font-family: var(--editorial); font-style: italic; font-size: 0.9375rem;
+  color: var(--graphite-mute);
+}
+
+/* ===== Footer ===== */
+[data-section="footer"] {
+  background: var(--obsidian); color: var(--vellum);
+  border-top: 1px solid var(--navy-deep);
+  padding-block: 56px 36px;
+}
+.ds-footer-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 40px;
+}
+.ds-footer-col h4 {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--graphite-mute); margin: 0 0 16px;
+}
+.ds-footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.ds-footer-col a {
+  font-family: var(--ui); font-size: 0.875rem;
+  color: var(--vellum); opacity: 0.85;
+  transition: opacity 120ms var(--ease-standard), color 120ms var(--ease-standard);
+}
+.ds-footer-col a:hover { opacity: 1; color: var(--brass); }
+.ds-social { display: flex; gap: 12px; }
+.ds-social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18); opacity: 0.8;
+  transition: opacity 120ms var(--ease-standard), border-color 120ms var(--ease-standard), background 120ms var(--ease-standard);
+}
+.ds-social a:hover { opacity: 1; border-color: var(--brass); background: rgba(184, 136, 48, 0.10); }
+.ds-social svg { width: 16px; height: 16px; }
+.ds-legal {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--graphite-mute); border-top: 1px solid rgba(255, 255, 255, 0.10);
+  padding-top: 24px; margin-bottom: 24px; display: flex; gap: 18px; flex-wrap: wrap;
+}
+.ds-legal a { color: var(--graphite-mute); transition: color 120ms var(--ease-standard); }
+.ds-legal a:hover { color: var(--vellum); }
+.ds-cobrand {
+  display: flex; gap: 32px; align-items: center; justify-content: center;
+  padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.ds-cobrand-mark {
+  font-family: var(--display); font-size: 0.875rem; font-weight: 500;
+  letter-spacing: 0.02em; color: var(--vellum); opacity: 0.9;
+}
+.ds-cobrand-mark img { height: 28px; width: auto; }
+
+@media (max-width: 1023px) {
+  .ds-footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 599px) {
+  [data-section="footer"] { padding-block: 40px; }
+  .ds-footer-grid { grid-template-columns: 1fr; }
+  .ds-cobrand { flex-direction: column; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .ds-reel:hover .ds-reel-thumb img { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- 0. UTILITY STRIP (compact, on ink) -->
+<header data-section="utility-strip" data-intent="attribute" data-layout="full-width-thin" data-items="2">
+  <div class="ds-container">
+    <p>Produced by The Channel Company &nbsp;·&nbsp; Sponsored by Dell Technologies</p>
+    <p style="opacity:.7">A trade publication for the Dell channel</p>
+  </div>
+</header>
+
+<!-- 1. HEADER (minimal, magazine-style) -->
+<header data-section="header" data-intent="navigate" data-layout="masthead" data-items="3">
+  <div class="ds-container ds-header-inner">
+    <a href="/" class="ds-sitemark" aria-label="Enterprise Tech Provider · Home">Enterprise Tech Provider</a>
+    <span class="ds-issue-tag" aria-hidden="true">May 2026 Edition</span>
+    <div class="ds-header-actions">
+      <a href="/sitemap" aria-label="Browse all topics">Topics</a>
+      <a href="/newsroom" aria-label="The newsroom archive">Archive</a>
+      <a class="ds-h-search" href="/search/node" aria-label="Search">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        Search
+      </a>
+      <a href="#engagement">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- S1: COVER -->
+  <section data-section="cover" data-intent="lead-story" data-layout="full-viewport-cover" data-items="1" class="ds-cover">
+    <div class="ds-container">
+      <div class="ds-cover-top">
+        <span class="ds-cover-mark">ETP &nbsp;·&nbsp; Vol. 3</span>
+        <span>May 2026 &nbsp;·&nbsp; Week of 4 May</span>
+      </div>
+    </div>
+
+    <div class="ds-container">
+      <div class="ds-cover-body">
+        <div class="ds-cover-text">
+          <span class="ds-cover-eyebrow">The Lead &nbsp;·&nbsp; Modern Workplace</span>
+          <h1>How Dell Is Accelerating Partners&rsquo; Success in the Era of <em>AI&nbsp;PC&nbsp;Computing</em></h1>
+          <p class="ds-cover-deck">
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead-story deck not on captured home">
+              two-line opener pending. Set in serif italic; the deck for the lead story.
+            </span>
+          </p>
+          <div class="ds-cover-meta">
+            <span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead date">date pending</span></span>
+            <span aria-hidden="true">·</span>
+            <span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead read-time">read-time pending</span></span>
+            <span aria-hidden="true">·</span>
+            <a href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">Read the lead &rarr;</a>
+          </div>
+        </div>
+
+        <figure class="ds-cover-image">
+          <img src="../current/assets/media/05824-20260325-Dell-ETP-CS-Launch_LinkedIn-Image_309x309-1674195d.jpg"
+               alt="An AI-capable PC workstation: monitor, keyboard, peripherals on a desk">
+          <figcaption class="ds-cover-caption">Photograph &nbsp;·&nbsp; Dell partner workstation</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="ds-container">
+      <div class="ds-cover-rule">
+        <span>Inside this issue &nbsp;·&nbsp; 8 stories</span>
+        <span class="ds-cover-rule-r">
+          Begin reading
+          <a class="ds-cover-arrow" href="#toc" aria-label="Jump to inside this issue">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- S2: INSIDE THIS ISSUE (TOC) -->
+  <section data-section="toc" data-intent="recent-content" data-layout="numbered-list" data-items="8" id="toc">
+    <div class="ds-reading">
+      <div class="ds-toc-head">
+        <span class="ds-toc-eyebrow">Inside this issue</span>
+        <h2>Eight reads from across the channel</h2>
+        <span class="ds-toc-rule" aria-hidden="true"></span>
+      </div>
+
+      <ol class="ds-toc-list">
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">01</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">The Lead &nbsp;·&nbsp; Modern Workplace</span>
+            <h3><a href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">5 min</span></span>
+        </li>
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">02</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">Storage</span>
+            <h3><a href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission">Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">read-time</span></span>
+        </li>
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">03</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">Storage</span>
+            <h3><a href="/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage">PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">read-time</span></span>
+        </li>
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">04</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">Dell Tech Advantage</span>
+            <h3><a href="/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your">5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">read-time</span></span>
+        </li>
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">05</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">Modern Datacenter</span>
+            <h3><a href="/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners">How Dell PowerEdge Single-Socket Servers With AMD EPYC Processors Help Partners Grow</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">read-time</span></span>
+        </li>
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">06</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">Modern Workplace</span>
+            <h3><a href="/modern-workplace/help-customers-build-the-best-workplace-experience-for-productivity-and">Help Customers Build the Best Workplace Experience for Productivity and Collaboration</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">read-time</span></span>
+        </li>
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">07</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">Modern Workplace</span>
+            <h3><a href="/modern-workplace/leverage-dell-s-powerful-client-device-security-to-win-customer-pc-refresh-deals">Leverage Dell&rsquo;s Powerful Client Device Security to Win Customer PC Refresh Deals</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">read-time</span></span>
+        </li>
+        <li class="ds-toc-item">
+          <span class="ds-toc-num">08</span>
+          <div class="ds-toc-text">
+            <span class="ds-toc-section">AI</span>
+            <h3><a href="/artificial-intelligence/how-the-dell-ai-factory-simplifies-the-customer-ai-journey">How the Dell AI Factory Simplifies the Customer AI Journey</a></h3>
+          </div>
+          <span class="ds-toc-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="toc read-time">read-time</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- S3: FEATURE (the lead, retold at scale) -->
+  <section data-section="feature" data-intent="lead-feature" data-layout="image-text-split" data-items="1">
+    <div class="ds-container">
+      <article class="ds-feature">
+        <div class="ds-feature-image">
+          <img src="../current/assets/media/04823-20241205-Dell-ETP-1779586389-309x309-b037c07f.jpg"
+               alt="A workstation in use: AI PC scenario for Dell channel partners">
+        </div>
+        <div class="ds-feature-text">
+          <span class="ds-feature-eyebrow">Story 02 &nbsp;·&nbsp; AI</span>
+          <h2><a href="/artificial-intelligence/you-can-now-accelerate-your-customers-ai-initiatives-quickly-and-easily">You Can Now Accelerate Your Customers&rsquo; AI Initiatives Quickly and Easily</a></h2>
+          <p class="ds-feature-deck">
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="feature deck">
+              Two- or three-line editorial deck pending. Sets the partner-facing premise of the feature in serif italic, at reading scale.
+            </span>
+          </p>
+          <div class="ds-feature-meta">
+            <span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="feature date">date</span></span>
+            <span aria-hidden="true">·</span>
+            <span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="feature read-time">read-time</span></span>
+            <span aria-hidden="true">·</span>
+            <span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="feature author">by author</span></span>
+          </div>
+          <a class="ds-feature-cta" href="/artificial-intelligence/you-can-now-accelerate-your-customers-ai-initiatives-quickly-and-easily">Read the feature &rarr;</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- S4: DEPARTMENTS -->
+  <section data-section="departments" data-intent="taxonomy" data-layout="grouped" data-items="3">
+    <div class="ds-container">
+      <div class="ds-dept-head">
+        <span class="ds-toc-eyebrow">By Department</span>
+        <h2>Across the channel</h2>
+        <span class="ds-dept-rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="ds-dept-grid">
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--datacenter"><span class="ds-dept-num">A</span> Datacenter</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item">
+              <h3><a href="/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage">PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage</a></h3>
+              <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept date">date</span> <span aria-hidden="true">·</span> <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept read-time">read-time</span></div>
+            </li>
+            <li class="ds-dept-item">
+              <h3><a href="/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners">How Dell PowerEdge Single-Socket Servers With AMD EPYC Processors Help Partners Grow</a></h3>
+              <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept date">date</span> <span aria-hidden="true">·</span> <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept read-time">read-time</span></div>
+            </li>
+            <li class="ds-dept-item">
+              <h3><a href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission">Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage</a></h3>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--workplace"><span class="ds-dept-num">B</span> Workplace</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item">
+              <h3><a href="/modern-workplace/help-customers-build-the-best-workplace-experience-for-productivity-and">Help Customers Build the Best Workplace Experience for Productivity and Collaboration</a></h3>
+              <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept date">date</span> <span aria-hidden="true">·</span> <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept read-time">read-time</span></div>
+            </li>
+            <li class="ds-dept-item">
+              <h3><a href="/modern-workplace/leverage-dell-s-powerful-client-device-security-to-win-customer-pc-refresh-deals">Leverage Dell&rsquo;s Powerful Client Device Security to Win Customer PC Refresh Deals</a></h3>
+              <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept date">date</span> <span aria-hidden="true">·</span> <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept read-time">read-time</span></div>
+            </li>
+            <li class="ds-dept-item">
+              <h3><a href="/modern-workplace/end-of-windows-10-support-heralds-massive-opportunity-for-solution-providers">End of Windows 10 Support Heralds Massive Opportunity for Solution Providers</a></h3>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--ai"><span class="ds-dept-num">C</span> AI &amp; Intel</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item">
+              <h3><a href="/artificial-intelligence/how-the-dell-ai-factory-simplifies-the-customer-ai-journey">How the Dell AI Factory Simplifies the Customer AI Journey</a></h3>
+              <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept date">date</span> <span aria-hidden="true">·</span> <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept read-time">read-time</span></div>
+            </li>
+            <li class="ds-dept-item">
+              <h3><a href="/intel/4-ways-an-ai-pc-refresh-saves-your-customers-time-and-money">4 Ways an AI PC Refresh Saves Your Customers Time and Money</a></h3>
+              <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept date">date</span> <span aria-hidden="true">·</span> <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="dept read-time">read-time</span></div>
+            </li>
+            <li class="ds-dept-item">
+              <h3><a href="/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your">5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers</a></h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5: REELS strip -->
+  <section data-section="reels" data-intent="watch" data-layout="strip-3" data-items="3">
+    <div class="ds-container">
+      <div class="ds-reels-head">
+        <div>
+          <span class="ds-eyebrow">In the reel</span>
+          <h2>Watch &amp; learn</h2>
+        </div>
+        <a href="/videos">All reels &rarr;</a>
+      </div>
+      <div class="ds-reels-grid">
+        <a class="ds-reel" href="https://www.youtube.com/playlist?list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGeI" rel="noopener" target="_blank">
+          <span class="ds-reel-thumb">
+            <img src="../current/assets/media/mqdefault-11deef93.jpg" alt="Reel from the ETP playlist" loading="lazy">
+            <span class="ds-reel-play" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/><path d="M13 11l8 5-8 5z" fill="currentColor"/></svg></span>
+          </span>
+          <span class="ds-reel-title"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="reel title">title pending</span></span>
+        </a>
+        <a class="ds-reel" href="https://www.youtube.com/playlist?list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGeI" rel="noopener" target="_blank">
+          <span class="ds-reel-thumb">
+            <img src="../current/assets/media/mqdefault-1e2daf41.jpg" alt="Reel from the ETP playlist" loading="lazy">
+            <span class="ds-reel-play" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/><path d="M13 11l8 5-8 5z" fill="currentColor"/></svg></span>
+          </span>
+          <span class="ds-reel-title"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="reel title">title pending</span></span>
+        </a>
+        <a class="ds-reel" href="https://www.youtube.com/playlist?list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGeI" rel="noopener" target="_blank">
+          <span class="ds-reel-thumb">
+            <img src="../current/assets/media/mqdefault-629c9420.jpg" alt="Reel from the ETP playlist" loading="lazy">
+            <span class="ds-reel-play" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/><path d="M13 11l8 5-8 5z" fill="currentColor"/></svg></span>
+          </span>
+          <span class="ds-reel-title"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="reel title">title pending</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: EDITOR'S NOTE / NEWSLETTER -->
+  <section data-section="engagement" data-intent="convert" data-layout="editor-note" data-items="1" id="engagement">
+    <div class="ds-container">
+      <div class="ds-editor-note">
+        <span class="ds-editor-eyebrow">From the editor</span>
+        <h2>Get next week&rsquo;s issue first.</h2>
+        <p>
+          <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="newsletter framing">
+            two- to three-sentence editorial promise pending. The personal note from the editor that earns the subscribe; the why, in serif at reading scale.
+          </span>
+        </p>
+        <form class="ds-editor-form" action="#" method="post" aria-label="Subscribe to the ETP newsletter">
+          <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="ds-editor-sign">Delivered weekly. One read, never more.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer data-section="footer" data-intent="navigate" data-layout="mega" data-items="4">
+  <div class="ds-container">
+    <div class="ds-footer-grid">
+      <div class="ds-footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="https://www.thechannelco.com/about-the-channel-company/">About The Channel Company</a></li>
+          <li><a href="https://www.crn.com/about-crn">About CRN</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.dell.com/en-us/dt/contactus.htm">Contact Dell Technologies</a></li>
+          <li><a href="https://www.thechannelco.com/contact-us/">Contact The Channel Company</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>CRN Awards</h4>
+        <ul>
+          <li><a href="#engagement">Subscribe</a></li>
+          <li><a href="https://www.crn.com/rankings-and-lists">CRN Lists &amp; Awards</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>Follow</h4>
+        <div class="ds-social">
+          <a href="https://www.instagram.com/thechannelcompany/" aria-label="Instagram" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@TheChannelCompany" aria-label="YouTube" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://x.com/TheChannelCo" aria-label="X" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.7 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21H2.3l7.1-8.1L2 3h6.3l4.4 5.8L17.7 3zm-1.1 16h1.7L7.5 5H5.7l10.9 14z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-channel-company" aria-label="LinkedIn" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M10 9h4v2c.7-1.3 2.2-2.2 4-2.2 3.3 0 5 2 5 5.5V21h-4v-6c0-1.7-.7-2.8-2.3-2.8-1.6 0-2.7 1.1-2.7 2.8v6h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-legal">
+      <a href="https://www.thechannelco.com/privacy-policy/">The Channel Company Privacy Policy</a>
+      <a href="https://www.thechannelco.com/cookie-policy/">The Channel Company Cookie Policy</a>
+      <a href="https://www.thechannelco.com/do-not-sell-my-information/">Do Not Sell or Share My Personal Information</a>
+    </div>
+
+    <div class="ds-cobrand">
+      <span class="ds-cobrand-mark"><img src="../current/assets/media/dell_logo_white_160px-764d5064.png" alt="Dell Technologies" height="28"></span>
+      <span class="ds-cobrand-mark">The Channel Company</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await page.goto('http://localhost:8001/stardust/prototypes/home-proposed-v06.html', { waitUntil: 'networkidle', timeout: 30000 });
+await page.waitForTimeout(8000);
+await page.evaluate(() => document.querySelector('[data-section="reels"]').scrollIntoView({ block: 'start' }));
+await page.waitForTimeout(4000);
+await page.screenshot({ path: 'stardust/prototypes/v06-reels-http.png', fullPage: false });
+console.log('OK');
+await browser.close();

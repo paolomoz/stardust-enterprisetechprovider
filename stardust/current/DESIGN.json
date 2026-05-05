@@ -1,0 +1,88 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-05-04T00:00:00Z",
+    "readArtifacts": ["stardust/current/_brand-extraction.json", "stardust/current/pages/*"],
+    "stardustVersion": "0.3.0"
+  },
+
+  "colors": {
+    "primary":      "#003049",
+    "surface-dark": "#191919",
+    "background":   "#ffffff",
+    "surface":      "#e7e7e7",
+    "text":         "#333333",
+    "text-strong":  "#181818",
+    "text-muted":   "#656565",
+    "link":         "#1d6dab",
+    "accent-red":   "#cc0000"
+  },
+  "typography": {
+    "heading": "Roboto Light, Roboto Condensed (Light + Regular)",
+    "body": "Roboto Regular",
+    "fallbacks": "Arial MT, Arial, sans-serif",
+    "weights": [300, 400, 500, 700],
+    "scale": "ad-hoc",
+    "casing": "heavy-uppercase"
+  },
+  "rounded": "0px",
+  "spacing": { "scale": "ad-hoc", "rhythm": "no-vertical-rhythm" },
+  "components": [
+    "card-grid", "section-label-strip", "hero-band", "co-branded-header",
+    "co-branded-footer", "right-rail", "article-title-band", "newsletter-form",
+    "consent-overlay"
+  ],
+
+  "extensions": {
+    "componentStyle": {
+      "buttons": {
+        "primary": { "kind": "absent", "note": "There is no consistent primary CTA button in the system. The most visible buttons are MENU/SEARCH affordances in the header. The only true 'submit' button is the newsletter form's, white-on-white at 3px radius." },
+        "consent": { "background": "#1f7ddc", "color": "#ffffff", "borderRadius": "0px", "label": "ACCEPT ALL", "source": "Sourcepoint, not the host site" }
+      },
+      "cards": {
+        "kind": "flat-tile",
+        "thumbnail": "309x309 source rendered at 78–195px on screen (4× over-served)",
+        "metadata": "title only — no date, no author, no topic chip, no read-time"
+      },
+      "sectionLabel": {
+        "kind": "full-bleed dark teal strip",
+        "headingStyle": "Roboto Condensed Regular 25px white uppercase",
+        "padding": "asymmetric — visual breathing depends on the strip itself, not spacing"
+      }
+    },
+
+    "motifs": [
+      { "name": "co-branded-band",       "frequency": "every page", "description": "Publisher logo + sponsor logo on dark teal" },
+      { "name": "persistent-hero-band",  "frequency": "every page (incl. utility)", "description": "Site H1 + tagline + stock photo, ~190px tall" },
+      { "name": "section-label-strip",   "frequency": "5–13× on home", "description": "Dark teal full-bleed band with white uppercase H2" },
+      { "name": "square-card-grid",      "frequency": "every listing", "description": "Sharp-corner thumbnail + title, flat" },
+      { "name": "right-rail-ad+newsletter", "frequency": "home + listings + articles", "description": "300×250 ad above 3-field email capture form" },
+      { "name": "pre-footer-dark-band",  "frequency": "every page", "description": "#191919 strip between content and #000000 footer" }
+    ],
+
+    "voice": {
+      "tagline": "Stay ahead of what’s next to drive profitable growth",
+      "heroPromise": "Accelerate from Ideas to Innovation",
+      "register": "B2B trade press, channel-partner second-person",
+      "headlineFormulas": ["How Dell Is X-ing Y", "N Ways Dell Z Helps You …", "Why Dell’s … Matters For Your Customers", "X That Helps You Win/Grow/Protect …"],
+      "ctaLabels": ["Submit", "Subscribe", "Read more", "Learn more", "MENU", "SEARCH"]
+    },
+
+    "typeAudit": {
+      "kind": "ad-hoc",
+      "evidence": "H1 on article pages = 25px while decorative H2 on home page = 41px. Same Roboto Condensed family used at multiple weights (300, 500, 700) without a clear level→weight mapping. No modular ratio (1.125, 1.2, 1.25, 1.333, etc.) holds across observed sizes."
+    },
+
+    "tokenAudit": {
+      "cssCustomPropertiesAtRoot": 1,
+      "designTokens": 0,
+      "note": "Only `--sa-uid` (analytics) is defined. No color/spacing/type tokens — every visual value is inline or hard-coded in legacy Drupal CSS."
+    },
+
+    "brokenSurfaces": [
+      { "path": "/videos", "status": 404, "note": "linked from main nav and home" },
+      { "path": "/newsletter-archive", "status": 404, "note": "linked from main nav" },
+      { "path": "/sitemap", "status": 403, "note": "linked from footer" }
+    ]
+  }
+}

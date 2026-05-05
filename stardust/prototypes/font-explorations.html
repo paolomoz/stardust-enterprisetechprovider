@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Font exploration · Enterprise Tech Provider</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,600&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<style>
+:root {
+  --ink:#003049; --ink-deep:#001f2f; --ink-haze:#e8eef2;
+  --vellum:#ffffff; --char:#0a0d12; --graphite:#3d4651; --graphite-mute:#6b7480;
+  --platinum:#f4f5f7; --platinum-edge:#dfe3e8;
+  --brass-deep:#8a6420; --cordovan:#5b1116;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--vellum);color:var(--char);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+
+.expo-toolbar{position:sticky;top:0;z-index:50;background:var(--ink-deep);color:var(--vellum);display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;}
+.expo-title{font-weight:600;color:var(--vellum);}
+.expo-meta{color:rgba(255,255,255,.55);}
+.expo-meta a{color:#d4a45a;border-bottom:1px solid #d4a45a;text-decoration:none;padding-bottom:1px;}
+
+.expo-container{max-width:1280px;margin:0 auto;padding:48px 24px;}
+.expo-intro{font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.6;color:var(--graphite);max-width:65ch;margin:0 0 32px;}
+.expo-intro b{color:var(--char);font-weight:600;}
+
+.variant-label{display:flex;align-items:baseline;justify-content:space-between;border-top:2px solid var(--ink);padding:14px 0 10px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);}
+.variant-id{font-family:Geist,system-ui,sans-serif;font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);text-transform:none;}
+.variant-name{font-family:Geist,system-ui,sans-serif;font-weight:500;font-size:14px;color:var(--char);text-transform:none;}
+.variant-tag{color:var(--brass-deep);}
+
+.expo-stack{margin-block:24px;border:1px solid var(--platinum-edge);border-radius:4px;background:var(--vellum);}
+.expo-block{padding:48px 56px;border-bottom:1px solid var(--platinum-edge);}
+.expo-block:last-child{border-bottom:none;}
+.expo-block-meta{display:flex;justify-content:space-between;align-items:baseline;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:18px;}
+.expo-block-meta .families{display:flex;gap:14px;flex-wrap:wrap;}
+.expo-block-meta .families span{color:var(--char);}
+
+/* Variant frame — rendered hero card mockup */
+.frame{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:center;padding-top:8px;}
+.frame .img{width:240px;aspect-ratio:1/1;background:var(--ink-haze);border:1px solid var(--platinum-edge);border-radius:4px;}
+.frame .body{display:flex;flex-direction:column;gap:14px;}
+
+/* Common shared pieces */
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-deep);}
+.h1{font-weight:600;font-size:34px;line-height:1.15;letter-spacing:-.018em;color:var(--char);}
+.deck{font-style:italic;font-size:18px;line-height:1.45;color:var(--graphite);max-width:56ch;}
+.meta{display:flex;gap:8px 12px;flex-wrap:wrap;font-size:12px;color:var(--graphite-mute);letter-spacing:.04em;}
+.meta .sep{color:var(--platinum-edge);}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--ink);color:var(--vellum);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;text-decoration:none;width:max-content;}
+.chip{display:inline-flex;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:rgba(91,17,22,.08);color:var(--cordovan);}
+
+/* === Variant A — Current (Geist + Source Serif 4 + Inter + Geist Mono) === */
+.var-A .h1, .var-A .eyebrow, .var-A .cta, .var-A .meta, .var-A .chip{font-family:'Geist',ui-sans-serif,system-ui,sans-serif;}
+.var-A .deck{font-family:'Source Serif 4','Iowan Old Style',Charter,Georgia,serif;}
+.var-A .eyebrow, .var-A .meta, .var-A .chip{font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;}
+
+/* === Variant B — Bricolage + Lora + Inter + Geist Mono === */
+.var-B .h1{font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;font-weight:700;letter-spacing:-.022em;}
+.var-B .deck{font-family:'Lora',Georgia,serif;}
+.var-B .cta{font-family:'Inter',ui-sans-serif,system-ui,sans-serif;}
+.var-B .eyebrow, .var-B .meta, .var-B .chip{font-family:'Geist Mono',ui-monospace,monospace;}
+
+/* === Variant C — Fraunces + Source Serif 4 + Inter + IBM Plex Mono === */
+.var-C .h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-variation-settings:"opsz" 60, "SOFT" 50;letter-spacing:-.022em;}
+.var-C .deck{font-family:'Source Serif 4','Iowan Old Style',Charter,Georgia,serif;}
+.var-C .cta{font-family:'Inter',ui-sans-serif,system-ui,sans-serif;}
+.var-C .eyebrow, .var-C .meta, .var-C .chip{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+
+/* === Variant D — Manrope + Newsreader + Inter + IBM Plex Mono === */
+.var-D .h1{font-family:'Manrope',ui-sans-serif,system-ui,sans-serif;font-weight:700;letter-spacing:-.020em;}
+.var-D .deck{font-family:'Newsreader',Georgia,serif;font-style:italic;}
+.var-D .cta{font-family:'Inter',ui-sans-serif,system-ui,sans-serif;}
+.var-D .eyebrow, .var-D .meta, .var-D .chip{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+
+@media (max-width:899px){.expo-block{padding:32px;}.frame{grid-template-columns:1fr;gap:24px;}.frame .img{width:100%;max-width:309px;}.h1{font-size:28px;}}
+
+</style>
+</head>
+<body>
+
+<div class="expo-toolbar">
+  <span class="expo-title">Font exploration · 4 alternatives</span>
+  <span class="expo-meta">For V06 / V07 hero · <a href="home-proposed-v07.html">View V07</a></span>
+</div>
+
+<div class="expo-container">
+  <p class="expo-intro">
+    The current type system is <b>Geist (display) · Source Serif 4 (editorial) · Inter (UI) · Geist Mono (data)</b>. Three alternative pairings below — each keeps the multi-family pattern and the editorial register, but shifts character. Hero card is rendered with each combo so you can compare set type at the same scale.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">A</span> &middot; <span class="variant-name">Current — Geist + Source Serif 4 + Inter + Geist Mono</span></span>
+    <span class="variant-tag">baseline · ships in V07</span>
+  </div>
+  <div class="expo-stack">
+    <div class="expo-block var-A">
+      <div class="expo-block-meta">
+        <span>Hero card · variant A</span>
+        <span class="families"><span>Display: Geist 600</span><span>Editorial: Source Serif 4 italic</span><span>UI: Inter 600</span><span>Data: Geist Mono</span></span>
+      </div>
+      <div class="frame">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta">
+            <span class="chip">Modern Workplace</span>
+            <span class="sep">·</span>
+            <span>12 May 2026</span>
+            <span class="sep">·</span>
+            <span>5 min read</span>
+            <span class="sep">·</span>
+            <span>by KJ Jacoby</span>
+          </div>
+          <a class="cta" href="#">Read article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">B</span> &middot; <span class="variant-name">Bricolage Grotesque + Lora + Inter + Geist Mono</span></span>
+    <span class="variant-tag">more character · less template-y</span>
+  </div>
+  <div class="expo-stack">
+    <div class="expo-block var-B">
+      <div class="expo-block-meta">
+        <span>Hero card · variant B</span>
+        <span class="families"><span>Display: Bricolage Grotesque 700</span><span>Editorial: Lora italic</span><span>UI: Inter 600</span><span>Data: Geist Mono</span></span>
+      </div>
+      <div class="frame">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta">
+            <span class="chip">Modern Workplace</span>
+            <span class="sep">·</span>
+            <span>12 May 2026</span>
+            <span class="sep">·</span>
+            <span>5 min read</span>
+            <span class="sep">·</span>
+            <span>by KJ Jacoby</span>
+          </div>
+          <a class="cta" href="#">Read article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Bricolage adds a slight optical-size character — corners feel hand-tuned, not perfectly geometric. Lora gives the deck a warmer, less studio-stock italic. Reads as a publication with a designer, not a template.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">C</span> &middot; <span class="variant-name">Fraunces + Source Serif 4 + Inter + IBM Plex Mono</span></span>
+    <span class="variant-tag">serif-led display · most editorial</span>
+  </div>
+  <div class="expo-stack">
+    <div class="expo-block var-C">
+      <div class="expo-block-meta">
+        <span>Hero card · variant C</span>
+        <span class="families"><span>Display: Fraunces 600 (opsz 60)</span><span>Editorial: Source Serif 4 italic</span><span>UI: Inter 600</span><span>Data: IBM Plex Mono</span></span>
+      </div>
+      <div class="frame">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta">
+            <span class="chip">Modern Workplace</span>
+            <span class="sep">·</span>
+            <span>12 May 2026</span>
+            <span class="sep">·</span>
+            <span>5 min read</span>
+            <span class="sep">·</span>
+            <span>by KJ Jacoby</span>
+          </div>
+          <a class="cta" href="#">Read article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Fraunces is a variable serif with strong editorial character. The H1 reads as &ldquo;long-form publication&rdquo; from first paint. IBM Plex Mono replaces Geist Mono &mdash; more enterprise, less startup. Risk: tips toward The Atlantic / NYRB territory; less &ldquo;trade press&rdquo; than current.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">D</span> &middot; <span class="variant-name">Manrope + Newsreader + Inter + IBM Plex Mono</span></span>
+    <span class="variant-tag">soft geometric display · friendly enterprise</span>
+  </div>
+  <div class="expo-stack">
+    <div class="expo-block var-D">
+      <div class="expo-block-meta">
+        <span>Hero card · variant D</span>
+        <span class="families"><span>Display: Manrope 700</span><span>Editorial: Newsreader italic</span><span>UI: Inter 600</span><span>Data: IBM Plex Mono</span></span>
+      </div>
+      <div class="frame">
+        <div class="img"></div>
+        <div class="body">
+          <span class="eyebrow">Recommended &middot; Modern Workplace</span>
+          <h1 class="h1">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="deck">Two-line opener pending. Set in editorial italic, the deck for the lead story.</p>
+          <div class="meta">
+            <span class="chip">Modern Workplace</span>
+            <span class="sep">·</span>
+            <span>12 May 2026</span>
+            <span class="sep">·</span>
+            <span>5 min read</span>
+            <span class="sep">·</span>
+            <span>by KJ Jacoby</span>
+          </div>
+          <a class="cta" href="#">Read article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Manrope is a soft geometric &mdash; friendlier than Geist, less corporate than IBM Plex Sans. Newsreader's italic feels like a magazine review section. Best balance of approachable + grown-up. Closest to &ldquo;Stripe Press meets a friendly trade journal&rdquo;.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-block:24px 64px;border-top:1px solid var(--platinum-edge);">
+  <p style="font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);margin:0;">
+    Tell me which font set (A–D) you want wired into V07, or pick two to compare further.
+  </p>
+</div>
+
+</body>
+</html>

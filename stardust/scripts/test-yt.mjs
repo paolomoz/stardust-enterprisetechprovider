@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ headless: false });
+const page = await browser.newPage();
+const html = `<!doctype html><html><body><iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLwSFLsD6NhIjdM5ncVJxfcOCYsCuOmGeI" frameborder="0" allowfullscreen></iframe></body></html>`;
+import { writeFile } from 'node:fs/promises';
+await writeFile('/tmp/yt-nocookie-test.html', html);
+await page.goto('file:///tmp/yt-nocookie-test.html', { waitUntil: 'networkidle', timeout: 30000 });
+await page.waitForTimeout(8000);
+await page.screenshot({ path: 'stardust/prototypes/yt-nocookie-test.png' });
+await browser.close();
+console.log('OK');

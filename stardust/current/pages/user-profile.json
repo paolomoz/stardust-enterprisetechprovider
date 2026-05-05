@@ -1,0 +1,1170 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-05-04T18:27:52.718Z",
+    "readArtifacts": [
+      "https://www.enterprisetechprovider.com/users/KJ"
+    ],
+    "synthesizedInputs": [],
+    "stardustVersion": "0.3.0",
+    "waitMode": "medium",
+    "waitMs": 8116,
+    "httpStatus": 200,
+    "contentType": "text/html"
+  },
+  "slug": "user-profile",
+  "url": "https://www.enterprisetechprovider.com/users/KJ",
+  "finalUrl": "https://www.enterprisetechprovider.com/users/KJ",
+  "title": "KJ | Enterprise Tech Provider",
+  "metaDescription": "News about APEX, Servers, Data Storage, HC and Commercial PCs. Enterprise Tech Provider Zone Can Help You Accelerate Your Business From Ideas To Innovation",
+  "og": {
+    "title": "KJ",
+    "description": null,
+    "image": "https://www.enterprisetechprovider.com/sites/new_etp/files/pictures/picture-4434-1677276172.png",
+    "type": "profile",
+    "siteName": "Enterprise Tech Provider"
+  },
+  "themeColor": {
+    "light": null,
+    "dark": null
+  },
+  "language": "en",
+  "headings": [
+    {
+      "level": 2,
+      "text": "Enterprise Tech Provider",
+      "id": "site-name",
+      "domPath": "h2#site-name",
+      "style": {
+        "fontFamily": "\"Roboto Light\", \"Arial MT Light\", Arial, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "41px",
+        "lineHeight": "45.1px",
+        "letterSpacing": "normal",
+        "color": "rgb(24, 24, 24)"
+      }
+    },
+    {
+      "level": 2,
+      "text": "Stay ahead of what’s next to drive profitable growth",
+      "id": null,
+      "domPath": "div#main-navs > div.navbar-header > div.row:nth-child(2) > div.col-lg-12 > h2.lead",
+      "style": {
+        "fontFamily": "\"Roboto Condensed Light\", \"Arial MT Narrow Light\", Arial, sans-serif",
+        "fontWeight": 300,
+        "fontSize": "27.5px",
+        "lineHeight": "38.5px",
+        "letterSpacing": "normal",
+        "color": "rgb(101, 101, 101)"
+      }
+    },
+    {
+      "level": 1,
+      "text": "KJ JACOBY",
+      "id": null,
+      "domPath": "div.container > div.main-content > div.row > div.col-md-12.main-col > article.article > header.user-profile-head > div > h1.author-name",
+      "style": {
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "24px",
+        "lineHeight": "26.4px",
+        "letterSpacing": "normal",
+        "color": "rgb(51, 51, 51)"
+      }
+    },
+    {
+      "level": 4,
+      "text": "Why Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission-Critical Storage",
+      "id": null,
+      "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-1:nth-child(1) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4",
+      "style": {
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "18px",
+        "lineHeight": "19.8px",
+        "letterSpacing": "normal",
+        "color": "rgb(51, 51, 51)"
+      }
+    },
+    {
+      "level": 4,
+      "text": "5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers",
+      "id": null,
+      "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-2:nth-child(2) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4",
+      "style": {
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "18px",
+        "lineHeight": "19.8px",
+        "letterSpacing": "normal",
+        "color": "rgb(51, 51, 51)"
+      }
+    },
+    {
+      "level": 4,
+      "text": "How Dell PowerEdge Single‑Socket Servers with AMD EPYC Processors Help Partners Grow",
+      "id": null,
+      "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-3:nth-child(3) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4",
+      "style": {
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "18px",
+        "lineHeight": "19.8px",
+        "letterSpacing": "normal",
+        "color": "rgb(51, 51, 51)"
+      }
+    },
+    {
+      "level": 4,
+      "text": "Revolutionize Your Customers’ AIOps with Dell’s AI Data Platform with NVIDIA and New Lightning File System",
+      "id": null,
+      "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-4:nth-child(4) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4",
+      "style": {
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "18px",
+        "lineHeight": "19.8px",
+        "letterSpacing": "normal",
+        "color": "rgb(51, 51, 51)"
+      }
+    },
+    {
+      "level": 4,
+      "text": "4 Reasons Your Customers Need To Refresh With AI PCs",
+      "id": null,
+      "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-5:nth-child(5) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4",
+      "style": {
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 500,
+        "fontSize": "18px",
+        "lineHeight": "19.8px",
+        "letterSpacing": "normal",
+        "color": "rgb(51, 51, 51)"
+      }
+    }
+  ],
+  "landmarks": [
+    {
+      "tag": "header",
+      "role": null,
+      "id": null,
+      "classes": [
+        "header-cover",
+        "container"
+      ],
+      "innerText": "PRODUCED BY:\nSPONSORED BY:\nEnterprise Tech Provider\n\nMENU\n\n \nSEARCH \nStay ahead of what’s next to drive profitable growth",
+      "children": [
+        {
+          "tag": "div",
+          "role": "banner",
+          "id": null,
+          "classes": [],
+          "purpose": "rich-text",
+          "headlineRef": null,
+          "innerTextSummary": "PRODUCED BY:\nSPONSORED BY:\nEnterprise Tech Provider\n\nMENU\n\n \nSEARCH \nStay ahead of what’s next to drive profitable growth",
+          "wordCount": 18
+        }
+      ]
+    },
+    {
+      "tag": "header",
+      "role": null,
+      "id": null,
+      "classes": [
+        "user-profile-head"
+      ],
+      "innerText": "KJ JACOBY",
+      "children": [
+        {
+          "tag": "div",
+          "role": null,
+          "id": null,
+          "classes": [],
+          "purpose": "unknown",
+          "headlineRef": null,
+          "innerTextSummary": "KJ JACOBY",
+          "wordCount": 2
+        }
+      ]
+    },
+    {
+      "tag": "nav",
+      "role": "navigation",
+      "id": null,
+      "classes": [],
+      "innerText": "",
+      "children": []
+    },
+    {
+      "tag": "nav",
+      "role": "navigation",
+      "id": null,
+      "classes": [],
+      "innerText": "",
+      "children": []
+    },
+    {
+      "tag": "nav",
+      "role": "navigation",
+      "id": null,
+      "classes": [],
+      "innerText": "",
+      "children": []
+    },
+    {
+      "tag": "nav",
+      "role": null,
+      "id": "navigation1",
+      "classes": [
+        "navigation",
+        "navigation-landscape"
+      ],
+      "innerText": "",
+      "children": []
+    },
+    {
+      "tag": "nav",
+      "role": "navigation",
+      "id": null,
+      "classes": [],
+      "innerText": "Home\nDell Technologies Advantage\nArtificial Intelligence\nEdge\nModern Datacenter\nStorage\nMulticloud\nModern Workplace\nSecurity\nSustainability",
+      "children": []
+    },
+    {
+      "tag": "main",
+      "role": null,
+      "id": null,
+      "classes": [
+        "main"
+      ],
+      "innerText": "KJ JACOBY\n \n\nTech writer and author of the popular Tech Explainer series, KJ has penned myriad articles, blogs, newsletters and white papers. KJ’s features have been published by a wide array of SMB and enterprise tech companies. Among them are some of the world’s most influential and prolific, including Dell, Intel, Microsoft, AMD and Supermicro.",
+      "children": [
+        {
+          "tag": "div",
+          "role": null,
+          "id": null,
+          "classes": [
+            "container"
+          ],
+          "purpose": "unknown",
+          "headlineRef": null,
+          "innerTextSummary": "KJ JACOBY\n \n\nTech writer and author of the popular Tech Explainer series, KJ has penned myriad articles, blogs, newsletters and white papers. KJ’s features have been published by a wide array of SMB and enterprise tech companies. Among them",
+          "wordCount": 55
+        }
+      ]
+    },
+    {
+      "tag": "footer",
+      "role": null,
+      "id": null,
+      "classes": [
+        "row",
+        "footer"
+      ],
+      "innerText": "ABOUT\n\nAbout The Channel Company\nAbout CRN\nSitemap\n\nCONTACT\n\nContact Dell Technologies\nContact The Channel Company\n\nCRN AWARDS\n\nSubscribe\nCRN Lists & Awards\n\nFOLLOW\n\n   \nThe Channel Company Privacy Policy | The Channel Company Cookie Policy | Do Not Sell or Share My Personal Information",
+      "children": [
+        {
+          "tag": "div",
+          "role": null,
+          "id": "footer-inner",
+          "classes": [
+            "container"
+          ],
+          "purpose": "rich-text",
+          "headlineRef": null,
+          "innerTextSummary": "ABOUT\n\nAbout The Channel Company\nAbout CRN\nSitemap\n\nCONTACT\n\nContact Dell Technologies\nContact The Channel Company\n\nCRN AWARDS\n\nSubscribe\nCRN Lists & Awards\n\nFOLLOW\n\n   \nThe Channel Company Privacy Policy | The Channel Company Cookie Policy",
+          "wordCount": 44
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "role": "banner",
+      "id": null,
+      "classes": [],
+      "innerText": "PRODUCED BY:\nSPONSORED BY:\nEnterprise Tech Provider\n\nMENU\n\n \nSEARCH \nStay ahead of what’s next to drive profitable growth",
+      "children": [
+        {
+          "tag": "div",
+          "role": null,
+          "id": "top",
+          "classes": [],
+          "purpose": "unknown",
+          "headlineRef": null,
+          "innerTextSummary": "PRODUCED BY:\nSPONSORED BY:",
+          "wordCount": 4
+        }
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "label": "MENU",
+      "href": null,
+      "tag": "button",
+      "domPath": "div#main-navs > div.navbar-header > div.row:nth-child(1) > div.col-lg-2.col-md-2:nth-child(2) > button.navbar-toggle.hide-desktop",
+      "style": {
+        "backgroundColor": "rgb(0, 48, 73)",
+        "color": "rgb(51, 51, 51)",
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 400,
+        "borderRadius": "0px",
+        "padding": "4px 20px",
+        "boxShadow": "none"
+      },
+      "appearsAbove": "fold"
+    },
+    {
+      "label": "SEARCH",
+      "href": null,
+      "tag": "button",
+      "domPath": "div#main-navs > div.navbar-header > div.row:nth-child(1) > div.col-lg-2.col-md-2:nth-child(3) > button.navbar-toggle.search-btn",
+      "style": {
+        "backgroundColor": "rgb(231, 231, 231)",
+        "color": "rgb(235, 0, 0)",
+        "fontFamily": "\"Roboto Condensed Regular\", \"Arial MT Narrow Regular\", Arial, sans-serif",
+        "fontWeight": 200,
+        "borderRadius": "0px",
+        "padding": "4px 20px",
+        "boxShadow": "none"
+      },
+      "appearsAbove": "fold"
+    }
+  ],
+  "links": {
+    "internal": [
+      {
+        "href": "/users/KJ",
+        "text": "Skip to main content",
+        "domPath": "div#skip-link > a.element-invisible.element-focusable"
+      },
+      {
+        "href": "/",
+        "text": "Enterprise Tech Provider",
+        "domPath": "div#main-navs > div.navbar-header > div.row:nth-child(1) > div.col-lg-8.col-md-8:nth-child(1) > a.brand"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "MENU",
+        "domPath": "div#main-navs > div.navbar-header > div.row:nth-child(1) > div.col-lg-2.col-md-2:nth-child(2) > button.navbar-toggle.hide-desktop > a"
+      },
+      {
+        "href": "/search/node",
+        "text": "SEARCH",
+        "domPath": "div#main-navs > div.navbar-header > div.row:nth-child(1) > div.col-lg-2.col-md-2:nth-child(3) > button.navbar-toggle.search-btn > a.search-button-text"
+      },
+      {
+        "href": "/search/node",
+        "text": "",
+        "domPath": "div#main-nav > nav > button.btn.btn-primary > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "Menu",
+        "domPath": "div#main-navs > div.navbar-header > div.row.hide-mobile:nth-child(3) > div.col-sm-6.col-xs-6:nth-child(1) > button.navbar-toggle > a.hide-mobile"
+      },
+      {
+        "href": "/search/node",
+        "text": "Search",
+        "domPath": "div#main-navs > div.navbar-header > div.row.hide-mobile:nth-child(3) > div.col-sm-6.col-xs-6:nth-child(2) > button.navbar-toggle.search-btn > a"
+      },
+      {
+        "href": "/",
+        "text": "HOME",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(1) > a"
+      },
+      {
+        "href": "/category/dta",
+        "text": "DELL TECHNOLOGIES ADVANTAGE",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(2) > a"
+      },
+      {
+        "href": "/category/ai",
+        "text": "ARTIFICIAL INTELLIGENCE",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(3) > a"
+      },
+      {
+        "href": "/category/mdi",
+        "text": "MODERN DATACENTER",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(4) > a"
+      },
+      {
+        "href": "/category/storage",
+        "text": "STORAGE",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(5) > a"
+      },
+      {
+        "href": "/category/hybrid-work",
+        "text": "MODERN WORKPLACE",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(6) > a"
+      },
+      {
+        "href": "/category/intel",
+        "text": "IN PARTNERSHIP WITH INTEL",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(7) > a"
+      },
+      {
+        "href": "/category/microsoft",
+        "text": "IN PARTNERSHIP WITH MICROSOFT",
+        "domPath": "div#mobile-navigation > div.nav-menus-wrapper > ul.nav-menu.align-to-right > li:nth-child(8) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "Close X",
+        "domPath": "div#Services > div.actual-megamenu > div.menubox.col-lg-3:nth-child(1) > a.menu-close"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "HOME",
+        "domPath": "ul#media-submenu > li.mm-submenu.activeSubmenu:nth-child(1) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "DELL TECHNOLOGIES ADVANTAGE",
+        "domPath": "ul#media-submenu > li.mm-submenu:nth-child(2) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "ARTIFICIAL INTELLIGENCE",
+        "domPath": "ul#media-submenu > li.mm-submenu:nth-child(3) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "MODERN DATACENTER",
+        "domPath": "ul#media-submenu > li.mm-submenu:nth-child(4) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "STORAGE",
+        "domPath": "ul#media-submenu > li.mm-submenu:nth-child(5) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "MODERN WORKPLACE",
+        "domPath": "ul#media-submenu > li.mm-submenu:nth-child(6) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "IN PARTNERSHIP WITH INTEL",
+        "domPath": "ul#media-submenu > li.mm-submenu:nth-child(7) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "IN PARTNERSHIP WITH MICROSOFT",
+        "domPath": "ul#media-submenu > li.mm-submenu:nth-child(8) > a"
+      },
+      {
+        "href": "/",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox01 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/dta",
+        "text": "",
+        "domPath": "div#imu-home > a"
+      },
+      {
+        "href": "/category/dta",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox02 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/ai",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox03 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/ai",
+        "text": "",
+        "domPath": "div#media-sidebox03 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(2) > a"
+      },
+      {
+        "href": "/category/mdi",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox05 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/mdi",
+        "text": "",
+        "domPath": "div#media-sidebox05 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(2) > a"
+      },
+      {
+        "href": "/category/storage",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox06 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/storage",
+        "text": "",
+        "domPath": "div#media-sidebox06 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(2) > a"
+      },
+      {
+        "href": "/category/hybrid-work",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox08 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/hybrid-work",
+        "text": "",
+        "domPath": "div#media-sidebox08 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(2) > a"
+      },
+      {
+        "href": "/category/intel",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox09 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/intel",
+        "text": "",
+        "domPath": "div#media-sidebox09 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(2) > a"
+      },
+      {
+        "href": "/category/microsoft",
+        "text": "Learn More",
+        "domPath": "div#media-sidebox10 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(1) > a.btn.sidebox-btn"
+      },
+      {
+        "href": "/category/microsoft",
+        "text": "",
+        "domPath": "div#media-sidebox10 > div.row.sidebox-container > div.col-lg-6.col-md-6:nth-child(2) > a"
+      },
+      {
+        "href": "/",
+        "text": "Home",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.first.leaf:nth-child(1) > a"
+      },
+      {
+        "href": "/category/dta",
+        "text": "Dell Technologies Advantage",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(2) > a"
+      },
+      {
+        "href": "/category/ai",
+        "text": "Artificial Intelligence",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(3) > a"
+      },
+      {
+        "href": "/category/edge",
+        "text": "Edge",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(4) > a"
+      },
+      {
+        "href": "/category/mdi",
+        "text": "Modern Datacenter",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(5) > a"
+      },
+      {
+        "href": "/category/storage",
+        "text": "Storage",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(6) > a"
+      },
+      {
+        "href": "/category/multicloud",
+        "text": "Multicloud",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(7) > a"
+      },
+      {
+        "href": "/category/hybrid-work",
+        "text": "Modern Workplace",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(8) > a"
+      },
+      {
+        "href": "/category/security",
+        "text": "Security",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.leaf:nth-child(9) > a"
+      },
+      {
+        "href": "/category/esg",
+        "text": "Sustainability",
+        "domPath": "div#modal-nav > div.modal-dialog > div.modal-content > div.modal-header > nav > ul.menu.nav > li.last.leaf:nth-child(10) > a"
+      },
+      {
+        "href": "/users/KJ",
+        "text": "",
+        "domPath": "div.main-content > div.row > div.col-md-12.main-col > article.article > div.profile-wrap > div.profile > div.user-picture:nth-child(1) > a.active"
+      },
+      {
+        "href": "/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission",
+        "text": "",
+        "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-1:nth-child(1) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a"
+      },
+      {
+        "href": "/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission",
+        "text": "Why Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission-Critical Storage",
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-1:nth-child(1) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4 > a"
+      },
+      {
+        "href": "/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your",
+        "text": "",
+        "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-2:nth-child(2) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a"
+      },
+      {
+        "href": "/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your",
+        "text": "5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers",
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-2:nth-child(2) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4 > a"
+      },
+      {
+        "href": "/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners",
+        "text": "",
+        "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-3:nth-child(3) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a"
+      },
+      {
+        "href": "/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners",
+        "text": "How Dell PowerEdge Single‑Socket Servers with AMD EPYC Processors Help Partners Grow",
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-3:nth-child(3) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4 > a"
+      },
+      {
+        "href": "/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new",
+        "text": "",
+        "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-4:nth-child(4) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a"
+      },
+      {
+        "href": "/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new",
+        "text": "Revolutionize Your Customers’ AIOps with Dell’s AI Data Platform with NVIDIA and New Lightning File System",
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-4:nth-child(4) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4 > a"
+      },
+      {
+        "href": "/intel/4-reasons-your-customers-need-to-refresh-with-ai-pcs",
+        "text": "",
+        "domPath": "div.view.view-author-s-content > div.view-content.clearfix > div.views-row.views-row-5:nth-child(5) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a"
+      },
+      {
+        "href": "/intel/4-reasons-your-customers-need-to-refresh-with-ai-pcs",
+        "text": "4 Reasons Your Customers Need To Refresh With AI PCs",
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-5:nth-child(5) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-8.col-md-8:nth-child(3) > h4 > a"
+      },
+      {
+        "href": "/sitemap",
+        "text": "Sitemap",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(1) > a.footer-link:nth-child(4)"
+      }
+    ],
+    "external": [
+      {
+        "href": "https://www.thechannelco.com/company",
+        "text": "About The Channel Company",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(1) > a.footer-link:nth-child(2)"
+      },
+      {
+        "href": "https://www.crn.com/about",
+        "text": "About CRN",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(1) > a.footer-link:nth-child(3)"
+      },
+      {
+        "href": "https://www.dell.com/en-us/lp/contact-us",
+        "text": "Contact Dell Technologies",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(2) > a.footer-link:nth-child(2)"
+      },
+      {
+        "href": "https://www.thechannelco.com/company/contact",
+        "text": "Contact The Channel Company",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(2) > a.footer-link:nth-child(3)"
+      },
+      {
+        "href": "https://pages.thechannelco.com/CRN-Lists-and-Awards.html?source=TCCwebsite",
+        "text": "Subscribe",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(3) > a.footer-link:nth-child(2)"
+      },
+      {
+        "href": "https://www.crn.com/rankings-and-lists",
+        "text": "CRN Lists & Awards",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(3) > a.footer-link:nth-child(3)"
+      },
+      {
+        "href": "https://www.instagram.com/dell/",
+        "text": "",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(1)"
+      },
+      {
+        "href": "https://www.youtube.com/channel/UC01FW5V9UVohbPtqKSmXX-w",
+        "text": "",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(2)"
+      },
+      {
+        "href": "https://twitter.com/delltech?lang=en",
+        "text": "",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(3)"
+      },
+      {
+        "href": "https://www.linkedin.com/company/delltechnologies",
+        "text": "",
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(4)"
+      },
+      {
+        "href": "https://pages.thechannelco.com/standard-policies-INTL-Privacy.html",
+        "text": "The Channel Company Privacy Policy",
+        "domPath": "section#block-block-48 > div.block-content > div.row.colored:nth-child(2) > div.col-lg-12.col-md-12 > div.centered > a:nth-child(2)"
+      },
+      {
+        "href": "https://pages.thechannelco.com/standard-policies-Global-cookies",
+        "text": "The Channel Company Cookie Policy",
+        "domPath": "section#block-block-48 > div.block-content > div.row.colored:nth-child(2) > div.col-lg-12.col-md-12 > div.centered > a:nth-child(3)"
+      },
+      {
+        "href": "https://www.thechannelco.com/privacy-choices",
+        "text": "Do Not Sell or Share My Personal Information",
+        "domPath": "section#block-block-48 > div.block-content > div.row.colored:nth-child(2) > div.col-lg-12.col-md-12 > div.centered > a:nth-child(4)"
+      },
+      {
+        "href": "https://www.thechannelco.com/",
+        "text": "",
+        "domPath": "section#block-block-48 > div.block-content > div.row.colored:nth-child(3) > div.col-lg-6.col-md-6:nth-child(1) > a"
+      },
+      {
+        "href": "https://www.delltechnologies.com/",
+        "text": "",
+        "domPath": "section#block-block-48 > div.block-content > div.row.colored:nth-child(3) > div.col-lg-6.col-md-6:nth-child(2) > a"
+      }
+    ]
+  },
+  "media": {
+    "images": [
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/thechannelco_logo_white_300w.png",
+        "srcset": "",
+        "alt": "Produced by The Channel Company",
+        "naturalWidth": 300,
+        "naturalHeight": 62,
+        "domPath": "section#block-block-40 > div.block-content > div.row.top-bar > div.col-lg-6.col-md-6:nth-child(1) > span:nth-child(2) > img.header-tcc-logo",
+        "rect": {
+          "x": 256,
+          "y": 0,
+          "width": 130,
+          "height": 43
+        },
+        "localPath": "stardust/current/assets/media/thechannelco_logo_white_300w-7807b093.png"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/dell_logo_302.jpg",
+        "srcset": "",
+        "alt": "Sponsored by Dell Technologies",
+        "naturalWidth": 302,
+        "naturalHeight": 40,
+        "domPath": "section#block-block-40 > div.block-content > div.row.top-bar > div.col-lg-6.col-md-6:nth-child(2) > span.sponsored:nth-child(1) > img.header-dell-logo",
+        "rect": {
+          "x": 988,
+          "y": 12,
+          "width": 302,
+          "height": 50
+        },
+        "localPath": "stardust/current/assets/media/dell_logo_302-2263a316.jpg"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/styles/thumbnail/public/pictures/picture-4434-1677276172.png?itok=Hx7VmieO",
+        "srcset": "",
+        "alt": "KJ's picture",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "div.row > div.col-md-12.main-col > article.article > div.profile-wrap > div.profile > div.user-picture:nth-child(1) > a.active > img.img-responsive",
+        "rect": {
+          "x": 215,
+          "y": 412,
+          "width": 100,
+          "height": 100
+        },
+        "localPath": "stardust/current/assets/media/picture-4434-1677276172-d181ea33.png"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/styles/thumbnail/public/05284-20260210-Dell-ETP-2215785854-309x309.jpg?itok=kPClEpb5",
+        "srcset": "",
+        "alt": "hy Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission-Critical Storage",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-1:nth-child(1) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a > img.img-responsive",
+        "rect": {
+          "x": 345,
+          "y": 589,
+          "width": 100,
+          "height": 100
+        },
+        "localPath": "stardust/current/assets/media/05284-20260210-Dell-ETP-2215785854-309x309-e4fe4725.jpg"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/styles/thumbnail/public/05182-20251114-Dell-ETP-2192467778-309x309.jpg?itok=jfCeIhKc",
+        "srcset": "",
+        "alt": "5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-2:nth-child(2) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a > img.img-responsive",
+        "rect": {
+          "x": 345,
+          "y": 751,
+          "width": 100,
+          "height": 100
+        },
+        "localPath": "stardust/current/assets/media/05182-20251114-Dell-ETP-2192467778-309x309-bead1d5c.jpg"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/styles/thumbnail/public/05284-20260210-Dell-ETP-1818616410-309x309.jpg?itok=9rBAVo6U",
+        "srcset": "",
+        "alt": "How Dell PowerEdge Single‑Socket Servers with AMD EPYC Processors Help Partners Grow",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-3:nth-child(3) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a > img.img-responsive",
+        "rect": {
+          "x": 345,
+          "y": 913,
+          "width": 100,
+          "height": 100
+        },
+        "localPath": "stardust/current/assets/media/05284-20260210-Dell-ETP-1818616410-309x309-716a883c.jpg"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/styles/thumbnail/public/05284-20260210-Dell-ETP-2188106600-309x309.jpg?itok=Orja_KqF",
+        "srcset": "",
+        "alt": "Revolutionize Your Customers’ AIOps with Dell’s AI Data Platform with NVIDIA and New Lightning File System",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-4:nth-child(4) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a > img.img-responsive",
+        "rect": {
+          "x": 345,
+          "y": 1075,
+          "width": 100,
+          "height": 100
+        },
+        "localPath": "stardust/current/assets/media/05284-20260210-Dell-ETP-2188106600-309x309-20107eac.jpg"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/styles/thumbnail/public/05284-20260210-Dell-ETP-1464209118-309x309.jpg?itok=uqbWd9Rt",
+        "srcset": "",
+        "alt": "4 Reasons Your Customers Need To Refresh With AI PCs",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "div.view-content.clearfix > div.views-row.views-row-5:nth-child(5) > div.views-field.views-field-nothing > span.field-content > div.row:nth-child(2) > div.col-lg-2.col-md-2:nth-child(2) > a > img.img-responsive",
+        "rect": {
+          "x": 345,
+          "y": 1237,
+          "width": 100,
+          "height": 100
+        },
+        "localPath": "stardust/current/assets/media/05284-20260210-Dell-ETP-1464209118-309x309-c5ff450c.jpg"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/instagram-white.png",
+        "srcset": "",
+        "alt": "Instagram",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(1) > img.social-media-icons",
+        "rect": {
+          "x": 1015,
+          "y": 1523,
+          "width": 25,
+          "height": 25
+        },
+        "localPath": "stardust/current/assets/media/instagram-white-03fe83e6.png"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/youtube-white.png",
+        "srcset": "",
+        "alt": "YouTube",
+        "naturalWidth": 142,
+        "naturalHeight": 100,
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(2) > img.social-media-icons",
+        "rect": {
+          "x": 1047,
+          "y": 1525,
+          "width": 25,
+          "height": 20
+        },
+        "localPath": "stardust/current/assets/media/youtube-white-50065cd5.png"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/xTwitter-white.png",
+        "srcset": "",
+        "alt": "Twitter",
+        "naturalWidth": 120,
+        "naturalHeight": 100,
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(3) > img.social-media-icons",
+        "rect": {
+          "x": 1079,
+          "y": 1522,
+          "width": 30,
+          "height": 26
+        },
+        "localPath": "stardust/current/assets/media/xTwitter-white-4a453d9e.png"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/linkedin-white.png",
+        "srcset": "",
+        "alt": "LinkedIn",
+        "naturalWidth": 100,
+        "naturalHeight": 100,
+        "domPath": "section#block-block-48 > div.block-content > div.row.footer:nth-child(1) > div.col-lg-3.col-md-3:nth-child(4) > div.footer-icons-block > a.footer-image-link:nth-child(4) > img.social-media-icons",
+        "rect": {
+          "x": 1116,
+          "y": 1523,
+          "width": 25,
+          "height": 25
+        },
+        "localPath": "stardust/current/assets/media/linkedin-white-99b281a1.png"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/thechannelco_logo_white_300w.png",
+        "srcset": "",
+        "alt": "The Channel Company",
+        "naturalWidth": 300,
+        "naturalHeight": 62,
+        "domPath": "section#block-block-48 > div.block-content > div.row.colored:nth-child(3) > div.col-lg-6.col-md-6:nth-child(1) > a > img.tcc-footer-logo",
+        "rect": {
+          "x": 170,
+          "y": 1697,
+          "width": 180,
+          "height": 37
+        },
+        "localPath": "stardust/current/assets/media/thechannelco_logo_white_300w-7807b093.png"
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/dell_logo_white_160px.png",
+        "srcset": "",
+        "alt": "Dell Technologies",
+        "naturalWidth": 160,
+        "naturalHeight": 20,
+        "domPath": "section#block-block-48 > div.block-content > div.row.colored:nth-child(3) > div.col-lg-6.col-md-6:nth-child(2) > a > img.dell-footer-logo",
+        "rect": {
+          "x": 1110,
+          "y": 1677,
+          "width": 160,
+          "height": 50
+        },
+        "localPath": "stardust/current/assets/media/dell_logo_white_160px-764d5064.png"
+      }
+    ],
+    "inlineSvgs": [],
+    "cssBackgrounds": [
+      {
+        "url": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/etp-header-people-standing-short.jpg",
+        "domPath": "body#body > header.header-cover.container",
+        "boundingClientRect": {
+          "x": 135,
+          "y": 0,
+          "width": 1170,
+          "height": 350
+        },
+        "backgroundSize": "cover",
+        "backgroundPosition": "0% 0%",
+        "backgroundRepeat": "no-repeat",
+        "localPath": "stardust/current/assets/media/etp-header-people-standing-short-e1489655.jpg"
+      }
+    ],
+    "videos": [],
+    "iframes": [
+      {
+        "src": "",
+        "title": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      {
+        "src": "",
+        "title": "",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      {
+        "src": "https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1173123&consentUUID=f51062cb-d2fc-4991-9148-52d0b6045ff7&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&concatenatedUUID=f51062cb-d2fc-4991-9148-52d0b6045ff7~~~&version=v1",
+        "title": "SP Consent Message",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        }
+      }
+    ]
+  },
+  "forms": [],
+  "widgets": {
+    "modals": [
+      {
+        "trigger": null,
+        "domPath": "div#sp_message_container_1173123"
+      }
+    ],
+    "accordions": [],
+    "tabs": []
+  },
+  "components": {
+    "cards": {
+      "count": 0,
+      "examples": []
+    },
+    "grids": {
+      "count": 28,
+      "examples": [
+        "section#block-block-40 > div.block-content > div.row.top-bar",
+        "section#block-block-78 > div.block-content > div.row.top-bar"
+      ]
+    },
+    "accordions": {
+      "count": 0,
+      "examples": []
+    },
+    "tabs": {
+      "count": 0,
+      "examples": []
+    },
+    "tables": {
+      "count": 0,
+      "examples": []
+    },
+    "modals": {
+      "count": 1,
+      "examples": [
+        "div#sp_message_container_1173123"
+      ]
+    },
+    "carousels": {
+      "count": 0,
+      "examples": []
+    },
+    "videos": {
+      "count": 0,
+      "examples": []
+    },
+    "iframes": {
+      "count": 3,
+      "examples": [
+        "body#body > iframe:nth-child(8)",
+        "body#body > iframe:nth-child(9)"
+      ]
+    },
+    "dataVizEmbeds": {
+      "count": 0,
+      "examples": []
+    },
+    "teamTiles": {
+      "count": 0,
+      "examples": []
+    },
+    "pricingTiles": {
+      "count": 0,
+      "examples": []
+    },
+    "testimonialCards": {
+      "count": 0,
+      "examples": []
+    },
+    "logoStrip": {
+      "count": 0,
+      "examples": []
+    },
+    "timeline": {
+      "count": 0,
+      "examples": []
+    },
+    "breadcrumbs": {
+      "count": 0,
+      "examples": []
+    },
+    "statRow": {
+      "count": 0,
+      "examples": []
+    },
+    "ctaBand": {
+      "count": 0,
+      "examples": []
+    },
+    "formFields": {
+      "count": 0,
+      "examples": []
+    },
+    "other": []
+  },
+  "perSectionStyle": [
+    {
+      "sectionRef": "div#content-inner > div.region.region-content > main.main > div.container",
+      "purpose": "unknown",
+      "background": {
+        "color": "rgb(255, 255, 255)",
+        "hasImage": false,
+        "hasGradient": false
+      },
+      "text": {
+        "dominantColor": "rgb(51, 51, 51)"
+      },
+      "spacing": {
+        "paddingBlock": "0px / 0px",
+        "paddingInline": "15px / 15px",
+        "gap": "normal"
+      },
+      "borderRadius": "0px",
+      "fontFamilies": [
+        "Roboto Condensed Regular"
+      ],
+      "shadowsUsed": []
+    }
+  ],
+  "embedDominance": {
+    "dominated": true,
+    "iframeSrc": "https://cdn.privacy-mgmt.com/index.html?hasCsp=true&message_id=1173123&consentUUID=f51062cb-d2fc-4991-9148-52d0b6045ff7&consent_origin=https%3A%2F%2Fcdn.privacy-mgmt.com%2Fconsent%2Ftcfv2&preload_message=true&concatenatedUUID=f51062cb-d2fc-4991-9148-52d0b6045ff7~~~&version=v1",
+    "viewportCoveragePct": 100,
+    "mainHeightCoveragePct": 458
+  },
+  "cssCustomProperties": [
+    {
+      "name": "--sa-uid",
+      "value": "'0-9a8e4e22-edf2-561f-6e6a-b856ae59195e'"
+    }
+  ],
+  "navLinks": [
+    "Enterprise Tech Provider",
+    "MENU",
+    "SEARCH",
+    "Menu",
+    "Search",
+    "HOME",
+    "DELL TECHNOLOGIES ADVANTAGE",
+    "ARTIFICIAL INTELLIGENCE",
+    "MODERN DATACENTER",
+    "STORAGE",
+    "MODERN WORKPLACE",
+    "IN PARTNERSHIP WITH INTEL",
+    "IN PARTNERSHIP WITH MICROSOFT",
+    "Close X",
+    "HOME",
+    "DELL TECHNOLOGIES ADVANTAGE",
+    "ARTIFICIAL INTELLIGENCE",
+    "MODERN DATACENTER",
+    "STORAGE",
+    "MODERN WORKPLACE",
+    "IN PARTNERSHIP WITH INTEL",
+    "IN PARTNERSHIP WITH MICROSOFT",
+    "Learn More",
+    "Learn More",
+    "Learn More",
+    "Learn More",
+    "Learn More",
+    "Learn More",
+    "Learn More",
+    "Learn More"
+  ],
+  "footerLinks": [
+    "About The Channel Company",
+    "About CRN",
+    "Sitemap",
+    "Contact Dell Technologies",
+    "Contact The Channel Company",
+    "Subscribe",
+    "CRN Lists & Awards",
+    "The Channel Company Privacy Policy",
+    "The Channel Company Cookie Policy",
+    "Do Not Sell or Share My Personal Information"
+  ],
+  "screenshot": "stardust/current/assets/screenshots/user-profile.png",
+  "stats": {
+    "wordCount": 278,
+    "ctaCount": 2,
+    "internalLinkCount": 61,
+    "externalLinkCount": 15,
+    "imageCount": 14
+  }
+}

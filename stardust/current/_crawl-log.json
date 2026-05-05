@@ -1,0 +1,138 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-05-04T00:00:00Z",
+    "stardustVersion": "0.3.0"
+  },
+  "discovery": {
+    "originUrl": "https://www.enterprisetechprovider.com/",
+    "method": "sitemap.xml + home-page link extraction",
+    "sitemapUrl": "https://www.enterprisetechprovider.com/sitemap.xml",
+    "totalDiscovered": 614,
+    "filteredAsJunk": [
+      "/testjoe (test page leaked into production sitemap)"
+    ],
+    "userChoice": "default cap=5",
+    "waitMode": "medium",
+    "ia_observations": {
+      "section_indexes_present": [
+        "/",
+        "/storage",
+        "/server",
+        "/commercial-pcs",
+        "/newsroom"
+      ],
+      "section_indexes_404": [
+        "/artificial-intelligence",
+        "/edge",
+        "/security",
+        "/sustainability",
+        "/apex-multicloud",
+        "/modern-workplace",
+        "/modern-datacenter"
+      ],
+      "category_pages_present": [
+        "/category/storage",
+        "/category/ai",
+        "/category/dta",
+        "/category/edge",
+        "/category/hybrid-work",
+        "/category/intel",
+        "/category/mdi",
+        "/category/microsoft",
+        "/category/multicloud"
+      ],
+      "broken_nav_links": [
+        "/videos (404)",
+        "/newsletter-archive (404)",
+        "/sitemap (403)"
+      ],
+      "by_section_count": {
+        "newsroom": 147,
+        "storage": 97,
+        "commercial-pcs": 55,
+        "server": 48,
+        "modern-workplace": 37,
+        "modern-datacenter": 36,
+        "artificial-intelligence": 36,
+        "apex-multicloud": 34,
+        "multicloud": 28,
+        "security": 24,
+        "sustainability": 17,
+        "dell-technologies-advantage": 17,
+        "edge": 14,
+        "intel": 9,
+        "cloud": 9,
+        "microsoft": 2,
+        "hybrid-work": 1
+      }
+    }
+  },
+  "selection": [
+    {
+      "slug": "home",
+      "url": "https://www.enterprisetechprovider.com/",
+      "rationale": "home/landing template"
+    },
+    {
+      "slug": "category-storage",
+      "url": "https://www.enterprisetechprovider.com/category/storage",
+      "rationale": "primary listing template (largest category at 97 articles)"
+    },
+    {
+      "slug": "storage-article",
+      "url": "https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage",
+      "rationale": "current article template"
+    },
+    {
+      "slug": "newsroom-article",
+      "url": "https://www.enterprisetechprovider.com/newsroom/dell-technologies-world-2021-get-ready-to-be-inspired",
+      "rationale": "alt-section article — confirms template parity"
+    },
+    {
+      "slug": "user-profile",
+      "url": "https://www.enterprisetechprovider.com/users/KJ",
+      "rationale": "author-profile / utility template"
+    }
+  ],
+  "crawl": {
+    "successes": [
+      {
+        "slug": "home",
+        "url": "https://www.enterprisetechprovider.com/",
+        "finalUrl": "https://www.enterprisetechprovider.com/",
+        "status": 200,
+        "waitMs": 14252
+      },
+      {
+        "slug": "category-storage",
+        "url": "https://www.enterprisetechprovider.com/category/storage",
+        "finalUrl": "https://www.enterprisetechprovider.com/category/storage",
+        "status": 200,
+        "waitMs": 9699
+      },
+      {
+        "slug": "storage-article",
+        "url": "https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage",
+        "finalUrl": "https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage",
+        "status": 200,
+        "waitMs": 10223
+      },
+      {
+        "slug": "newsroom-article",
+        "url": "https://www.enterprisetechprovider.com/newsroom/dell-technologies-world-2021-get-ready-to-be-inspired",
+        "finalUrl": "https://www.enterprisetechprovider.com/newsroom/dell-technologies-world-2021-get-ready-to-be-inspired",
+        "status": 200,
+        "waitMs": 8091
+      },
+      {
+        "slug": "user-profile",
+        "url": "https://www.enterprisetechprovider.com/users/KJ",
+        "finalUrl": "https://www.enterprisetechprovider.com/users/KJ",
+        "status": 200,
+        "waitMs": 8118
+      }
+    ],
+    "failures": []
+  }
+}

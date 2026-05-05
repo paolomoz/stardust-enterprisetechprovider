@@ -1,0 +1,1071 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:custom (extract-ia.mjs v3 — Drupal-view-aware)",
+    "writtenAt": "2026-05-05T07:11:53.640Z",
+    "sourceUrl": "https://www.enterprisetechprovider.com/",
+    "purpose": "Section-by-section IA snapshot of the current home page; consumed downstream by V04-applied-to-exact-IA prototype",
+    "stardustVersion": "0.3.0",
+    "notes": [
+      "Each section corresponds to a Drupal .view block on the home page.",
+      "Every view-id has a custom item template; the extractor switches on view-id to pull the right item shape (featured-story, card, numbered-list-item, carousel-slide, text-link).",
+      "Tag chips on each item come from /category/* and /technologies/* links inside the row."
+    ]
+  },
+  "identity": {
+    "title": "Enterprise Tech Provider | Accelerate from Ideas to Innovation",
+    "canonical": "https://www.enterprisetechprovider.com/",
+    "metaDescription": "News about APEX, Servers, Data Storage, HC and Commercial PCs. Enterprise Tech Provider Zone Can Help You Accelerate Your Business From Ideas To Innovation",
+    "og": {
+      "title": "Enterprise Tech Provider",
+      "description": "Accelerate from Ideas to Innovation",
+      "type": "website",
+      "siteName": "Enterprise Tech Provider"
+    },
+    "publisher": "The Channel Company",
+    "sponsor": "Dell Technologies"
+  },
+  "chrome": {
+    "cobrand": [
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/thechannelco_logo_white_300w.png",
+        "alt": "Produced by The Channel Company",
+        "naturalWidth": 300,
+        "naturalHeight": 62
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/dell_logo_302.jpg",
+        "alt": "Sponsored by Dell Technologies",
+        "naturalWidth": 302,
+        "naturalHeight": 40
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05109-Dell-Global-FY26-Q3-ETP_Aug-Oct-25-300x250_v1a.gif",
+        "alt": "Dell Technologies Advantage",
+        "naturalWidth": 300,
+        "naturalHeight": 250
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/dell_logo_white_160px.png",
+        "alt": "Dell Technologies",
+        "naturalWidth": 160,
+        "naturalHeight": 20
+      }
+    ],
+    "persistentHero": {
+      "siteName": null,
+      "tagline": null,
+      "photoSrc": null,
+      "photoAlt": null,
+      "region": "top"
+    },
+    "primaryNav": [
+      {
+        "label": "DELL TECHNOLOGIES ADVANTAGE",
+        "href": "/category/dta"
+      },
+      {
+        "label": "ARTIFICIAL INTELLIGENCE",
+        "href": "/category/ai"
+      },
+      {
+        "label": "MODERN DATACENTER",
+        "href": "/category/mdi"
+      },
+      {
+        "label": "STORAGE",
+        "href": "/category/storage"
+      },
+      {
+        "label": "MODERN WORKPLACE",
+        "href": "/category/hybrid-work"
+      },
+      {
+        "label": "IN PARTNERSHIP WITH INTEL",
+        "href": "/category/intel"
+      },
+      {
+        "label": "IN PARTNERSHIP WITH MICROSOFT",
+        "href": "/category/microsoft"
+      },
+      {
+        "label": "Close X",
+        "href": "/"
+      },
+      {
+        "label": "DELL TECHNOLOGIES ADVANTAGE",
+        "href": "/"
+      },
+      {
+        "label": "ARTIFICIAL INTELLIGENCE",
+        "href": "/"
+      },
+      {
+        "label": "MODERN DATACENTER",
+        "href": "/"
+      },
+      {
+        "label": "STORAGE",
+        "href": "/"
+      },
+      {
+        "label": "MODERN WORKPLACE",
+        "href": "/"
+      },
+      {
+        "label": "IN PARTNERSHIP WITH INTEL",
+        "href": "/"
+      },
+      {
+        "label": "IN PARTNERSHIP WITH MICROSOFT",
+        "href": "/"
+      },
+      {
+        "label": "Learn More",
+        "href": "/"
+      },
+      {
+        "label": "Learn More",
+        "href": "/category/dta"
+      },
+      {
+        "label": "Learn More",
+        "href": "/category/ai"
+      },
+      {
+        "label": "Learn More",
+        "href": "/category/mdi"
+      },
+      {
+        "label": "Learn More",
+        "href": "/category/storage"
+      },
+      {
+        "label": "Learn More",
+        "href": "/category/hybrid-work"
+      },
+      {
+        "label": "Learn More",
+        "href": "/category/intel"
+      },
+      {
+        "label": "Learn More",
+        "href": "/category/microsoft"
+      }
+    ],
+    "search": {
+      "visible": false,
+      "actionUrl": "/search/node",
+      "placeholder": null
+    }
+  },
+  "sections": [
+    {
+      "idx": 0,
+      "viewId": "categories",
+      "viewDisplay": "block_4",
+      "label": "RECOMMENDED",
+      "labelSlug": "recommended",
+      "region": "left75",
+      "itemCount": 1,
+      "items": [
+        {
+          "kind": "featured-story",
+          "title": "How Dell Is Accelerating Partners’ Success In The Era Of AI PC Computing",
+          "href": "/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05824-20260325-Dell-ETP-CS-Launch_LinkedIn-Image_309x309.jpg",
+            "alt": "How Dell Is Accelerating Partners’ Success In The Era Of AI PC Computing",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": [
+            {
+              "label": "Modern Workplace",
+              "href": "/category/hybrid-work"
+            },
+            {
+              "label": "AI",
+              "href": "/technologies/ai"
+            },
+            {
+              "label": "Intel",
+              "href": "/technologies/intel"
+            },
+            {
+              "label": "Microsoft",
+              "href": "/technologies/microsoft"
+            },
+            {
+              "label": "Precision",
+              "href": "/technologies/precision"
+            },
+            {
+              "label": "UltraSharp",
+              "href": "/technologies/ultrasharp"
+            },
+            {
+              "label": "PCaaS",
+              "href": "/technologies/pcaas"
+            },
+            {
+              "label": "Hybrid Work",
+              "href": "/technologies/hybrid%20work"
+            }
+          ]
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 1,
+      "viewId": "essential_reading",
+      "viewDisplay": "block",
+      "label": "ESSENTIAL READING",
+      "labelSlug": "essential-reading",
+      "region": "left75",
+      "itemCount": 1,
+      "items": [
+        {
+          "kind": "card",
+          "title": "You Can Now Accelerate Your Customers’ AI Initiatives Quickly And Easily",
+          "href": "/modern-datacenter/you-can-now-accelerate-your-customers-ai-initiatives-quickly-and-easily",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1779586389-309x309.jpg",
+            "alt": "You Can Now Accelerate Your Customers’ AI Initiatives Quickly And Easily",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": [
+            {
+              "label": "Modern Datacenter",
+              "href": "/category/mdi"
+            },
+            {
+              "label": "AI",
+              "href": "/technologies/ai"
+            },
+            {
+              "label": "PowerEdge",
+              "href": "/technologies/poweredge"
+            }
+          ]
+        }
+      ],
+      "footerLink": null,
+      "merged": {
+        "description": "Visual grouping of all Essential Reading items (block + block_1 + block_2 sub-views) into one section.",
+        "items": [
+          {
+            "kind": "card",
+            "title": "You Can Now Accelerate Your Customers’ AI Initiatives Quickly And Easily",
+            "href": "/modern-datacenter/you-can-now-accelerate-your-customers-ai-initiatives-quickly-and-easily",
+            "image": {
+              "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1779586389-309x309.jpg",
+              "alt": "You Can Now Accelerate Your Customers’ AI Initiatives Quickly And Easily",
+              "naturalWidth": 309,
+              "naturalHeight": 309
+            },
+            "tags": [
+              {
+                "label": "Modern Datacenter",
+                "href": "/category/mdi"
+              },
+              {
+                "label": "AI",
+                "href": "/technologies/ai"
+              },
+              {
+                "label": "PowerEdge",
+                "href": "/technologies/poweredge"
+              }
+            ]
+          },
+          {
+            "kind": "card",
+            "title": "Help Customers Build The Best Workplace Experience For Productivity And Collaboration",
+            "href": "/modern-workplace/help-customers-build-the-best-workplace-experience-for-productivity-and",
+            "image": {
+              "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-2162026367-309x309_0.jpg",
+              "alt": "Help Customers Build The Best Workplace Experience For Productivity And Collaboration",
+              "naturalWidth": 309,
+              "naturalHeight": 309
+            },
+            "tags": [
+              {
+                "label": "Modern Workplace",
+                "href": "/category/hybrid-work"
+              },
+              {
+                "label": "AI",
+                "href": "/technologies/ai"
+              },
+              {
+                "label": "UltraSharp",
+                "href": "/technologies/ultrasharp"
+              },
+              {
+                "label": "ComfortView Plus",
+                "href": "/technologies/comfortview%20plus"
+              }
+            ]
+          },
+          {
+            "kind": "card",
+            "title": "End of Windows 10 Support Heralds Massive Opportunity For Solution Providers",
+            "href": "/modern-workplace/end-of-windows-10-support-heralds-massive-opportunity-for-solution-providers",
+            "image": {
+              "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05109-20251024-Dell-windows-refresh-blog-309x309%202.jpg",
+              "alt": "End of Windows 10 Support Heralds Massive Opportunity For Solution Providers",
+              "naturalWidth": 309,
+              "naturalHeight": 309
+            },
+            "tags": [
+              {
+                "label": "Modern Workplace",
+                "href": "/category/hybrid-work"
+              },
+              {
+                "label": "AI",
+                "href": "/technologies/ai"
+              },
+              {
+                "label": "Precision",
+                "href": "/technologies/precision"
+              },
+              {
+                "label": "PCaaS",
+                "href": "/technologies/pcaas"
+              },
+              {
+                "label": "Hybrid Work",
+                "href": "/technologies/hybrid%20work"
+              },
+              {
+                "label": "OptiPlex",
+                "href": "/technologies/optiplex"
+              },
+              {
+                "label": "Latitude",
+                "href": "/technologies/latitude"
+              }
+            ]
+          },
+          {
+            "kind": "card",
+            "title": "Leverage Dell’s Powerful Client Device Security To Win Customer PC Refresh Deals",
+            "href": "/modern-workplace/leverage-dell-s-powerful-client-device-security-to-win-customer-pc-refresh-deals",
+            "image": {
+              "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1185673314-309x309.jpg",
+              "alt": "Leverage Dell’s Powerful Client Device Security To Win Customer PC Refresh Deals",
+              "naturalWidth": 309,
+              "naturalHeight": 309
+            },
+            "tags": [
+              {
+                "label": "Modern Workplace",
+                "href": "/category/hybrid-work"
+              },
+              {
+                "label": "AI",
+                "href": "/technologies/ai"
+              },
+              {
+                "label": "Precision",
+                "href": "/technologies/precision"
+              },
+              {
+                "label": "PCaaS",
+                "href": "/technologies/pcaas"
+              },
+              {
+                "label": "Security",
+                "href": "/technologies/security"
+              },
+              {
+                "label": "OptiPlex",
+                "href": "/technologies/optiplex"
+              },
+              {
+                "label": "Latitude",
+                "href": "/technologies/latitude"
+              }
+            ]
+          },
+          {
+            "kind": "card",
+            "title": "PowerStore’s Latest Release Proves the Future of IT Is Smarter Storage",
+            "href": "/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage",
+            "image": {
+              "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1402896104-309x309.jpg",
+              "alt": "PowerStore’s Latest Release Proves the Future of IT Is Smarter Storage",
+              "naturalWidth": 309,
+              "naturalHeight": 309
+            },
+            "tags": [
+              {
+                "label": "Storage",
+                "href": "/category/storage"
+              },
+              {
+                "label": "AI",
+                "href": "/technologies/ai"
+              },
+              {
+                "label": "PowerStore",
+                "href": "/technologies/powerstore"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "idx": 2,
+      "viewId": "essential_reading",
+      "viewDisplay": "block_1",
+      "label": "Essential Reading (sub: lower-left)",
+      "labelSlug": "essential-reading-sub-lower-left-",
+      "region": "left75",
+      "itemCount": 2,
+      "items": [
+        {
+          "kind": "card",
+          "title": "Help Customers Build The Best Workplace Experience For Productivity And Collaboration",
+          "href": "/modern-workplace/help-customers-build-the-best-workplace-experience-for-productivity-and",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-2162026367-309x309_0.jpg",
+            "alt": "Help Customers Build The Best Workplace Experience For Productivity And Collaboration",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": [
+            {
+              "label": "Modern Workplace",
+              "href": "/category/hybrid-work"
+            },
+            {
+              "label": "AI",
+              "href": "/technologies/ai"
+            },
+            {
+              "label": "UltraSharp",
+              "href": "/technologies/ultrasharp"
+            },
+            {
+              "label": "ComfortView Plus",
+              "href": "/technologies/comfortview%20plus"
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "title": "End of Windows 10 Support Heralds Massive Opportunity For Solution Providers",
+          "href": "/modern-workplace/end-of-windows-10-support-heralds-massive-opportunity-for-solution-providers",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05109-20251024-Dell-windows-refresh-blog-309x309%202.jpg",
+            "alt": "End of Windows 10 Support Heralds Massive Opportunity For Solution Providers",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": [
+            {
+              "label": "Modern Workplace",
+              "href": "/category/hybrid-work"
+            },
+            {
+              "label": "AI",
+              "href": "/technologies/ai"
+            },
+            {
+              "label": "Precision",
+              "href": "/technologies/precision"
+            },
+            {
+              "label": "PCaaS",
+              "href": "/technologies/pcaas"
+            },
+            {
+              "label": "Hybrid Work",
+              "href": "/technologies/hybrid%20work"
+            },
+            {
+              "label": "OptiPlex",
+              "href": "/technologies/optiplex"
+            },
+            {
+              "label": "Latitude",
+              "href": "/technologies/latitude"
+            }
+          ]
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 3,
+      "viewId": "essential_reading",
+      "viewDisplay": "block_2",
+      "label": "Essential Reading (sub: lower-right)",
+      "labelSlug": "essential-reading-sub-lower-right-",
+      "region": "left75",
+      "itemCount": 2,
+      "items": [
+        {
+          "kind": "card",
+          "title": "Leverage Dell’s Powerful Client Device Security To Win Customer PC Refresh Deals",
+          "href": "/modern-workplace/leverage-dell-s-powerful-client-device-security-to-win-customer-pc-refresh-deals",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1185673314-309x309.jpg",
+            "alt": "Leverage Dell’s Powerful Client Device Security To Win Customer PC Refresh Deals",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": [
+            {
+              "label": "Modern Workplace",
+              "href": "/category/hybrid-work"
+            },
+            {
+              "label": "AI",
+              "href": "/technologies/ai"
+            },
+            {
+              "label": "Precision",
+              "href": "/technologies/precision"
+            },
+            {
+              "label": "PCaaS",
+              "href": "/technologies/pcaas"
+            },
+            {
+              "label": "Security",
+              "href": "/technologies/security"
+            },
+            {
+              "label": "OptiPlex",
+              "href": "/technologies/optiplex"
+            },
+            {
+              "label": "Latitude",
+              "href": "/technologies/latitude"
+            }
+          ]
+        },
+        {
+          "kind": "card",
+          "title": "PowerStore’s Latest Release Proves the Future of IT Is Smarter Storage",
+          "href": "/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04823-20241205-Dell-ETP-1402896104-309x309.jpg",
+            "alt": "PowerStore’s Latest Release Proves the Future of IT Is Smarter Storage",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": [
+            {
+              "label": "Storage",
+              "href": "/category/storage"
+            },
+            {
+              "label": "AI",
+              "href": "/technologies/ai"
+            },
+            {
+              "label": "PowerStore",
+              "href": "/technologies/powerstore"
+            }
+          ]
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 4,
+      "viewId": "categories",
+      "viewDisplay": "block_2",
+      "label": "LATEST",
+      "labelSlug": "latest",
+      "region": "left75",
+      "itemCount": 3,
+      "items": [
+        {
+          "kind": "card",
+          "title": "Why Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission-Critical Storage",
+          "href": "/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05284-20260210-Dell-ETP-2215785854-309x309.jpg",
+            "alt": "hy Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission-Critical Storage",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": []
+        },
+        {
+          "kind": "card",
+          "title": "5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers",
+          "href": "/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05182-20251114-Dell-ETP-2192467778-309x309.jpg",
+            "alt": "5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": []
+        },
+        {
+          "kind": "card",
+          "title": "How Dell PowerEdge Single‑Socket Servers with AMD EPYC Processors Help Partners Grow",
+          "href": "/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05284-20260210-Dell-ETP-1818616410-309x309.jpg",
+            "alt": "How Dell PowerEdge Single‑Socket Servers with AMD EPYC Processors Help Partners Grow",
+            "naturalWidth": 309,
+            "naturalHeight": 309
+          },
+          "tags": []
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 5,
+      "viewId": "video_slideshow",
+      "viewDisplay": "block",
+      "label": "INNOVATION & IMPACT",
+      "labelSlug": "innovation-impact",
+      "region": "right25",
+      "itemCount": 6,
+      "items": [
+        {
+          "kind": "carousel-slide",
+          "title": "vprofleet.intel.com",
+          "href": "https://vprofleet.intel.com/",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05279%20Dell%20Global%20FY27%20Q1%20ETP%20Intel%20Package_v1a.jpg",
+            "alt": "",
+            "naturalWidth": 300,
+            "naturalHeight": 250
+          },
+          "external": true
+        },
+        {
+          "kind": "carousel-slide",
+          "title": "dt.crndigitalnewsroom.com",
+          "href": "https://dt.crndigitalnewsroom.com/",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05192%20Dell%20NA%20FY26%20Q4%20ISG%20Newshub%20%28AMD%29_Nov%2725-Jan%2726_Banners_300x250.jpg",
+            "alt": "",
+            "naturalWidth": 300,
+            "naturalHeight": 250
+          },
+          "external": true
+        },
+        {
+          "kind": "carousel-slide",
+          "title": "dell.com",
+          "href": "https://www.dell.com/en-us/delltechnologiesworld/lp/2026-overview?dgc=co&cid=partner&lid=DTW26-crn-feb",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05284-20260212-DTW26-Partner-Portal-CRN-ETP-Page-Banner-Carousel-237x198.jpg",
+            "alt": "",
+            "naturalWidth": 237,
+            "naturalHeight": 198
+          },
+          "external": true
+        },
+        {
+          "kind": "carousel-slide",
+          "title": "crn.com",
+          "href": "https://www.crn.com/sponsored/assets/2026/05182-dell-02-2026-why-dell-ai-pcs-and-windows-11-are-a-strategic-advantage-whitepaper.pdf",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/04653-20251218-Dell-ETP-why-dell-ai-pcs-strategic-advantage-whitepaper-cover.jpg",
+            "alt": "",
+            "naturalWidth": 237,
+            "naturalHeight": 198
+          },
+          "external": true
+        },
+        {
+          "kind": "carousel-slide",
+          "title": "intel.com",
+          "href": "https://www.intel.com/content/www/us/en/architecture-and-technology/vpro/overview.html",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05183%20Dell%20Global%20FY26%20Q4%20ETP%20Vendor%20Package%20%28Intel%29_Carousel%20Tile_v2a.jpg",
+            "alt": "",
+            "naturalWidth": 300,
+            "naturalHeight": 250
+          },
+          "external": true
+        },
+        {
+          "kind": "carousel-slide",
+          "title": "delltechnologies.com",
+          "href": "https://www.delltechnologies.com/partner/en-us/auth/news-events-and-communication/vxrail-transition.htm",
+          "image": {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05182-20251117-Dell-ETP-Carousel-929772310-300x250.jpg",
+            "alt": "",
+            "naturalWidth": 300,
+            "naturalHeight": 250
+          },
+          "external": true
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 6,
+      "viewId": "categories",
+      "viewDisplay": "block_5",
+      "label": "POPULAR",
+      "labelSlug": "popular",
+      "region": "right25",
+      "itemCount": 5,
+      "items": [
+        {
+          "kind": "numbered-list-item",
+          "rank": 1,
+          "title": "How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage",
+          "href": "/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage"
+        },
+        {
+          "kind": "numbered-list-item",
+          "rank": 2,
+          "title": "Revolutionize Your Customers’ AIOps with Dell’s AI Data Platform with NVIDIA and New Lightning File System",
+          "href": "/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new"
+        },
+        {
+          "kind": "numbered-list-item",
+          "rank": 3,
+          "title": "Unlock AI Success in 2026: How the Dell AI Factory Transforms Your Business",
+          "href": "/artificial-intelligence/unlock-ai-success-in-2026-how-the-dell-ai-factory-transforms-your-business"
+        },
+        {
+          "kind": "numbered-list-item",
+          "rank": 4,
+          "title": "Dell’s 2026 Playbook: How the Dell Technologies Advantage Helps Partners Capture a $6 Trillion Market",
+          "href": "/dell-technologies-advantage/dell-s-2026-playbook-how-the-dell-technologies-advantage-helps-partners"
+        },
+        {
+          "kind": "numbered-list-item",
+          "rank": 5,
+          "title": "4 Ways An AI PC Refresh Saves Your Customers Time and Money",
+          "href": "/intel/4-ways-an-ai-pc-refresh-saves-your-customers-time-and-money"
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 7,
+      "viewId": "outcomes",
+      "viewDisplay": "block_1",
+      "label": "ARTIFICIAL INTELLIGENCE",
+      "labelSlug": "artificial-intelligence",
+      "region": "left33",
+      "itemCount": 3,
+      "items": [
+        {
+          "kind": "text-link",
+          "title": "The Dell Technologies Advantage for AI 2026: How To Capture Your Share Of The $248 Billion AI Market",
+          "href": "/artificial-intelligence/the-dell-technologies-advantage-for-ai-2026-how-to-capture-your-share-of-the"
+        },
+        {
+          "kind": "text-link",
+          "title": "Unlock AI Success in 2026: How the Dell AI Factory Transforms Your Business",
+          "href": "/artificial-intelligence/unlock-ai-success-in-2026-how-the-dell-ai-factory-transforms-your-business"
+        },
+        {
+          "kind": "text-link",
+          "title": "How the Dell AI Factory Simplifies the Customer AI Journey",
+          "href": "/artificial-intelligence/how-the-dell-ai-factory-simplifies-the-customer-ai-journey"
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 8,
+      "viewId": "outcomes",
+      "viewDisplay": "block_8",
+      "label": "VIDEOS",
+      "labelSlug": "videos",
+      "region": "left33",
+      "itemCount": 3,
+      "items": [
+        {
+          "kind": "text-link",
+          "title": "IDC Research Shows Value Of Workstations Vs PCs",
+          "href": "/modern-workplace/idc-research-shows-value-of-workstations-vs-pcs"
+        },
+        {
+          "kind": "text-link",
+          "title": "The Superpower Of ISV Certified Workstations",
+          "href": "/modern-workplace/the-superpower-of-isv-certified-workstations"
+        },
+        {
+          "kind": "text-link",
+          "title": "IDC Research: Workstations Provide Better Support For Today’s AI Workloads",
+          "href": "/modern-workplace/idc-research-workstations-provide-better-support-for-today-s-ai-workloads"
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 9,
+      "viewId": "outcomes",
+      "viewDisplay": "block_5",
+      "label": "MODERN DATA CENTER",
+      "labelSlug": "modern-data-center",
+      "region": "middle33",
+      "itemCount": 3,
+      "items": [
+        {
+          "kind": "text-link",
+          "title": "How Dell PowerEdge Single‑Socket Servers with AMD EPYC Processors Help Partners Grow",
+          "href": "/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners"
+        },
+        {
+          "kind": "text-link",
+          "title": "5 Reasons Your Customer’s Tech Refresh Is A Huge Opportunity For You",
+          "href": "/modern-datacenter/5-reasons-your-customer-s-tech-refresh-is-a-huge-opportunity-for-you"
+        },
+        {
+          "kind": "text-link",
+          "title": "How Dell NativeEdge Empowers Your Customers to Simplify, Optimize, and Protect Their IT Ops",
+          "href": "/modern-datacenter/how-dell-nativeedge-empowers-your-customers-to-simplify-optimize-and-protect-their"
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 10,
+      "viewId": "outcomes",
+      "viewDisplay": "block_9",
+      "label": "STORAGE",
+      "labelSlug": "storage",
+      "region": "middle33",
+      "itemCount": 3,
+      "items": [
+        {
+          "kind": "text-link",
+          "title": "Why Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission-Critical Storage",
+          "href": "/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission"
+        },
+        {
+          "kind": "text-link",
+          "title": "Revolutionize Your Customers’ AIOps with Dell’s AI Data Platform with NVIDIA and New Lightning File System",
+          "href": "/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new"
+        },
+        {
+          "kind": "text-link",
+          "title": "How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage",
+          "href": "/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage"
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 11,
+      "viewId": "outcomes",
+      "viewDisplay": "block_11",
+      "label": "DELL TECH ADVANTAGE",
+      "labelSlug": "dell-tech-advantage",
+      "region": "right33",
+      "itemCount": 3,
+      "items": [
+        {
+          "kind": "text-link",
+          "title": "5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers",
+          "href": "/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your"
+        },
+        {
+          "kind": "text-link",
+          "title": "The Dell Technologies Advantage 2026: How To Capture Your Share Of A $866 Billion Market",
+          "href": "/dell-technologies-advantage/the-dell-technologies-advantage-2026-how-to-capture-your-share-of-a-866"
+        },
+        {
+          "kind": "text-link",
+          "title": "The Dell Technologies Advantage 2026: How To Capture Your Share Of A $487 Billion Market*",
+          "href": "/dell-technologies-advantage/the-dell-technologies-advantage-2026-how-to-capture-your-share-of-a-487"
+        }
+      ],
+      "footerLink": null
+    },
+    {
+      "idx": 12,
+      "viewId": "outcomes",
+      "viewDisplay": "block_4",
+      "label": "MODERN WORK",
+      "labelSlug": "modern-work",
+      "region": "right33",
+      "itemCount": 3,
+      "items": [
+        {
+          "kind": "text-link",
+          "title": "How Dell Is Accelerating Partners’ Success In The Era Of AI PC Computing",
+          "href": "/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing"
+        },
+        {
+          "kind": "text-link",
+          "title": "IDC Research Shows Value Of Workstations Vs PCs",
+          "href": "/modern-workplace/idc-research-shows-value-of-workstations-vs-pcs"
+        },
+        {
+          "kind": "text-link",
+          "title": "The Superpower Of ISV Certified Workstations",
+          "href": "/modern-workplace/the-superpower-of-isv-certified-workstations"
+        }
+      ],
+      "footerLink": null
+    }
+  ],
+  "rightRail": {
+    "region": "right25",
+    "blocks": [
+      {
+        "heading": null,
+        "kind": "ad-slot",
+        "embedSrc": null,
+        "ads": [
+          {
+            "src": "https://www.enterprisetechprovider.com/sites/new_etp/files/05109-Dell-Global-FY26-Q3-ETP_Aug-Oct-25-300x250_v1a.gif",
+            "alt": "",
+            "naturalWidth": 300,
+            "naturalHeight": 250
+          }
+        ],
+        "links": []
+      },
+      {
+        "heading": "NEWSLETTERS",
+        "kind": "link-list",
+        "embedSrc": null,
+        "ads": [],
+        "links": [
+          {
+            "label": "terms of service",
+            "href": "https://pages.thechannelco.com/terms-of-service-INTL.html"
+          },
+          {
+            "label": "privacy policy",
+            "href": "https://pages.thechannelco.com/standard-policies-INTL-Privacy.html"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "columns": [
+      {
+        "heading": "ABOUT",
+        "links": [
+          {
+            "label": "About The Channel Company",
+            "href": "https://www.thechannelco.com/company"
+          },
+          {
+            "label": "About CRN",
+            "href": "https://www.crn.com/about"
+          },
+          {
+            "label": "Sitemap",
+            "href": "/sitemap"
+          }
+        ]
+      },
+      {
+        "heading": "CONTACT",
+        "links": [
+          {
+            "label": "Contact Dell Technologies",
+            "href": "https://www.dell.com/en-us/lp/contact-us"
+          },
+          {
+            "label": "Contact The Channel Company",
+            "href": "https://www.thechannelco.com/company/contact"
+          }
+        ]
+      },
+      {
+        "heading": "CRN AWARDS",
+        "links": [
+          {
+            "label": "Subscribe",
+            "href": "https://pages.thechannelco.com/CRN-Lists-and-Awards.html?source=TCCwebsite"
+          },
+          {
+            "label": "CRN Lists & Awards",
+            "href": "https://www.crn.com/rankings-and-lists"
+          }
+        ]
+      }
+    ],
+    "social": [
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/dell/",
+        "icon": {
+          "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/instagram-white.png",
+          "alt": "Instagram",
+          "naturalWidth": 100,
+          "naturalHeight": 100
+        }
+      },
+      {
+        "label": "YouTube",
+        "href": "https://www.youtube.com/channel/UC01FW5V9UVohbPtqKSmXX-w",
+        "icon": {
+          "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/youtube-white.png",
+          "alt": "YouTube",
+          "naturalWidth": 142,
+          "naturalHeight": 100
+        }
+      },
+      {
+        "label": "Twitter",
+        "href": "https://twitter.com/delltech?lang=en",
+        "icon": {
+          "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/xTwitter-white.png",
+          "alt": "Twitter",
+          "naturalWidth": 120,
+          "naturalHeight": 100
+        }
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/delltechnologies",
+        "icon": {
+          "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/linkedin-white.png",
+          "alt": "LinkedIn",
+          "naturalWidth": 100,
+          "naturalHeight": 100
+        }
+      }
+    ],
+    "legal": [
+      {
+        "label": "The Channel Company Privacy Policy",
+        "href": "https://pages.thechannelco.com/standard-policies-INTL-Privacy.html"
+      },
+      {
+        "label": "The Channel Company Cookie Policy",
+        "href": "https://pages.thechannelco.com/standard-policies-Global-cookies"
+      },
+      {
+        "label": "Do Not Sell or Share My Personal Information",
+        "href": "https://www.thechannelco.com/privacy-choices"
+      }
+    ],
+    "cobrand": [
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/thechannelco_logo_white_300w.png",
+        "alt": "The Channel Company",
+        "naturalWidth": 300,
+        "naturalHeight": 62
+      },
+      {
+        "src": "https://www.enterprisetechprovider.com/sites/all/themes/etp2023/images/dell_logo_white_160px.png",
+        "alt": "Dell Technologies",
+        "naturalWidth": 160,
+        "naturalHeight": 20
+      }
+    ]
+  }
+}

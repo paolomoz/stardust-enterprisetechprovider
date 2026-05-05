@@ -1,0 +1,302 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:direct",
+    "writtenAt": "2026-05-05T00:00:00Z",
+    "readArtifacts": [
+      "PRODUCT.md",
+      "stardust/current/_brand-extraction.json",
+      "stardust/current/brand-review.html",
+      "stardust/prototypes/home-improvements.md"
+    ],
+    "stardustVersion": "0.3.0",
+    "schemaVersion": 2
+  },
+
+  "register": "brand",
+  "density": "balanced",
+
+  "colors": {
+    "ink":            "#003049",
+    "ink-deep":       "#001f2f",
+    "ink-haze":       "#e8eef2",
+    "obsidian":       "#000000",
+    "vellum":         "#ffffff",
+    "char":           "#0a0d12",
+    "graphite":       "#3d4651",
+    "graphite-mute":  "#6b7480",
+    "platinum":       "#f4f5f7",
+    "platinum-edge":  "#dfe3e8",
+    "navy-deep":      "#0b1f3a",
+    "brass":          "#b88830",
+    "cordovan":       "#5b1116"
+  },
+
+  "typography": {
+    "display":   "Geist, ui-sans-serif, system-ui, sans-serif",
+    "editorial": "'Source Serif 4', 'Iowan Old Style', Charter, Georgia, serif",
+    "ui":        "Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "mono":      "'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace",
+    "scale": 1.25,
+    "baseSize": "16px",
+    "steps": [12, 14, 16, 18, 20, 24, 30, 36, 48, 60],
+    "casing": "mixed-case",
+    "tracking": { "eyebrow": "0.12em", "heading": "-0.01em", "body": "0" }
+  },
+
+  "rounded": { "none": "0px", "sm": "2px", "md": "4px", "lg": "8px", "pill": "999px" },
+
+  "spacing": {
+    "baseUnit": "4px",
+    "sectionPadding": { "desktop": "64px", "tablet": "48px", "mobile": "32px" },
+    "cardGap":        { "desktop": "24px", "tablet": "16px", "mobile": "12px" },
+    "contentMaxWidth": "1280px",
+    "proseMeasure": "68ch"
+  },
+
+  "components": ["button-primary", "button-secondary", "button-ghost", "link-inline", "card-article", "chip-topic", "badge", "eyebrow", "input", "newsletter-form"],
+
+  "extensions": {
+
+    "colorMeta": {
+      "primaryRoles":    ["ink", "obsidian", "vellum"],
+      "secondaryRoles":  ["navy-deep", "brass", "cordovan"],
+      "neutralRoles":    ["char", "graphite", "graphite-mute", "platinum", "platinum-edge"],
+      "accentRoles":     ["ink-deep", "ink-haze"],
+      "topicChipPalette": {
+        "datacenter": { "bg": "ink-haze",  "text": "ink",      "applies": ["Storage", "Server", "Modern Datacenter", "Cloud", "Multicloud", "Apex Multicloud"] },
+        "ai":         { "bg": "brass-12",  "text": "brass",    "applies": ["AI", "Intel"] },
+        "workplace":  { "bg": "cordovan-10", "text": "cordovan", "applies": ["Modern Workplace", "Hybrid Work", "Commercial PCs"] },
+        "neutral":    { "bg": "platinum",  "text": "graphite", "applies": ["Sustainability", "Dell Technologies Advantage", "Microsoft", "Newsroom", "Edge", "Security"] }
+      }
+    },
+
+    "typographyMeta": {
+      "families": [
+        { "role": "display",   "name": "Geist",          "source": "Vercel (open source, OFL)", "weights": [400, 500, 600, 700], "usedFor": ["H1", "H2", "hero", "section-opener", "card-title", "primary-CTA"] },
+        { "role": "editorial", "name": "Source Serif 4", "source": "Adobe (open source, OFL)",  "weights": [400, "400-italic", 600, "600-italic"], "usedFor": ["article-body", "deck", "pullquote", "byline", "author-bio"] },
+        { "role": "ui",        "name": "Inter",          "source": "Rasmus Andersson (open source, OFL)", "weights": [400, 500, 600, 700], "usedFor": ["nav", "card-meta", "captions", "forms", "footer", "buttons"] },
+        { "role": "mono",      "name": "Geist Mono",     "source": "Vercel (open source, OFL)", "weights": [400, 500], "usedFor": ["topic-chip", "date", "read-time", "counters", "technical-strings"] }
+      ],
+      "scale": "modular 1.25 (perfect fourth)",
+      "baseSize": "16px",
+      "casingRule": "mixed-case default; UPPERCASE reserved for ≤3-word eyebrows, topic chips (mono 11px), primary CTAs, utility strip"
+    },
+
+    "shadows": {
+      "sm": "0 1px 2px rgba(10, 13, 18, 0.04), 0 1px 4px rgba(10, 13, 18, 0.04)",
+      "md": "0 4px 12px rgba(10, 13, 18, 0.08), 0 2px 6px rgba(10, 13, 18, 0.06)"
+    },
+
+    "motion": {
+      "duration":  { "fast": "120ms", "base": "200ms", "slow": "320ms" },
+      "easing":    { "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)", "in": "cubic-bezier(0.4, 0, 1, 1)", "out": "cubic-bezier(0, 0, 0.2, 1)" },
+      "reducedMotion": "respect-prefers-reduced-motion (no auto-advance carousel; disable hover-triggered animations)"
+    },
+
+    "breakpoints": {
+      "mobile":  { "min": "0px",     "max": "599px" },
+      "tablet":  { "min": "600px",   "max": "1023px" },
+      "desktop": { "min": "1024px",  "max": "1439px" },
+      "wide":    { "min": "1440px",  "max": null }
+    },
+
+    "divergence": {
+      "mode": "A (brand-faithful) + B (anchor-implied)",
+      "seed": {
+        "decade":        { "value": "2025-now",  "picked_by": "anchor-reference: Bloomberg Businessweek / Stripe Press" },
+        "craft":         { "value": "editorial-trade", "picked_by": "anchor-reference: Bloomberg Businessweek" },
+        "register":      { "value": "brand",     "picked_by": "inherited from PRODUCT.md" },
+        "ground_family": { "value": "stark-white", "picked_by": "user-constraint", "override": "brand-faithful" },
+        "anchors": [
+          { "ref": "Bloomberg Businessweek", "implies": ["decade=2025-now", "craft=editorial-trade", "ground=stark-white"] },
+          { "ref": "Stripe Press",            "implies": ["distinctiveness=distinctive", "type=multi-family"] },
+          { "ref": "IBM annual report",       "implies": ["register=brand", "color-energy=moderate"] }
+        ]
+      },
+      "font_deck": {
+        "name": "editorial-trade-multi",
+        "picked_by": "user-direction (multi-family for distinct functions)",
+        "families": ["Geist (display)", "Source Serif 4 (editorial)", "Inter (UI)", "Geist Mono (data)"]
+      },
+      "palette": {
+        "source": "user-pinned primaries (#003049 + #000000 + #ffffff) + new secondaries from enterprise-refined direction",
+        "picked_by": "user-constraint (primaries) + direction-roll (secondaries)",
+        "newSecondaries": ["#0b1f3a navy-deep", "#b88830 brass", "#5b1116 cordovan"]
+      },
+      "brand_faithful_inversions": [
+        { "id": "pure-black-allowed",  "rule": "no-pure-black",  "reason": "user-pinned: #000000 in footer container, premium type accent" },
+        { "id": "pure-white-allowed",  "rule": "no-pure-white",  "reason": "user-pinned: #ffffff page background and brand surface" },
+        { "id": "type-fully-open",     "rule": "Mode A pins type", "reason": "user explicitly opened type system; current Roboto reads as templated CMS default" }
+      ],
+      "anti_toolbox_audit": {
+        "passed": [
+          "no-Generic-2026-SaaS-silhouette (editorial-trade composition, not landing-page)",
+          "no-editorial-register-larping (no atelier/journal vocab; trade-press direct voice preserved)",
+          "no-pull-quote-as-hero",
+          "no-hero-text-on-photo-without-scrim",
+          "type-ratio >= 1.25 (1.25 modular)"
+        ],
+        "explicit_overrides": [
+          "no-pure-black: overridden under brand-faithful-inversion id=pure-black-allowed",
+          "no-pure-white: overridden under brand-faithful-inversion id=pure-white-allowed"
+        ]
+      }
+    },
+
+    "componentStyle": {
+      "buttons": {
+        "primary":   { "face": "ui",      "weight": 600, "fill": "ink",     "text": "vellum", "border": "none", "radius": "md", "padding": "12px 20px", "size": "16px", "casing": "uppercase", "tracking": "0.04em", "hover": { "fill": "ink-deep" } },
+        "secondary": { "face": "ui",      "weight": 600, "fill": "transparent", "text": "ink", "border": "1px solid ink", "radius": "md", "padding": "11px 19px", "size": "16px", "casing": "uppercase", "tracking": "0.04em", "hover": { "fill": "ink-haze" } },
+        "ghost":     { "face": "ui",      "weight": 500, "fill": "transparent", "text": "char", "border": "none", "radius": "md", "padding": "11px 16px", "size": "14px", "casing": "mixed-case", "underlineOnHover": true }
+      },
+      "cards": {
+        "article": {
+          "fill": "vellum", "border": "1px solid platinum-edge", "radius": "lg", "shadow": "sm",
+          "hover": { "shadow": "md", "borderColor": "ink-haze" },
+          "structure": ["cover-image (16:9, srcset 256/384/512)", "topic-chip", "title (display 600 / 20px)", "deck (editorial italic 16px / 1.5)", "meta-row (mono 12px: date · read-time · author)"]
+        }
+      },
+      "inputs": {
+        "default": { "face": "ui", "fill": "vellum", "border": "1px solid platinum-edge", "radius": "md", "padding": "10px 14px", "focus": { "border": "1px solid ink", "ring": "0 0 0 3px rgba(0,48,73,0.15)" } }
+      },
+      "chips": {
+        "topic": { "face": "mono", "size": "11px", "weight": 500, "tracking": "0.12em", "casing": "uppercase", "padding": "3px 8px", "radius": "sm", "variants": "see colorMeta.topicChipPalette" }
+      },
+      "eyebrow": { "face": "mono", "size": "11px", "weight": 500, "tracking": "0.12em", "casing": "uppercase", "color": "graphite-mute" },
+      "dualCTAPattern": {
+        "rule": "Primary + secondary side-by-side allowed only on home hero and on per-article footer (Subscribe + Read more). Forbidden in card grids — cards link via title, not via in-card CTA."
+      }
+    },
+
+    "systemComponentRoles": {
+      "utility-strip": {
+        "purpose": "Co-brand attribution (Channel Co + Dell Technologies) — present, not loud",
+        "position-class": "site-top (above header)",
+        "constraints": ["height: 28px max", "face: mono 11px / 0.12em tracking", "color: graphite-mute on vellum", "no logos at this height — text only"]
+      },
+      "header": {
+        "purpose": "Site identity + primary navigation + search",
+        "position-class": "site-top (below utility-strip)",
+        "constraints": ["site-mark dominant top-left", "primary nav inline at desktop", "MENU drawer at tablet/mobile", "sticky on scroll with --shadow-md"]
+      },
+      "page-chrome-bar": {
+        "purpose": "Inner pages — breadcrumb + section eyebrow + page H1",
+        "position-class": "page-top (replaces global hero on inner pages)",
+        "constraints": ["height: 56px desktop / 48px mobile", "no stock photo", "no global tagline repeat"]
+      },
+      "footer": {
+        "purpose": "Co-brand lockups (full scale here), site map, legal",
+        "position-class": "site-bottom",
+        "constraints": ["fill: obsidian", "top-accent: navy-deep 1px line", "4-col layout at desktop, stacked at mobile"]
+      },
+      "consent-overlay": {
+        "purpose": "Sourcepoint privacy compliance",
+        "position-class": "viewport-overlay (first visit)",
+        "constraints": ["unstyleable cross-origin iframe — design assumes worst-case 100vh take-over on first paint", "page beneath has no critical content above fold to obscure"]
+      }
+    },
+
+    "voice": {
+      "tone": "trade-press confident, direct-address",
+      "dos": [
+        "Headline-driven, benefit-first ('How Dell Helps Partners…', '5 Ways…', 'Win Customer PC Refresh Deals')",
+        "Speak to 'you' (the partner) and 'your customers'",
+        "Mixed-case article titles in display face",
+        "Short eyebrow labels (≤3 words) UPPERCASE in mono",
+        "Editorial serif decks under article H1s (2-3 lines, italic 18px)"
+      ],
+      "donts": [
+        "No editorial-larping vocabulary (atelier, the studio, the journal, mise-en-place)",
+        "No ALL-CAPS article titles or section openers",
+        "No persistent global hero on inner pages",
+        "No card-without-metadata (every card carries topic chip · date · read-time · author)",
+        "No coloured full-bleed strips as section dividers",
+        "No more than two CTAs per editorial block"
+      ],
+      "samplesFromCurrent": [
+        "How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage",
+        "5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers",
+        "Why Dell's PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers' Mission-Critical Workloads"
+      ]
+    },
+
+    "iaPriorities": [
+      {
+        "signal": "search-led IA",
+        "evidence": "614 articles in sitemap; same article promoted in 3 home sections; users come via Google as much as via home.",
+        "preserveAs": "search-prominent",
+        "scope": "site-wide",
+        "implication": "Header search affordance must be visible (not buried in MENU). Article URLs preserved exactly (no slug changes that would break inbound links)."
+      },
+      {
+        "signal": "co-brand attribution legally required",
+        "evidence": "Channel Company is publisher; Dell Technologies is sponsor — disclosed on every page in current site.",
+        "preserveAs": "site-wide attribution",
+        "scope": "site-wide",
+        "implication": "Utility-strip role at site-top + footer co-brand lockups. Cannot be hidden, can be quieter."
+      },
+      {
+        "signal": "newsletter conversion as secondary KPI",
+        "evidence": "Newsletter form on every page (right rail in current site); 3-field email capture.",
+        "preserveAs": "home-block + per-article-footer",
+        "scope": "site-wide",
+        "implication": "Dedicated home block (not stuffed into rail with ad). Per-article footer always renders newsletter signup + 'read more like this' link."
+      },
+      {
+        "signal": "topic taxonomy load-bearing for navigation",
+        "evidence": "17 sections (newsroom 147, storage 97, commercial-pcs 55, server 48, …); topic clusters drive both nav and editorial grouping.",
+        "preserveAs": "first-viewport navigation",
+        "scope": "site-wide",
+        "implication": "Primary nav exposes top-level topics inline at desktop. Home page 'By Topic' block is one of the four canonical home blocks."
+      }
+    ],
+
+    "narrative": {
+      "northStar": "A small Bloomberg Businessweek for the Dell channel. Editorial chrome, premium B2B colour, considered type. The brand teal #003049 stays as anchor; new secondaries (navy-deep, brass, cordovan) carry editorial accents. Three type families with distinct functions replace the single Roboto skin and let typography carry the hierarchy that full-bleed coloured strips used to fake.",
+      "overview": "Mode-A brand-faithful refresh. Primary palette pinned by user (#003049 teal, black, white). Secondaries open and resolved to enterprise-refined direction (navy-deep, brass, cordovan). Type system fully open and resolved to multi-family (Geist display, Source Serif 4 editorial, Inter UI, Geist Mono data) on a 1.25 modular scale. Density balanced (64/48/32px section padding). IA cleanup: kill section glut, single canonical taxonomy, build missing section indexes, fix broken nav.",
+      "keyCharacteristics": [
+        "Three type families with distinct functions (display / editorial / UI / mono)",
+        "Modular 1.25 type scale (10 steps from 12 to 60 px)",
+        "Pinned primaries + 3 enterprise secondaries (no consumer-grade saturation)",
+        "Cards earn opens via metadata (chip · date · read-time · author)",
+        "Mixed-case headings; UPPERCASE only for ≤3-word eyebrows + CTAs",
+        "Persistent global hero killed on inner pages",
+        "13+ home-page section glut consolidated to 4 editorial blocks",
+        "Single canonical IA (drop /category/ duplicates; build missing indexes)",
+        "Restrained shadow + radius vocabulary",
+        "Token-driven; zero hard-coded values in component CSS"
+      ],
+      "rules": [
+        "Every CSS value reads from a token at :root — colours, type sizes, spacing, radius, shadow.",
+        "No card without metadata (chip · date · read-time · author).",
+        "No coloured full-bleed strip as a section divider.",
+        "No ALL-CAPS for article titles, section openers, decks, body, or card titles.",
+        "No persistent global hero on inner pages — page-chrome-bar replaces it.",
+        "Topic chips cycle by category cluster from a fixed 4-variant palette.",
+        "Article body in editorial serif at 18 px / 68 ch measure.",
+        "Inline body links: 1 px ink underline at descender; 2 px brass on hover.",
+        "Reduced-motion respected on every animated element."
+      ],
+      "dos": [
+        "Use mixed-case for all headings, decks, and card titles in the display face.",
+        "Reserve UPPERCASE for short eyebrow labels, topic chips (mono 11 px), primary CTAs.",
+        "Lead with the lead story on home — single editorial hero composition, not a stock-photo band.",
+        "Give every card a topic chip · date · read-time · author meta row.",
+        "Render article body in Source Serif 4 at 18 px / 1.6 line-height / 68 ch measure.",
+        "Use --brass for considered hover accents (inline link underline thickening).",
+        "Use --cordovan for urgency markers ('LATEST', 'BREAKING') sparingly.",
+        "Use --navy-deep for large editorial bands (footer top, featured-story background)."
+      ],
+      "donts": [
+        "Do not stack 13 section-label strips on the home page; consolidate to 4 editorial blocks.",
+        "Do not render the persistent 'Enterprise Tech Provider · Stay ahead…' band on inner pages.",
+        "Do not render article H1s in UPPERCASE on a teal band.",
+        "Do not put cards in a grid without metadata.",
+        "Do not let co-brand attribution outweigh the site mark in the header.",
+        "Do not auto-advance the YouTube reels carousel.",
+        "Do not use Bootstrap 3 default chrome (flat tiles, sharp corners on everything, no shadow language).",
+        "Do not introduce more than 2 CTAs per editorial block."
+      ]
+    }
+  }
+}

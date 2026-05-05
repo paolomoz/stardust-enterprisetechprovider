@@ -1,0 +1,32 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:direct",
+    "writtenAt": "2026-05-05T00:00:00Z",
+    "stardustVersion": "0.3.0"
+  },
+  "site": {
+    "originUrl": "https://www.enterprisetechprovider.com/",
+    "name": "Enterprise Tech Provider",
+    "extractedAt": "2026-05-04T00:00:00Z",
+    "pageCap": 5,
+    "totalDiscovered": 614,
+    "crawled": 5,
+    "discoveryMethod": "sitemap.xml + home BFS"
+  },
+  "direction": {
+    "resolvedAt": "2026-05-05T00:00:00Z",
+    "phrase": "Redesign Enterprise Tech Provider. Constraint: keep the current primary colors (the dark teal #003049, black, white) — these are non-negotiable as the primary anchor. Secondary colors are open and the redesign should introduce them to fix the current monochrome flatness. All other tensions from stardust/current/brand-review.html are in scope. Content (copy + images) is preserved exactly; only the design system changes.",
+    "directionFile": "stardust/direction.md",
+    "mode": "A (brand-faithful) + B (anchor-implied)",
+    "density": "balanced",
+    "secondariesDirection": "enterprise refined",
+    "variantMode": "single-variant"
+  },
+  "pages": [
+    { "slug": "home",             "url": "https://www.enterprisetechprovider.com/", "type": "landing", "status": "approved", "currentStatePath": "stardust/current/pages/home.json", "prototypePath": "stardust/prototypes/home-proposed-v08.html", "migratedPath": null, "stale": false, "approvedAt": "2026-05-05T13:00:00Z", "approvedVariant": "V08" },
+    { "slug": "category-storage", "url": "https://www.enterprisetechprovider.com/category/storage", "type": "listing", "status": "directed", "currentStatePath": "stardust/current/pages/category-storage.json", "prototypePath": null, "migratedPath": null, "stale": false },
+    { "slug": "storage-article",  "url": "https://www.enterprisetechprovider.com/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage", "type": "article", "status": "directed", "currentStatePath": "stardust/current/pages/storage-article.json",  "prototypePath": null, "migratedPath": null, "stale": false },
+    { "slug": "newsroom-article", "url": "https://www.enterprisetechprovider.com/newsroom/dell-technologies-world-2021-get-ready-to-be-inspired", "type": "article", "status": "directed", "currentStatePath": "stardust/current/pages/newsroom-article.json", "prototypePath": null, "migratedPath": null, "stale": false },
+    { "slug": "user-profile",     "url": "https://www.enterprisetechprovider.com/users/KJ", "type": "static", "status": "directed", "currentStatePath": "stardust/current/pages/user-profile.json",     "prototypePath": null, "migratedPath": null, "stale": false }
+  ]
+}

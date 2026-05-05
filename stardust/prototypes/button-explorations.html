@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button exploration · Enterprise Tech Provider</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500;1,8..60,600&display=swap">
+<style>
+:root{
+  --ink:#003049; --ink-deep:#001f2f; --ink-haze:#e8eef2;
+  --vellum:#ffffff; --char:#0a0d12; --graphite:#3d4651; --graphite-mute:#6b7480;
+  --platinum:#f4f5f7; --platinum-edge:#dfe3e8;
+  --brass:#b88830; --brass-deep:#8a6420; --brass-soft:#d4a45a; --cordovan:#5b1116;
+  --display:Geist,system-ui,sans-serif;
+  --editorial:'Source Serif 4',Georgia,serif;
+  --ui:Inter,system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--vellum);color:var(--char);font-family:var(--ui);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+
+.expo-toolbar{position:sticky;top:0;z-index:50;background:var(--ink-deep);color:var(--vellum);display:flex;align-items:center;justify-content:space-between;padding:14px 24px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;}
+.expo-meta a{color:#d4a45a;border-bottom:1px solid #d4a45a;text-decoration:none;}
+
+.expo-container{max-width:1280px;margin:0 auto;padding:48px 24px;}
+.expo-intro{font-family:var(--editorial);font-size:18px;line-height:1.6;color:var(--graphite);max-width:65ch;margin:0 0 32px;}
+.expo-intro b{color:var(--char);font-weight:600;}
+
+.variant-label{display:flex;align-items:baseline;justify-content:space-between;border-top:2px solid var(--ink);padding:14px 0 10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);flex-wrap:wrap;gap:14px;}
+.variant-id{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);text-transform:none;}
+.variant-name{font-family:var(--display);font-weight:500;font-size:14px;color:var(--char);text-transform:none;}
+.variant-tag{color:var(--graphite-mute);}
+
+.expo-stack{margin-block:16px 32px;border:1px solid var(--platinum-edge);border-radius:4px;background:var(--vellum);overflow:hidden;}
+
+/* Demo block — H2 chip + button side by side so you can see the contrast */
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.demo-cell{padding:48px 56px;border-right:1px solid var(--platinum-edge);}
+.demo-cell:last-child{border-right:none;}
+.demo-cell.dark{background:var(--platinum);}
+.demo-meta{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:14px;}
+
+/* The H2 chip used in V06/V07 */
+.h2-chip{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.018em;line-height:1.4;display:inline;background:var(--ink);color:var(--vellum);padding:6px 12px;-webkit-box-decoration-break:clone;box-decoration-break:clone;border-radius:2px;}
+
+/* H1 hero placeholder so context is realistic */
+.hero-h1{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.15;letter-spacing:-.018em;color:var(--char);margin:0 0 12px;}
+.hero-deck{font-family:var(--editorial);font-style:italic;font-size:16px;color:var(--graphite);margin:0 0 22px;max-width:48ch;}
+
+/* === BUTTON STYLES (each label = one variant) === */
+
+/* 1. Current — solid ink, white text, uppercase, small radius */
+.btn-A{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--ink);color:var(--vellum);font-family:var(--ui);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;border:0;cursor:pointer;text-decoration:none;}
+.btn-A:hover{background:var(--ink-deep);}
+
+/* B. Outline — transparent, ink border, ink text */
+.btn-B{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:transparent;color:var(--ink);font-family:var(--ui);font-size:14px;font-weight:600;letter-spacing:.04em;border:1.5px solid var(--ink);border-radius:4px;cursor:pointer;text-decoration:none;transition:background 120ms ease;}
+.btn-B:hover{background:var(--ink-haze);}
+
+/* C. Pill — fully rounded, slight bump, mono caps */
+.btn-C{display:inline-flex;align-items:center;gap:10px;padding:10px 22px;background:var(--ink);color:var(--vellum);font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;border-radius:999px;border:0;cursor:pointer;text-decoration:none;}
+.btn-C:hover{background:var(--ink-deep);}
+
+/* D. Underlined-text mono — looks like an affordance, not a chip */
+.btn-D{display:inline-flex;align-items:baseline;gap:10px;padding:8px 0;color:var(--ink);font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--ink);text-decoration:none;cursor:pointer;background:transparent;border-top:0;border-left:0;border-right:0;}
+.btn-D:hover{color:var(--brass-deep);border-bottom-color:var(--brass-deep);}
+.btn-D .arrow{font-size:14px;transition:transform 200ms cubic-bezier(.16,1,.3,1);}
+.btn-D:hover .arrow{transform:translateX(4px);}
+
+/* E. Two-tone — ink slab + brass arrow tab. Distinctive. */
+.btn-E{display:inline-flex;align-items:stretch;font-family:var(--ui);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;overflow:hidden;text-decoration:none;border:0;cursor:pointer;}
+.btn-E .lab{padding:11px 16px 11px 18px;background:var(--ink);color:var(--vellum);}
+.btn-E .arrow{padding:11px 16px;background:var(--brass);color:var(--ink-deep);font-family:var(--mono);font-size:13px;display:inline-flex;align-items:center;}
+.btn-E:hover .lab{background:var(--ink-deep);}
+.btn-E:hover .arrow{background:var(--brass-soft);}
+
+/* F. Mono caps with rule — minimal, editorial */
+.btn-F{display:inline-flex;align-items:center;gap:10px;padding:14px 0 10px;color:var(--ink);font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;border-top:1px solid var(--ink);border-bottom:0;background:transparent;text-decoration:none;cursor:pointer;width:max-content;min-width:200px;justify-content:space-between;}
+.btn-F:hover{color:var(--brass-deep);border-top-color:var(--brass-deep);}
+
+@media (max-width:899px){.demo{grid-template-columns:1fr;}.demo-cell{border-right:none;border-bottom:1px solid var(--platinum-edge);padding:32px;}}
+
+</style>
+</head>
+<body>
+
+<div class="expo-toolbar">
+  <span>Button exploration · 6 alternatives</span>
+  <span class="expo-meta">For V06 / V07 hero CTA · <a href="home-proposed-v07.html">View V07</a></span>
+</div>
+
+<div class="expo-container">
+  <p class="expo-intro">
+    The current primary button (A) is <b>solid --ink fill, white text, 4 px radius, uppercase</b>. Same fill + same text + same border-radius family as the H2 chip-highlight, so they read as the same visual element. Five alternatives below — each shown next to the H2 chip on the same canvas so the differentiation is obvious.
+  </p>
+</div>
+
+<!-- ============ A. Current ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">A</span> &middot; <span class="variant-name">Current — solid ink, uppercase, 4 px</span></span>
+    <span class="variant-tag">baseline · ships in V07 · same shape as H2 chip</span>
+  </div>
+  <div class="expo-stack">
+    <div class="demo">
+      <div class="demo-cell">
+        <div class="demo-meta">H2 chip-highlight (current)</div>
+        <span class="h2-chip">This week&rsquo;s reads</span>
+      </div>
+      <div class="demo-cell dark">
+        <div class="demo-meta">Primary button (A)</div>
+        <h1 class="hero-h1">How Dell Is Accelerating Partners&rsquo; Success</h1>
+        <p class="hero-deck">Two-line opener pending. The deck.</p>
+        <a class="btn-A" href="#">Read article</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    They&rsquo;re obviously similar. Both =&nbsp;ink fill + white text + small radius. The button is just slightly more padded.
+  </p>
+</div>
+
+<!-- ============ B. Outline ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">B</span> &middot; <span class="variant-name">Outline — transparent, ink border</span></span>
+    <span class="variant-tag">strongest visual differentiation · simple</span>
+  </div>
+  <div class="expo-stack">
+    <div class="demo">
+      <div class="demo-cell">
+        <div class="demo-meta">H2 chip-highlight</div>
+        <span class="h2-chip">This week&rsquo;s reads</span>
+      </div>
+      <div class="demo-cell dark">
+        <div class="demo-meta">Primary button (B)</div>
+        <h1 class="hero-h1">How Dell Is Accelerating Partners&rsquo; Success</h1>
+        <p class="hero-deck">Two-line opener pending. The deck.</p>
+        <a class="btn-B" href="#">Read article →</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Inverts the fill direction. H2 is the heavy element (filled), button is the light one (outline). Reads as &ldquo;label vs. action&rdquo; clearly. Most conservative of the alternatives.
+  </p>
+</div>
+
+<!-- ============ C. Pill ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">C</span> &middot; <span class="variant-name">Pill — mono caps, fully rounded</span></span>
+    <span class="variant-tag">geometry differentiates · mono = action signal</span>
+  </div>
+  <div class="expo-stack">
+    <div class="demo">
+      <div class="demo-cell">
+        <div class="demo-meta">H2 chip-highlight</div>
+        <span class="h2-chip">This week&rsquo;s reads</span>
+      </div>
+      <div class="demo-cell dark">
+        <div class="demo-meta">Primary button (C)</div>
+        <h1 class="hero-h1">How Dell Is Accelerating Partners&rsquo; Success</h1>
+        <p class="hero-deck">Two-line opener pending. The deck.</p>
+        <a class="btn-C" href="#">Read Article →</a>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Pill geometry instantly says &ldquo;clickable&rdquo;. Mono face vs. display-on-chip differentiates by typeface. Lighter weight than A. Could feel slightly &ldquo;startup&rdquo; if not careful — works because it&rsquo;s on dark ink and uses our editorial mono.
+  </p>
+</div>
+
+<!-- ============ D. Underlined mono ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">D</span> &middot; <span class="variant-name">Underlined mono — no fill</span></span>
+    <span class="variant-tag">most editorial · zero visual weight collision</span>
+  </div>
+  <div class="expo-stack">
+    <div class="demo">
+      <div class="demo-cell">
+        <div class="demo-meta">H2 chip-highlight</div>
+        <span class="h2-chip">This week&rsquo;s reads</span>
+      </div>
+      <div class="demo-cell dark">
+        <div class="demo-meta">Primary button (D)</div>
+        <h1 class="hero-h1">How Dell Is Accelerating Partners&rsquo; Success</h1>
+        <p class="hero-deck">Two-line opener pending. The deck.</p>
+        <button class="btn-D">Read article <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    No fill, just text + bottom rule + arrow that translates on hover. Editorial / NYT-Magazine treatment. Lowest visual weight. Risk: doesn&rsquo;t signal &ldquo;primary action&rdquo; strongly enough on first glance &mdash; works only if other CTAs on the page also use rule-marker patterns.
+  </p>
+</div>
+
+<!-- ============ E. Two-tone ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">E</span> &middot; <span class="variant-name">Two-tone — ink slab + brass arrow tab</span></span>
+    <span class="variant-tag">most distinctive · uses brass meaningfully</span>
+  </div>
+  <div class="expo-stack">
+    <div class="demo">
+      <div class="demo-cell">
+        <div class="demo-meta">H2 chip-highlight</div>
+        <span class="h2-chip">This week&rsquo;s reads</span>
+      </div>
+      <div class="demo-cell dark">
+        <div class="demo-meta">Primary button (E)</div>
+        <h1 class="hero-h1">How Dell Is Accelerating Partners&rsquo; Success</h1>
+        <p class="hero-deck">Two-line opener pending. The deck.</p>
+        <a class="btn-E" href="#"><span class="lab">Read article</span><span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Two-color split: dark slab carries the label, brass tab carries the arrow. Visually unique — clearly NOT an H2 chip. Uses --brass meaningfully (currently brass is barely used outside the topic-band ::before glow). Risk: more complex to maintain across states.
+  </p>
+</div>
+
+<!-- ============ F. Mono caps with rule ============ -->
+<div class="expo-container" style="padding-bottom:0;">
+  <div class="variant-label">
+    <span><span class="variant-id">F</span> &middot; <span class="variant-name">Mono caps with top rule — minimal editorial</span></span>
+    <span class="variant-tag">consistent with section eyebrows + link-arrows</span>
+  </div>
+  <div class="expo-stack">
+    <div class="demo">
+      <div class="demo-cell">
+        <div class="demo-meta">H2 chip-highlight</div>
+        <span class="h2-chip">This week&rsquo;s reads</span>
+      </div>
+      <div class="demo-cell dark">
+        <div class="demo-meta">Primary button (F)</div>
+        <h1 class="hero-h1">How Dell Is Accelerating Partners&rsquo; Success</h1>
+        <p class="hero-deck">Two-line opener pending. The deck.</p>
+        <a class="btn-F" href="#">Read article <span>→</span></a>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:var(--editorial);font-style:italic;font-size:14px;line-height:1.55;color:var(--graphite);margin:12px 0 24px;max-width:75ch;">
+    Reuses the link-arrow pattern from the section heads (mono uppercase + 1 px ink rule). Consistent visual language across all action-affordances. Quietest of the six. Same risk as D &mdash; doesn&rsquo;t shout &ldquo;primary&rdquo;.
+  </p>
+</div>
+
+<div class="expo-container" style="padding-block:24px 64px;border-top:1px solid var(--platinum-edge);">
+  <p style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);margin:0;">
+    Tell me which button (A–F) to wire into V07 globally (primary CTA, header Subscribe, etc.).
+  </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  writtenBy:         stardust:prototype (variant V02 — anti-slop revision)
+  writtenAt:         2026-05-05T00:00:00Z
+  page:              home
+  pageUrl:           https://www.enterprisetechprovider.com/
+  proposedFile:      ./home-proposed-v02.html
+  againstDirection:  stardust/direction.md (Active 2026-05-05T00:00:00Z)
+  variantBasis:      moves A (bento hero) + B (mixed-grid latest) + C (full-bleed ink topic band) + D (editorial section labels) + E (issue-marker typographic moment) + F (quiet placeholders)
+  divergenceVersion: v1.0 (stardust v0.3)
+  fontDeck:          editorial-trade-multi (Geist + Source Serif 4 + Inter + Geist Mono)
+  paletteSource:     user-pinned primaries + enterprise-refined secondaries
+  unsourcedContent:
+    - { selector: "[data-card='lead'] .ds-ph",        type: other, reason: "lead-story deck + meta not on captured home" }
+    - { selector: "[data-card='secondary'] .ds-ph",   type: other, reason: "secondary-story metadata not on captured home (2 instances)" }
+    - { selector: ".ds-mixed-lead .ds-ph",            type: other, reason: "lead reads-card excerpt + meta not captured" }
+    - { selector: ".ds-mixed-pair .ds-card .ds-ph",   type: other, reason: "pair card excerpt + meta not captured (2 instances)" }
+    - { selector: ".ds-list-item .ds-ph",             type: other, reason: "numbered list item meta not captured (3 instances)" }
+    - { selector: ".ds-newsletter-narrow p",          type: other, reason: "newsletter description not on captured home" }
+  totalPlaceholders: 18
+  stardustVersion:   0.3.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise Tech Provider | Week of 4 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap">
+<style>
+:root {
+  --ink: #003049;
+  --ink-deep: #001f2f;
+  --ink-haze: #e8eef2;
+  --obsidian: #000000;
+  --vellum: #ffffff;
+  --char: #0a0d12;
+  --graphite: #3d4651;
+  --graphite-mute: #6b7480;
+  --platinum: #f4f5f7;
+  --platinum-edge: #dfe3e8;
+  --navy-deep: #0b1f3a;
+  --brass: #b88830;
+  --brass-soft: #d4a45a;
+  --cordovan: #5b1116;
+
+  --tint-datacenter: rgba(0, 48, 73, 0.06);
+  --tint-ai:         rgba(184, 136, 48, 0.12);
+  --tint-workplace:  rgba(91, 17, 22, 0.08);
+  --tint-neutral:    var(--platinum);
+
+  --display:   "Geist", ui-sans-serif, system-ui, sans-serif;
+  --editorial: "Source Serif 4", "Iowan Old Style", Charter, Georgia, serif;
+  --ui:        "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:      "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --type-12: 0.75rem;
+  --type-14: 0.875rem;
+  --type-16: 1rem;
+  --type-18: 1.125rem;
+  --type-20: 1.25rem;
+  --type-24: 1.5rem;
+  --type-30: 1.875rem;
+  --type-36: 2.25rem;
+  --type-48: 3rem;
+  --type-60: 3.75rem;
+  --type-72: 4.5rem;
+
+  --radius-none: 0px;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(10, 13, 18, 0.04), 0 1px 4px rgba(10, 13, 18, 0.04);
+  --shadow-md: 0 4px 12px rgba(10, 13, 18, 0.08), 0 2px 6px rgba(10, 13, 18, 0.06);
+  --shadow-lg: 0 24px 60px rgba(0, 31, 47, 0.18), 0 4px 12px rgba(0, 31, 47, 0.10);
+
+  --space-section-d: 80px;
+  --space-section-t: 56px;
+  --space-section-m: 40px;
+  --space-gap-d:     24px;
+  --space-gap-t:     16px;
+  --space-gap-m:     12px;
+  --content-max:     1280px;
+
+  --motion-fast: 120ms;
+  --motion-base: 220ms;
+  --motion-slow: 360ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--vellum);
+  color: var(--char);
+  font-family: var(--ui);
+  font-size: var(--type-16);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; color: var(--char); margin: 0; line-height: 1.15; letter-spacing: -0.012em; }
+
+.ds-eyebrow {
+  font-family: var(--mono);
+  font-size: var(--type-12);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--graphite-mute);
+  display: inline-block;
+}
+.ds-eyebrow--brass { color: var(--brass); }
+.ds-eyebrow--ink { color: var(--ink); }
+
+.ds-chip {
+  display: inline-flex;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--tint-datacenter);
+  color: var(--ink);
+}
+.ds-chip--datacenter { background: var(--tint-datacenter); color: var(--ink); }
+.ds-chip--ai         { background: var(--tint-ai);         color: var(--brass); }
+.ds-chip--workplace  { background: var(--tint-workplace);  color: var(--cordovan); }
+.ds-chip--neutral    { background: var(--platinum);        color: var(--graphite); }
+
+.ds-button-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--ui); font-size: var(--type-14); font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 11px 18px;
+  background: var(--brass); color: var(--ink-deep);
+  border: none; border-radius: var(--radius-md);
+  transition: background var(--motion-base) var(--ease-standard);
+}
+.ds-button-primary:hover { background: var(--brass-soft); }
+.ds-button-primary--ink { background: var(--ink); color: var(--vellum); }
+.ds-button-primary--ink:hover { background: var(--ink-deep); }
+
+.ds-button-secondary {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--ui); font-size: var(--type-14); font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 9px 14px; background: transparent; color: var(--ink);
+  border: 1px solid var(--ink); border-radius: var(--radius-md);
+  transition: background var(--motion-base) var(--ease-standard);
+}
+.ds-button-secondary:hover { background: var(--ink-haze); }
+
+.ds-link-arrow {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); display: inline-flex; align-items: center; gap: 6px;
+  border-bottom: 1px solid transparent; padding-bottom: 2px;
+  transition: border-color var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard);
+}
+.ds-link-arrow:hover { border-bottom-color: var(--brass); color: var(--brass); }
+
+.ds-input {
+  flex: 1; font-family: var(--ui); font-size: var(--type-16);
+  padding: 12px 14px; background: var(--vellum); color: var(--char);
+  border: 1px solid var(--platinum-edge); border-radius: var(--radius-md);
+  transition: border-color var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard);
+}
+.ds-input:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(0, 48, 73, 0.15); }
+
+/* ===== F: Quiet placeholder ghost ===== */
+.ds-ph {
+  font-family: var(--editorial);
+  font-style: italic;
+  font-size: inherit;
+  color: var(--graphite-mute);
+  opacity: 0.68;
+  border-bottom: 1px dotted rgba(184, 136, 48, 0.45);
+  padding: 0 1px;
+}
+.ds-ph::before {
+  content: "›";
+  margin-right: 4px;
+  color: var(--brass);
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 0.85em;
+}
+
+/* ===== Container ===== */
+.ds-container {
+  width: 100%; max-width: var(--content-max);
+  margin: 0 auto; padding-inline: 24px;
+}
+@media (min-width: 600px) { .ds-container { padding-inline: 32px; } }
+@media (min-width: 1024px) { .ds-container { padding-inline: 48px; } }
+
+/* ===== Utility strip ===== */
+[data-section="utility-strip"] {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--platinum-edge);
+  height: 28px; display: flex; align-items: center;
+}
+[data-section="utility-strip"] .ds-container {
+  display: flex; justify-content: space-between; align-items: center; height: 100%;
+}
+[data-section="utility-strip"] p {
+  margin: 0; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--graphite-mute);
+}
+@media (max-width: 599px) {
+  [data-section="utility-strip"] { height: auto; padding: 6px 0; }
+  [data-section="utility-strip"] p { font-size: 10px; line-height: 1.4; text-align: center; }
+  [data-section="utility-strip"] p:last-child { display: none; }
+}
+
+/* ===== Header ===== */
+[data-section="header"] {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--vellum);
+  border-bottom: 1px solid var(--platinum-edge);
+  transition: box-shadow var(--motion-base) var(--ease-standard);
+}
+.ds-header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; height: 64px;
+}
+.ds-sitemark {
+  font-family: var(--display); font-size: var(--type-20); font-weight: 600;
+  color: var(--ink); letter-spacing: -0.012em; flex-shrink: 0;
+}
+.ds-nav { display: flex; align-items: center; gap: 4px; flex: 1; justify-content: center; }
+.ds-nav-link {
+  font-family: var(--ui); font-size: var(--type-14); font-weight: 500; color: var(--char);
+  padding: 8px 12px; border-radius: var(--radius-md);
+  transition: background var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard);
+}
+.ds-nav-link:hover { background: var(--ink-haze); color: var(--ink); }
+.ds-header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.ds-search-form {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--platinum); border: 1px solid transparent; border-radius: var(--radius-md);
+  padding: 6px 10px;
+  transition: border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
+}
+.ds-search-form:focus-within { border-color: var(--ink); background: var(--vellum); }
+.ds-search-icon { color: var(--graphite-mute); }
+.ds-search-input {
+  border: none; background: transparent; font-family: var(--ui); font-size: var(--type-14);
+  color: var(--char); width: 180px; padding: 2px 0;
+}
+.ds-search-input:focus { outline: none; }
+.ds-menu-toggle { display: none; background: transparent; border: 1px solid var(--platinum-edge); border-radius: var(--radius-md); padding: 8px 10px; }
+@media (max-width: 1023px) {
+  .ds-nav { display: none; }
+  .ds-search-input { width: 120px; }
+  .ds-header-actions .ds-button-secondary { display: none; }
+  .ds-menu-toggle { display: inline-flex; }
+}
+@media (max-width: 599px) {
+  .ds-search-form { display: none; }
+}
+
+/* ===== Issue-marker masthead (E) ===== */
+[data-section="issue-masthead"] {
+  background: var(--vellum);
+  border-bottom: 1px solid var(--platinum-edge);
+  padding-block: 36px 24px;
+}
+.ds-issue-row {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.ds-issue-mark {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(36px, 6vw, var(--type-72));
+  letter-spacing: -0.022em; line-height: 1; color: var(--ink);
+}
+.ds-issue-mark .ds-issue-num { color: var(--brass); }
+.ds-issue-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--graphite-mute); text-align: right; line-height: 1.6; }
+
+/* ===== Bento hero (A) ===== */
+[data-section="hero"] {
+  padding-block: 24px var(--space-section-d);
+  border-bottom: 1px solid var(--platinum-edge);
+}
+.ds-bento {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  min-height: 540px;
+}
+.ds-bento-lead {
+  grid-row: 1 / span 2;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--ink-deep);
+  display: flex;
+  isolation: isolate;
+}
+.ds-bento-lead::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0, 31, 47, 0.20) 0%, rgba(0, 31, 47, 0.55) 50%, rgba(0, 31, 47, 0.92) 100%);
+  z-index: 1;
+}
+.ds-bento-lead img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  z-index: 0;
+  transition: transform var(--motion-slow) var(--ease-standard);
+}
+.ds-bento-lead:hover img { transform: scale(1.02); }
+.ds-bento-lead-text {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 36px 36px 32px;
+  margin-top: auto;
+  color: var(--vellum);
+  max-width: 640px;
+}
+.ds-bento-lead h1 {
+  color: var(--vellum);
+  font-size: clamp(28px, 4.2vw, var(--type-48));
+  line-height: 1.08; letter-spacing: -0.018em;
+}
+.ds-bento-lead .ds-eyebrow { color: var(--brass-soft); }
+.ds-bento-lead .ds-deck {
+  font-family: var(--editorial);
+  font-style: italic;
+  font-size: var(--type-18);
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 56ch;
+}
+.ds-bento-lead .ds-meta {
+  display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center;
+  font-family: var(--mono); font-size: 11px; color: rgba(255, 255, 255, 0.72);
+  letter-spacing: 0.06em;
+}
+.ds-bento-lead .ds-meta .ds-chip { background: rgba(255, 255, 255, 0.14); color: var(--vellum); }
+.ds-bento-lead .ds-meta .ds-ph { color: rgba(255, 255, 255, 0.65); border-bottom-color: rgba(212, 164, 90, 0.5); }
+.ds-bento-lead .ds-meta .ds-ph::before { color: var(--brass-soft); }
+.ds-bento-lead-cta { margin-top: 6px; }
+
+.ds-bento-secondary {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--platinum);
+  border: 1px solid var(--platinum-edge);
+  display: flex; flex-direction: column;
+  transition: box-shadow var(--motion-base) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), transform var(--motion-base) var(--ease-standard);
+}
+.ds-bento-secondary:hover { box-shadow: var(--shadow-md); border-color: var(--ink-haze); transform: translateY(-2px); }
+.ds-bento-secondary .ds-bento-thumb {
+  position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ink-haze);
+}
+.ds-bento-secondary .ds-bento-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-slow) var(--ease-standard); }
+.ds-bento-secondary:hover .ds-bento-thumb img { transform: scale(1.04); }
+.ds-bento-secondary .ds-bento-body {
+  padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1;
+  background: var(--vellum);
+}
+.ds-bento-secondary h3 {
+  font-size: var(--type-18); font-weight: 600; color: var(--char); line-height: 1.25; letter-spacing: -0.005em;
+}
+.ds-bento-secondary .ds-meta {
+  margin-top: auto; font-family: var(--mono); font-size: var(--type-12); color: var(--graphite-mute); display: flex; flex-wrap: wrap; gap: 6px 10px;
+}
+
+@media (max-width: 1023px) {
+  .ds-bento { grid-template-columns: 1fr; grid-template-rows: auto; gap: 16px; min-height: 0; }
+  .ds-bento-lead { grid-row: auto; min-height: 360px; }
+  .ds-bento-lead h1 { font-size: var(--type-30); }
+}
+@media (max-width: 599px) {
+  [data-section="hero"] { padding-block: 16px var(--space-section-m); }
+  .ds-bento-lead-text { padding: 24px 22px 22px; }
+}
+
+/* ===== C: Topic band (full-bleed ink) ===== */
+[data-section="by-topic"] {
+  background: var(--ink);
+  color: var(--vellum);
+  padding-block: 56px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+[data-section="by-topic"]::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--brass) 0%, transparent 40%);
+}
+.ds-topic-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px; margin-bottom: 36px; flex-wrap: wrap;
+}
+.ds-topic-head h2 {
+  color: var(--vellum); font-size: var(--type-36); font-family: var(--display);
+  letter-spacing: -0.018em;
+}
+.ds-topic-head .ds-eyebrow { color: var(--brass); margin-bottom: 8px; display: block; }
+.ds-topic-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.ds-topic-cell {
+  padding: 22px 18px;
+  display: flex; flex-direction: column; gap: 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.10);
+  transition: background var(--motion-fast) var(--ease-standard);
+  color: var(--vellum);
+}
+.ds-topic-cell:last-child { border-right: none; }
+.ds-topic-cell:hover { background: rgba(255, 255, 255, 0.05); }
+.ds-topic-cell .ds-topic-num {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+  color: var(--brass); text-transform: uppercase;
+}
+.ds-topic-cell .ds-topic-name {
+  font-family: var(--display); font-size: var(--type-20); font-weight: 600;
+  color: var(--vellum); letter-spacing: -0.01em; line-height: 1.2;
+}
+.ds-topic-cell .ds-topic-count {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.10em;
+  text-transform: uppercase; color: rgba(255, 255, 255, 0.55);
+  margin-top: auto;
+}
+@media (max-width: 1023px) {
+  .ds-topic-row { grid-template-columns: repeat(3, 1fr); }
+  .ds-topic-cell:nth-child(3n) { border-right: none; }
+  .ds-topic-cell:nth-child(n+4) { border-top: 1px solid rgba(255, 255, 255, 0.10); }
+}
+@media (max-width: 599px) {
+  .ds-topic-row { grid-template-columns: repeat(2, 1fr); }
+  .ds-topic-cell:nth-child(2n) { border-right: none; }
+  .ds-topic-cell:nth-child(2n+1) { border-right: 1px solid rgba(255, 255, 255, 0.10); }
+  .ds-topic-cell:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, 0.10); }
+}
+
+/* ===== B: This week's reads — magazine-mixed grid ===== */
+[data-section="latest"] {
+  padding-block: var(--space-section-d);
+  background: var(--vellum);
+}
+.ds-section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px; margin-bottom: 40px; flex-wrap: wrap;
+}
+.ds-section-head h2 { font-size: var(--type-36); letter-spacing: -0.018em; }
+.ds-section-head .ds-eyebrow { display: block; margin-bottom: 8px; }
+
+.ds-mixed-lead {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 32px;
+  align-items: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--platinum-edge);
+  margin-bottom: 40px;
+}
+.ds-mixed-lead-image {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--ink-haze);
+}
+.ds-mixed-lead-image img { width: 100%; height: 100%; object-fit: cover; }
+.ds-mixed-lead-text { display: flex; flex-direction: column; gap: 12px; }
+.ds-mixed-lead-text h3 {
+  font-size: var(--type-30);
+  line-height: 1.18;
+  letter-spacing: -0.018em;
+}
+.ds-mixed-lead-text .ds-deck {
+  font-family: var(--editorial);
+  font-style: italic;
+  font-size: var(--type-18);
+  line-height: 1.5;
+  color: var(--graphite);
+  max-width: 56ch;
+}
+.ds-mixed-lead-text .ds-meta { font-family: var(--mono); font-size: var(--type-12); color: var(--graphite-mute); display: flex; flex-wrap: wrap; gap: 6px 12px; }
+
+.ds-mixed-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-gap-d);
+  margin-bottom: 56px;
+}
+.ds-pair-card {
+  display: flex; flex-direction: column;
+  background: var(--vellum);
+  border: 1px solid var(--platinum-edge);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--motion-fast) var(--ease-standard), transform var(--motion-base) var(--ease-standard), box-shadow var(--motion-base) var(--ease-standard);
+}
+.ds-pair-card:hover { border-color: var(--ink-haze); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.ds-pair-card-cover { aspect-ratio: 16 / 9; overflow: hidden; background: var(--platinum); }
+.ds-pair-card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-slow) var(--ease-standard); }
+.ds-pair-card:hover .ds-pair-card-cover img { transform: scale(1.03); }
+.ds-pair-card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; }
+.ds-pair-card h3 { font-size: var(--type-20); font-weight: 600; line-height: 1.25; letter-spacing: -0.005em; }
+.ds-pair-card .ds-meta { font-family: var(--mono); font-size: var(--type-12); color: var(--graphite-mute); margin-top: 4px; display: flex; flex-wrap: wrap; gap: 6px 10px; }
+
+.ds-mixed-list-head {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--graphite-mute); margin-bottom: 16px;
+}
+.ds-list {
+  list-style: none; padding: 0; margin: 0 0 32px;
+  border-top: 1px solid var(--platinum-edge);
+}
+.ds-list-item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--platinum-edge);
+}
+.ds-list-num {
+  font-family: var(--display); font-weight: 700; font-size: var(--type-30);
+  color: var(--brass); letter-spacing: -0.02em; line-height: 1;
+}
+.ds-list-text { display: flex; flex-direction: column; gap: 6px; }
+.ds-list-text h3 {
+  font-family: var(--editorial);
+  font-weight: 600;
+  font-size: var(--type-20);
+  line-height: 1.3;
+  color: var(--char);
+  letter-spacing: -0.005em;
+}
+.ds-list-text .ds-meta { font-family: var(--mono); font-size: var(--type-12); color: var(--graphite-mute); display: flex; flex-wrap: wrap; gap: 6px 12px; }
+.ds-list-chip { align-self: start; padding-top: 4px; }
+.ds-section-foot { display: flex; justify-content: flex-end; }
+
+@media (max-width: 1023px) {
+  .ds-mixed-lead { grid-template-columns: 1fr; gap: 20px; }
+  .ds-mixed-pair { grid-template-columns: 1fr; }
+  .ds-list-item { grid-template-columns: 36px 1fr; }
+  .ds-list-chip { grid-column: 2; padding-top: 0; }
+  .ds-list-num { font-size: var(--type-24); }
+}
+@media (max-width: 599px) {
+  [data-section="latest"] { padding-block: var(--space-section-m); }
+  .ds-mixed-lead-text h3 { font-size: var(--type-24); }
+}
+
+/* ===== Newsletter sign-off (D — narrower, voice copy) ===== */
+[data-section="engagement"] {
+  background: var(--platinum);
+  padding-block: var(--space-section-d);
+  border-top: 1px solid var(--platinum-edge);
+}
+.ds-newsletter-narrow {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex; flex-direction: column; gap: 14px; align-items: center;
+}
+.ds-newsletter-narrow h2 {
+  font-size: var(--type-36); letter-spacing: -0.018em;
+}
+.ds-newsletter-narrow p {
+  font-family: var(--editorial); font-size: var(--type-18); line-height: 1.5; color: var(--graphite);
+  max-width: 52ch;
+}
+.ds-newsletter-narrow form { display: flex; gap: 8px; width: 100%; max-width: 460px; }
+.ds-newsletter-narrow .ds-eyebrow { color: var(--brass); }
+.ds-newsletter-foot {
+  margin-top: 14px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.10em; text-transform: uppercase; color: var(--graphite-mute);
+}
+.ds-newsletter-foot a { color: var(--ink); border-bottom: 1px solid transparent; transition: border-color var(--motion-fast) var(--ease-standard); }
+.ds-newsletter-foot a:hover { border-bottom-color: var(--brass); }
+
+@media (max-width: 599px) {
+  [data-section="engagement"] { padding-block: var(--space-section-m); }
+  .ds-newsletter-narrow h2 { font-size: var(--type-24); }
+  .ds-newsletter-narrow p { font-size: var(--type-16); }
+}
+
+/* ===== Footer ===== */
+[data-section="footer"] {
+  background: var(--obsidian); color: var(--vellum);
+  border-top: 1px solid var(--navy-deep);
+  padding-block: 56px 36px;
+}
+.ds-footer-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-gap-d); margin-bottom: 40px;
+}
+.ds-footer-col h4 {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--graphite-mute); margin-bottom: 16px;
+}
+.ds-footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.ds-footer-col a {
+  font-family: var(--ui); font-size: var(--type-14);
+  color: var(--vellum); opacity: 0.85;
+  transition: opacity var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard);
+}
+.ds-footer-col a:hover { opacity: 1; color: var(--brass); }
+.ds-social { display: flex; gap: 12px; }
+.ds-social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.18); opacity: 0.8;
+  transition: opacity var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), background var(--motion-fast) var(--ease-standard);
+}
+.ds-social a:hover { opacity: 1; border-color: var(--brass); background: rgba(184, 136, 48, 0.10); }
+.ds-social svg { width: 16px; height: 16px; }
+.ds-legal {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--graphite-mute); border-top: 1px solid rgba(255, 255, 255, 0.10);
+  padding-top: 24px; margin-bottom: 24px; display: flex; gap: 18px; flex-wrap: wrap;
+}
+.ds-legal a { color: var(--graphite-mute); transition: color var(--motion-fast) var(--ease-standard); }
+.ds-legal a:hover { color: var(--vellum); }
+.ds-cobrand {
+  display: flex; gap: 32px; align-items: center; justify-content: center;
+  padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.ds-cobrand-mark {
+  font-family: var(--display); font-size: var(--type-14); font-weight: 500;
+  letter-spacing: 0.02em; color: var(--vellum); opacity: 0.9;
+}
+.ds-cobrand-mark img { height: 28px; width: auto; }
+@media (max-width: 1023px) {
+  .ds-footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 599px) {
+  [data-section="footer"] { padding-block: var(--space-section-m); }
+  .ds-footer-grid { grid-template-columns: 1fr; }
+  .ds-cobrand { flex-direction: column; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .ds-bento-lead:hover img, .ds-bento-secondary:hover .ds-bento-thumb img,
+  .ds-pair-card:hover .ds-pair-card-cover img, .ds-pair-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- 0. UTILITY STRIP -->
+<header data-section="utility-strip" data-intent="attribute" data-layout="full-width-thin" data-items="2">
+  <div class="ds-container">
+    <p>Produced by The Channel Company &nbsp;·&nbsp; Sponsored by Dell Technologies</p>
+    <p style="opacity:.7">A trade publication for the Dell channel</p>
+  </div>
+</header>
+
+<!-- 1. HEADER -->
+<header data-section="header" data-intent="navigate" data-layout="full-width-sticky" data-items="6">
+  <div class="ds-container ds-header-inner">
+    <a href="/" class="ds-sitemark" aria-label="Enterprise Tech Provider · Home">Enterprise Tech Provider</a>
+    <nav class="ds-nav" aria-label="Primary">
+      <a class="ds-nav-link" href="/artificial-intelligence">AI</a>
+      <a class="ds-nav-link" href="/modern-datacenter">Modern Datacenter</a>
+      <a class="ds-nav-link" href="/storage">Storage</a>
+      <a class="ds-nav-link" href="/modern-workplace">Modern Workplace</a>
+      <a class="ds-nav-link" href="/intel">Intel</a>
+      <a class="ds-nav-link" href="/dell-technologies-advantage">Dell Tech Advantage</a>
+    </nav>
+    <div class="ds-header-actions">
+      <form class="ds-search-form" action="/search/node" role="search">
+        <svg class="ds-search-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <input type="search" name="keys" class="ds-search-input" placeholder="Search articles" aria-label="Search articles">
+      </form>
+      <a class="ds-button-secondary" href="#engagement">Subscribe</a>
+      <button class="ds-menu-toggle" aria-label="Open menu" type="button">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- E. ISSUE MARKER (typographic moment) -->
+  <section data-section="issue-masthead" data-intent="editorial-marker" data-layout="full-width-row" data-items="1">
+    <div class="ds-container ds-issue-row">
+      <h2 class="ds-issue-mark">Week of <span class="ds-issue-num">4&nbsp;May&nbsp;2026</span></h2>
+      <div class="ds-issue-meta">
+        <div>The Dell channel edition</div>
+        <div style="opacity:.7">17 sections &nbsp;·&nbsp; 614 articles in the archive</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A. BENTO HERO -->
+  <section data-section="hero" data-intent="lead-story" data-layout="bento-8-4" data-items="3" class="ds-hero">
+    <div class="ds-container">
+      <div class="ds-bento">
+
+        <!-- Lead -->
+        <a class="ds-bento-lead"
+           href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing"
+           aria-label="Read the lead story"
+           data-card="lead">
+          <img src="../current/assets/media/05824-20260325-Dell-ETP-CS-Launch_LinkedIn-Image_309x309-1674195d.jpg"
+               alt="How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing">
+          <div class="ds-bento-lead-text">
+            <span class="ds-eyebrow ds-eyebrow--brass">Featured · Modern Workplace</span>
+            <h1>How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+            <p class="ds-deck">
+              <span class="ds-ph"
+                    data-placeholder="true" data-placeholder-type="other"
+                    data-placeholder-source="article excerpt not on captured home; sourced from article meta at migrate">
+                deck pending. Two lines from the article&rsquo;s opening, set in editorial italic.
+              </span>
+            </p>
+            <div class="ds-meta">
+              <span class="ds-chip">Modern Workplace</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card author">author pending</span>
+            </div>
+            <div class="ds-bento-lead-cta"><span class="ds-button-primary">Read article</span></div>
+          </div>
+        </a>
+
+        <!-- Secondary 1 -->
+        <a class="ds-bento-secondary"
+           href="/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage"
+           aria-label="Read: PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage"
+           data-card="secondary">
+          <span class="ds-bento-thumb">
+            <img src="../current/assets/media/04823-20241205-Dell-ETP-1402896104-309x309-cbe17f87.jpg" alt="PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage" loading="lazy">
+          </span>
+          <div class="ds-bento-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Secondary 2 -->
+        <a class="ds-bento-secondary"
+           href="/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your"
+           aria-label="Read: 5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers"
+           data-card="secondary">
+          <span class="ds-bento-thumb">
+            <img src="../current/assets/media/05182-20251114-Dell-ETP-2192467778-309x309-b233797f.jpg" alt="5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers" loading="lazy">
+          </span>
+          <div class="ds-bento-body">
+            <span class="ds-chip ds-chip--neutral">Dell Tech Advantage</span>
+            <h3>5 Ways Dell PowerProtect Helps You Grow Your Business by Protecting Your Customers</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- C. TOPIC BAND (full-bleed ink) — D label "Across the channel" -->
+  <section data-section="by-topic" data-intent="taxonomy" data-layout="band-row" data-items="6">
+    <div class="ds-container">
+      <div class="ds-topic-head">
+        <div>
+          <span class="ds-eyebrow">By Topic</span>
+          <h2>Across the channel</h2>
+        </div>
+        <a class="ds-link-arrow" style="color: var(--brass-soft);" href="/sitemap">All topics &rarr;</a>
+      </div>
+
+      <div class="ds-topic-row">
+        <a class="ds-topic-cell" href="/newsroom" aria-label="Newsroom: 147 articles">
+          <span class="ds-topic-num">01</span>
+          <span class="ds-topic-name">Newsroom</span>
+          <span class="ds-topic-count">147 articles</span>
+        </a>
+        <a class="ds-topic-cell" href="/storage" aria-label="Storage: 97 articles">
+          <span class="ds-topic-num">02</span>
+          <span class="ds-topic-name">Storage</span>
+          <span class="ds-topic-count">97 articles</span>
+        </a>
+        <a class="ds-topic-cell" href="/commercial-pcs" aria-label="Commercial PCs: 55 articles">
+          <span class="ds-topic-num">03</span>
+          <span class="ds-topic-name">Commercial PCs</span>
+          <span class="ds-topic-count">55 articles</span>
+        </a>
+        <a class="ds-topic-cell" href="/server" aria-label="Server: 48 articles">
+          <span class="ds-topic-num">04</span>
+          <span class="ds-topic-name">Server</span>
+          <span class="ds-topic-count">48 articles</span>
+        </a>
+        <a class="ds-topic-cell" href="/modern-workplace" aria-label="Modern Workplace: 37 articles">
+          <span class="ds-topic-num">05</span>
+          <span class="ds-topic-name">Modern Workplace</span>
+          <span class="ds-topic-count">37 articles</span>
+        </a>
+        <a class="ds-topic-cell" href="/artificial-intelligence" aria-label="Artificial Intelligence: 36 articles">
+          <span class="ds-topic-num">06</span>
+          <span class="ds-topic-name">Artificial Intelligence</span>
+          <span class="ds-topic-count">36 articles</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- B. THIS WEEK'S READS — magazine-mixed -->
+  <section data-section="latest" data-intent="recent-content" data-layout="mixed-magazine" data-items="6">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div>
+          <span class="ds-eyebrow">This Week</span>
+          <h2>This week&rsquo;s reads</h2>
+        </div>
+        <a class="ds-link-arrow" href="/newsroom">View all latest &rarr;</a>
+      </div>
+
+      <!-- LEAD reads card -->
+      <a class="ds-mixed-lead" href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission" aria-label="Read: Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage">
+        <div class="ds-mixed-lead-image">
+          <img src="../current/assets/media/05284-20260210-Dell-ETP-2215785854-309x309-dbed03bb.jpg" alt="Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage" loading="lazy">
+        </div>
+        <div class="ds-mixed-lead-text">
+          <span class="ds-chip ds-chip--datacenter">Storage</span>
+          <h3>Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital for Your Enterprise Customers&rsquo; Mission-Critical Storage</h3>
+          <p class="ds-deck">
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="article deck">
+              two-line opener pending; the editorial deck for this story will land here.
+            </span>
+          </p>
+          <div class="ds-meta">
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+            <span aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+            <span aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card author">author pending</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PAIR row: 2 cards at 1/2 each -->
+      <div class="ds-mixed-pair">
+        <a class="ds-pair-card" href="/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners" aria-label="Read: How Dell PowerEdge Single-Socket Servers With AMD EPYC Processors Help Partners Grow">
+          <div class="ds-pair-card-cover">
+            <img src="../current/assets/media/05284-20260210-Dell-ETP-1818616410-309x309-374060e3.jpg" alt="How Dell PowerEdge Single-Socket Servers With AMD EPYC Processors Help Partners Grow" loading="lazy">
+          </div>
+          <div class="ds-pair-card-body">
+            <span class="ds-chip ds-chip--datacenter">Modern Datacenter</span>
+            <h3>How Dell PowerEdge Single-Socket Servers With AMD EPYC Processors Help Partners Grow</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+        <a class="ds-pair-card" href="/modern-workplace/help-customers-build-the-best-workplace-experience-for-productivity-and" aria-label="Read: Help Customers Build the Best Workplace Experience for Productivity and Collaboration">
+          <div class="ds-pair-card-cover">
+            <img src="../current/assets/media/04823-20241205-Dell-ETP-2162026367-309x309_0-6cb5dbe1.jpg" alt="Help Customers Build the Best Workplace Experience for Productivity and Collaboration" loading="lazy">
+          </div>
+          <div class="ds-pair-card-body">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <h3>Help Customers Build the Best Workplace Experience for Productivity and Collaboration</h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- NUMBERED LIST: 3 items, no thumbnails -->
+      <div class="ds-mixed-list-head">More from this week</div>
+      <ol class="ds-list">
+        <li class="ds-list-item">
+          <span class="ds-list-num">04</span>
+          <div class="ds-list-text">
+            <h3><a href="/modern-workplace/leverage-dell-s-powerful-client-device-security-to-win-customer-pc-refresh-deals">Leverage Dell&rsquo;s Powerful Client Device Security to Win Customer PC Refresh Deals</a></h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="list date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="list read-time">read-time pending</span>
+            </div>
+          </div>
+          <span class="ds-list-chip"><span class="ds-chip ds-chip--workplace">Modern Workplace</span></span>
+        </li>
+        <li class="ds-list-item">
+          <span class="ds-list-num">05</span>
+          <div class="ds-list-text">
+            <h3><a href="/artificial-intelligence/how-the-dell-ai-factory-simplifies-the-customer-ai-journey">How the Dell AI Factory Simplifies the Customer AI Journey</a></h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="list date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="list read-time">read-time pending</span>
+            </div>
+          </div>
+          <span class="ds-list-chip"><span class="ds-chip ds-chip--ai">AI</span></span>
+        </li>
+        <li class="ds-list-item">
+          <span class="ds-list-num">06</span>
+          <div class="ds-list-text">
+            <h3><a href="/intel/4-ways-an-ai-pc-refresh-saves-your-customers-time-and-money">4 Ways an AI PC Refresh Saves Your Customers Time and Money</a></h3>
+            <div class="ds-meta">
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="list date">date pending</span>
+              <span aria-hidden="true">·</span>
+              <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="list read-time">read-time pending</span>
+            </div>
+          </div>
+          <span class="ds-list-chip"><span class="ds-chip ds-chip--ai">Intel</span></span>
+        </li>
+      </ol>
+
+      <div class="ds-section-foot">
+        <a class="ds-link-arrow" href="/newsroom">Browse the archive &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- D. NEWSLETTER SIGN-OFF -->
+  <section data-section="engagement" data-intent="convert" data-layout="centered-narrow" data-items="1" id="engagement">
+    <div class="ds-container">
+      <div class="ds-newsletter-narrow">
+        <span class="ds-eyebrow ds-eyebrow--brass">From the editor</span>
+        <h2>Get next week&rsquo;s first.</h2>
+        <p>
+          <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="newsletter description">
+            two-line newsletter description pending. The editorial promise of the weekly send, set in serif italic.
+          </span>
+        </p>
+        <form action="#" method="post" aria-label="Subscribe to the ETP newsletter">
+          <input class="ds-input" type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+          <button class="ds-button-primary" type="submit">Subscribe</button>
+        </form>
+        <div class="ds-newsletter-foot">Reels, news, and short reads · Watch the latest on <a href="/videos">video</a></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 6. FOOTER -->
+<footer data-section="footer" data-intent="navigate" data-layout="mega" data-items="4">
+  <div class="ds-container">
+    <div class="ds-footer-grid">
+      <div class="ds-footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="https://www.thechannelco.com/about-the-channel-company/">About The Channel Company</a></li>
+          <li><a href="https://www.crn.com/about-crn">About CRN</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.dell.com/en-us/dt/contactus.htm">Contact Dell Technologies</a></li>
+          <li><a href="https://www.thechannelco.com/contact-us/">Contact The Channel Company</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>CRN Awards</h4>
+        <ul>
+          <li><a href="#engagement">Subscribe</a></li>
+          <li><a href="https://www.crn.com/rankings-and-lists">CRN Lists &amp; Awards</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>Follow</h4>
+        <div class="ds-social">
+          <a href="https://www.instagram.com/thechannelcompany/" aria-label="Instagram" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@TheChannelCompany" aria-label="YouTube" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://x.com/TheChannelCo" aria-label="X" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.7 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21H2.3l7.1-8.1L2 3h6.3l4.4 5.8L17.7 3zm-1.1 16h1.7L7.5 5H5.7l10.9 14z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/the-channel-company" aria-label="LinkedIn" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M10 9h4v2c.7-1.3 2.2-2.2 4-2.2 3.3 0 5 2 5 5.5V21h-4v-6c0-1.7-.7-2.8-2.3-2.8-1.6 0-2.7 1.1-2.7 2.8v6h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-legal">
+      <a href="https://www.thechannelco.com/privacy-policy/">The Channel Company Privacy Policy</a>
+      <a href="https://www.thechannelco.com/cookie-policy/">The Channel Company Cookie Policy</a>
+      <a href="https://www.thechannelco.com/do-not-sell-my-information/">Do Not Sell or Share My Personal Information</a>
+    </div>
+
+    <div class="ds-cobrand">
+      <span class="ds-cobrand-mark"><img src="../current/assets/media/dell_logo_white_160px-764d5064.png" alt="Dell Technologies" height="28"></span>
+      <span class="ds-cobrand-mark">The Channel Company</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

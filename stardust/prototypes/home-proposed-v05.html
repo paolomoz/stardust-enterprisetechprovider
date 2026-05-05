@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- stardust:provenance
+  writtenBy:         stardust:prototype (V05 — V04 design applied to exact captured 13-section IA)
+  writtenAt:         2026-05-05T00:00:00Z
+  page:              home
+  pageUrl:           https://www.enterprisetechprovider.com/
+  proposedFile:      ./home-proposed-v05.html
+  againstDirection:  stardust/direction.md (Active 2026-05-05T00:00:00Z)
+  basis:             stardust/current/pages/home-ia.json (13 sections captured from live home)
+  variantBasis:      V04 design system (type-led hero · 1:1 native thumbs · ink topic band · quiet placeholders · multi-family type · enterprise-refined secondaries) deployed across the exact section inventory captured from the live home; sections appear in source DOM order; each item rendered per its captured kind (featured-story | card | carousel-slide | numbered-list-item | text-link)
+  divergenceVersion: v1.0 (stardust v0.3)
+  fontDeck:          editorial-trade-multi (Geist + Source Serif 4 + Inter + Geist Mono)
+  paletteSource:     user-pinned primaries + enterprise-refined secondaries
+  unsourcedContent:  ~16 placeholders (deck/date/read-time/author per article + newsletter description)
+  stardustVersion:   0.3.0
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise Tech Provider | Week of 4 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap">
+<style>
+:root {
+  --ink:#003049; --ink-deep:#001f2f; --ink-haze:#e8eef2;
+  --obsidian:#000000; --vellum:#ffffff;
+  --char:#0a0d12; --graphite:#3d4651; --graphite-mute:#6b7480;
+  --platinum:#f4f5f7; --platinum-edge:#dfe3e8;
+  --navy-deep:#0b1f3a; --brass:#b88830; --brass-soft:#d4a45a; --cordovan:#5b1116;
+  --tint-datacenter: rgba(0,48,73,0.06);
+  --tint-ai:         rgba(184,136,48,0.12);
+  --tint-workplace:  rgba(91,17,22,0.08);
+  --tint-neutral:    var(--platinum);
+  --display:"Geist",ui-sans-serif,system-ui,sans-serif;
+  --editorial:"Source Serif 4","Iowan Old Style",Charter,Georgia,serif;
+  --ui:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --type-12:.75rem; --type-14:.875rem; --type-16:1rem; --type-18:1.125rem;
+  --type-20:1.25rem; --type-24:1.5rem; --type-30:1.875rem; --type-36:2.25rem;
+  --type-48:3rem; --type-60:3.75rem; --type-72:4.5rem;
+  --radius-sm:2px; --radius-md:4px; --radius-lg:8px; --radius-pill:999px;
+  --shadow-sm:0 1px 2px rgba(10,13,18,.04),0 1px 4px rgba(10,13,18,.04);
+  --shadow-md:0 4px 12px rgba(10,13,18,.08),0 2px 6px rgba(10,13,18,.06);
+  --space-section-d:80px; --space-section-t:56px; --space-section-m:40px;
+  --space-gap-d:24px; --space-gap-t:16px; --space-gap-m:12px;
+  --content-max:1280px;
+  --motion-fast:120ms; --motion-base:220ms; --motion-slow:360ms;
+  --ease-standard:cubic-bezier(.2,.8,.2,1);
+  --img-hero-spot:309px; --img-roster:200px; --img-mini:96px;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--vellum);color:var(--char);font-family:var(--ui);font-size:var(--type-16);line-height:1.55;-webkit-font-smoothing:antialiased;}
+img,svg{display:block;max-width:100%;}
+button{font:inherit;cursor:pointer;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;color:var(--char);margin:0;line-height:1.15;letter-spacing:-.012em;}
+.ds-eyebrow{font-family:var(--mono);font-size:var(--type-12);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);display:inline-block;}
+.ds-eyebrow--brass{color:var(--brass);}
+.ds-eyebrow--ink{color:var(--ink);}
+.ds-chip{display:inline-flex;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:var(--radius-sm);background:var(--tint-datacenter);color:var(--ink);}
+.ds-chip--datacenter{background:var(--tint-datacenter);color:var(--ink);}
+.ds-chip--ai{background:var(--tint-ai);color:var(--brass);}
+.ds-chip--workplace{background:var(--tint-workplace);color:var(--cordovan);}
+.ds-chip--neutral{background:var(--platinum);color:var(--graphite);}
+.ds-chip--storage{background:var(--tint-datacenter);color:var(--ink);}
+.ds-button-primary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--ui);font-size:var(--type-14);font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:11px 18px;background:var(--ink);color:var(--vellum);border:none;border-radius:var(--radius-md);transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-primary:hover{background:var(--ink-deep);}
+.ds-button-secondary{display:inline-flex;align-items:center;justify-content:center;font-family:var(--ui);font-size:var(--type-14);font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:var(--radius-md);transition:background var(--motion-base) var(--ease-standard);}
+.ds-button-secondary:hover{background:var(--ink-haze);}
+.ds-link-arrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color var(--motion-fast) var(--ease-standard),color var(--motion-fast) var(--ease-standard);}
+.ds-link-arrow:hover{border-bottom-color:var(--brass);color:var(--brass);}
+.ds-input{flex:1;font-family:var(--ui);font-size:var(--type-16);padding:12px 14px;background:var(--vellum);color:var(--char);border:1px solid var(--platinum-edge);border-radius:var(--radius-md);transition:border-color var(--motion-fast) var(--ease-standard),box-shadow var(--motion-fast) var(--ease-standard);}
+.ds-input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(0,48,73,.15);}
+.ds-ph{font-family:var(--editorial);font-style:italic;font-size:inherit;color:var(--graphite-mute);opacity:.68;border-bottom:1px dotted rgba(184,136,48,.45);padding:0 1px;}
+.ds-ph::before{content:"›";margin-right:4px;color:var(--brass);font-style:normal;font-family:var(--mono);font-size:.85em;}
+.ds-container{width:100%;max-width:var(--content-max);margin:0 auto;padding-inline:24px;}
+@media (min-width:600px){.ds-container{padding-inline:32px;}}
+@media (min-width:1024px){.ds-container{padding-inline:48px;}}
+
+/* === Utility strip === */
+[data-section="utility-strip"]{background:var(--vellum);border-bottom:1px solid var(--platinum-edge);height:28px;display:flex;align-items:center;}
+[data-section="utility-strip"] .ds-container{display:flex;justify-content:space-between;align-items:center;height:100%;}
+[data-section="utility-strip"] p{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);}
+@media (max-width:599px){[data-section="utility-strip"]{height:auto;padding:6px 0;}[data-section="utility-strip"] p{font-size:10px;line-height:1.4;text-align:center;}[data-section="utility-strip"] p:last-child{display:none;}}
+
+/* === Header === */
+[data-section="header"]{position:sticky;top:0;z-index:50;background:var(--vellum);border-bottom:1px solid var(--platinum-edge);transition:box-shadow var(--motion-base) var(--ease-standard);}
+.ds-header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px;}
+.ds-sitemark{font-family:var(--display);font-size:var(--type-20);font-weight:600;color:var(--ink);letter-spacing:-.012em;flex-shrink:0;}
+.ds-nav{display:flex;align-items:center;gap:2px;flex:1;justify-content:center;}
+.ds-nav-link{font-family:var(--ui);font-size:var(--type-14);font-weight:500;color:var(--char);padding:8px 10px;border-radius:var(--radius-md);white-space:nowrap;transition:background var(--motion-fast) var(--ease-standard),color var(--motion-fast) var(--ease-standard);}
+.ds-nav-link:hover{background:var(--ink-haze);color:var(--ink);}
+.ds-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.ds-search-form{display:flex;align-items:center;gap:6px;background:var(--platinum);border:1px solid transparent;border-radius:var(--radius-md);padding:6px 10px;}
+.ds-search-form:focus-within{border-color:var(--ink);background:var(--vellum);}
+.ds-search-icon{color:var(--graphite-mute);}
+.ds-search-input{border:none;background:transparent;font-family:var(--ui);font-size:var(--type-14);color:var(--char);width:160px;padding:2px 0;}
+.ds-search-input:focus{outline:none;}
+.ds-menu-toggle{display:none;background:transparent;border:1px solid var(--platinum-edge);border-radius:var(--radius-md);padding:8px 10px;}
+@media (max-width:1199px){.ds-nav{display:none;}.ds-search-input{width:120px;}.ds-header-actions .ds-button-secondary{display:none;}.ds-menu-toggle{display:inline-flex;}}
+@media (max-width:599px){.ds-search-form{display:none;}}
+
+/* === Issue masthead === */
+[data-section="issue-masthead"]{background:var(--vellum);border-bottom:1px solid var(--platinum-edge);padding-block:36px 24px;}
+.ds-issue-row{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.ds-issue-mark{font-family:var(--display);font-weight:700;font-size:clamp(36px,6vw,var(--type-72));letter-spacing:-.022em;line-height:1;color:var(--ink);}
+.ds-issue-mark .ds-issue-num{color:var(--brass);}
+.ds-issue-meta{font-family:var(--editorial);font-style:italic;font-size:var(--type-18);color:var(--graphite);text-align:right;line-height:1.5;max-width:38ch;}
+.ds-issue-meta-foot{display:block;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite-mute);margin-top:6px;}
+
+/* === Section head (shared) === */
+.ds-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;}
+.ds-section-head h2{font-size:var(--type-30);letter-spacing:-.018em;}
+.ds-section-head .ds-eyebrow{display:block;margin-bottom:6px;}
+
+/* === Hero (RECOMMENDED) === */
+[data-section="hero"]{padding-block:24px var(--space-section-d);border-bottom:1px solid var(--platinum-edge);}
+.ds-hero-typeled{display:grid;grid-template-columns:minmax(0,1fr) calc(var(--img-hero-spot) + 32px);gap:56px;align-items:start;}
+.ds-hero-text{display:flex;flex-direction:column;gap:18px;max-width:760px;}
+.ds-hero-text h1{font-size:clamp(36px,5.4vw,var(--type-60));line-height:1.05;letter-spacing:-.022em;color:var(--char);}
+.ds-hero-text .ds-deck{font-family:var(--editorial);font-style:italic;font-size:var(--type-20);line-height:1.5;color:var(--graphite);max-width:56ch;}
+.ds-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-family:var(--mono);font-size:var(--type-12);color:var(--graphite-mute);letter-spacing:.04em;}
+.ds-meta-sep{color:var(--platinum-edge);}
+.ds-tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.ds-tag{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);background:var(--platinum);padding:3px 8px;border-radius:var(--radius-sm);}
+.ds-tag:hover{background:var(--ink-haze);color:var(--ink);}
+.ds-hero-actions{margin-top:8px;display:flex;gap:12px;align-items:center;}
+.ds-hero-spot{position:relative;width:var(--img-hero-spot);aspect-ratio:1/1;border-radius:var(--radius-lg);overflow:hidden;background:var(--ink);box-shadow:var(--shadow-md);align-self:start;}
+.ds-hero-spot img{width:100%;height:100%;object-fit:cover;transition:transform var(--motion-slow) var(--ease-standard);}
+.ds-hero-spot:hover img{transform:scale(1.02);}
+.ds-hero-spot-caption{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:linear-gradient(180deg,rgba(0,31,47,0) 0%,rgba(0,31,47,.85) 100%);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-soft);z-index:2;}
+@media (max-width:1023px){.ds-hero-typeled{grid-template-columns:1fr;gap:28px;}.ds-hero-spot{width:100%;max-width:var(--img-hero-spot);}}
+@media (max-width:599px){[data-section="hero"]{padding-block:24px var(--space-section-m);}.ds-hero-text h1{font-size:var(--type-30);}}
+
+/* === Roster (ESSENTIAL READING + LATEST) === */
+[data-section="essential-reading"], [data-section="latest"]{padding-block:var(--space-section-d);border-bottom:1px solid var(--platinum-edge);}
+[data-section="essential-reading"]{background:var(--vellum);}
+[data-section="latest"]{background:var(--platinum);}
+.ds-roster{display:grid;grid-template-columns:repeat(2,1fr);gap:32px var(--space-gap-d);}
+.ds-roster--3{grid-template-columns:repeat(3,1fr);}
+.ds-roster-card{display:grid;grid-template-columns:var(--img-roster) 1fr;gap:20px;align-items:start;padding-bottom:28px;border-bottom:1px solid var(--platinum-edge);}
+.ds-roster--3 .ds-roster-card{grid-template-columns:1fr;gap:14px;padding-bottom:0;border-bottom:none;}
+.ds-roster--3 .ds-roster-thumb{width:100%;}
+.ds-roster-thumb{width:var(--img-roster);aspect-ratio:1/1;border-radius:var(--radius-md);overflow:hidden;background:var(--ink-haze);box-shadow:var(--shadow-sm);flex-shrink:0;}
+.ds-roster-thumb img{width:100%;height:100%;object-fit:cover;transition:transform var(--motion-slow) var(--ease-standard);}
+.ds-roster-card:hover .ds-roster-thumb img{transform:scale(1.03);}
+.ds-roster-body{display:flex;flex-direction:column;gap:8px;min-width:0;}
+.ds-roster-body .ds-chip{align-self:flex-start;}
+.ds-roster-body h3{font-family:var(--display);font-weight:600;font-size:var(--type-20);line-height:1.25;letter-spacing:-.005em;color:var(--char);}
+.ds-roster-body h3 a:hover{color:var(--ink);}
+.ds-roster-body .ds-deck{font-family:var(--editorial);font-style:italic;font-size:var(--type-14);line-height:1.5;color:var(--graphite);}
+.ds-roster-body .ds-meta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite-mute);display:flex;gap:6px 10px;flex-wrap:wrap;margin-top:auto;}
+@media (max-width:1023px){.ds-roster, .ds-roster--3{grid-template-columns:1fr;gap:24px;}.ds-roster-card{padding-bottom:24px;}}
+@media (max-width:599px){.ds-roster-card{grid-template-columns:120px 1fr;gap:14px;}.ds-roster-thumb{width:120px;}}
+
+/* === Sponsored promo strip (INNOVATION & IMPACT) === */
+[data-section="innovation-impact"]{background:var(--navy-deep);color:var(--vellum);padding-block:var(--space-section-d);border-top:4px solid var(--brass);}
+.ds-sponsored-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;}
+.ds-sponsored-head h2{color:var(--vellum);font-size:var(--type-30);letter-spacing:-.018em;}
+.ds-sponsored-head .ds-eyebrow{color:var(--brass);}
+.ds-sponsored-head .ds-eyebrow-meta{display:block;font-family:var(--editorial);font-style:italic;color:rgba(255,255,255,.7);font-size:var(--type-14);margin-top:6px;text-transform:none;letter-spacing:0;}
+.ds-promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ds-promo-tile{display:flex;flex-direction:column;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:var(--radius-md);overflow:hidden;transition:background var(--motion-base) var(--ease-standard),border-color var(--motion-fast) var(--ease-standard),transform var(--motion-base) var(--ease-standard);color:var(--vellum);}
+.ds-promo-tile:hover{background:rgba(184,136,48,.06);border-color:rgba(212,164,90,.4);transform:translateY(-2px);}
+.ds-promo-thumb{aspect-ratio:6/5;overflow:hidden;background:var(--ink-deep);}
+.ds-promo-thumb img{width:100%;height:100%;object-fit:cover;}
+.ds-promo-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;}
+.ds-promo-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-soft);}
+.ds-promo-host{font-family:var(--display);font-size:var(--type-14);font-weight:500;color:var(--vellum);}
+.ds-promo-arrow{margin-top:auto;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(212,164,90,.85);display:inline-flex;align-items:center;gap:4px;padding-top:8px;}
+@media (max-width:1023px){.ds-promo-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:599px){.ds-promo-grid{grid-template-columns:1fr;}}
+
+/* === Topic ink band === */
+[data-section="topic-band"]{background:var(--ink);color:var(--vellum);padding-block:56px;position:relative;}
+[data-section="topic-band"]::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--brass) 0%,transparent 40%);}
+.ds-topic-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:36px;flex-wrap:wrap;}
+.ds-topic-head h2{color:var(--vellum);font-size:var(--type-36);letter-spacing:-.018em;}
+.ds-topic-head .ds-eyebrow{color:var(--brass);margin-bottom:8px;display:block;}
+.ds-topic-row{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);}
+.ds-topic-cell{padding:22px 16px;display:flex;flex-direction:column;gap:8px;border-right:1px solid rgba(255,255,255,.10);transition:background var(--motion-fast) var(--ease-standard);color:var(--vellum);}
+.ds-topic-cell:last-child{border-right:none;}
+.ds-topic-cell:hover{background:rgba(255,255,255,.05);}
+.ds-topic-num{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--brass);text-transform:uppercase;}
+.ds-topic-name{font-family:var(--display);font-size:var(--type-18);font-weight:600;color:var(--vellum);letter-spacing:-.005em;line-height:1.2;}
+.ds-topic-count{font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:auto;}
+@media (max-width:1199px){.ds-topic-row{grid-template-columns:repeat(4,1fr);}.ds-topic-cell:nth-child(4n){border-right:none;}.ds-topic-cell:nth-child(n+5){border-top:1px solid rgba(255,255,255,.10);}}
+@media (max-width:599px){.ds-topic-row{grid-template-columns:repeat(2,1fr);}.ds-topic-cell:nth-child(2n){border-right:none;}.ds-topic-cell:nth-child(n+3){border-top:1px solid rgba(255,255,255,.10);}}
+
+/* === Departments (text-only topic sections) === */
+[data-section="departments"]{padding-block:var(--space-section-d);background:var(--vellum);}
+.ds-dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px var(--space-gap-d);}
+.ds-department{display:flex;flex-direction:column;gap:14px;}
+.ds-dept-label{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;color:var(--ink);padding-bottom:10px;border-bottom:2px solid var(--ink);}
+.ds-dept-label--ai{color:var(--brass);border-bottom-color:var(--brass);}
+.ds-dept-label--workplace{color:var(--cordovan);border-bottom-color:var(--cordovan);}
+.ds-dept-label--neutral{color:var(--graphite);border-bottom-color:var(--graphite);}
+.ds-dept-num{color:var(--brass);font-weight:500;}
+.ds-dept-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
+.ds-dept-item{padding-bottom:14px;border-bottom:1px solid var(--platinum-edge);}
+.ds-dept-item:last-child{border-bottom:none;padding-bottom:0;}
+.ds-dept-item h3{font-family:var(--editorial);font-weight:600;font-size:var(--type-16);line-height:1.35;letter-spacing:-.005em;color:var(--char);margin:0;}
+.ds-dept-item h3 a:hover{color:var(--ink);}
+@media (max-width:1023px){.ds-dept-grid{grid-template-columns:repeat(2,1fr);gap:40px;}}
+@media (max-width:599px){[data-section="departments"]{padding-block:var(--space-section-m);}.ds-dept-grid{grid-template-columns:1fr;}}
+
+/* === Popular numbered list === */
+[data-section="popular"]{background:var(--platinum);padding-block:var(--space-section-d);border-top:1px solid var(--platinum-edge);}
+.ds-popular-head{text-align:left;margin-bottom:32px;}
+.ds-popular-head h2{font-size:var(--type-36);letter-spacing:-.018em;}
+.ds-popular-head .ds-eyebrow{display:block;margin-bottom:6px;}
+.ds-popular-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--platinum-edge);}
+.ds-popular-item{display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--platinum-edge);}
+.ds-popular-rank{font-family:var(--display);font-weight:700;font-size:var(--type-36);color:var(--brass);letter-spacing:-.02em;line-height:1;}
+.ds-popular-item h3{font-family:var(--editorial);font-weight:600;font-size:var(--type-20);line-height:1.3;color:var(--char);letter-spacing:-.005em;}
+.ds-popular-item h3 a:hover{color:var(--ink);}
+@media (max-width:599px){[data-section="popular"]{padding-block:var(--space-section-m);}.ds-popular-item{grid-template-columns:36px 1fr;gap:16px;}.ds-popular-rank{font-size:var(--type-24);}}
+
+/* === Engagement (newsletter sign-off) === */
+[data-section="engagement"]{padding-block:var(--space-section-d);background:var(--vellum);border-top:1px solid var(--platinum-edge);}
+.ds-newsletter-narrow{max-width:600px;margin:0 auto;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;}
+.ds-newsletter-narrow h2{font-size:var(--type-36);letter-spacing:-.018em;}
+.ds-newsletter-narrow p{font-family:var(--editorial);font-size:var(--type-18);line-height:1.5;color:var(--graphite);max-width:52ch;}
+.ds-newsletter-narrow form{display:flex;gap:8px;width:100%;max-width:460px;}
+.ds-newsletter-narrow .ds-eyebrow{color:var(--brass);}
+.ds-newsletter-foot{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--graphite-mute);}
+.ds-newsletter-foot a{color:var(--ink);border-bottom:1px solid transparent;}
+.ds-newsletter-foot a:hover{border-bottom-color:var(--brass);}
+@media (max-width:599px){[data-section="engagement"]{padding-block:var(--space-section-m);}.ds-newsletter-narrow h2{font-size:var(--type-24);}.ds-newsletter-narrow p{font-size:var(--type-16);}}
+
+/* === Footer === */
+[data-section="footer"]{background:var(--obsidian);color:var(--vellum);border-top:1px solid var(--navy-deep);padding-block:56px 36px;}
+.ds-footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-gap-d);margin-bottom:40px;}
+.ds-footer-col h4{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--graphite-mute);margin-bottom:16px;}
+.ds-footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+.ds-footer-col a{font-family:var(--ui);font-size:var(--type-14);color:var(--vellum);opacity:.85;transition:opacity var(--motion-fast) var(--ease-standard),color var(--motion-fast) var(--ease-standard);}
+.ds-footer-col a:hover{opacity:1;color:var(--brass);}
+.ds-social{display:flex;gap:12px;}
+.ds-social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--radius-pill);border:1px solid rgba(255,255,255,.18);opacity:.8;}
+.ds-social a:hover{opacity:1;border-color:var(--brass);background:rgba(184,136,48,.10);}
+.ds-social svg{width:16px;height:16px;}
+.ds-legal{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--graphite-mute);border-top:1px solid rgba(255,255,255,.10);padding-top:24px;margin-bottom:24px;display:flex;gap:18px;flex-wrap:wrap;}
+.ds-legal a{color:var(--graphite-mute);}
+.ds-legal a:hover{color:var(--vellum);}
+.ds-cobrand{display:flex;gap:32px;align-items:center;justify-content:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);}
+.ds-cobrand-mark{font-family:var(--display);font-size:var(--type-14);font-weight:500;letter-spacing:.02em;color:var(--vellum);opacity:.9;}
+.ds-cobrand-mark img{height:28px;width:auto;}
+@media (max-width:1023px){.ds-footer-grid{grid-template-columns:repeat(2,1fr);gap:32px;}}
+@media (max-width:599px){[data-section="footer"]{padding-block:var(--space-section-m);}.ds-footer-grid{grid-template-columns:1fr;}.ds-cobrand{flex-direction:column;gap:16px;}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}.ds-hero-spot:hover img,.ds-roster-card:hover .ds-roster-thumb img,.ds-promo-tile:hover{transform:none;}}
+</style>
+</head>
+<body>
+
+<!-- 0. UTILITY STRIP — co-brand attribution (captured) -->
+<header data-section="utility-strip" data-intent="attribute" data-layout="full-width-thin" data-items="2">
+  <div class="ds-container">
+    <p>Produced by The Channel Company &nbsp;·&nbsp; Sponsored by Dell Technologies</p>
+    <p style="opacity:.7">A trade publication for the Dell channel</p>
+  </div>
+</header>
+
+<!-- 1. HEADER — sitemark + 7-item nav (from captured primary nav) + search + Subscribe -->
+<header data-section="header" data-intent="navigate" data-layout="full-width-sticky" data-items="7">
+  <div class="ds-container ds-header-inner">
+    <a href="/" class="ds-sitemark" aria-label="Enterprise Tech Provider · Home">Enterprise Tech Provider</a>
+    <nav class="ds-nav" aria-label="Primary">
+      <a class="ds-nav-link" href="/category/dta">Dell Technologies Advantage</a>
+      <a class="ds-nav-link" href="/category/ai">AI</a>
+      <a class="ds-nav-link" href="/category/mdi">Modern Datacenter</a>
+      <a class="ds-nav-link" href="/category/storage">Storage</a>
+      <a class="ds-nav-link" href="/category/hybrid-work">Modern Workplace</a>
+      <a class="ds-nav-link" href="/category/intel">Intel</a>
+      <a class="ds-nav-link" href="/category/microsoft">Microsoft</a>
+    </nav>
+    <div class="ds-header-actions">
+      <form class="ds-search-form" action="/search/node" role="search">
+        <svg class="ds-search-icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <input type="search" name="keys" class="ds-search-input" placeholder="Search articles" aria-label="Search articles">
+      </form>
+      <a class="ds-button-secondary" href="#engagement">Subscribe</a>
+      <button class="ds-menu-toggle" aria-label="Open menu" type="button">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. ISSUE MASTHEAD — replaces the captured persistent hero band (site H1 + tagline) -->
+  <section data-section="issue-masthead" data-intent="editorial-marker" data-layout="full-width-row" data-items="1">
+    <div class="ds-container ds-issue-row">
+      <h2 class="ds-issue-mark">Week of <span class="ds-issue-num">4&nbsp;May&nbsp;2026</span></h2>
+      <div class="ds-issue-meta">
+        Stay ahead of what&rsquo;s next to drive profitable growth.
+        <span class="ds-issue-meta-foot">The Dell channel edition &middot; 614 articles &middot; 17 sections</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HERO (RECOMMENDED — categories/block_4, 1 featured story) -->
+  <section data-section="hero" data-intent="lead-story" data-layout="type-led-with-spot" data-items="1" data-source-view="categories/block_4">
+    <div class="ds-container">
+      <div class="ds-hero-typeled">
+        <div class="ds-hero-text">
+          <span class="ds-eyebrow ds-eyebrow--brass">Recommended &nbsp;·&nbsp; Modern Workplace</span>
+          <h1>How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="ds-deck">
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="article excerpt not on captured home">
+              two-line opener pending. Set in editorial italic, the deck for the lead story.
+            </span>
+          </p>
+          <div class="ds-meta">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead date">date pending</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead read-time">read-time pending</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead author">author pending</span>
+          </div>
+          <div class="ds-tag-row" aria-label="Tags">
+            <a class="ds-tag" href="/category/hybrid-work">Modern Workplace</a>
+            <a class="ds-tag" href="/category/ai">AI</a>
+            <a class="ds-tag" href="/category/intel">Intel</a>
+            <a class="ds-tag" href="/category/microsoft">Microsoft</a>
+            <a class="ds-tag" href="/technologies/precision">Precision</a>
+            <a class="ds-tag" href="/technologies/ultrasharp">UltraSharp</a>
+            <a class="ds-tag" href="/technologies/pcaas">PCaaS</a>
+            <a class="ds-tag" href="/technologies/hybrid%20work">Hybrid Work</a>
+          </div>
+          <div class="ds-hero-actions">
+            <a class="ds-button-primary" href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">Read article</a>
+          </div>
+        </div>
+        <a class="ds-hero-spot" href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing" aria-label="Read the lead story">
+          <img src="../current/assets/media/05824-20260325-Dell-ETP-CS-Launch_LinkedIn-Image_309x309-1674195d.jpg"
+               alt="How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing"
+               width="309" height="309">
+          <span class="ds-hero-spot-caption">Recommended &middot; Modern Workplace</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ESSENTIAL READING (essential_reading/block + block_1 + block_2 = 5 cards merged) -->
+  <section data-section="essential-reading" data-intent="recent-content" data-layout="roster-2col" data-items="5" data-source-view="essential_reading/block+block_1+block_2">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div><span class="ds-eyebrow">Section</span><h2>Essential Reading</h2></div>
+        <a class="ds-link-arrow" href="/newsroom">All articles &rarr;</a>
+      </div>
+
+      <div class="ds-roster">
+        <a class="ds-roster-card" href="/modern-datacenter/you-can-now-accelerate-your-customers-ai-initiatives-quickly-and-easily">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/04823-20241205-Dell-ETP-1779586389-309x309-b037c07f.jpg" alt="You Can Now Accelerate Your Customers&rsquo; AI Initiatives Quickly And Easily" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--datacenter">Modern Datacenter</span>
+            <h3>You Can Now Accelerate Your Customers&rsquo; AI Initiatives Quickly And Easily</h3>
+            <div class="ds-tag-row" style="margin-top:0">
+              <a class="ds-tag" href="/category/ai">AI</a>
+              <a class="ds-tag" href="/technologies/poweredge">PowerEdge</a>
+            </div>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+
+        <a class="ds-roster-card" href="/modern-workplace/help-customers-build-the-best-workplace-experience-for-productivity-and">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/04823-20241205-Dell-ETP-2162026367-309x309_0-6cb5dbe1.jpg" alt="Help Customers Build The Best Workplace Experience For Productivity And Collaboration" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <h3>Help Customers Build The Best Workplace Experience For Productivity And Collaboration</h3>
+            <div class="ds-tag-row" style="margin-top:0">
+              <a class="ds-tag" href="/category/ai">AI</a>
+              <a class="ds-tag" href="/technologies/ultrasharp">UltraSharp</a>
+              <a class="ds-tag" href="/technologies/comfortview%20plus">ComfortView Plus</a>
+            </div>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+
+        <a class="ds-roster-card" href="/modern-workplace/end-of-windows-10-support-heralds-massive-opportunity-for-solution-providers">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/05109-20251024-Dell-windows-refresh-blog-309x309_202-2e033d3c.jpg" alt="End of Windows 10 Support Heralds Massive Opportunity For Solution Providers" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <h3>End of Windows 10 Support Heralds Massive Opportunity For Solution Providers</h3>
+            <div class="ds-tag-row" style="margin-top:0">
+              <a class="ds-tag" href="/category/ai">AI</a>
+              <a class="ds-tag" href="/technologies/precision">Precision</a>
+              <a class="ds-tag" href="/technologies/pcaas">PCaaS</a>
+              <a class="ds-tag" href="/technologies/optiplex">OptiPlex</a>
+              <a class="ds-tag" href="/technologies/latitude">Latitude</a>
+            </div>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+
+        <a class="ds-roster-card" href="/modern-workplace/leverage-dell-s-powerful-client-device-security-to-win-customer-pc-refresh-deals">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/04823-20241205-Dell-ETP-1185673314-309x309-bd621ffa.jpg" alt="Leverage Dell&rsquo;s Powerful Client Device Security To Win Customer PC Refresh Deals" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <h3>Leverage Dell&rsquo;s Powerful Client Device Security To Win Customer PC Refresh Deals</h3>
+            <div class="ds-tag-row" style="margin-top:0">
+              <a class="ds-tag" href="/category/ai">AI</a>
+              <a class="ds-tag" href="/technologies/precision">Precision</a>
+              <a class="ds-tag" href="/technologies/security">Security</a>
+              <a class="ds-tag" href="/technologies/optiplex">OptiPlex</a>
+            </div>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+
+        <a class="ds-roster-card" href="/storage/powerstore-s-latest-release-proves-the-future-of-it-is-smarter-storage">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/04823-20241205-Dell-ETP-1402896104-309x309-cbe17f87.jpg" alt="PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>PowerStore&rsquo;s Latest Release Proves the Future of IT Is Smarter Storage</h3>
+            <div class="ds-tag-row" style="margin-top:0">
+              <a class="ds-tag" href="/category/ai">AI</a>
+              <a class="ds-tag" href="/technologies/powerstore">PowerStore</a>
+            </div>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. LATEST (categories/block_2 — 3 cards in a row, image-led roster --3) -->
+  <section data-section="latest" data-intent="recent-content" data-layout="roster-3col" data-items="3" data-source-view="categories/block_2">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div><span class="ds-eyebrow">Section</span><h2>Latest</h2></div>
+        <a class="ds-link-arrow" href="/newsroom">View all latest &rarr;</a>
+      </div>
+      <div class="ds-roster ds-roster--3">
+        <a class="ds-roster-card" href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/05284-20260210-Dell-ETP-2215785854-309x309-dbed03bb.jpg" alt="Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers&rsquo; Mission-Critical Storage" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--datacenter">Storage</span>
+            <h3>Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers&rsquo; Mission-Critical Storage</h3>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+        <a class="ds-roster-card" href="/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/05182-20251114-Dell-ETP-2192467778-309x309-b233797f.jpg" alt="5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--neutral">Dell Tech Advantage</span>
+            <h3>5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers</h3>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+        <a class="ds-roster-card" href="/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners">
+          <span class="ds-roster-thumb"><img src="../current/assets/media/05284-20260210-Dell-ETP-1818616410-309x309-374060e3.jpg" alt="How Dell PowerEdge Single-Socket Servers with AMD EPYC Processors Help Partners Grow" loading="lazy" width="200" height="200"></span>
+          <div class="ds-roster-body">
+            <span class="ds-chip ds-chip--datacenter">Modern Datacenter</span>
+            <h3>How Dell PowerEdge Single-Socket Servers with AMD EPYC Processors Help Partners Grow</h3>
+            <div class="ds-meta"><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card date">date pending</span><span aria-hidden="true">·</span><span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="card read-time">read-time pending</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INNOVATION & IMPACT (video_slideshow/block — 6 sponsor promos shown as a grid, NOT auto-advancing carousel) -->
+  <section data-section="innovation-impact" data-intent="cross-promo" data-layout="sponsored-grid-3" data-items="6" data-source-view="video_slideshow/block">
+    <div class="ds-container">
+      <div class="ds-sponsored-head">
+        <div>
+          <span class="ds-eyebrow">In partnership with</span>
+          <h2>Innovation &amp; Impact</h2>
+          <span class="ds-eyebrow-meta">Sponsored placements from Dell, Intel, and partners. Click-through to external destinations.</span>
+        </div>
+      </div>
+      <div class="ds-promo-grid">
+        <a class="ds-promo-tile" href="https://vprofleet.intel.com/" target="_blank" rel="noopener">
+          <span class="ds-promo-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05279%20Dell%20Global%20FY27%20Q1%20ETP%20Intel%20Package_v1a.jpg" alt="Intel vPro Fleet Services" loading="lazy"></span>
+          <div class="ds-promo-body">
+            <span class="ds-promo-eyebrow">Sponsored &middot; Intel</span>
+            <span class="ds-promo-host">vprofleet.intel.com</span>
+            <span class="ds-promo-arrow">Open &rarr;</span>
+          </div>
+        </a>
+        <a class="ds-promo-tile" href="https://dt.crndigitalnewsroom.com/" target="_blank" rel="noopener">
+          <span class="ds-promo-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05192%20Dell%20NA%20FY26%20Q4%20ISG%20Newshub%20%28AMD%29_Nov%2725-Jan%2726_Banners_300x250.jpg" alt="Dell ISG Newshub" loading="lazy"></span>
+          <div class="ds-promo-body">
+            <span class="ds-promo-eyebrow">Sponsored &middot; Dell</span>
+            <span class="ds-promo-host">dt.crndigitalnewsroom.com</span>
+            <span class="ds-promo-arrow">Open &rarr;</span>
+          </div>
+        </a>
+        <a class="ds-promo-tile" href="https://www.dell.com/en-us/delltechnologiesworld/lp/2026-overview?dgc=co&amp;cid=partner&amp;lid=DTW26-crn-feb" target="_blank" rel="noopener">
+          <span class="ds-promo-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05284-20260212-DTW26-Partner-Portal-CRN-ETP-Page-Banner-Carousel-237x198.jpg" alt="Dell Technologies World 2026" loading="lazy"></span>
+          <div class="ds-promo-body">
+            <span class="ds-promo-eyebrow">Sponsored &middot; Dell</span>
+            <span class="ds-promo-host">dell.com / DTW 2026</span>
+            <span class="ds-promo-arrow">Open &rarr;</span>
+          </div>
+        </a>
+        <a class="ds-promo-tile" href="https://www.crn.com/sponsored/assets/2026/05182-dell-02-2026-why-dell-ai-pcs-and-windows-11-are-a-strategic-advantage-whitepaper.pdf" target="_blank" rel="noopener">
+          <span class="ds-promo-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/04653-20251218-Dell-ETP-why-dell-ai-pcs-strategic-advantage-whitepaper-cover.jpg" alt="Why Dell AI PCs and Windows 11 are a Strategic Advantage (whitepaper)" loading="lazy"></span>
+          <div class="ds-promo-body">
+            <span class="ds-promo-eyebrow">Sponsored &middot; Whitepaper</span>
+            <span class="ds-promo-host">crn.com / whitepaper PDF</span>
+            <span class="ds-promo-arrow">Download &rarr;</span>
+          </div>
+        </a>
+        <a class="ds-promo-tile" href="https://www.intel.com/content/www/us/en/architecture-and-technology/vpro/overview.html" target="_blank" rel="noopener">
+          <span class="ds-promo-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05183%20Dell%20Global%20FY26%20Q4%20ETP%20Vendor%20Package%20%28Intel%29_Carousel%20Tile_v2a.jpg" alt="Intel vPro overview" loading="lazy"></span>
+          <div class="ds-promo-body">
+            <span class="ds-promo-eyebrow">Sponsored &middot; Intel</span>
+            <span class="ds-promo-host">intel.com / vPro overview</span>
+            <span class="ds-promo-arrow">Open &rarr;</span>
+          </div>
+        </a>
+        <a class="ds-promo-tile" href="https://www.delltechnologies.com/partner/en-us/auth/news-events-and-communication/vxrail-transition.htm" target="_blank" rel="noopener">
+          <span class="ds-promo-thumb"><img src="https://www.enterprisetechprovider.com/sites/new_etp/files/05182-20251117-Dell-ETP-Carousel-929772310-300x250.jpg" alt="VxRail transition" loading="lazy"></span>
+          <div class="ds-promo-body">
+            <span class="ds-promo-eyebrow">Sponsored &middot; Dell Partner</span>
+            <span class="ds-promo-host">delltechnologies.com / VxRail</span>
+            <span class="ds-promo-arrow">Open &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TOPIC BAND (V04 ink band — taxonomy index from primary nav) -->
+  <section data-section="topic-band" data-intent="taxonomy" data-layout="band-row" data-items="7" data-source-view="primary-nav">
+    <div class="ds-container">
+      <div class="ds-topic-head">
+        <div><span class="ds-eyebrow">By Topic</span><h2>Across the channel</h2></div>
+        <a class="ds-link-arrow" style="color:var(--brass-soft);" href="/sitemap">All sections &rarr;</a>
+      </div>
+      <div class="ds-topic-row">
+        <a class="ds-topic-cell" href="/category/dta"><span class="ds-topic-num">01</span><span class="ds-topic-name">Dell Tech Advantage</span><span class="ds-topic-count">Programme</span></a>
+        <a class="ds-topic-cell" href="/category/ai"><span class="ds-topic-num">02</span><span class="ds-topic-name">Artificial Intelligence</span><span class="ds-topic-count">36 articles</span></a>
+        <a class="ds-topic-cell" href="/category/mdi"><span class="ds-topic-num">03</span><span class="ds-topic-name">Modern Datacenter</span><span class="ds-topic-count">36 articles</span></a>
+        <a class="ds-topic-cell" href="/category/storage"><span class="ds-topic-num">04</span><span class="ds-topic-name">Storage</span><span class="ds-topic-count">97 articles</span></a>
+        <a class="ds-topic-cell" href="/category/hybrid-work"><span class="ds-topic-num">05</span><span class="ds-topic-name">Modern Workplace</span><span class="ds-topic-count">37 articles</span></a>
+        <a class="ds-topic-cell" href="/category/intel"><span class="ds-topic-num">06</span><span class="ds-topic-name">Intel</span><span class="ds-topic-count">9 articles</span></a>
+        <a class="ds-topic-cell" href="/category/microsoft"><span class="ds-topic-num">07</span><span class="ds-topic-name">Microsoft</span><span class="ds-topic-count">2 articles</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. DEPARTMENTS — 6 text-only topic sections (outcomes/block_*) -->
+  <section data-section="departments" data-intent="taxonomy-deep" data-layout="grid-3-2-textonly" data-items="6" data-source-view="outcomes/block_1+block_5+block_8+block_9+block_11+block_4">
+    <div class="ds-container">
+      <div class="ds-section-head">
+        <div><span class="ds-eyebrow">Inside each section</span><h2>Three reads from each topic</h2></div>
+      </div>
+      <div class="ds-dept-grid">
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--ai"><span class="ds-dept-num">A</span> Artificial Intelligence</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/artificial-intelligence/the-dell-technologies-advantage-for-ai-2026-how-to-capture-your-share-of-the">The Dell Technologies Advantage for AI 2026: How To Capture Your Share Of The $248 Billion AI Market</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/artificial-intelligence/unlock-ai-success-in-2026-how-the-dell-ai-factory-transforms-your-business">Unlock AI Success in 2026: How the Dell AI Factory Transforms Your Business</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/artificial-intelligence/how-the-dell-ai-factory-simplifies-the-customer-ai-journey">How the Dell AI Factory Simplifies the Customer AI Journey</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label"><span class="ds-dept-num">B</span> Videos</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/idc-research-shows-value-of-workstations-vs-pcs">IDC Research Shows Value Of Workstations Vs PCs</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/the-superpower-of-isv-certified-workstations">The Superpower Of ISV Certified Workstations</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/idc-research-workstations-provide-better-support-for-today-s-ai-workloads">IDC Research: Workstations Provide Better Support For Today&rsquo;s AI Workloads</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label"><span class="ds-dept-num">C</span> Modern Datacenter</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/modern-datacenter/how-dell-poweredge-single-socket-servers-with-amd-epyc-processors-help-partners">How Dell PowerEdge Single-Socket Servers with AMD EPYC Processors Help Partners Grow</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-datacenter/5-reasons-your-customer-s-tech-refresh-is-a-huge-opportunity-for-you">5 Reasons Your Customer&rsquo;s Tech Refresh Is A Huge Opportunity For You</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-datacenter/how-dell-nativeedge-empowers-your-customers-to-simplify-optimize-and-protect-their">How Dell NativeEdge Empowers Your Customers to Simplify, Optimize, and Protect Their IT Operations</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label"><span class="ds-dept-num">D</span> Storage</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/storage/why-dell-s-powermaxos-104-enhancements-are-vital-for-your-enterprise-customers-mission">Why Dell&rsquo;s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers&rsquo; Mission-Critical Storage</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new">Revolutionize Your Customers&rsquo; AIOps with Dell&rsquo;s AI Data Platform with NVIDIA</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage">How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--neutral"><span class="ds-dept-num">E</span> Dell Tech Advantage</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/dell-technologies-advantage/5-ways-dell-powerprotect-helps-you-grow-your-business-by-protecting-your">5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/dell-technologies-advantage/the-dell-technologies-advantage-2026-how-to-capture-your-share-of-a-866">The Dell Technologies Advantage 2026: How To Capture Your Share Of A $866 Billion Market</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/dell-technologies-advantage/the-dell-technologies-advantage-2026-how-to-capture-your-share-of-a-487">The Dell Technologies Advantage 2026: How To Capture Your Share Of A $487 Billion Market</a></h3></li>
+          </ul>
+        </div>
+
+        <div class="ds-department">
+          <span class="ds-dept-label ds-dept-label--workplace"><span class="ds-dept-num">F</span> Modern Workplace</span>
+          <ul class="ds-dept-list">
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">How Dell Is Accelerating Partners&rsquo; Success In The Era Of AI PC Computing</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/idc-research-shows-value-of-workstations-vs-pcs">IDC Research Shows Value Of Workstations Vs PCs</a></h3></li>
+            <li class="ds-dept-item"><h3><a href="/modern-workplace/the-superpower-of-isv-certified-workstations">The Superpower Of ISV Certified Workstations</a></h3></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. POPULAR (categories/block_5 — 5 numbered items) -->
+  <section data-section="popular" data-intent="ranking" data-layout="numbered-list" data-items="5" data-source-view="categories/block_5">
+    <div class="ds-container">
+      <div class="ds-popular-head">
+        <span class="ds-eyebrow">Top of the week</span>
+        <h2>Popular</h2>
+      </div>
+      <ol class="ds-popular-list">
+        <li class="ds-popular-item">
+          <span class="ds-popular-rank">1</span>
+          <h3><a href="/storage/how-dell-is-helping-partners-navigate-an-unprecedented-memory-shortage">How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage</a></h3>
+        </li>
+        <li class="ds-popular-item">
+          <span class="ds-popular-rank">2</span>
+          <h3><a href="/storage/revolutionize-your-customers-aiops-with-dell-s-ai-data-platform-with-nvidia-and-new">Revolutionize Your Customers&rsquo; AIOps with Dell&rsquo;s AI Data Platform with NVIDIA</a></h3>
+        </li>
+        <li class="ds-popular-item">
+          <span class="ds-popular-rank">3</span>
+          <h3><a href="/artificial-intelligence/unlock-ai-success-in-2026-how-the-dell-ai-factory-transforms-your-business">Unlock AI Success in 2026: How the Dell AI Factory Transforms Your Business</a></h3>
+        </li>
+        <li class="ds-popular-item">
+          <span class="ds-popular-rank">4</span>
+          <h3><a href="/dell-technologies-advantage/dell-s-2026-playbook-how-the-dell-technologies-advantage-helps-partners">Dell&rsquo;s 2026 Playbook: How the Dell Technologies Advantage Helps Partners Capture</a></h3>
+        </li>
+        <li class="ds-popular-item">
+          <span class="ds-popular-rank">5</span>
+          <h3><a href="/intel/4-ways-an-ai-pc-refresh-saves-your-customers-time-and-money">4 Ways An AI PC Refresh Saves Your Customers Time and Money</a></h3>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 10. NEWSLETTER sign-off -->
+  <section data-section="engagement" data-intent="convert" data-layout="centered-narrow" data-items="1" id="engagement">
+    <div class="ds-container">
+      <div class="ds-newsletter-narrow">
+        <span class="ds-eyebrow ds-eyebrow--brass">Newsletters</span>
+        <h2>Get next week&rsquo;s first.</h2>
+        <p>
+          <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="newsletter description">
+            two-line newsletter description pending. The editorial promise of the weekly send.
+          </span>
+        </p>
+        <form action="https://pages.thechannelco.com/index.php/form/XDFrame" method="post" aria-label="Subscribe to the ETP newsletter">
+          <input class="ds-input" type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+          <button class="ds-button-primary" type="submit">Subscribe</button>
+        </form>
+        <div class="ds-newsletter-foot">
+          By subscribing you agree to our
+          <a href="https://pages.thechannelco.com/terms-of-service-INTL.html">terms of service</a> and
+          <a href="https://pages.thechannelco.com/standard-policies-INTL-Privacy.html">privacy policy</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 11. FOOTER (captured) -->
+<footer data-section="footer" data-intent="navigate" data-layout="mega" data-items="3">
+  <div class="ds-container">
+    <div class="ds-footer-grid">
+      <div class="ds-footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="https://www.thechannelco.com/company" target="_blank" rel="noopener">About The Channel Company</a></li>
+          <li><a href="https://www.crn.com/about" target="_blank" rel="noopener">About CRN</a></li>
+          <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://www.dell.com/en-us/lp/contact-us" target="_blank" rel="noopener">Contact Dell Technologies</a></li>
+          <li><a href="https://www.thechannelco.com/company/contact" target="_blank" rel="noopener">Contact The Channel Company</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>CRN Awards</h4>
+        <ul>
+          <li><a href="https://pages.thechannelco.com/CRN-Lists-and-Awards.html?source=TCCwebsite" target="_blank" rel="noopener">Subscribe</a></li>
+          <li><a href="https://www.crn.com/rankings-and-lists" target="_blank" rel="noopener">CRN Lists &amp; Awards</a></li>
+        </ul>
+      </div>
+      <div class="ds-footer-col">
+        <h4>Follow</h4>
+        <div class="ds-social">
+          <a href="https://www.instagram.com/dell/" aria-label="Instagram (Dell)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UC01FW5V9UVohbPtqKSmXX-w" aria-label="YouTube (Dell)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://twitter.com/delltech?lang=en" aria-label="X / Twitter (Dell Tech)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.7 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21H2.3l7.1-8.1L2 3h6.3l4.4 5.8L17.7 3zm-1.1 16h1.7L7.5 5H5.7l10.9 14z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/delltechnologies" aria-label="LinkedIn (Dell Technologies)" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M10 9h4v2c.7-1.3 2.2-2.2 4-2.2 3.3 0 5 2 5 5.5V21h-4v-6c0-1.7-.7-2.8-2.3-2.8-1.6 0-2.7 1.1-2.7 2.8v6h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-legal">
+      <a href="https://pages.thechannelco.com/standard-policies-INTL-Privacy.html" target="_blank" rel="noopener">The Channel Company Privacy Policy</a>
+      <a href="https://pages.thechannelco.com/standard-policies-Global-cookies" target="_blank" rel="noopener">The Channel Company Cookie Policy</a>
+      <a href="https://www.thechannelco.com/privacy-choices" target="_blank" rel="noopener">Do Not Sell or Share My Personal Information</a>
+    </div>
+
+    <div class="ds-cobrand">
+      <span class="ds-cobrand-mark"><img src="../current/assets/media/dell_logo_white_160px-764d5064.png" alt="Dell Technologies" height="28"></span>
+      <span class="ds-cobrand-mark">The Channel Company</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

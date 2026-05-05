@@ -1,0 +1,180 @@
+{
+  "_provenance": {
+    "writtenBy": "stardust:extract",
+    "writtenAt": "2026-05-04T00:00:00Z",
+    "readArtifacts": [
+      "stardust/current/pages/home.json",
+      "stardust/current/pages/category-storage.json",
+      "stardust/current/pages/storage-article.json",
+      "stardust/current/pages/newsroom-article.json",
+      "stardust/current/pages/user-profile.json"
+    ],
+    "synthesizedInputs": [
+      "register classification (brand)",
+      "voice register (B2B-channel)"
+    ],
+    "stardustVersion": "0.3.0",
+    "aggregationScope": "5 pages"
+  },
+
+  "site": {
+    "name": "Enterprise Tech Provider",
+    "tagline": "Stay ahead of what’s next to drive profitable growth",
+    "ownership": "The Channel Company (publisher) — Dell Technologies (sponsor). A sponsored content destination for Dell partners (channel resellers / solution providers).",
+    "originUrl": "https://www.enterprisetechprovider.com/",
+    "language": "en"
+  },
+
+  "logo": {
+    "primary": {
+      "kind": "wordmark-png",
+      "src": "https://www.enterprisetechprovider.com/sites/all/themes/tpz_theme_2020/images/etp-logo-2025.png",
+      "domPath": "header > .header-cover > a > img",
+      "displayedAs": "white wordmark on dark teal band, ~200px wide",
+      "localPath": null
+    },
+    "coBrand": [
+      { "label": "Produced by The Channel Company", "src": "thechannel-logo.png" },
+      { "label": "Sponsored by Dell Technologies", "src": "dell_logo_white_160px.png", "localPath": "stardust/current/assets/media/dell_logo_white_160px-764d5064.png" }
+    ],
+    "footerCoBrand": [
+      { "label": "TheChannelCo (footer)", "src": "thechannelco-logo-footer.png" },
+      { "label": "Dell Technologies (footer)", "src": "dell_logo_302.jpg", "localPath": "stardust/current/assets/media/dell_logo_302-2263a316.jpg" }
+    ],
+    "synthesized": false
+  },
+
+  "palette": [
+    { "role": "primary",      "value": "#003049", "rgb": "rgb(0, 48, 73)",     "where": "header band, footer accents, h6 brand label, primary surface stripes; appears across all 5 pages" },
+    { "role": "surface-dark", "value": "#191919", "rgb": "rgb(25, 25, 25)",    "where": "footer container; full-width dark band before footer" },
+    { "role": "background",   "value": "#ffffff", "rgb": "rgb(255, 255, 255)", "where": "main content background on every page" },
+    { "role": "surface",      "value": "#e7e7e7", "rgb": "rgb(231, 231, 231)", "where": "search button background; subtle dividers" },
+    { "role": "text",         "value": "#333333", "rgb": "rgb(51, 51, 51)",    "where": "body text on every page" },
+    { "role": "text-strong",  "value": "#181818", "rgb": "rgb(24, 24, 24)",    "where": "section H2 ‘decorative’ headings" },
+    { "role": "text-muted",   "value": "#656565", "rgb": "rgb(101, 101, 101)", "where": "site tagline, secondary headings" },
+    { "role": "link",         "value": "#1d6dab", "rgb": "approx",             "where": "inline links inside article body" },
+    { "role": "accent-red",   "value": "#cc0000", "rgb": "approx",             "where": "occasional ‘Read more’ link / CTA underline" }
+  ],
+  "paletteNotes": "Palette is dominated by dark teal #003049 (Dell-adjacent) and pure white. No formal token set — see cssCustomProperties (only `--sa-uid` analytics token defined). All colors are hard-coded in the Drupal theme CSS.",
+
+  "type": {
+    "headingFamily": "Roboto Light / Roboto Condensed (Light, Regular)",
+    "bodyFamily": "Roboto Regular",
+    "fallbacks": "Arial MT (Light/Narrow Light/Regular/Narrow Regular), Arial, sans-serif",
+    "weightsObserved": [300, 400, 500, 700],
+    "sizesObserved": ["41px H2 (decorative)", "27.5px H2 muted tagline", "25px H1 article title", "24px H3", "18px H4 / H6 body", "16px H6 brand label", "14px H6 small caps"],
+    "scaleAudit": {
+      "kind": "ad-hoc",
+      "basis": "Sizes do not follow a modular ratio. The semantic H1 on article pages is 25px and visually outranked by an unrelated H2 at 41px elsewhere on the same page. Headings use Roboto Condensed at multiple weights without a clear mapping from level to weight."
+    },
+    "casing": "Heavy ALL-CAPS — site nav, every section label on the home page (RECOMMENDED, ESSENTIAL READING, LATEST, NEWSLETTERS, …), and even article H1s on storage/newsroom templates. Title case is reserved for article card titles in card lists."
+  },
+
+  "motifs": {
+    "borderRadius": {
+      "dominant": "0px (sharp corners on cards, bands, sections)",
+      "exceptions": ["3px on 'Submit' button", "50% on social icons in footer"]
+    },
+    "shadows": [
+      { "value": "none on most cards", "where": "card grid items lay flat" },
+      { "value": "rgba(0,0,0,0.16) 0px 1px 4px (subtle, occasional)", "where": "newsletter signup container" }
+    ],
+    "gradients": [],
+    "patterns": [
+      "header co-branded band (publisher + sponsor) — repeats on every page",
+      "hero band: dark teal background + lifestyle stock photo + uppercase tagline — repeats on every page including author-profile and 404-prone utility pages",
+      "section label band: dark teal full-width strip with white uppercase H2 (RECOMMENDED, LATEST, etc.) — used 5–13 times on the home page",
+      "card grid: 309×309 thumbnail (rendered at 78–195px) + uppercase title link, no body summary, no metadata, no shadow, no border",
+      "right rail: ad slot 300×250 + newsletter signup form + ‘Newsletters’ promo",
+      "co-branded footer: dark band, two columns (Channel Co links, Dell links), social icons row, legal strip"
+    ]
+  },
+
+  "voice": {
+    "samples": {
+      "tagline": "Stay ahead of what’s next to drive profitable growth",
+      "heroPromise": "Accelerate from Ideas to Innovation",
+      "ctaLabels": ["Submit", "Subscribe", "Read more about", "Learn more about", "MENU", "SEARCH"],
+      "sectionLabels": ["RECOMMENDED", "ESSENTIAL READING", "LATEST", "REEL HIGHLIGHTS", "INNOVATION & IMPACT", "POPULAR", "NEWSLETTERS"],
+      "sampleHeadlines": [
+        "How Dell Is Helping Partners Navigate an Unprecedented Memory Shortage",
+        "How Dell Is Accelerating Partners’ Success In The Era Of AI PC Computing",
+        "Why Dell’s PowerMaxOS 10.4 Enhancements Are Vital For Your Enterprise Customers’ Mission‑Critical Workloads",
+        "5 Ways Dell PowerProtect Helps You Grow Your Business By Protecting Your Customers"
+      ]
+    },
+    "register": "B2B trade press, channel-partner audience. Direct-address (‘Help Your Customers…’, ‘Win…’, ‘Grow…’). Headline-driven — every card is a benefit promise to the reseller. Vocabulary is Dell-product-heavy (PowerStore, PowerMax, PoweEdge, AMD EPYC, vPro, NativeEdge, PowerProtect, AI Factory). Tone is earnest sponsored-content — no irony, no editorial voice, no opinion."
+  },
+
+  "systemComponents": [
+    {
+      "id": "site-header",
+      "presentOn": ["home","category-storage","storage-article","newsroom-article","user-profile"],
+      "fingerprint": "Dark teal band + 'PRODUCED BY THE CHANNEL COMPANY' + 'SPONSORED BY DELL TECHNOLOGIES' + (search bar + MENU button on right)",
+      "height": "~70px"
+    },
+    {
+      "id": "hero-band",
+      "presentOn": ["home","category-storage","storage-article","newsroom-article","user-profile"],
+      "fingerprint": "H1 'Enterprise Tech Provider' + H2 'Stay ahead of what’s next to drive profitable growth' + lifestyle stock photo of three people at a workstation",
+      "height": "~190px",
+      "note": "Repeats on every page including utility pages — costs the article ~190px of above-the-fold real estate before the title is ever shown."
+    },
+    {
+      "id": "main-nav",
+      "presentOn": ["home","category-storage","storage-article","newsroom-article","user-profile"],
+      "fingerprint": "Uppercase top-level nav: HOME · DELL TECHNOLOGIES ADVANTAGE · ARTIFICIAL INTELLIGENCE · MODERN DATACENTER · STORAGE · MODERN WORKPLACE · IN PARTNERSHIP WITH INTEL (visible only after MENU click on most viewports)"
+    },
+    {
+      "id": "page-title-band",
+      "presentOn": ["category-storage","storage-article","newsroom-article"],
+      "fingerprint": "Dark teal full-width band + uppercase H1 in white + image right; this is where the actual page title lives, after the global hero."
+    },
+    {
+      "id": "consent-overlay",
+      "presentOn": ["home","category-storage","storage-article","newsroom-article","user-profile"],
+      "fingerprint": "1440×900 iframe from cdn.privacy-mgmt.com — covers the entire viewport on first visit, blocking all content until dismissed.",
+      "iframeSrc": "https://cdn.privacy-mgmt.com/index.html"
+    },
+    {
+      "id": "right-rail",
+      "presentOn": ["home","category-storage","storage-article"],
+      "fingerprint": "300×250 GIF/JPEG ad + Newsletters form (3-field email-capture) + 'Newsletters' tile"
+    },
+    {
+      "id": "section-label-strip",
+      "presentOn": ["home","category-storage"],
+      "fingerprint": "Full-width dark teal strip with white uppercase H2 (e.g. ‘LATEST’, ‘POPULAR’) — used as a divider between card grids."
+    },
+    {
+      "id": "card-grid",
+      "presentOn": ["home","category-storage","user-profile"],
+      "fingerprint": "Repeated card: 309×309 thumbnail (rendered 78×195px) + 1–3 line title; no summary, no date, no author byline, no category chip."
+    },
+    {
+      "id": "footer",
+      "presentOn": ["home","category-storage","storage-article","newsroom-article","user-profile"],
+      "fingerprint": "Black band, 4 columns (ABOUT, CONTACT, CRN AWARDS, FOLLOW), social icons (Instagram/YouTube/X/LinkedIn), legal strip, TheChannelCo + Dell Technologies co-brand row."
+    }
+  ],
+
+  "iframeEcosystem": [
+    { "src": "cdn.privacy-mgmt.com (Sourcepoint)", "purpose": "consent overlay", "size": "1440×900 (full viewport)" },
+    { "src": "youtube.com/embed/* (videoseries playlist)", "purpose": "REEL HIGHLIGHTS video carousel", "size": "870×315" },
+    { "src": "pages.thechannelco.com/index.php/form/XDFrame", "purpose": "newsletter signup", "size": "0×0 (offscreen / loaded on demand)" },
+    { "src": "tcc.demdex.net (Adobe Audience Manager)", "purpose": "ad/audience tracking", "size": "0×0" }
+  ],
+
+  "tokens": {
+    "cssCustomPropertiesCount": 1,
+    "cssCustomProperties": [{ "name": "--sa-uid", "value": "(analytics user id, generated per page)" }],
+    "designTokensDefined": false,
+    "tensionFlag": "site ships zero design tokens — every color, font, spacing value is hard-coded inline or in legacy theme CSS"
+  },
+
+  "frameworkSignals": {
+    "platform": "Drupal (theme path /sites/all/themes/tpz_theme_2020)",
+    "css": ["Bootstrap 3.3.7 (cdn.jsdelivr.net)", "lightSlider 1.x (carousel)"],
+    "ageSignals": ["Bootstrap 3 (released 2015, EOL'd by Bootstrap)", "Drupal-style sites/all/themes path", "year-stamped image filenames suggest Photoshop pipeline"]
+  }
+}
