@@ -2,14 +2,39 @@
 <html lang="en">
 <head>
 <!-- stardust:provenance
-  writtenBy:         stardust:prototype (V09 — V08 + full-bleed hero with background image)
+  writtenBy:         stardust:prototype (V09 — V08 hero with captured 3-people lifestyle photo as right-aligned background, fading left)
   derivedFrom:       home-proposed-v08.html
   changeFromV08:
-    - hero: --platinum card layout → full-bleed background image (Unsplash data center) with dark ink scrim
-    - hero height: ~padding-block:64px → min-height:560px (desktop), 420px (tablet), 360px (mobile)
-    - hero content: lead article card → brand statement (Enterprise Tech Provider + tagline + CTA)
-    - publication-banner: removed (brand identity absorbed into hero)
-    - lead article: retained as secondary element below hero headline
+    - hero section background: light --platinum solid → captured `etp-header-people-standing-short` (1200x400 lifestyle photo) right-aligned, faded to platinum on left via gradient mask
+    - hero text remains on left; image bleeds into right ~55% of the band, gradient overlay keeps text-side AA contrast
+    - rationale: reuses the captured site's most recognizable lifestyle photo as a brand-faithful nod, but inverts its role (it was the persistent across-all-pages stock-band asset; now it appears once, only on home, as scenography for the lead story)
+  -- V08 history below --
+  writtenBy:         stardust:prototype (V08 — V07 + font D + button E)
+  derivedFrom:       home-proposed-v07.html
+  changeFromV07:
+    - type system: Geist → Manrope (display); Source Serif 4 → Newsreader (editorial); Geist Mono → IBM Plex Mono (data); Inter unchanged (UI)
+    - primary button: solid ink → two-tone (ink slab + brass arrow tab)
+    - accent color: brass kept (no change)
+  -- V07 (light hero) and V06 history below --
+  writtenBy:         stardust:prototype (V07 — V06 with light-grey hero variant)
+  derivedFrom:       home-proposed-v06.html
+  changeFromV06:     hero section background --ink (#003049) → --platinum (#f4f5f7); all hero text colors flipped from white to dark; chip + tags + CTA + image-frame adapted for light surface
+  -- V06 history below --
+  writtenBy:         stardust:prototype (V06 — V04+V05 hybrid with full-bleed hero)
+  writtenAt:         2026-05-05T00:00:00Z
+  page:              home
+  pageUrl:           https://www.enterprisetechprovider.com/
+  proposedFile:      ./home-proposed-v06.html
+  againstDirection:  stardust/direction.md (Active 2026-05-05T00:00:00Z)
+  variantBasis:
+    - kept-from-V05: header navigation (7 items incl. Microsoft) · "Across the channel" ink topic band · "Three reads from each topic" departments grid
+    - kept-from-V04: "What else partners are reading" mini-roster · "This week's reads" 2x2 roster · "More from this week" numbered text list
+    - new: full-bleed --ink hero (replaces "Week of 4 May 2026" masthead); featured article styled as a slightly larger version of other roster cards (chip + 36px title + serif italic deck + meta + tag-row + Read article CTA)
+    - removed-from-IA: Innovation & Impact sponsored grid (user request) · Popular numbered list (user request)
+  divergenceVersion: v1.0 (stardust v0.3)
+  fontDeck:          editorial-trade-multi (Geist + Source Serif 4 + Inter + Geist Mono)
+  paletteSource:     user-pinned primaries + enterprise-refined secondaries
+  unsourcedContent:  ~22 placeholders (deck/date/read-time/author per article + newsletter description)
   stardustVersion:   0.3.0
 -->
 <meta charset="UTF-8">
@@ -220,7 +245,35 @@ body.ds-drawer-open{overflow:hidden;}
 @media (max-width:599px){.ds-search-form{display:none;}}
 @media (max-width:599px){.ds-search-form{display:none;}}
 
-/* === PUBLICATION MASTHEAD — removed in V09 (absorbed into hero) === */
+/* === PUBLICATION MASTHEAD (variant E — compact mono whisper, ~60px tall) === */
+[data-section="publication-banner"]{
+  background:var(--ink-deep);color:var(--vellum);
+  padding:18px 0;
+  border-top:2px solid var(--brass);
+  position:relative;  /* V09: hosts the brass→transparent fade hairline at the bottom */
+}
+[data-section="publication-banner"]::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+  background:linear-gradient(90deg, var(--brass) 0%, transparent 50%);
+  pointer-events:none;
+}
+[data-section="publication-banner"] .ds-container{
+  display:flex;align-items:baseline;gap:24px;justify-content:space-between;flex-wrap:wrap;
+}
+.ds-banner-name{
+  font-family:var(--display);font-weight:700;
+  font-size:22px;letter-spacing:-.012em;color:var(--vellum);margin:0;
+}
+.ds-banner-tagline{
+  font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass-soft);margin:0;
+}
+.ds-banner-tagline::before{content:"§ ";color:rgba(255,255,255,.4);}
+@media (max-width:599px){
+  [data-section="publication-banner"]{padding:14px 0;}
+  .ds-banner-name{font-size:18px;}
+  .ds-banner-tagline{font-size:12px;letter-spacing:.12em;}
+}
 
 /* === WATCH & LEARN (featured iframe + sidebar of real reels) === */
 [data-section="reels"]{padding-block:var(--space-section-d);background:var(--vellum);border-bottom:1px solid var(--platinum-edge);}
@@ -245,95 +298,85 @@ body.ds-drawer-open{overflow:hidden;}
 @media (max-width:1023px){.ds-reels-grid{grid-template-columns:1fr;gap:24px;}}
 @media (max-width:599px){[data-section="reels"]{padding-block:var(--space-section-m);}.ds-reels-side .ds-reel{grid-template-columns:96px 1fr;}.ds-reels-side .ds-reel-thumb{width:96px;}}
 
-/* === FULL-BLEED HERO (V09 — background image with dark scrim) === */
-[data-section="hero"]{
-  position:relative;overflow:hidden;isolation:isolate;
-  min-height:560px;
-  display:flex;align-items:center;
-  color:var(--vellum);
-  border-bottom:none;
-  padding-block:80px 72px;
+/* === FULL-BLEED HERO (V09 — captured lifestyle photo as right-aligned background, fades to platinum on the left) === */
+[data-section="hero"]{background:var(--platinum);color:var(--char);padding-block:48px;position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--platinum-edge);}
+/* Layer 1: the photo, right-anchored, narrower than the band — explicit width keeps it from over-dominating the right side */
+[data-section="hero"]::before{
+  content:"";position:absolute;top:0;right:0;bottom:0;left:0;z-index:0;
+  background-image:url("../current/assets/media/etp-header-people-standing-short-e1489655.jpg");
+  background-repeat:no-repeat;
+  background-position:right center;
+  background-size:auto 100%;  /* image height = block height; width is proportional (3:1 photo) so it stays narrower than the page on its own */
+  /* mask: opaque on the right, fading to transparent on the left so the photo dissolves into the platinum surface */
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, transparent 28%, rgba(0,0,0,.55) 50%, rgba(0,0,0,.95) 70%, #000 100%);
+          mask-image:linear-gradient(90deg, transparent 0%, transparent 28%, rgba(0,0,0,.55) 50%, rgba(0,0,0,.95) 70%, #000 100%);
 }
-[data-section="hero"] .ds-hero-bg{
-  position:absolute;inset:0;z-index:0;
-}
-[data-section="hero"] .ds-hero-bg img{
-  width:100%;height:100%;object-fit:cover;
-  object-position:center 40%;
-}
-/* Dark scrim — stronger on the left for text, fading right to show imagery */
-[data-section="hero"] .ds-hero-bg::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(105deg,
-    rgba(0,31,47,0.92) 0%,
-    rgba(0,48,73,0.82) 35%,
-    rgba(0,48,73,0.55) 65%,
-    rgba(0,48,73,0.35) 100%);
-}
-/* Top brass accent line */
+/* Layer 2: a left-side wash that re-asserts the platinum tone over the photo edge so the title block stays AA-contrast */
 [data-section="hero"]::after{
-  content:"";position:absolute;top:0;left:0;right:0;height:4px;z-index:3;
-  background:linear-gradient(90deg,var(--brass) 0%,var(--brass-soft) 40%,transparent 80%);
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg, var(--platinum) 0%, var(--platinum) 32%, rgba(244,245,247,.85) 48%, rgba(244,245,247,.0) 70%);
 }
-[data-section="hero"] .ds-container{position:relative;z-index:2;width:100%;}
-.ds-hero-inner{
-  display:flex;flex-direction:column;gap:24px;max-width:720px;
-}
-.ds-hero-eyebrow{
-  font-family:var(--mono);font-size:11px;font-weight:500;
-  letter-spacing:.18em;text-transform:uppercase;
-  color:var(--brass-soft);
-}
-.ds-hero-title{
-  font-family:var(--display);font-weight:800;
-  font-size:clamp(36px,5vw,var(--type-60));
-  line-height:1.05;letter-spacing:-.025em;
-  color:var(--vellum);margin:0;
-}
-.ds-hero-tagline{
-  font-family:var(--editorial);font-style:italic;
-  font-size:clamp(var(--type-18),2.2vw,var(--type-24));
-  line-height:1.45;color:rgba(255,255,255,.85);
-  max-width:52ch;margin:0;
-}
-.ds-hero-actions{margin-top:12px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
-/* Featured article card inside hero (secondary element) */
-.ds-hero-featured{
-  margin-top:32px;padding-top:28px;
-  border-top:1px solid rgba(255,255,255,.15);
-  display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start;
-  max-width:600px;
-}
-.ds-hero-featured-thumb{
-  width:80px;height:80px;border-radius:var(--radius-md);overflow:hidden;
-  border:1px solid rgba(255,255,255,.2);flex-shrink:0;
-}
-.ds-hero-featured-thumb img{width:100%;height:100%;object-fit:cover;}
-.ds-hero-featured-body{display:flex;flex-direction:column;gap:6px;min-width:0;}
-.ds-hero-featured-body .ds-chip{align-self:flex-start;background:rgba(255,255,255,.12);color:var(--vellum);}
-.ds-hero-featured-body h2{
-  font-family:var(--display);font-weight:600;
-  font-size:var(--type-18);line-height:1.3;letter-spacing:-.005em;
-  color:var(--vellum);margin:0;
-}
-.ds-hero-featured-body h2 a{color:inherit;text-decoration:none;}
-.ds-hero-featured-body h2 a:hover{text-decoration:underline;text-decoration-color:var(--brass-soft);text-underline-offset:3px;}
-.ds-hero-featured-body .ds-meta{
-  font-family:var(--mono);font-size:11px;letter-spacing:.04em;
-  color:rgba(255,255,255,.6);display:flex;gap:6px 10px;flex-wrap:wrap;
-}
+/* Brass top hairline removed in V09 — moved to the bottom of the publication-banner instead, see [data-section="publication-banner"]::after */
 @media (max-width:1023px){
-  [data-section="hero"]{min-height:480px;padding-block:64px 56px;}
-  .ds-hero-title{font-size:clamp(32px,5vw,var(--type-48));}
+  [data-section="hero"]{min-height:auto;}
+  [data-section="hero"]::before{
+    background-position:center top;
+    background-size:cover;
+    opacity:.35;
+    -webkit-mask-image:none;mask-image:none;
+  }
+  [data-section="hero"]::after{
+    background:linear-gradient(180deg, rgba(244,245,247,.92) 0%, rgba(244,245,247,.96) 100%);
+  }
 }
-@media (max-width:599px){
-  [data-section="hero"]{min-height:400px;padding-block:48px 40px;}
-  .ds-hero-title{font-size:var(--type-36);}
-  .ds-hero-tagline{font-size:var(--type-16);}
-  .ds-hero-featured{grid-template-columns:64px 1fr;gap:12px;margin-top:24px;padding-top:20px;}
-  .ds-hero-featured-thumb{width:64px;height:64px;}
-  .ds-hero-featured-body h2{font-size:var(--type-16);}
+[data-section="hero"] .ds-container{position:relative;z-index:2;}
+.ds-hero-card{
+  display:grid;
+  grid-template-columns:var(--img-hero) 1fr; /* V09: V08 column order kept — 309 thumb on left, text body on right */
+  gap:40px;
+  align-items:center;
 }
+.ds-hero-thumb{
+  width:var(--img-hero);
+  aspect-ratio:1/1;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  background:var(--ink-haze);
+  border:1px solid var(--platinum-edge);
+  box-shadow:var(--shadow-md);
+  flex-shrink:0;
+}
+.ds-hero-thumb img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform var(--motion-slow) var(--ease-standard);
+}
+.ds-hero-card:hover .ds-hero-thumb img{transform:scale(1.02);}
+/* V09: transparent text body — relies on the band's left-side platinum gradient overlay for any contrast */
+.ds-hero-body{display:flex;flex-direction:column;gap:8px;max-width:650px;}  /* V09: 14 → 8 — tighter rhythm between chip / h1 / deck / meta / tags / button */
+@media (prefers-reduced-transparency:reduce){
+  .ds-hero-body::before{background:var(--platinum);}
+}
+.ds-hero-body h1{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(28px,3.4vw,var(--type-36));
+  line-height:1.15;letter-spacing:-.018em;color:var(--char);
+}
+.ds-hero-body .ds-deck{
+  font-family:var(--editorial);font-style:italic;
+  font-size:var(--type-18);line-height:1.5;
+  color:var(--graphite);max-width:60ch;
+}
+.ds-hero-body .ds-meta{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;
+  font-family:var(--mono);font-size:var(--type-12);
+  color:var(--graphite-mute);letter-spacing:.04em;
+}
+.ds-hero-body .ds-meta .ds-meta-sep{color:var(--platinum-edge);}
+/* Hero placeholders revert to default (white-surface) ghost styling — color via .ds-ph base rule */
+.ds-hero-actions{margin-top:6px;display:flex;gap:12px;align-items:center;}
+@media (max-width:1023px){.ds-hero-card{grid-template-columns:1fr;gap:28px;}.ds-hero-thumb{width:100%;max-width:var(--img-hero);}}
+@media (max-width:599px){[data-section="hero"]{padding-block:32px 36px;}.ds-hero-card{gap:20px;}.ds-hero-thumb{max-width:200px;border-radius:var(--radius-sm);}.ds-hero-body h1{font-size:var(--type-24);}.ds-hero-body .ds-deck{font-size:var(--type-16);}.ds-hero-body .ds-meta{gap:6px 10px;font-size:11px;}.ds-hero-card .ds-tag-row .ds-tag:nth-child(n+5){display:none;}.ds-hero-card .ds-tag-row::after{content:"+ MORE";font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.10em;color:rgba(255,255,255,.55);align-self:center;padding:0 4px;}}
 
 /* === Section head === */
 .ds-section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:32px;flex-wrap:wrap;}
@@ -537,10 +580,10 @@ body.ds-drawer-open{overflow:hidden;}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;}.ds-hero-card:hover .ds-hero-thumb img,.ds-roster-card:hover .ds-roster-thumb img,.ds-promo-tile:hover{transform:none;}}
 
-/* === DELIGHT: hero title word-by-word reveal on first paint === */
-.ds-hero-title .word{display:inline-block;opacity:0;transform:translateY(14px);animation:heroWordIn 600ms cubic-bezier(.16,1,.3,1) forwards;}
+/* === DELIGHT: hero H1 word-by-word reveal on first paint === */
+.ds-hero-body h1 .word{display:inline-block;opacity:0;transform:translateY(10px);animation:heroWordIn 520ms cubic-bezier(.16,1,.3,1) forwards;}
 @keyframes heroWordIn{to{opacity:1;transform:translateY(0);}}
-@media (prefers-reduced-motion:reduce){.ds-hero-title .word{animation:none;opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.ds-hero-body h1 .word{animation:none;opacity:1;transform:none;}}
 
 /* === DELIGHT: topic-band count tick-up on scroll-into-view === */
 .ds-topic-count{font-variant-numeric:tabular-nums;}
@@ -635,39 +678,55 @@ body.ds-drawer-open{overflow:hidden;}
 
 <main id="main">
 
-  <!-- 2. FULL-BLEED HERO (V09 — background image with dark scrim, brand statement + featured article) -->
-  <section data-section="hero" data-intent="brand-identity+lead-story" data-layout="full-bleed-image" data-items="1" data-source-view="categories/block_4" aria-labelledby="hero-title">
-    <div class="ds-hero-bg" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80&auto=format&fit=crop"
-           alt="" width="1920" height="1080" loading="eager" fetchpriority="high">
-    </div>
+  <!-- 2. PUBLICATION MASTHEAD (variant E — compact mono whisper, ~60px tall) -->
+  <section data-section="publication-banner" data-intent="brand-identity" data-layout="compact-whisper" data-items="1" aria-labelledby="banner-name">
     <div class="ds-container">
-      <div class="ds-hero-inner">
-        <span class="ds-hero-eyebrow">A Dell Channel Publication</span>
-        <h1 class="ds-hero-title" id="hero-title">Enterprise Tech Provider</h1>
-        <p class="ds-hero-tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
-        <div class="ds-hero-actions">
-          <a class="ds-button-primary" href="#reads">
-            <span class="ds-btn-lab">Explore articles</span>
-            <span class="ds-btn-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-          <a class="ds-button-secondary" style="color:var(--vellum);border-color:rgba(255,255,255,.4);" href="#engagement">Subscribe</a>
-        </div>
-        <!-- Lead story retained as secondary element -->
-        <div class="ds-hero-featured">
-          <a class="ds-hero-featured-thumb" href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing" aria-label="Read the featured story">
-            <img src="../current/assets/media/05824-20260325-Dell-ETP-CS-Launch_LinkedIn-Image_309x309-1674195d.jpg"
-                 alt="How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing"
-                 width="80" height="80" loading="eager">
-          </a>
-          <div class="ds-hero-featured-body">
-            <span class="ds-chip ds-chip--on-ink">Recommended</span>
-            <h2><a href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</a></h2>
-            <div class="ds-meta">
-              <span>Modern Workplace</span>
-              <span aria-hidden="true">&middot;</span>
-              <span class="ds-ph ds-ph--on-ink" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead read-time">5 min read</span>
-            </div>
+      <p class="ds-banner-name" id="banner-name">Enterprise Tech Provider</p>
+      <p class="ds-banner-tagline">Stay ahead of what&rsquo;s next to drive profitable growth.</p>
+    </div>
+  </section>
+
+  <!-- 3. FULL-BLEED HERO (featured article on --ink) -->
+  <section data-section="hero" data-intent="lead-story" data-layout="full-bleed-card" data-items="1" data-source-view="categories/block_4">
+    <div class="ds-container">
+      <div class="ds-hero-card">
+        <a class="ds-hero-thumb" href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing" aria-label="Read the lead story">
+          <img src="../current/assets/media/05824-20260325-Dell-ETP-CS-Launch_LinkedIn-Image_309x309-1674195d.jpg"
+               alt="How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing"
+               width="309" height="309"
+               loading="eager" fetchpriority="high">
+        </a>
+        <div class="ds-hero-body">
+          <span class="ds-eyebrow ds-eyebrow--brass-deep">Recommended &nbsp;·&nbsp; Modern Workplace</span>
+          <h1>How Dell Is Accelerating Partners&rsquo; Success in the Era of AI PC Computing</h1>
+          <p class="ds-deck">
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="article excerpt not on captured home">
+              two-line opener pending. Set in editorial italic, the deck for the lead story.
+            </span>
+          </p>
+          <div class="ds-meta">
+            <span class="ds-chip ds-chip--workplace">Modern Workplace</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead date">date pending</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead read-time">read-time pending</span>
+            <span class="ds-meta-sep" aria-hidden="true">·</span>
+            <span class="ds-ph" data-placeholder="true" data-placeholder-type="other" data-placeholder-source="lead author">author pending</span>
+          </div>
+          <div class="ds-tag-row" aria-label="Tags">
+            <a class="ds-tag" href="/category/ai">AI</a>
+            <a class="ds-tag" href="/category/intel">Intel</a>
+            <a class="ds-tag" href="/category/microsoft">Microsoft</a>
+            <a class="ds-tag" href="/technologies/precision">Precision</a>
+            <a class="ds-tag" href="/technologies/ultrasharp">UltraSharp</a>
+            <a class="ds-tag" href="/technologies/pcaas">PCaaS</a>
+            <a class="ds-tag" href="/technologies/hybrid%20work">Hybrid Work</a>
+          </div>
+          <div class="ds-hero-actions">
+            <a class="ds-button-primary" href="/modern-workplace/how-dell-is-accelerating-partners-success-in-the-era-of-ai-pc-computing">
+              <span class="ds-btn-lab">Read article</span>
+              <span class="ds-btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1100,18 +1159,19 @@ body.ds-drawer-open{overflow:hidden;}
   mq.addEventListener && mq.addEventListener('change', function(e){ if (e.matches) close(); });
 })();
 
-/* ===== DELIGHT 1 — Hero title word-by-word reveal on first paint ===== */
+/* ===== DELIGHT 1 — Hero H1 word-by-word reveal on first paint ===== */
 (function(){
   var prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
-  var h1 = document.querySelector('.ds-hero-title');
+  var h1 = document.querySelector('[data-section="hero"] h1');
   if (!h1) return;
+  // Walk text nodes only — preserves any nested HTML
   var text = h1.textContent;
   var parts = text.split(/(\s+)/);
   var idx = 0;
   h1.innerHTML = parts.map(function(p){
     if (/^\s+$/.test(p)) return p;
-    var span = '<span class="word" style="animation-delay:' + (idx * 90) + 'ms">' + p.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</span>';
+    var span = '<span class="word" style="animation-delay:' + (idx * 70) + 'ms">' + p.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</span>';
     idx++;
     return span;
   }).join('');
